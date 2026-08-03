@@ -1,0 +1,11 @@
+[
+  { "bot": "AURIKA", "brand": "Aurika Trading", "name": "Gold", "symbol_display": "XAU / USD" },
+  { "bot": "SILVERSMITH", "brand": "Silversmith Trading", "name": "Silver", "symbol_display": "XAG / USD" },
+  { "bot": "OLIVIA", "brand": "Olivia Trading", "name": "Crude Oil", "symbol_display": "WTI / USD" },
+  { "bot": "SPENCER", "brand": "Spencer Trading", "name": "S&P 500", "symbol_display": "SPX500" },
+  { "bot": "SPIKE", "brand": "Spike Trading", "name": "Dow Jones", "symbol_display": "US30" },
+  { "bot": "NAZIM", "brand": "Nazim Trading", "name": "Nasdaq 100", "symbol_display": "NAS100" },
+  { "bot": "RUSSELL", "brand": "Russell Trading", "name": "Russell 2000", "symbol_display": "US2000" },
+  { "bot": "SOLOMON", "brand": "Solomon Trading", "name": "Soybean", "symbol_display": "SOYBN" },
+  { "bot": "SWEETPEA", "brand": "Sweetpea Trading", "name": "Sugar", "symbol_display": "SUGAR" }
+]

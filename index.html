@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARISA Trading Bots — autonomous algo-trading, in the open</title>
+<meta name="description" content="A fleet of autonomous, rule-based trading bots across FX, metals, energy, indices and softs — running on OANDA practice (demo) accounts, with every closed trade published as it happens.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.5;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:26px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+
+  .hero{ padding: 64px 24px 40px; text-align:center; }
+  .hero h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(34px, 6vw, 58px); line-height:1.08; margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .hero h1 em{ font-style:normal; color: var(--gold-1); }
+  .hero p.lede{ max-width: 640px; margin: 0 auto; color: var(--text-mid); font-size: 17px; }
+
+  .disclosure-banner{
+    margin: 30px auto 0; max-width: 640px;
+    border:1px solid color-mix(in srgb, var(--gold-2) 55%, var(--hairline));
+    background: color-mix(in srgb, var(--gold-2) 8%, transparent);
+    border-radius: 12px; padding: 12px 18px; font-size: 13.5px; color: var(--text-mid);
+  }
+  .disclosure-banner b{ color: var(--gold-1); }
+
+  section{ padding: 46px 24px; border-top: 1px solid var(--hairline); }
+  section > .wrap > h2{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size: 26px;
+    margin: 0 0 6px;
+  }
+  section > .wrap > p.sub{ color: var(--text-low); margin: 0 0 28px; font-size: 14.5px; }
+
+  .fleet-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+  .bot-card{
+    border:1px solid var(--hairline); border-radius: 14px; padding: 16px 18px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--gold-2) 6%, transparent), transparent 40%), var(--card);
+  }
+  .bot-card .name{ font-family: Georgia, serif; font-size: 18px; margin-bottom:2px; }
+  .bot-card .sym{ font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; color: var(--gold-1); letter-spacing:.04em; }
+  .bot-card .desc{ font-size: 12.5px; color: var(--text-low); margin-top: 8px; }
+
+  #feed{ display:flex; flex-direction:column; gap:12px; }
+  .trade-row{
+    display:flex; align-items:center; gap:16px;
+    border:1px solid var(--hairline); border-radius:12px; padding: 14px 18px;
+    background: var(--card);
+  }
+  .trade-row .who{ min-width: 150px; }
+  .trade-row .who .bot{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-low); }
+  .trade-row .who .instrument{ font-family: Georgia, serif; font-size:16px; }
+  .trade-row .side{
+    font-family: ui-monospace, monospace; font-size:11px; font-weight:700; letter-spacing:.08em;
+    padding: 3px 8px; border-radius:6px; color:var(--text-hi);
+    background: color-mix(in srgb, var(--gold-2) 30%, transparent);
+    border:1px solid color-mix(in srgb, var(--gold-1) 45%, transparent);
+  }
+  .trade-row .result{ margin-left:auto; text-align:right; font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .trade-row .result .pct{ font-size:18px; font-weight:700; }
+  .trade-row .result .usd{ font-size:12px; color:var(--text-mid); }
+  .trade-row .result.pos .pct, .trade-row .result.pos .usd b{ color: var(--good); }
+  .trade-row .result.neg .pct, .trade-row .result.neg .usd b{ color: var(--bad); }
+  .trade-row .when{ font-size:11.5px; color:var(--text-low); min-width:118px; text-align:right; }
+
+  #feed .empty, #feed .error{ color: var(--text-low); font-size: 14px; padding: 20px 0; }
+
+  .links{ display:flex; gap:14px; flex-wrap:wrap; }
+  .links a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .links a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+
+  @media (max-width: 560px){
+    .trade-row{ flex-wrap:wrap; }
+    .trade-row .when{ text-align:left; min-width:0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><b>ARISA</b> Trading Bots</div>
+  <nav>
+    <a href="#fleet">Fleet</a>
+    <a href="#activity">Activity</a>
+    <a href="#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Autonomous trading bots,<br><em>run in the open.</em></h1>
+  <p class="lede">
+    A fleet of rule-based algo-trading bots across FX, metals, energy, indices and softs.
+    Every signal, entry, exit and stop-loss is decided by code — no manual trade placement.
+    Every closed trade below is published automatically, win or lose.
+  </p>
+  <div class="disclosure-banner">
+    <b>Practice accounts only.</b> Every bot shown here trades on an OANDA practice (demo) account —
+    no real funds are at risk anywhere on this page. Nothing here is investment advice.
+  </div>
+</div>
+
+<section id="fleet">
+  <div class="wrap">
+    <h2>The fleet</h2>
+    <p class="sub">Nine bots, nine instruments, one shared architecture: volatility-gated signals, staged take-profits, hard stops.</p>
+    <div class="fleet-grid" id="fleetGrid"></div>
+  </div>
+</section>
+
+<section id="activity">
+  <div class="wrap">
+    <h2>Recent activity</h2>
+    <p class="sub">The most recent closed trades across the fleet, refreshed automatically as positions close.</p>
+    <div id="feed"><div class="empty">Loading recent activity…</div></div>
+  </div>
+</section>
+
+<section id="follow">
+  <div class="wrap">
+    <h2>Follow along</h2>
+    <p class="sub">New closed-trade cards and clips are posted as they happen.</p>
+    <div class="links">
+      <a href="#" id="discordLink">Discord</a>
+      <a href="#" id="telegramLink">Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this site is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
