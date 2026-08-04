@@ -105,6 +105,37 @@
     .trade-row{ flex-wrap:wrap; }
     .trade-row .when{ text-align:left; min-width:0; }
   }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card);
+    overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{
+    display:inline-flex; align-items:center;
+    animation: ticker-scroll 55s linear infinite;
+    will-change: transform;
+  }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px;
+    padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline);
+    color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; overflow-x: auto; }
+  }
 </style>
 </head>
 <body>
@@ -117,6 +148,10 @@
     <a href="#follow">Follow</a>
   </nav>
 </header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
 
 <div class="hero">
   <h1>Autonomous trading bots,<br><em>run in the open.</em></h1>
