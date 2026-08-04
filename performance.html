@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance — ARISA Trading Bots</title>
+<meta name="description" content="Real aggregate trade performance across the ARISA Trading Bots fleet — win rate, profit factor and a cumulative P&amp;L equity curve, computed from every closed trade.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.5;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:26px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .page-head{ padding: 48px 24px 8px; text-align:center; }
+  .page-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 42px); margin: 0 0 12px; text-wrap: balance;
+  }
+  .page-head p{ color: var(--text-mid); max-width:620px; margin:0 auto; font-size:15px; }
+
+  section{ padding: 40px 24px; border-top: 1px solid var(--hairline); }
+  section:first-of-type{ border-top:none; }
+  section > .wrap > h2{ font-family: Georgia, serif; font-weight:400; font-size: 22px; margin: 0 0 6px; }
+  section > .wrap > p.sub{ color: var(--text-low); margin: 0 0 24px; font-size: 14px; }
+
+  .stat-row{ display:flex; flex-wrap:wrap; gap:16px; margin-bottom: 36px; }
+  .stat-tile{
+    flex:1 1 180px; border:1px solid var(--hairline); border-radius:14px; padding:18px 20px;
+    background: var(--card);
+  }
+  .stat-tile .label{ font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-low); }
+  .stat-tile .value{
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    font-size:26px; font-weight:700; margin-top:6px; color: var(--text-hi);
+  }
+  .stat-tile.hero{ flex-basis: 260px; }
+  .stat-tile.hero .value{ font-size:36px; }
+  .stat-tile .value.pos{ color: var(--good); } .stat-tile .value.neg{ color: var(--bad); }
+
+  .chart-card{
+    border:1px solid var(--hairline); border-radius:16px; padding:22px 22px 14px;
+    background: var(--card);
+  }
+  .chart-title{ font-size:13px; color: var(--text-mid); margin-bottom:14px; }
+  .chart-wrap{ position:relative; }
+  svg.equity{ display:block; width:100%; height:auto; overflow:visible; }
+  .grid-line{ stroke: var(--hairline); stroke-width:1; }
+  .zero-line{ stroke: var(--text-low); stroke-width:1; }
+  .axis-label{ fill: var(--text-low); font-size:10.5px; font-family: ui-monospace, monospace; }
+  .equity-area{ opacity:.12; }
+  .equity-line{ fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; }
+  .equity-line.pos{ stroke: var(--good); } .equity-line.neg{ stroke: var(--bad); }
+  .equity-area.pos{ fill: var(--good); } .equity-area.neg{ fill: var(--bad); }
+  .end-dot{ stroke: var(--card); stroke-width:2; }
+  .end-dot.pos{ fill: var(--good); } .end-dot.neg{ fill: var(--bad); }
+  .end-label{ font-family: ui-monospace, monospace; font-size:12px; font-weight:700; font-variant-numeric: tabular-nums; }
+  .end-label.pos{ fill: var(--good); } .end-label.neg{ fill: var(--bad); }
+  .crosshair{ stroke: var(--gold-1); stroke-width:1; opacity:0; pointer-events:none; }
+  .hover-dot{ fill: var(--gold-1); opacity:0; pointer-events:none; }
+  .chart-hit{ fill:transparent; cursor:crosshair; }
+
+  .tooltip{
+    position:absolute; pointer-events:none; opacity:0; transition:opacity .1s;
+    background: var(--bg-1); border:1px solid var(--hairline); border-radius:8px;
+    padding:8px 11px; font-size:12px; white-space:nowrap; transform:translate(-50%,-115%);
+    box-shadow: 0 10px 24px -8px rgba(0,0,0,.5);
+  }
+  .tooltip .tt-val{ font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-weight:700; font-size:14px; }
+  .tooltip .tt-val.pos{ color: var(--good); } .tooltip .tt-val.neg{ color: var(--bad); }
+  .tooltip .tt-date{ color: var(--text-low); font-size:10.5px; margin-top:2px; }
+
+  table.stats-table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.stats-table th, table.stats-table td{ text-align:right; padding:10px 12px; border-bottom:1px solid var(--hairline); }
+  table.stats-table th:first-child, table.stats-table td:first-child{ text-align:left; }
+  table.stats-table th{
+    color:var(--text-low); font-weight:500; font-size:11px; letter-spacing:.05em; text-transform:uppercase;
+  }
+  table.stats-table td{ font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; color: var(--text-hi); }
+  table.stats-table td.bot-name{ font-family: Georgia, serif; font-variant-numeric: normal; color: var(--text-hi); }
+  table.stats-table td.bot-name .sym{ display:block; font-family: ui-monospace, monospace; font-size:11px; color: var(--text-low); margin-top:2px; }
+  table.stats-table td.pos{ color: var(--good); } table.stats-table td.neg{ color: var(--bad); }
+  .table-wrap{ overflow-x:auto; border:1px solid var(--hairline); border-radius:14px; }
+  .table-wrap table{ min-width:640px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+
+  @media (max-width: 640px){
+    .stat-row{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><b>ARISA</b> Trading Bots</div>
+  <nav>
+    <a href="index.html#fleet">Fleet</a>
+    <a href="index.html#activity">Activity</a>
+    <a href="performance.html" class="active">Performance</a>
+    <a href="index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="page-head">
+  <h1>Real performance, in full.</h1>
+  <p>Every closed trade across all 9 bots, aggregated — not curated. Demo accounts, no real funds, updated automatically as positions close.</p>
+</div>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="stat-row" id="statRow">
+      <div class="stat-tile hero"><div class="label">Fleet cumulative P&amp;L</div><div class="value" id="statPnl">—</div></div>
+      <div class="stat-tile"><div class="label">Total closed trades</div><div class="value" id="statTrades">—</div></div>
+      <div class="stat-tile"><div class="label">Overall win rate</div><div class="value" id="statWinRate">—</div></div>
+      <div class="stat-tile"><div class="label">Live since</div><div class="value" id="statSince" style="font-size:19px">—</div></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Fleet-wide cumulative P&amp;L, trade by trade (all 9 bots combined, demo accounts)</div>
+      <div class="chart-wrap" id="chartWrap">
+        <div class="tooltip" id="tooltip">
+          <div class="tt-val" id="ttVal"></div>
+          <div class="tt-date" id="ttDate"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bot-stats">
+  <div class="wrap">
+    <h2>Per-bot breakdown</h2>
+    <p class="sub">Win rate, profit factor and average hold time, computed from each bot's complete trade history.</p>
+    <div class="table-wrap">
+      <table class="stats-table">
+        <thead>
+          <tr>
+            <th>Bot</th><th>Trades</th><th>Win rate</th><th>Profit factor</th><th>Avg hold</th><th>Total P&amp;L</th>
+          </tr>
+        </thead>
+        <tbody id="statsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this site is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script src="ticker.js"></script>
+<script src="performance.js"></script>
+</body>
+</html>
