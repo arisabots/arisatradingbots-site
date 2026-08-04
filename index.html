@@ -63,6 +63,20 @@
   }
   .disclosure-banner b{ color: var(--gold-1); }
 
+  .hero-stats{
+    display:flex; justify-content:center; flex-wrap:wrap; gap:0;
+    max-width:640px; margin:26px auto 0;
+    border:1px solid var(--hairline); border-radius:12px; background: var(--card);
+    overflow:hidden;
+  }
+  .hero-stat{ flex:1 1 120px; padding:14px 16px; text-align:center; border-right:1px solid var(--hairline); }
+  .hero-stat:last-child{ border-right:none; }
+  .hero-stat .v{
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    font-size:20px; font-weight:700; color: var(--text-hi);
+  }
+  .hero-stat .l{ font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color: var(--text-low); margin-top:3px; }
+
   section{ padding: 46px 24px; border-top: 1px solid var(--hairline); }
   section > .wrap > h2{
     font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size: 26px;
@@ -179,6 +193,11 @@
   <div class="disclosure-banner">
     <b>Practice accounts only.</b> Every bot shown here trades on an OANDA practice (demo) account —
     no real funds are at risk anywhere on this page. Nothing here is investment advice.
+  </div>
+  <div class="hero-stats" id="heroStats">
+    <div class="hero-stat"><div class="v" id="hsBots">—</div><div class="l">Bots live</div></div>
+    <div class="hero-stat"><div class="v" id="hsTrades">—</div><div class="l">Trades closed</div></div>
+    <div class="hero-stat"><div class="v" id="hsDays">—</div><div class="l">Days running</div></div>
   </div>
 </div>
 

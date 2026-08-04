@@ -22,10 +22,29 @@ fetch("data/fleet.json", { cache: "no-store" })
       </div>`
       )
       .join("");
+    const hsBots = document.getElementById("hsBots");
+    if (hsBots) hsBots.textContent = bots.length;
   })
   .catch(() => {
     document.getElementById("fleetGrid").innerHTML =
       '<div class="empty">Fleet list unavailable right now.</div>';
+  });
+
+fetch("data/performance.json", { cache: "no-store" })
+  .then((r) => r.json())
+  .then((d) => {
+    const hsTrades = document.getElementById("hsTrades");
+    const hsDays = document.getElementById("hsDays");
+    if (hsTrades) hsTrades.textContent = d.fleet_total_trades.toLocaleString();
+    if (hsDays && d.equity_curve.length) {
+      const start = new Date(d.equity_curve[0].time);
+      const days = Math.max(1, Math.round((Date.now() - start.getTime()) / 86400000));
+      hsDays.textContent = days;
+    }
+  })
+  .catch(() => {
+    const stats = document.getElementById("heroStats");
+    if (stats) stats.style.display = "none";
   });
 
 fetch("data/activity.json", { cache: "no-store" })
