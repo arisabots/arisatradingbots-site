@@ -1,5 +1,25 @@
 [
   {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
+    "pnl_usd": -14.82,
+    "exit_time": "2026-08-04T02:38:59.840757Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.26,
+    "pnl_usd": 31.46,
+    "exit_time": "2026-08-04T01:18:34.386846Z"
+  },
+  {
     "bot": "NAZIM",
     "brand": "Nazim Trading",
     "instrument_name": "Nasdaq 100",
@@ -38,6 +58,56 @@
     "pnl_pct": 0.39,
     "pnl_usd": 4.14,
     "exit_time": "2026-08-03T07:38:09.997738Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
+    "pnl_usd": -14.7,
+    "exit_time": "2026-08-03T05:56:04.483978Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
+    "pnl_usd": -14.67,
+    "exit_time": "2026-08-03T04:07:10.929256Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
+    "pnl_usd": -14.55,
+    "exit_time": "2026-08-03T02:00:04.844393Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.3,
+    "pnl_usd": 36.57,
+    "exit_time": "2026-08-03T01:25:25.500111Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
+    "pnl_usd": -14.49,
+    "exit_time": "2026-08-02T23:19:53.347164Z"
   },
   {
     "bot": "RUSSELL",
@@ -128,75 +198,5 @@
     "pnl_pct": 0.35,
     "pnl_usd": 3.68,
     "exit_time": "2026-07-31T13:06:54.370102Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.44,
-    "pnl_usd": 4.36,
-    "exit_time": "2026-07-31T08:52:15.167313Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.07,
-    "pnl_usd": 0.73,
-    "exit_time": "2026-07-31T06:45:20.355203Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "LONG",
-    "pnl_pct": 0.44,
-    "pnl_usd": 4.38,
-    "exit_time": "2026-07-31T03:11:23.800499Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": 0.2,
-    "pnl_usd": 5.59,
-    "exit_time": "2026-07-30T16:41:08.387277Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": 0.43,
-    "pnl_usd": 11.45,
-    "exit_time": "2026-07-30T15:10:30.672897Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "SHORT",
-    "pnl_pct": 0.6,
-    "pnl_usd": 15.99,
-    "exit_time": "2026-07-30T14:20:47.254298Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": -1.07,
-    "pnl_usd": -8.21,
-    "exit_time": "2026-07-30T05:32:21.138877Z"
   }
 ]
