@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering log — ARISA Trading Bots</title>
+<meta name="description" content="Real bugs found and fixed across the ARISA Trading Bots fleet, documented as they happened — including the ones that quietly broke things for days.">
+<link rel="canonical" href="https://arisatradingbot.com/log.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/log.html">
+<meta property="og:title" content="Engineering log — ARISA Trading Bots">
+<meta property="og:description" content="Real bugs found and fixed across the fleet, documented as they happened — including the ones that quietly broke things for days.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engineering log — ARISA Trading Bots">
+<meta name="twitter:description" content="Real bugs found and fixed across the fleet, documented as they happened — including the ones that quietly broke things for days.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:820px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .page-head{ padding: 52px 24px 8px; text-align:center; }
+  .page-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 42px); margin: 0 0 14px; text-wrap: balance;
+  }
+  .page-head p{ color: var(--text-mid); max-width:600px; margin:0 auto; font-size:15px; }
+
+  .log{ padding: 44px 24px 60px; }
+  .entry{ position:relative; padding-left:28px; padding-bottom:44px; border-left:1px solid var(--hairline); }
+  .entry:last-child{ border-left-color:transparent; padding-bottom:0; }
+  .entry::before{
+    content:""; position:absolute; left:-5px; top:4px; width:9px; height:9px; border-radius:50%;
+    background: var(--gold-1); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold-1) 20%, transparent);
+  }
+  .entry .date{
+    font-family: ui-monospace, monospace; font-size:11.5px; letter-spacing:.05em; color: var(--gold-1);
+    text-transform:uppercase; margin-bottom:6px;
+  }
+  .entry h2{ font-family: Georgia, serif; font-weight:400; font-size:21px; margin:0 0 12px; }
+  .entry .impact{
+    display:inline-block; font-size:11.5px; font-family: ui-monospace, monospace; color: var(--bad);
+    border:1px solid color-mix(in srgb, var(--bad) 45%, var(--hairline)); border-radius:999px;
+    padding:3px 11px; margin-bottom:14px;
+  }
+  .entry .body p{ color: var(--text-mid); font-size:14.5px; margin:0 0 10px; }
+  .entry .body p:last-child{ margin-bottom:0; }
+  .entry .body b{ color: var(--text-hi); }
+  .entry .body code{
+    font-family: ui-monospace, monospace; font-size:13px; background: var(--card);
+    border:1px solid var(--hairline); border-radius:5px; padding:1px 6px; color: var(--gold-1);
+  }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; border-top:1px solid var(--hairline); }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><b>ARISA</b> Trading Bots</div>
+  <nav>
+    <a href="index.html#fleet">Fleet</a>
+    <a href="performance.html">Performance</a>
+    <a href="how-it-works.html">How it works</a>
+    <a href="log.html" class="active">Log</a>
+    <a href="index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="page-head">
+  <h1>Bugs found. Bugs fixed.</h1>
+  <p>Every automated system has failure modes. Most trading sites don't show you theirs. Here are the real ones — what broke, how it was found, and what the fix actually was.</p>
+</div>
+
+<div class="log">
+  <div class="wrap">
+
+    <div class="entry">
+      <div class="date">2026-08-04</div>
+      <h2>A missing browser silently took down the whole publishing pipeline</h2>
+      <div class="impact">~5 hours · 6 bots affected</div>
+      <div class="body">
+        <p>The pipeline that renders every trade card and updates this site runs a headless browser to draw the image. At some point its browser installation went missing from disk. Every run after that crashed.</p>
+        <p>What made it worse: the crash handler's own error-printing line choked on a Unicode character inside the error message, on Windows' console encoding. That second failure happened <i>inside the except block</i>, which meant it wasn't caught — it killed the entire script, every single run, before it could reach any bot after the first failure, or update this site at all.</p>
+        <p><b>Fix:</b> reinstalled the browser, and reconfigured the script's output to tolerate any character so a future bad error message can never again take the whole pipeline down — worst case now, one card fails and everything else still runs.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-08-04</div>
+      <h2>One unlogged trade quietly froze a bot's cards for three weeks</h2>
+      <div class="impact">Aurika · 68 trades queued silently</div>
+      <div class="body">
+        <p>On 2026-07-15, a partial exit left 2 units logged as still open, with no matching close event ever recorded for them. The card-generation logic tracked a running position balance across the whole trade log, and once that balance stopped returning to zero, it never <i>completed</i> another trade — for any position opened afterward, for three straight weeks — even though the pipeline ran every 30 minutes without a single error.</p>
+        <p><b>Fix:</b> every new position open now always starts a fresh lifecycle instead of assuming it might be continuing a prior one, which matches how these bots actually trade and makes the tracker self-healing against this exact class of gap.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-07-30</div>
+      <h2>Real-money orders were silently failing on a clock drift no one was compensating for</h2>
+      <div class="impact">12,677 real error occurrences</div>
+      <div class="body">
+        <p>The Binance API requires every signed request's timestamp to be within a tight window of the exchange's own clock. The trading library exposes a <code>timestamp_offset</code> for exactly this — and never sets it. Local clock drift measured as high as 6.7 seconds in a single session, non-monotonically, not a slow steady creep.</p>
+        <p><b>Fix:</b> sync the offset against Binance's public time endpoint on startup, plus a background resync every 30 minutes for the long-running process.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-07-28</div>
+      <h2>A trade-log display bug made one real trade look like several</h2>
+      <div class="impact">All 9 bots' dashboards</div>
+      <div class="body">
+        <p>Every dashboard's trade table picked the row label from whichever field happened to be set first — and the field that was actually set (the specific action: open, partial exit, cover, stop) came second in that check, behind a generic field that's the same for every row on one side of a trade. The result: a single position's real lifecycle rendered as what looked like duplicate entries.</p>
+        <p><b>Fix:</b> reordered the field priority so the specific action is read first.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-07-28</div>
+      <h2>A defensive fallback was fabricating closed trades that never happened</h2>
+      <div class="impact">All 9 bots · 5 fabricated log entries found &amp; removed</div>
+      <div class="body">
+        <p>The function checking whether a position was still open had a final fallback: if both of its lookups failed for any reason — including a transient network blip — it returned <code>0 units</code>. That return value was indistinguishable from "confirmed flat," so a genuine API hiccup got logged as a real broker-side close, complete with a fabricated result.</p>
+        <p>Caught by cross-checking logged closes against OANDA's real transaction history — several had no matching fill at all.</p>
+        <p><b>Fix:</b> the fallback now re-raises instead of guessing, so a real lookup failure is treated as "skip this check," not "the position is flat."</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this site is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="ticker.js"></script>
+</body>
+</html>
