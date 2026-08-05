@@ -131,6 +131,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-08-05</div>
+      <h2>A failed card render was still marked "posted," so it never got retried</h2>
+      <div class="impact">4 real trades · 3 bots · no card ever produced</div>
+      <div class="body">
+        <p>The browser installation used to draw each card's image went missing a second time — same class of failure as 2026-08-04 below, a different underlying file this time. Any trade that closed during that window failed to render.</p>
+        <p>The real problem was what happened next: the trade's ID was recorded as "already posted" <i>before</i> the render was attempted, not after. So when the render failed, the trade stayed marked done anyway — no card, no retry, not on the next cycle, not ever, even once the browser was reinstalled. One of the four silently dropped this way was a real broker-side stop-loss close on Aurika.</p>
+        <p><b>Fix:</b> reinstalled the browser, and reordered the pipeline so a trade is only marked posted after its card actually renders successfully. A failed attempt now retries automatically on the next run instead of vanishing. The four missed trades were identified and their cards posted after the fix.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-08-04</div>
       <h2>A missing browser silently took down the whole publishing pipeline</h2>
       <div class="impact">~5 hours · 6 bots affected</div>
