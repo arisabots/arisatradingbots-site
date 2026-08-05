@@ -132,6 +132,17 @@
 
     <div class="entry">
       <div class="date">2026-08-05</div>
+      <h2>The card-rendering browser kept failing to launch, so we made it retry instead of just reinstalling</h2>
+      <div class="impact">5 real trades · 3 bots · delayed, not lost this time</div>
+      <div class="body">
+        <p>Hours after the previous fix below, the same "browser executable doesn't exist" error came back for three more trades, on a file that provably still existed on disk moments before and after each failure — no antivirus quarantine, no cleanup task, no environment mismatch between the automated run and an interactive one. That points to a brief race at the exact moment the browser process launches, not the file actually going missing.</p>
+        <p>Because of the previous fix, none of these five trades were lost this time — they sat correctly flagged as "not yet posted" until the pipeline could be run again by hand, rather than disappearing.</p>
+        <p><b>Fix:</b> the browser launch now retries automatically (up to 3 attempts, spaced a couple of seconds apart) instead of failing on the first flake. The five delayed trades were posted immediately after.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-08-05</div>
       <h2>A failed card render was still marked "posted," so it never got retried</h2>
       <div class="impact">4 real trades · 3 bots · no card ever produced</div>
       <div class="body">
