@@ -6,6 +6,26 @@
     "symbol_display": "XAU / USD",
     "side": "SHORT",
     "pnl_pct": -0.16,
+    "pnl_usd": -15.63,
+    "exit_time": "2026-08-06T01:39:04.958531Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.37,
+    "pnl_usd": -9.9,
+    "exit_time": "2026-08-06T01:26:04.390065Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
     "pnl_usd": -15.73,
     "exit_time": "2026-08-06T00:08:31.581259Z"
   },
@@ -178,25 +198,5 @@
     "pnl_pct": -0.16,
     "pnl_usd": -14.92,
     "exit_time": "2026-08-04T10:46:00.662286Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.17,
-    "pnl_usd": 1.7,
-    "exit_time": "2026-08-04T10:14:24.290918Z"
-  },
-  {
-    "bot": "AURIKA",
-    "brand": "Aurika Trading",
-    "instrument_name": "Gold",
-    "symbol_display": "XAU / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.16,
-    "pnl_usd": -14.36,
-    "exit_time": "2026-08-04T06:02:17.839894Z"
   }
 ]
