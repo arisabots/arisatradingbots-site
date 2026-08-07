@@ -5,6 +5,16 @@
     "instrument_name": "Crude Oil",
     "symbol_display": "WTI / USD",
     "side": "SHORT",
+    "pnl_pct": 0.1,
+    "pnl_usd": 1.05,
+    "exit_time": "2026-08-07T15:50:03.875242Z"
+  },
+  {
+    "bot": "OLIVIA",
+    "brand": "Olivia Trading",
+    "instrument_name": "Crude Oil",
+    "symbol_display": "WTI / USD",
+    "side": "SHORT",
     "pnl_pct": 0.17,
     "pnl_usd": 1.7,
     "exit_time": "2026-08-07T14:24:35.438955Z"
@@ -188,15 +198,5 @@
     "pnl_pct": -0.35,
     "pnl_usd": -6.93,
     "exit_time": "2026-08-06T13:32:38.037413Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": -1.03,
-    "pnl_usd": -7.61,
-    "exit_time": "2026-08-06T13:06:39.066351Z"
   }
 ]
