@@ -139,6 +139,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-08-07</div>
+      <h2>A settings change on our own hosting elsewhere silently broke every update to this site for two days</h2>
+      <div class="impact">26 trades missing cards · site frozen for ~2 days</div>
+      <div class="body">
+        <p>Fixing an unrelated deployment issue meant briefly changing a domain setting on this site's host. That setting change made the host commit a change directly to this site's code — something our own automated publisher never expected another party to do.</p>
+        <p>From that point on, every scheduled update (new trade activity, market data, performance stats) tried to push its own changes and got silently rejected, because the two histories had diverged. Nothing crashed and nothing alerted — the script just logged a one-line failure and moved on, 48 times a day, for about two days. 26 real closed trades built up without ever getting a card or clip posted, and the site itself stopped updating.</p>
+        <p><b>Fix:</b> recovered the 80 real updates that had been silently piling up locally and never reached the live site, then rendered and posted the 26 missing trade cards. More importantly: the publishing scripts now detect exactly this situation (a rejected push because the remote has changed) and automatically re-sync and retry once, instead of giving up. Tested against four scenarios — a clean push, a recoverable conflict, a genuine unresolvable conflict, and an unrelated failure — before shipping.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-08-05</div>
       <h2>The card-rendering browser kept failing to launch, so we made it retry instead of just reinstalling</h2>
       <div class="impact">5 real trades · 3 bots · delayed, not lost this time</div>
