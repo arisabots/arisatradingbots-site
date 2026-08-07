@@ -3,7 +3,7 @@ function fngClass(classification) {
   return "fng-" + key;
 }
 
-fetch("data/market.json", { cache: "no-store" })
+fetch("/data/market.json", { cache: "no-store" })
   .then((r) => r.json())
   .then((m) => {
     const items = [];

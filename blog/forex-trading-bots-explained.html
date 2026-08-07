@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forex Trading Bots: How Automated FX Trading Actually Works | ARISA Trading Bots</title>
+<meta name="description" content="How forex trading bots actually work: market hours, spreads, broker execution, and the specific things worth checking before trusting one with real money.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/forex-trading-bots-explained.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/forex-trading-bots-explained.html">
+<meta property="og:title" content="Forex Trading Bots: How Automated FX Trading Actually Works">
+<meta property="og:description" content="Market hours, spreads, broker execution, and what to check before trusting a forex trading bot.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Forex Trading Bots: How Automated FX Trading Actually Works">
+<meta name="twitter:description" content="Market hours, spreads, broker execution, and what to check first.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / Forex Trading Bots Explained</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Asset classes</div>
+    <h1>Forex Trading Bots: How Automated FX Trading Actually Works</h1>
+    <div class="meta">Published 2026-08-07 · 7 min read</div>
+    <p class="dek">Forex is the oldest, most liquid market automated trading bots operate in — and the one where broker execution quality quietly matters more than most traders realize.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>Forex trading bots are, in one sense, the original automated trading bots — currency markets have been algorithmically traded by institutions for decades, long before "AI trading bot" was a search term. The retail version works on the same core mechanics, just at a much smaller scale.</p>
+
+    <h2>What's structurally different about FX</h2>
+
+    <ul>
+      <li><strong>24/5, not 24/7.</strong> Forex trades continuously from Monday morning in Asia through Friday evening in New York, then closes for the weekend — unlike crypto, there's a real weekly gap risk to manage around.</li>
+      <li><strong>Spread is the real cost, not a flat commission.</strong> Most retail forex trading happens through a broker's bid/ask spread rather than a per-trade commission, and that spread widens during low-liquidity hours and around major news — a bot that doesn't account for this can look profitable on paper and lose to execution cost in practice.</li>
+      <li><strong>Broker execution quality varies a lot.</strong> Unlike a crypto exchange's public order book, forex execution runs through a broker's own pricing and fill logic — which broker a bot trades through is a real variable in its results, not just a formality.</li>
+      <li><strong>Macro-driven moves.</strong> Central bank rate decisions, employment data, and geopolitical events can move currency pairs sharply and instantly — a risk layer that has to be handled explicitly, not assumed away.</li>
+    </ul>
+
+    <h2>What to actually check before trusting a forex bot</h2>
+
+    <h3>Does it have a broker-side stop-loss?</h3>
+    <p>A stop-loss that only exists in the bot's own code disappears the moment the bot's process crashes or loses its connection. A stop-loss placed on the broker's servers fires regardless of whether the bot itself is still running — the difference matters most exactly when something has already gone wrong.</p>
+
+    <h3>Is position sizing fixed, or does it grow after losses?</h3>
+    <p>Martingale-style sizing — doubling the position after a loss to "make it back faster" — is common in forex bot marketing because it can produce an impressive-looking win streak right up until a single losing run wipes the account. Fixed, pre-calibrated position sizing is a much healthier sign.</p>
+
+    <h3>Does the strategy explain itself in market-condition terms?</h3>
+    <p>"Buys oversold dips when volatility is elevated" is a claim you can actually test against real price history. "Proprietary algorithm" is not. The more specific the description, the more you can verify it independently.</p>
+
+    <div class="callout"><b>A structural risk worth knowing:</b> a bot backtested only on calm, trending conditions can behave very differently the moment a central bank surprises the market — see our <a href="../log.html">engineering log</a> for a real example of a strategy that worked well in one volatility regime and needed a genuine fix, not a tweak, once conditions changed.</div>
+
+    <h2>How our own forex bots handle this</h2>
+
+    <p>Our forex bots run on OANDA, with a volatility gate that requires real, elevated volatility before a mean-reversion signal is even evaluated — the same mechanism described in full on our <a href="../how-it-works.html">how it works page</a> — plus a broker-side stop-loss on every position from the moment it opens, fixed position sizing with no martingale-style scaling, and staged partial exits rather than all-or-nothing closes. Every bot trades on an OANDA practice account while it builds a real track record, and every closed trade posts automatically to our <a href="../performance.html">performance page</a> — including the losses.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="crypto-trading-bots-explained.html">Crypto trading bots explained →</a>
+      <a href="../how-it-works.html">How our bots actually trade →</a>
+      <a href="../performance.html">See our real performance →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>

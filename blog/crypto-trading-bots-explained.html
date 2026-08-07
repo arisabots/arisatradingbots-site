@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypto Trading Bots Explained: How Automated Crypto Trading Works | ARISA Trading Bots</title>
+<meta name="description" content="How crypto trading bots actually work: 24/7 markets, exchange APIs, and the real strategies (grid, DCA, momentum, mean-reversion) behind automated crypto trading.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/crypto-trading-bots-explained.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/crypto-trading-bots-explained.html">
+<meta property="og:title" content="Crypto Trading Bots Explained: How Automated Crypto Trading Works">
+<meta property="og:description" content="24/7 markets, exchange APIs, and the real strategies behind automated crypto trading.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crypto Trading Bots Explained: How Automated Crypto Trading Works">
+<meta name="twitter:description" content="24/7 markets, exchange APIs, and the real strategies behind automated crypto trading.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / Crypto Trading Bots Explained</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Asset classes</div>
+    <h1>Crypto Trading Bots Explained: How Automated Crypto Trading Works</h1>
+    <div class="meta">Published 2026-08-07 · 7 min read</div>
+    <p class="dek">Crypto trading bots run in a genuinely different environment from FX or stock bots — a market that never closes changes what "automated" actually has to handle.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>Crypto is where automated trading bots are most heavily marketed, and for one real, structural reason: crypto exchanges never close. There's no overnight gap, no weekend, no market-open scramble — just a continuous price feed, 24 hours a day, 365 days a year. A human can't watch that. A bot can. That's the entire, legitimate case for crypto trading bots, before any strategy specifics enter the picture.</p>
+
+    <h2>What's actually different about crypto bots</h2>
+
+    <ul>
+      <li><strong>24/7 markets.</strong> There's no closing bell to reset against — a position can be open through news, weekends, and low-liquidity overnight hours all at once, which changes how stop-losses and volatility assumptions need to be sized.</li>
+      <li><strong>Exchange APIs, not broker platforms.</strong> Crypto bots typically connect directly to an exchange's REST/WebSocket API (Binance, Coinbase, Kraken, and similar) rather than a broker's proprietary platform — which means the bot itself is usually responsible for more of the order-management logic a broker would otherwise handle.</li>
+      <li><strong>Thinner liquidity on smaller pairs.</strong> Major pairs like BTC/USDT trade enormous volume, but a lot of altcoins have real, meaningful slippage on order sizes that would barely move a major FX pair — a strategy that looks fine on paper can lose real money to execution cost alone on a thin symbol.</li>
+      <li><strong>Higher baseline volatility.</strong> Crypto routinely moves in a single day what a major currency pair might move in a month. That's a bigger opportunity for a volatility-aware strategy, and a bigger risk for one that isn't.</li>
+    </ul>
+
+    <h2>The strategies that actually get used</h2>
+
+    <h3>Grid trading</h3>
+    <p>Places a ladder of buy and sell orders at fixed price intervals above and below the current price, profiting from price oscillating within a range. Works well in sideways, choppy markets; can lose steadily in a strong sustained trend if the grid isn't paired with a wider stop.</p>
+
+    <h3>Dollar-cost averaging (DCA) bots</h3>
+    <p>Buys a fixed amount at fixed intervals (or adds to a position at set price drops), averaging the entry price down over time rather than trying to time a single entry. Reduces the impact of bad timing on any single entry; doesn't protect against a sustained decline if there's no real exit or size cap.</p>
+
+    <h3>Momentum / trend-following</h3>
+    <p>Enters in the direction of a confirmed move rather than against it — the opposite instinct to mean-reversion. Tends to do well in strong directional markets and poorly in choppy, range-bound ones, which is exactly the inverse of when mean-reversion strategies tend to work.</p>
+
+    <h3>Mean-reversion</h3>
+    <p>Buys statistically oversold dips and sells statistically overbought spikes, betting price snaps back toward its recent average. This is the mechanism our own bots use — see <a href="../how-it-works.html">how it works</a> for the specifics, including the volatility gate that keeps it from trading dead, directionless price action.</p>
+
+    <div class="callout"><b>No single strategy above is "correct."</b> Each one has a real, opposite failure mode to at least one other on this list — trend-following loses in the exact conditions mean-reversion wins in, and vice versa. Anyone claiming one approach dominates in all conditions either hasn't tested it through a real losing stretch, or isn't showing you the results from when it lost.</div>
+
+    <h2>Real risks specific to crypto bots</h2>
+
+    <ul>
+      <li><strong>API key custody.</strong> A crypto bot needs exchange API keys with trading permission — real financial risk if those keys are ever exposed or the exchange's own security is compromised, independent of whether the strategy itself is any good.</li>
+      <li><strong>Exchange outages and delisting.</strong> A pair can be delisted, an exchange can halt withdrawals, or an API can silently rate-limit during exactly the volatile moment a bot most needs to react.</li>
+      <li><strong>Regime dependence.</strong> A grid bot tuned during a calm, ranging month can lose steadily the moment the market breaks into a sustained trend — the strategy didn't change, the regime did.</li>
+    </ul>
+
+    <h2>How this shows up in our own fleet</h2>
+
+    <p>Our crypto bots run the same volatility-gated mean-reversion mechanism as the rest of the fleet, adapted for exchange execution instead of broker execution, with the same fixed position sizing and broker/exchange-side protective logic described on our <a href="../how-it-works.html">how it works page</a>. Every closed trade, on every symbol, posts to our <a href="../performance.html">performance page</a> automatically — including the real losing stretches, not just the calm-market wins that make grid and mean-reversion strategies look easy.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="forex-trading-bots-explained.html">Forex trading bots explained →</a>
+      <a href="../how-it-works.html">How our bots actually trade →</a>
+      <a href="../performance.html">See our real performance →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>

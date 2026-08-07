@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Actually Evaluate a "Best Trading Bot" Claim | ARISA Trading Bots</title>
+<meta name="description" content="A checklist for cutting through 'best trading bot 2026' listicles — the five questions real evidence has to answer that marketing copy always avoids.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/how-to-evaluate-a-best-trading-bot-claim.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/how-to-evaluate-a-best-trading-bot-claim.html">
+<meta property="og:title" content="How to Actually Evaluate a &quot;Best Trading Bot&quot; Claim">
+<meta property="og:description" content="A checklist for cutting through 'best trading bot' listicles — the questions marketing copy always avoids.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Actually Evaluate a &quot;Best Trading Bot&quot; Claim">
+<meta name="twitter:description" content="The questions real evidence has to answer that marketing copy always avoids.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  .qcard{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 14px; }
+  .qcard .q{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:6px; }
+  .qcard .a{ font-size:13.5px; color: var(--text-low); line-height:1.55; }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / How to Evaluate a "Best Trading Bot" Claim</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Guides</div>
+    <h1>How to Actually Evaluate a "Best Trading Bot" Claim</h1>
+    <div class="meta">Published 2026-08-07 · 8 min read</div>
+    <p class="dek">"Best trading bot 2026" articles all follow the same formula. Here's what to actually ask before you trust one — including this site.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>Search "best trading bot" and every result looks the same: a ranked list, a handful of screenshots, and confident claims about returns with no way to check any of it. That format isn't an accident — it's optimized to rank in search results and convert clicks, not to give you evidence.</p>
+
+    <p>None of that makes automated trading illegitimate. It means the burden is on you to know what real evidence looks like, so you can tell it apart from a well-designed page. Here are the five questions that actually matter.</p>
+
+    <h2>1. Can you see every trade, or just the highlights?</h2>
+    <div class="qcard">
+      <div class="q">What to look for</div>
+      <div class="a">A full, timestamped trade log — every win and every loss — not a curated slideshow of the best weeks. If a site shows you three winning screenshots and a testimonial, that's marketing, not a track record.</div>
+    </div>
+
+    <h2>2. What's the sample size, and over what time period?</h2>
+    <div class="qcard">
+      <div class="q">What to look for</div>
+      <div class="a">Ten trades over two good weeks proves almost nothing — it's well within the range of pure luck. A track record worth trusting needs enough trades, over enough time, to have lived through at least one bad stretch of market conditions.</div>
+    </div>
+
+    <h2>3. Is the reported return net of fees and slippage?</h2>
+    <div class="qcard">
+      <div class="q">What to look for</div>
+      <div class="a">A backtest that ignores spread, commission, and slippage will always look better than live trading. Ask whether the numbers you're looking at are backtested or real, and whether real execution costs are already subtracted.</div>
+    </div>
+
+    <h2>4. What does the strategy do in a loss, not just a win?</h2>
+    <div class="qcard">
+      <div class="q">What to look for</div>
+      <div class="a">Win rate alone is close to meaningless — a strategy that wins 90% of the time can still be a net loser if the 10% of losses are ten times the size of the average win. Look for profit factor (gross profit ÷ gross loss) and maximum drawdown, not just win percentage. Our <a href="how-to-read-a-trading-bot-track-record.html">guide to reading a track record</a> covers exactly what each of these numbers means.</div>
+    </div>
+
+    <h2>5. Is real money actually at risk, or is this a demo account?</h2>
+    <div class="qcard">
+      <div class="q">What to look for</div>
+      <div class="a">Neither answer is automatically disqualifying, but the claim needs to match reality. Demo-account results are real execution against real market prices, which is genuinely useful evidence — but only if the site tells you that's what you're looking at, instead of implying real capital is on the line when it isn't.</div>
+    </div>
+
+    <div class="callout"><b>A quick sanity check:</b> if a page can't answer these five questions without you having to dig for it, that's itself the answer. Real evidence doesn't need to hide.</div>
+
+    <h2>What "best" should actually mean</h2>
+
+    <p>There's no such thing as an objectively "best" trading bot independent of your own risk tolerance, capital, and time horizon — a strategy with a high win rate and small drawdowns suits a different person than one with a lower win rate but a much bigger average win. Anyone claiming a single universal "best" is selling you something, or hasn't looked closely enough at their own numbers.</p>
+
+    <p>What you actually want is a bot whose results you can verify, whose failures you can see as clearly as its wins, and whose numbers hold up over a real sample size and a real stretch of time — not the one with the shiniest landing page.</p>
+
+    <h2>How we hold ourselves to this</h2>
+
+    <p>We built our own <a href="../performance.html">performance page</a> to answer these exact five questions without you having to ask: every closed trade across the fleet, win rate, profit factor, and a live cumulative equity curve, computed automatically from the real trade log — not curated. Every bot runs on an OANDA practice account while it builds a genuine track record, disclosed plainly, not implied otherwise. And our <a href="../log.html">public engineering log</a> documents the real bugs we've found, because a strategy's real weaknesses matter as much as its wins.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="how-to-read-a-trading-bot-track-record.html">How to read a track record →</a>
+      <a href="../performance.html">See our real numbers →</a>
+      <a href="why-we-publish-every-bug.html">Why we publish every bug →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>

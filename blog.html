@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Automated & AI Trading Bots Explained | ARISA Trading Bots</title>
+<meta name="description" content="Plain-language guides to automated trading bots, AI trading bots, crypto and forex bots, and how to actually read a trading bot's real performance — no hype.">
+<link rel="canonical" href="https://arisatradingbot.com/blog.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog.html">
+<meta property="og:title" content="Blog — Automated & AI Trading Bots Explained | ARISA Trading Bots">
+<meta property="og:description" content="Plain-language guides to automated trading bots, AI trading bots, crypto and forex bots, and how to actually read a trading bot's real performance.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Automated & AI Trading Bots Explained | ARISA Trading Bots">
+<meta name="twitter:description" content="Plain-language guides to automated trading bots, AI trading bots, crypto and forex bots, and how to read real performance.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1000px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .page-head{ padding: 52px 24px 8px; text-align:center; }
+  .page-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 42px); margin: 0 0 14px; text-wrap: balance;
+  }
+  .page-head p{ color: var(--text-mid); max-width:620px; margin:0 auto; font-size:15px; }
+
+  .articles{ padding: 44px 24px 64px; }
+  .article-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .article-card{
+    display:flex; flex-direction:column; border:1px solid var(--hairline); border-radius:16px;
+    padding:22px 22px 20px; background: var(--card); text-decoration:none; color:inherit;
+    transition: border-color .15s;
+  }
+  .article-card:hover{ border-color: var(--gold-1); }
+  .article-card .cat{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color: var(--gold-1); margin-bottom:10px; }
+  .article-card h2{ font-family: Georgia, serif; font-weight:400; font-size:19px; margin:0 0 10px; line-height:1.35; }
+  .article-card p{ font-size:13.5px; color: var(--text-low); line-height:1.55; margin:0; flex-grow:1; }
+  .article-card .read{ font-size:12.5px; color: var(--text-mid); margin-top:16px; }
+  .article-card .read b{ color: var(--gold-1); font-weight:600; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; border-top:1px solid var(--hairline); }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><b>ARISA</b> Trading Bots</div>
+  <nav>
+    <a href="index.html#fleet">Fleet</a>
+    <a href="performance.html">Performance</a>
+    <a href="how-it-works.html">How it works</a>
+    <a href="log.html">Log</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="page-head">
+  <h1>Trading bots, explained plainly.</h1>
+  <p>No "10x your portfolio" hype. Straight explanations of how automated and AI trading bots actually work, how to evaluate one, and what real, checkable performance looks like.</p>
+</div>
+
+<div class="articles">
+  <div class="wrap">
+    <div class="article-grid">
+
+      <a class="article-card" href="blog/what-is-an-automated-trading-bot.html">
+        <div class="cat">Basics</div>
+        <h2>What Is an Automated Trading Bot? A Practical Explainer</h2>
+        <p>The parts every trading bot actually has in common, what "automated" really means in practice, and the risks nobody puts in the headline.</p>
+        <div class="read">7 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/ai-trading-bots-vs-rule-based.html">
+        <div class="cat">Basics</div>
+        <h2>AI Trading Bots vs. Rule-Based Trading Bots: What's Actually Different</h2>
+        <p>"AI trading bot" gets used for almost anything with an if-statement. Here's the honest distinction, and why it matters more than the label.</p>
+        <div class="read">6 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/how-to-evaluate-a-best-trading-bot-claim.html">
+        <div class="cat">Guides</div>
+        <h2>How to Actually Evaluate a "Best Trading Bot" Claim</h2>
+        <p>A checklist for cutting through "best trading bot 2026" listicles — what real evidence looks like, and the five questions marketing copy never answers.</p>
+        <div class="read">8 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/crypto-trading-bots-explained.html">
+        <div class="cat">Asset classes</div>
+        <h2>Crypto Trading Bots Explained: How Automated Crypto Trading Works</h2>
+        <p>Why crypto bots look different from FX or stock bots — 24/7 markets, exchange APIs, and the strategies (grid, DCA, momentum) that actually get used.</p>
+        <div class="read">7 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/forex-trading-bots-explained.html">
+        <div class="cat">Asset classes</div>
+        <h2>Forex Trading Bots: How Automated FX Trading Actually Works</h2>
+        <p>Market hours, spreads, broker execution, and the specific things worth checking before you trust a forex trading bot with real money.</p>
+        <div class="read">7 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/why-we-publish-every-bug.html">
+        <div class="cat">Transparency</div>
+        <h2>Why We Publish Every Bug: Inside a Trading Bot's Public Engineering Log</h2>
+        <p>The reasoning behind running a public bug log for a live trading bot fleet — and real examples of what that transparency actually looks like.</p>
+        <div class="read">6 min read</div>
+      </a>
+
+      <a class="article-card" href="blog/how-to-read-a-trading-bot-track-record.html">
+        <div class="cat">Guides</div>
+        <h2>How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown</h2>
+        <p>The numbers that actually matter when judging real performance — and the ones that are trivially easy to game or cherry-pick.</p>
+        <div class="read">8 min read</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this site or in this blog is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="ticker.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown | ARISA Trading Bots</title>
+<meta name="description" content="The numbers that actually matter when judging a trading bot's real performance — win rate, profit factor, drawdown — and the ones that are easy to cherry-pick.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/how-to-read-a-trading-bot-track-record.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/how-to-read-a-trading-bot-track-record.html">
+<meta property="og:title" content="How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown">
+<meta property="og:description" content="The numbers that actually matter when judging real trading bot performance.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown">
+<meta name="twitter:description" content="The numbers that actually matter when judging real performance.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+  .article-body code{
+    font-family: ui-monospace, monospace; font-size:14px; background: var(--card);
+    border:1px solid var(--hairline); border-radius:5px; padding:1px 6px; color: var(--gold-1);
+  }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  .metric{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 14px; }
+  .metric .t{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:4px; font-family: ui-monospace, monospace; }
+  .metric .d{ font-size:13.5px; color: var(--text-low); line-height:1.55; }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / How to Read a Trading Bot's Track Record</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Guides</div>
+    <h1>How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown</h1>
+    <div class="meta">Published 2026-08-07 · 8 min read</div>
+    <p class="dek">Win rate is the number every trading bot leads with, and the one that tells you the least on its own. Here's what actually matters, and how to read it.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>A trading bot with a 90% win rate sounds unambiguously great. It can also be a strategy that will eventually blow up an account — if the 10% of trades that lose are, on average, ten times bigger than the 90% that win, the strategy is a net loser dressed up in an impressive-sounding headline number. Win rate alone can't tell you which situation you're looking at. Here's what can.</p>
+
+    <h2>The core numbers, in order of how much they actually matter</h2>
+
+    <div class="metric">
+      <div class="t">Profit factor</div>
+      <div class="d">Gross profit ÷ gross loss. A profit factor of 1.5 means the strategy made $1.50 for every $1.00 it lost, across every trade. Above 1.0 means the winners outweigh the losers in dollar terms — below 1.0 means they don't, no matter how high the win rate looks. This is the single most informative number on a track record, because it accounts for both how often a strategy wins and how big the wins and losses actually are.</div>
+    </div>
+
+    <div class="metric">
+      <div class="t">Maximum drawdown</div>
+      <div class="d">The largest peak-to-trough decline the account ever experienced, as a percentage. A strategy that returns 40% a year but has a real 35% drawdown along the way is a very different (and much harder to actually hold through) experience than one returning 15% with a 5% drawdown. Return without drawdown is an incomplete picture — nobody experiences a strategy's average, they experience its worst stretch.</div>
+    </div>
+
+    <div class="metric">
+      <div class="t">Win rate</div>
+      <div class="d">The percentage of trades that closed profitably. Genuinely useful, but only alongside profit factor — a low win rate can still be very profitable if wins are large relative to losses (classic trend-following), and a high win rate can still lose money if losses are disproportionately large (a common failure mode in strategies with no real stop-loss).</div>
+    </div>
+
+    <div class="metric">
+      <div class="t">Sample size</div>
+      <div class="d">Not a performance metric itself, but it determines how much to trust everything above. A profit factor of 2.0 over 8 trades is close to meaningless — it's well within the range of pure luck. The same number over 200+ trades, across multiple market conditions, is real evidence.</div>
+    </div>
+
+    <h2>The trap: cherry-picked windows</h2>
+
+    <p>Almost any real strategy has had at least one good month. Marketing material built around "look at this stretch" is technically true and still misleading, because it's not telling you how the strategy performed <em>outside</em> that window. The only honest version of a track record is the full one — every trade, from the strategy's actual start, not a hand-picked slice.</p>
+
+    <div class="callout"><b>A quick test:</b> ask whether the numbers you're looking at update automatically as new trades close, or whether they're a static screenshot. A live, automatically-computed track record can't quietly exclude a bad week after the fact. A screenshot can.</div>
+
+    <h2>Reading an equity curve</h2>
+
+    <p>A cumulative profit-and-loss equity curve is one of the most honest single charts a trading bot can show you, because it makes cherry-picking visually obvious — a steadily rising line with real dips is very different from a flat line that suddenly jumps once, which usually means one outsized trade is doing all the work. Look for a curve that trends up (or down) consistently across many trades, not one dominated by a single event.</p>
+
+    <h2>Putting it together</h2>
+
+    <p>No single number tells the whole story. A track record worth trusting has: a profit factor meaningfully above 1.0, a drawdown you could actually tolerate living through, a sample size large enough to rule out luck, and — critically — a way to verify all of it wasn't cherry-picked after the fact.</p>
+
+    <h2>What our own performance page shows</h2>
+
+    <p>We built our <a href="../performance.html">performance page</a> around exactly these numbers: win rate, profit factor, and a live cumulative equity curve, computed automatically from every closed trade across the fleet — not a curated selection. It updates as new trades close, including losing ones, because a track record that can quietly leave out its worst stretches isn't a track record at all.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="../performance.html">See our real performance →</a>
+      <a href="how-to-evaluate-a-best-trading-bot-claim.html">How to evaluate a "best" claim →</a>
+      <a href="what-is-an-automated-trading-bot.html">What is an automated trading bot? →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why We Publish Every Bug: Inside a Trading Bot's Public Engineering Log | ARISA Trading Bots</title>
+<meta name="description" content="The reasoning behind running a public bug log for a live trading bot fleet, with real examples of what trading bot transparency actually looks like in practice.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/why-we-publish-every-bug.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/why-we-publish-every-bug.html">
+<meta property="og:title" content="Why We Publish Every Bug: Inside a Trading Bot's Public Engineering Log">
+<meta property="og:description" content="What trading bot transparency actually looks like in practice, with real examples.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why We Publish Every Bug: Inside a Trading Bot's Public Engineering Log">
+<meta name="twitter:description" content="What trading bot transparency actually looks like in practice.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  .incident{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 14px; }
+  .incident .t{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:6px; }
+  .incident .d{ font-size:13.5px; color: var(--text-low); line-height:1.55; }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / Why We Publish Every Bug</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Transparency</div>
+    <h1>Why We Publish Every Bug: Inside a Trading Bot's Public Engineering Log</h1>
+    <div class="meta">Published 2026-08-07 · 6 min read</div>
+    <p class="dek">Every automated system has failure modes. Almost no trading bot site shows you theirs. Here's why we do, and what it costs us to be honest about it.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>Trading bot marketing tends to describe the strategy and skip the plumbing — as if the code that actually places the orders, tracks the positions, and computes the numbers on the results page never has bugs. It always does. The only real choice is whether you find out about them.</p>
+
+    <p>We keep a <a href="../log.html">public engineering log</a> of real bugs found in our own trading bot fleet — what broke, how we found it, and what the actual fix was. Not a highlight reel of clever features. Bugs. Here's why that's the right trade, and a few real examples of what it looks like in practice.</p>
+
+    <h2>The case for showing the failures</h2>
+
+    <p>A trading bot's code has three jobs: decide what to trade, execute it correctly, and report the result accurately. Most public attention goes to the first job — the strategy — because it's the interesting part. But the second and third jobs are where real, silent damage happens: a position that doesn't get logged correctly, a stop-loss that doesn't actually reach the broker, a dashboard number computed from stale data. None of these are strategy failures. All of them can make a perfectly good strategy look better or worse than it actually is.</p>
+
+    <p>If a site only ever shows you clean, successful-looking numbers, you have no way to tell whether that's because nothing ever goes wrong, or because you're only being shown the version where nothing went wrong. Those look identical from the outside. A public bug log is the only way to actually tell them apart.</p>
+
+    <h2>Real examples from our own log</h2>
+
+    <div class="incident">
+      <div class="t">A position tracker that quietly stopped updating</div>
+      <div class="d">One bot's trade log stopped registering completed trades for weeks after an edge case in how partial exits were tracked — the bot kept trading correctly the entire time, but the reporting layer silently fell behind. Found, root-caused, and fixed; the backlog was recovered rather than hidden.</div>
+    </div>
+    <div class="incident">
+      <div class="t">A missing browser dependency that broke every card and clip</div>
+      <div class="d">Our automated pipeline that publishes closed-trade summaries depends on a headless browser component that went missing from the server — for hours, every attempt failed silently in the background before anyone noticed real trades weren't being published.</div>
+    </div>
+    <div class="incident">
+      <div class="t">A hosting-settings change that silently broke site updates for two days</div>
+      <div class="d">An unrelated fix on our hosting provider caused an out-of-band change to our site's code repository. Our own publishing scripts weren't built to expect that, and every scheduled update failed quietly for about two days before it was caught.</div>
+    </div>
+
+    <div class="callout"><b>None of these bugs changed a single actual trade decision.</b> Every one was in the reporting, publishing, or infrastructure layer — which is exactly why they're easy for a company to quietly fix and never mention. We mention them anyway.</div>
+
+    <h2>What transparency doesn't mean</h2>
+
+    <p>Publishing our bugs doesn't mean our strategies are proven profitable — see our honest <a href="../performance.html">performance numbers</a> for where that actually stands. It doesn't mean every possible failure has already been found; new ones surface regularly, and we log those too, as they happen. What it does mean is that when something breaks, you'll be able to read exactly what it was and how it got fixed, instead of just noticing that a number on a dashboard quietly looks different than it used to.</p>
+
+    <h2>Why this is rare</h2>
+
+    <p>There's a real, understandable reason most trading bot companies don't do this: publishing your own bugs is a genuine trust risk if the goal is to look flawless. We think it's the opposite trade in practice — a site that visibly never has problems is either lying or hasn't looked hard enough, and neither is a reason to trust its performance numbers more.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="../log.html">Read the full engineering log →</a>
+      <a href="how-to-evaluate-a-best-trading-bot-claim.html">How to evaluate a "best" claim →</a>
+      <a href="../performance.html">See our real performance →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>

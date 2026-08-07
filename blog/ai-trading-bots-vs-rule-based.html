@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBZ186FL7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBZ186FL7J');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Trading Bots vs. Rule-Based Trading Bots: What's Actually Different | ARISA Trading Bots</title>
+<meta name="description" content="'AI trading bot' gets slapped on almost anything with an if-statement. Here's the honest, technical difference between AI and rule-based trading bots.">
+<link rel="canonical" href="https://arisatradingbot.com/blog/ai-trading-bots-vs-rule-based.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ARISA Trading Bots">
+<meta property="og:url" content="https://arisatradingbot.com/blog/ai-trading-bots-vs-rule-based.html">
+<meta property="og:title" content="AI Trading Bots vs. Rule-Based Trading Bots: What's Actually Different">
+<meta property="og:description" content="'AI trading bot' gets slapped on almost anything with an if-statement. Here's the honest, technical difference.">
+<meta property="og:image" content="https://arisatradingbot.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Trading Bots vs. Rule-Based Trading Bots: What's Actually Different">
+<meta name="twitter:description" content="The honest, technical difference between AI and rule-based trading bots.">
+<meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
+
+<style>
+  :root{
+    --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
+    --gold-1:#e9c876; --gold-2:#b9862f;
+    --text-hi:#f6f1e6; --text-mid:#c9bfa8; --text-low:#8a8069;
+    --good:#7fd99b; --bad:#e8877e;
+    --max-w:1080px; --article-w:700px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text-hi); font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(1100px 620px at 15% -5%, color-mix(in srgb, var(--gold-2) 14%, transparent), transparent 60%),
+      var(--bg-0);
+    line-height:1.6;
+  }
+  a{ color: var(--gold-1); }
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-wrap{ max-width: var(--article-w); margin: 0 auto; padding: 0 24px; }
+
+  header.top{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:1080px; margin:0 auto; }
+  header.top .mark{ display:flex; align-items:center; gap:10px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-low); text-decoration:none; }
+  header.top .mark b{ color:var(--gold-1); font-weight:700; }
+  header.top nav a{ color:var(--text-mid); text-decoration:none; font-size:14px; margin-left:22px; }
+  header.top nav a:hover{ color:var(--gold-1); }
+  header.top nav a.active{ color:var(--gold-1); }
+
+  .ticker{
+    border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+    background: var(--card); overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; align-items:center; animation: ticker-scroll 55s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track{ animation-play-state: paused; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    display:inline-flex; align-items:baseline; gap:8px; padding:9px 26px; font-size:12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+    border-right:1px solid var(--hairline); color: var(--text-mid);
+  }
+  .ticker-item .lbl{ color: var(--text-low); letter-spacing:.04em; text-transform:uppercase; font-size:10.5px; }
+  .ticker-item .val{ color: var(--text-hi); font-weight:600; }
+  .ticker-item .chg.pos{ color: var(--good); } .ticker-item .chg.neg{ color: var(--bad); }
+  .ticker-item .fng-extreme-fear, .ticker-item .fng-fear{ color: var(--bad); }
+  .ticker-item .fng-extreme-greed, .ticker-item .fng-greed{ color: var(--good); }
+  .ticker-item .fng-neutral{ color: var(--gold-1); }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; overflow-x: auto; } }
+
+  .crumb{ padding: 28px 24px 0; font-size:13px; color: var(--text-low); }
+  .crumb a{ color: var(--text-low); text-decoration:none; }
+  .crumb a:hover{ color: var(--gold-1); }
+
+  .article-head{ padding: 20px 24px 8px; }
+  .article-head .cat{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:12px; }
+  .article-head h1{
+    font-family: Georgia, "Times New Roman", serif; font-weight:400;
+    font-size: clamp(28px, 5vw, 40px); margin: 0 0 16px; line-height:1.25; text-wrap: balance;
+  }
+  .article-head .meta{ color: var(--text-low); font-size:13px; font-family: ui-monospace, monospace; }
+  .article-head .dek{ color: var(--text-mid); font-size:16px; margin-top:18px; line-height:1.6; }
+
+  .article-body{ padding: 28px 24px 20px; font-size:16px; }
+  .article-body h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 40px 0 14px; color: var(--text-hi); }
+  .article-body h3{ font-size:16px; font-weight:700; margin: 28px 0 10px; color: var(--text-hi); }
+  .article-body p{ color: var(--text-mid); margin: 0 0 18px; }
+  .article-body ul, .article-body ol{ color: var(--text-mid); margin: 0 0 18px; padding-left: 22px; }
+  .article-body li{ margin-bottom: 8px; }
+  .article-body strong{ color: var(--text-hi); }
+  .article-body a{ text-decoration: underline; }
+
+  .callout{
+    border:1px solid var(--hairline); border-left:3px solid var(--gold-1); border-radius:10px;
+    padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
+  }
+  .callout b{ color: var(--gold-1); }
+
+  table.compare{ width:100%; border-collapse:collapse; margin: 20px 0 28px; font-size:14.5px; }
+  table.compare th, table.compare td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+  table.compare th{ color: var(--gold-1); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+  table.compare td{ color: var(--text-mid); }
+  table.compare td:first-child{ color: var(--text-hi); font-weight:600; white-space:nowrap; }
+
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .cta-row a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    border:1px solid var(--hairline); border-radius: 10px; padding: 10px 16px;
+    color: var(--text-hi); font-size: 14px;
+  }
+  .cta-row a:hover{ border-color: var(--gold-1); color: var(--gold-1); }
+
+  .article-foot{ padding: 32px 24px 8px; border-top:1px solid var(--hairline); margin-top:20px; }
+  .article-foot .eyebrow{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px; }
+
+  footer{ padding: 34px 24px 50px; color: var(--text-low); font-size: 12.5px; }
+  footer .wrap{ display:flex; flex-direction:column; gap:10px; max-width:1080px; }
+  footer .disclosure{ line-height:1.6; max-width:720px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="../index.html"><b>ARISA</b> Trading Bots</a>
+  <nav>
+    <a href="../index.html#fleet">Fleet</a>
+    <a href="../performance.html">Performance</a>
+    <a href="../how-it-works.html">How it works</a>
+    <a href="../log.html">Log</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#follow">Follow</a>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<div class="crumb"><a href="../blog.html">Blog</a> / AI vs. Rule-Based Trading Bots</div>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="cat">Basics</div>
+    <h1>AI Trading Bots vs. Rule-Based Trading Bots: What's Actually Different</h1>
+    <div class="meta">Published 2026-08-07 · 6 min read</div>
+    <p class="dek">"AI trading bot" has become a label almost anything gets, from genuine machine-learning models to a spreadsheet with an if-statement. Here's what separates the two for real.</p>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="article-wrap">
+
+    <p>Type "ai trading bot" into a search bar and the results are a wall of near-identical claims: adaptive, self-learning, powered by neural networks, smarter than the market. Almost none of them explain what "AI" is actually doing inside the bot, because in a lot of cases the honest answer is: not much, or nothing at all.</p>
+
+    <p>The label isn't meaningless, though — there's a real, technical line between an AI trading bot and a rule-based one, and it matters for how much you should trust its results.</p>
+
+    <h2>Rule-based: if this, then that</h2>
+
+    <p>A rule-based trading bot runs on logic a person wrote and can read back line by line. "If RSI drops below 30 and 20-period volatility is above its own trailing median, open a long position." Every decision the bot ever makes traces back to a rule someone deliberately chose, usually after testing it against historical data to see whether it held up.</p>
+
+    <p>The strength of rule-based systems is that they're explainable. When a trade loses, you can point to the exact condition that triggered it and reason about whether the rule itself is flawed or the market just did something unlikely. Nothing is hidden inside a black box.</p>
+
+    <h2>AI / machine learning: the rules are learned, not written</h2>
+
+    <p>A genuine AI trading bot doesn't run on rules a person wrote directly. Instead, a model — commonly a reinforcement-learning policy or a supervised model trained on historical price/feature data — learns a mapping from market conditions to actions by optimizing against a reward signal (usually some version of profit) over thousands or millions of simulated decisions. Nobody explicitly told it "buy when X" — it arrived at whatever pattern it uses on its own, from data.</p>
+
+    <p>That's a real capability difference: a good model can pick up on relationships too complex or too subtle for a person to hand-code as a rule. It's also the source of AI trading's real risks:</p>
+
+    <ul>
+      <li><strong>It's harder to explain.</strong> When an RL policy makes a bad trade, there often isn't a clean, human-readable reason — just "the model's learned weights produced this action given this input."</li>
+      <li><strong>It can overfit invisibly.</strong> A model can learn to exploit quirks specific to its training data that don't generalize to live markets, and this is much harder to catch than an overfit rule-based strategy, where at least the rule itself is inspectable.</li>
+      <li><strong>It needs a lot of real evidence before it should be trusted.</strong> A handful of good trades from a new model tells you very little — reinforcement-learning systems in particular need a meaningful sample size before their live results mean anything beyond luck.</li>
+    </ul>
+
+    <div class="callout"><b>The tell that separates real AI from marketing AI:</b> ask what the model was trained on, what it's optimizing for, and how many real (not backtested) trades it has behind it. If a site can't answer those three questions, "AI-powered" is doing marketing work, not describing an actual system.</div>
+
+    <h2>Why most "AI trading bots" are actually rule-based with better branding</h2>
+
+    <p>Building and safely deploying a genuine learned model is meaningfully harder than writing a good rule-based strategy — it needs more data, more infrastructure, and a lot more validation before it's safe to run with real money. Plenty of products labeled "AI trading bot" are, underneath, a rule-based system with a modern name. That isn't automatically dishonest — a well-built rule-based bot can be just as effective, sometimes more predictable — but it's worth knowing which one you're actually looking at.</p>
+
+    <h2>Which one is "better"?</h2>
+
+    <table class="compare">
+      <tr><th></th><th>Rule-based</th><th>AI / machine-learning</th></tr>
+      <tr><td>Explainability</td><td>Every decision traces to a written rule</td><td>Decisions come from learned weights, harder to inspect</td></tr>
+      <tr><td>Can capture complex patterns</td><td>Limited to what a person can specify</td><td>Can pick up relationships too subtle to hand-code</td></tr>
+      <tr><td>Overfitting risk</td><td>Visible — you can read the rule and judge it</td><td>Can be invisible until it fails live</td></tr>
+      <tr><td>Evidence needed before trust</td><td>Standard backtest + live validation</td><td>Meaningfully more — small live samples are close to meaningless</td></tr>
+    </table>
+
+    <p>Neither is inherently superior — the honest answer is that both need the same thing to actually be trustworthy: a real track record against real market data, not just a plausible-sounding description of the method.</p>
+
+    <h2>How our own fleet handles this</h2>
+
+    <p>Most of our bots are openly rule-based — volatility-gated mean-reversion logic you can read about in full on our <a href="../how-it-works.html">how it works page</a>. One bot in the fleet runs a genuine reinforcement-learning policy, and we don't blur that line: it only gets meaningfully backed once it has earned enough real trade evidence to clear the same trust bar every strategy in the fleet has to clear, exactly because small live samples from a learned model are the easiest thing in this industry to over-trust. Every trade from every bot, rule-based or learned, posts to the same <a href="../performance.html">public performance page</a> — the label on the strategy doesn't earn it different treatment.</p>
+
+  </div>
+</div>
+
+<div class="article-foot">
+  <div class="article-wrap">
+    <div class="eyebrow">Keep reading</div>
+    <div class="cta-row">
+      <a href="what-is-an-automated-trading-bot.html">What is an automated trading bot? →</a>
+      <a href="how-to-read-a-trading-bot-track-record.html">How to read a track record →</a>
+      <a href="../how-it-works.html">How our bots actually trade →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      All trading activity shown on this site runs on OANDA practice (demo) accounts. No real money is
+      traded or at risk. Past results — demo or otherwise — are not indicative of future performance.
+      Nothing on this page is financial or investment advice.
+    </div>
+    <div>© <span id="year"></span> ARISA Trading Bots</div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../ticker.js"></script>
+</body>
+</html>
