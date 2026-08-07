@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": 0.42,
+    "pnl_usd": 11.18,
+    "exit_time": "2026-08-07T11:52:24.700300Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.16,
     "pnl_usd": -15.63,
     "exit_time": "2026-08-06T01:39:04.958531Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.37,
-    "pnl_usd": -9.9,
-    "exit_time": "2026-08-06T01:26:04.390065Z"
   }
 ]
