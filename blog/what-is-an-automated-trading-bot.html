@@ -29,6 +29,58 @@
 <meta name="twitter:description" content="What an automated trading bot actually is, and the real risks the marketing leaves out.">
 <meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is an Automated Trading Bot? A Practical Explainer",
+  "description": "A plain-language explanation of what an automated trading bot actually is, the parts every one has in common, and the real risks that get left out of the marketing.",
+  "url": "https://arisatradingbot.com/blog/what-is-an-automated-trading-bot.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": { "@type": "Organization", "name": "ARISA Trading Bots" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ARISA Trading Bots",
+    "url": "https://arisatradingbot.com/"
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://arisatradingbot.com/blog/what-is-an-automated-trading-bot.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arisatradingbot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://arisatradingbot.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "What Is an Automated Trading Bot?", "item": "https://arisatradingbot.com/blog/what-is-an-automated-trading-bot.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the four parts of an automated trading bot?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A data feed, a signal generator, a risk and sizing layer, and an execution layer, connected in a loop. Signal generation \u2014 what most people mean by \u201cthe algorithm\u201d \u2014 is usually the simplest of the four despite getting the most marketing attention." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does \u201cautomated\u201d mean a bot's strategy is profitable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Automation removes emotional decision-making from execution, which is a real edge over discretionary trading, but it doesn't validate whether the underlying strategy has an edge in the first place \u2014 a bad idea executed automatically just loses money faster and more consistently." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the biggest trading bot risk that doesn't make the marketing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Overfitting \u2014 a strategy tuned to look great on the last two years of data can fall apart the moment the market regime shifts, because it learned the noise in that data, not a real, repeatable signal." }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
@@ -104,6 +156,12 @@
     padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
   }
   .callout b{ color: var(--gold-1); }
+
+  .article-faqs{ padding: 8px 24px 12px; }
+  .article-faqs h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 32px 0 16px; color: var(--text-hi); }
+  .faq-item{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 12px; }
+  .faq-item .faq-q{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:6px; }
+  .faq-item .faq-a{ font-size:13.5px; color: var(--text-low); line-height:1.6; }
 
   .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
   .cta-row a{
@@ -194,6 +252,24 @@
 
     <p>Our own fleet runs on exactly the four-part architecture above: a real data feed, rule-based signal logic (mostly volatility-gated mean-reversion — see <a href="../how-it-works.html">how it works</a> for the specifics), fixed position sizing with a broker-side stop-loss on every trade, and staged partial exits instead of all-or-nothing closes. Every bot trades on an OANDA practice account while it builds a track record, and every closed trade — win or loss — is published automatically. Our <a href="../performance.html">performance page</a> shows the real, unedited numbers, and our <a href="../log.html">engineering log</a> documents the actual bugs we've found and fixed, because a trading bot is only trustworthy if you can see it when it's wrong, not just when it's winning.</p>
 
+  </div>
+</div>
+
+<div class="article-faqs">
+  <div class="article-wrap">
+    <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What are the four parts of an automated trading bot?</div>
+        <div class="faq-a">A data feed, a signal generator, a risk and sizing layer, and an execution layer, connected in a loop. Signal generation — what most people mean by “the algorithm” — is usually the simplest of the four despite getting the most marketing attention.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does “automated” mean a bot's strategy is profitable?</div>
+        <div class="faq-a">No. Automation removes emotional decision-making from execution, which is a real edge over discretionary trading, but it doesn't validate whether the underlying strategy has an edge in the first place — a bad idea executed automatically just loses money faster and more consistently.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the biggest trading bot risk that doesn't make the marketing?</div>
+        <div class="faq-a">Overfitting — a strategy tuned to look great on the last two years of data can fall apart the moment the market regime shifts, because it learned the noise in that data, not a real, repeatable signal.</div>
+      </div>
   </div>
 </div>
 

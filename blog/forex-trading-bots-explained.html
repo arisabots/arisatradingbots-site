@@ -29,6 +29,58 @@
 <meta name="twitter:description" content="Market hours, spreads, broker execution, and what to check first.">
 <meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Forex Trading Bots: How Automated FX Trading Actually Works",
+  "description": "How forex trading bots actually work: market hours, spreads, broker execution, and the specific things worth checking before trusting one with real money.",
+  "url": "https://arisatradingbot.com/blog/forex-trading-bots-explained.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": { "@type": "Organization", "name": "ARISA Trading Bots" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ARISA Trading Bots",
+    "url": "https://arisatradingbot.com/"
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://arisatradingbot.com/blog/forex-trading-bots-explained.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arisatradingbot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://arisatradingbot.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Forex Trading Bots Explained", "item": "https://arisatradingbot.com/blog/forex-trading-bots-explained.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should I check before trusting a forex trading bot?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Three things: whether it has a broker-side stop-loss rather than just one in its own code, whether position sizing is fixed rather than growing after losses (martingale-style sizing), and whether the strategy explains itself in testable market-condition terms instead of \u201cproprietary algorithm.\u201d" }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does broker execution quality matter for a forex bot?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Unlike a crypto exchange's public order book, forex execution runs through a broker's own pricing and fill logic, and spread \u2014 the real cost in FX \u2014 widens during low-liquidity hours and around major news. Which broker a bot trades through is a real variable in its results." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is martingale-style position sizing a good sign?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No \u2014 doubling a position after a loss to \u201cmake it back faster\u201d can produce an impressive-looking win streak right up until a single losing run wipes the account. Fixed, pre-calibrated sizing is a healthier sign." }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
@@ -104,6 +156,12 @@
     padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
   }
   .callout b{ color: var(--gold-1); }
+
+  .article-faqs{ padding: 8px 24px 12px; }
+  .article-faqs h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 32px 0 16px; color: var(--text-hi); }
+  .faq-item{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 12px; }
+  .faq-item .faq-q{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:6px; }
+  .faq-item .faq-a{ font-size:13.5px; color: var(--text-low); line-height:1.6; }
 
   .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
   .cta-row a{
@@ -184,10 +242,29 @@
   </div>
 </div>
 
+<div class="article-faqs">
+  <div class="article-wrap">
+    <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What should I check before trusting a forex trading bot?</div>
+        <div class="faq-a">Three things: whether it has a broker-side stop-loss rather than just one in its own code, whether position sizing is fixed rather than growing after losses (martingale-style sizing), and whether the strategy explains itself in testable market-condition terms instead of “proprietary algorithm.”</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why does broker execution quality matter for a forex bot?</div>
+        <div class="faq-a">Unlike a crypto exchange's public order book, forex execution runs through a broker's own pricing and fill logic, and spread — the real cost in FX — widens during low-liquidity hours and around major news. Which broker a bot trades through is a real variable in its results.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is martingale-style position sizing a good sign?</div>
+        <div class="faq-a">No — doubling a position after a loss to “make it back faster” can produce an impressive-looking win streak right up until a single losing run wipes the account. Fixed, pre-calibrated sizing is a healthier sign.</div>
+      </div>
+  </div>
+</div>
+
 <div class="article-foot">
   <div class="article-wrap">
     <div class="eyebrow">Keep reading</div>
     <div class="cta-row">
+      <a href="what-is-an-automated-trading-bot.html">What is an automated trading bot? →</a>
       <a href="crypto-trading-bots-explained.html">Crypto trading bots explained →</a>
       <a href="../how-it-works.html">How our bots actually trade →</a>
       <a href="../performance.html">See our real performance →</a>

@@ -29,6 +29,58 @@
 <meta name="twitter:description" content="The numbers that actually matter when judging real performance.">
 <meta name="twitter:image" content="https://arisatradingbot.com/assets/og-image.png">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Read a Trading Bot's Track Record: Win Rate, Profit Factor, Drawdown",
+  "description": "The numbers that actually matter when judging a trading bot's real performance \u2014 win rate, profit factor, drawdown \u2014 and the ones that are easy to cherry-pick.",
+  "url": "https://arisatradingbot.com/blog/how-to-read-a-trading-bot-track-record.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": { "@type": "Organization", "name": "ARISA Trading Bots" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ARISA Trading Bots",
+    "url": "https://arisatradingbot.com/"
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://arisatradingbot.com/blog/how-to-read-a-trading-bot-track-record.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arisatradingbot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://arisatradingbot.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "How to Read a Trading Bot's Track Record", "item": "https://arisatradingbot.com/blog/how-to-read-a-trading-bot-track-record.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is profit factor, and why does it matter more than win rate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Profit factor is gross profit divided by gross loss \u2014 a profit factor of 1.5 means the strategy made $1.50 for every $1.00 it lost. It accounts for both how often a strategy wins and how big the wins and losses actually are, which win rate alone doesn't." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many trades are enough to trust a track record?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no fixed number, but a profit factor of 2.0 over 8 trades is close to meaningless \u2014 well within the range of pure luck. The same number over 200+ trades across multiple market conditions is real evidence." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does maximum drawdown tell you that total return doesn't?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the largest peak-to-trough decline the account experienced. A strategy returning 40% a year with a 35% drawdown is a much harder thing to actually hold through than one returning 15% with a 5% drawdown \u2014 nobody experiences a strategy's average, they experience its worst stretch." }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg-0:#0b0a08; --bg-1:#141210; --card:#17140f; --hairline:#3a3226;
@@ -108,6 +160,12 @@
     padding:16px 20px; background: var(--card); margin: 24px 0; font-size:14.5px; color: var(--text-mid);
   }
   .callout b{ color: var(--gold-1); }
+
+  .article-faqs{ padding: 8px 24px 12px; }
+  .article-faqs h2{ font-family: Georgia, serif; font-weight:400; font-size:24px; margin: 32px 0 16px; color: var(--text-hi); }
+  .faq-item{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 12px; }
+  .faq-item .faq-q{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:6px; }
+  .faq-item .faq-a{ font-size:13.5px; color: var(--text-low); line-height:1.6; }
 
   .metric{ border:1px solid var(--hairline); border-radius:12px; padding:16px 20px; background: var(--card); margin: 0 0 14px; }
   .metric .t{ font-size:14.5px; font-weight:700; color: var(--text-hi); margin-bottom:4px; font-family: ui-monospace, monospace; }
@@ -203,6 +261,24 @@
 
     <p>We built our <a href="../performance.html">performance page</a> around exactly these numbers: win rate, profit factor, and a live cumulative equity curve, computed automatically from every closed trade across the fleet — not a curated selection. It updates as new trades close, including losing ones, because a track record that can quietly leave out its worst stretches isn't a track record at all.</p>
 
+  </div>
+</div>
+
+<div class="article-faqs">
+  <div class="article-wrap">
+    <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is profit factor, and why does it matter more than win rate?</div>
+        <div class="faq-a">Profit factor is gross profit divided by gross loss — a profit factor of 1.5 means the strategy made $1.50 for every $1.00 it lost. It accounts for both how often a strategy wins and how big the wins and losses actually are, which win rate alone doesn't.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many trades are enough to trust a track record?</div>
+        <div class="faq-a">There's no fixed number, but a profit factor of 2.0 over 8 trades is close to meaningless — well within the range of pure luck. The same number over 200+ trades across multiple market conditions is real evidence.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does maximum drawdown tell you that total return doesn't?</div>
+        <div class="faq-a">It's the largest peak-to-trough decline the account experienced. A strategy returning 40% a year with a 35% drawdown is a much harder thing to actually hold through than one returning 15% with a 5% drawdown — nobody experiences a strategy's average, they experience its worst stretch.</div>
+      </div>
   </div>
 </div>
 
