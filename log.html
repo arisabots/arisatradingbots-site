@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-08-10</div>
+      <h2>A locked screen was quietly breaking the same card-rendering browser, days at a time</h2>
+      <div class="impact">14 real trades queued · one stuck 3+ days</div>
+      <div class="body">
+        <p>The scheduled job that renders every closed-trade card runs every 30 minutes, whether or not anyone's at the keyboard. Its Windows scheduled task is configured to run under an "interactive" login — which, it turns out, only works reliably while the screen is actually unlocked. Headless Chromium still needs real window-station access on Windows even in headless mode, so every run that happened to fire while the machine was locked failed to launch the browser at all.</p>
+        <p>Because a failed render is correctly left unmarked (see 2026-08-05 below), nothing was ever lost — but nothing forced a retry to actually succeed either. A handful of real trades, several of them on our oil bot, sat retrying every 30 minutes for days without a single successful attempt, and without anything surfacing that beyond a growing log file nobody was watching.</p>
+        <p><b>Fix:</b> ran the pipeline by hand to clear the backlog — 14 real trades posted immediately, cards and clips both. Longer term: added a monitor that tracks how long any individual trade has been failing to render, and sends a real alert once it's been stuck long enough that "it'll clear on its own" is no longer a safe assumption, instead of waiting for someone to notice a gap in the feed. The underlying scheduling issue (switching the task off "interactive-only" login) is a real fix too, still pending.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-08-07</div>
       <h2>A settings change on our own hosting elsewhere silently broke every update to this site for two days</h2>
       <div class="impact">26 trades missing cards · site frozen for ~2 days</div>
