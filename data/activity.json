@@ -5,6 +5,16 @@
     "instrument_name": "Gold",
     "symbol_display": "XAU / USD",
     "side": "SHORT",
+    "pnl_pct": -0.17,
+    "pnl_usd": -16.04,
+    "exit_time": "2026-08-10T02:12:57.689973Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
     "pnl_pct": -0.16,
     "pnl_usd": -15.2,
     "exit_time": "2026-08-10T00:06:15.394954Z"
@@ -188,15 +198,5 @@
     "pnl_pct": 0.08,
     "pnl_usd": 0.79,
     "exit_time": "2026-08-06T16:02:19.626593Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "SHORT",
-    "pnl_pct": -1.15,
-    "pnl_usd": -23.16,
-    "exit_time": "2026-08-06T15:21:38.422798Z"
   }
 ]
