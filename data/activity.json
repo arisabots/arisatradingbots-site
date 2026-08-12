@@ -6,6 +6,16 @@
     "symbol_display": "XAU / USD",
     "side": "SHORT",
     "pnl_pct": -0.16,
+    "pnl_usd": -15.41,
+    "exit_time": "2026-08-12T06:38:21.712875Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.16,
     "pnl_usd": -15.88,
     "exit_time": "2026-08-12T05:10:22.369620Z"
   },
@@ -188,15 +198,5 @@
     "pnl_pct": -0.17,
     "pnl_usd": -16.6,
     "exit_time": "2026-08-10T03:24:29.447496Z"
-  },
-  {
-    "bot": "AURIKA",
-    "brand": "Aurika Trading",
-    "instrument_name": "Gold",
-    "symbol_display": "XAU / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.17,
-    "pnl_usd": -16.04,
-    "exit_time": "2026-08-10T02:12:57.689973Z"
   }
 ]
