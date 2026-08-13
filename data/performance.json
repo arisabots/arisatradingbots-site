@@ -799,6 +799,14 @@
     {
       "time": "2026-08-13T09:14:17.837094Z",
       "cumulative_pnl": -266.13
+    },
+    {
+      "time": "2026-08-13T15:15:59.928737Z",
+      "cumulative_pnl": -251.82
+    },
+    {
+      "time": "2026-08-13T15:18:45.169226Z",
+      "cumulative_pnl": -248.79
     }
   ],
   "bots": [
@@ -837,15 +845,15 @@
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 47,
-      "wins": 32,
+      "total_trades": 48,
+      "wins": 33,
       "losses": 15,
-      "win_rate": 68.08510638297872,
-      "gross_profit": 97.61,
+      "win_rate": 68.75,
+      "gross_profit": 111.92,
       "gross_loss": -109.31,
-      "profit_factor": 0.89,
+      "profit_factor": 1.02,
       "avg_hold_minutes": 74.5,
-      "total_pnl": -11.7
+      "total_pnl": 2.61
     },
     {
       "bot": "RUSSELL",
@@ -897,15 +905,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 7,
-      "wins": 5,
+      "total_trades": 8,
+      "wins": 6,
       "losses": 2,
-      "win_rate": 71.42857142857143,
-      "gross_profit": 44.52,
+      "win_rate": 75.0,
+      "gross_profit": 47.55,
       "gross_loss": -18.23,
-      "profit_factor": 2.44,
-      "avg_hold_minutes": 2082.2,
-      "total_pnl": 26.29
+      "profit_factor": 2.61,
+      "avg_hold_minutes": 3328.2,
+      "total_pnl": 29.32
     },
     {
       "bot": "SPIKE",
@@ -938,6 +946,6 @@
       "total_pnl": -133.73
     }
   ],
-  "fleet_total_pnl": -266.13,
-  "fleet_total_trades": 200
+  "fleet_total_pnl": -248.79,
+  "fleet_total_trades": 202
 }
