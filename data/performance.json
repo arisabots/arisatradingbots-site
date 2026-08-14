@@ -807,6 +807,14 @@
     {
       "time": "2026-08-14T05:38:28.739481Z",
       "cumulative_pnl": -310.37
+    },
+    {
+      "time": "2026-08-14T08:31:46.947200Z",
+      "cumulative_pnl": -278.55
+    },
+    {
+      "time": "2026-08-14T08:38:53.284894Z",
+      "cumulative_pnl": -270.34
     }
   ],
   "bots": [
@@ -830,30 +838,30 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 17,
-      "wins": 5,
+      "total_trades": 18,
+      "wins": 6,
       "losses": 12,
-      "win_rate": 29.411764705882355,
-      "gross_profit": 109.89,
+      "win_rate": 33.33333333333333,
+      "gross_profit": 141.71,
       "gross_loss": -87.83,
-      "profit_factor": 1.25,
-      "avg_hold_minutes": 287.5,
-      "total_pnl": 22.06
+      "profit_factor": 1.61,
+      "avg_hold_minutes": 339.6,
+      "total_pnl": 53.88
     },
     {
       "bot": "OLIVIA",
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 49,
-      "wins": 34,
+      "total_trades": 50,
+      "wins": 35,
       "losses": 15,
-      "win_rate": 69.38775510204081,
-      "gross_profit": 113.65,
+      "win_rate": 70.0,
+      "gross_profit": 121.86,
       "gross_loss": -109.31,
-      "profit_factor": 1.04,
-      "avg_hold_minutes": 75.3,
-      "total_pnl": 4.34
+      "profit_factor": 1.11,
+      "avg_hold_minutes": 91.3,
+      "total_pnl": 12.55
     },
     {
       "bot": "RUSSELL",
@@ -946,6 +954,6 @@
       "total_pnl": -133.73
     }
   ],
-  "fleet_total_pnl": -310.37,
-  "fleet_total_trades": 202
+  "fleet_total_pnl": -270.34,
+  "fleet_total_trades": 204
 }
