@@ -815,6 +815,10 @@
     {
       "time": "2026-08-14T08:38:53.284894Z",
       "cumulative_pnl": -270.34
+    },
+    {
+      "time": "2026-08-14T09:59:09.752731Z",
+      "cumulative_pnl": -263.87
     }
   ],
   "bots": [
@@ -898,15 +902,15 @@
       "brand": "Solomon Trading",
       "instrument_name": "Soybean",
       "symbol_display": "SOYBN",
-      "total_trades": 7,
-      "wins": 4,
+      "total_trades": 8,
+      "wins": 5,
       "losses": 3,
-      "win_rate": 57.14285714285714,
-      "gross_profit": 34.01,
+      "win_rate": 62.5,
+      "gross_profit": 40.48,
       "gross_loss": -79.16,
-      "profit_factor": 0.43,
-      "avg_hold_minutes": 2618.5,
-      "total_pnl": -45.15
+      "profit_factor": 0.51,
+      "avg_hold_minutes": 2488.9,
+      "total_pnl": -38.68
     },
     {
       "bot": "SPENCER",
@@ -954,6 +958,6 @@
       "total_pnl": -133.73
     }
   ],
-  "fleet_total_pnl": -270.34,
-  "fleet_total_trades": 204
+  "fleet_total_pnl": -263.87,
+  "fleet_total_trades": 205
 }
