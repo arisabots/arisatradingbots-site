@@ -1,24 +1,24 @@
 {
   "indices": {
     "Dow": {
-      "price": 53422.88,
-      "pct_change": -0.07
+      "price": 53441.95,
+      "pct_change": -0.03
     },
     "Nasdaq": {
-      "price": 26348.0,
+      "price": 26350.21,
       "pct_change": -1.11
     },
     "S&P500": {
-      "price": 7709.16,
-      "pct_change": -0.46
+      "price": 7708.96,
+      "pct_change": -0.47
     }
   },
   "crypto": {
-    "mcap_usd": 2278121138297.5127,
-    "btc_dominance": 56.56462660450261,
-    "mcap_change_24h": 0.170026920982564,
-    "btc_price_usd": 64505.0,
-    "btc_change_24h": 1.4441113200508195
+    "mcap_usd": 2294435830555.7993,
+    "btc_dominance": 56.673716274883034,
+    "mcap_change_24h": 0.8873913908726327,
+    "btc_price_usd": 64725.0,
+    "btc_change_24h": 1.8349236024345488
   },
   "fear_greed": {
     "value": 41,
