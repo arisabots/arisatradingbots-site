@@ -1,5 +1,25 @@
 [
   {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "LONG",
+    "pnl_pct": -1.04,
+    "pnl_usd": -5.1,
+    "exit_time": "2026-08-18T05:31:35.034634Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "LONG",
+    "pnl_pct": -0.16,
+    "pnl_usd": -16.18,
+    "exit_time": "2026-08-18T05:31:32.950779Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -178,25 +198,5 @@
     "pnl_pct": -0.16,
     "pnl_usd": -15.63,
     "exit_time": "2026-08-14T01:56:52.134029Z"
-  },
-  {
-    "bot": "AURIKA",
-    "brand": "Aurika Trading",
-    "instrument_name": "Gold",
-    "symbol_display": "XAU / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.25,
-    "pnl_usd": 32.18,
-    "exit_time": "2026-08-14T00:35:14.111751Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.17,
-    "pnl_usd": 1.73,
-    "exit_time": "2026-08-13T17:11:15.104521Z"
   }
 ]
