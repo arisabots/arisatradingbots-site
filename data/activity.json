@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "LONG",
+    "pnl_pct": -1.51,
+    "pnl_usd": -30.41,
+    "exit_time": "2026-08-18T13:30:54.193088Z"
+  },
+  {
     "bot": "SWEETPEA",
     "brand": "Sweetpea Trading",
     "instrument_name": "Sugar",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.76,
     "pnl_usd": 7.48,
     "exit_time": "2026-08-14T14:07:27.707558Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": 0.24,
-    "pnl_usd": 6.47,
-    "exit_time": "2026-08-14T09:59:09.752731Z"
   }
 ]
