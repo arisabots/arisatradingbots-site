@@ -1,7 +1,7 @@
 {
   "indices": {
     "Dow": {
-      "price": 53459.8,
+      "price": 53459.78,
       "pct_change": -0.51
     },
     "Nasdaq": {
@@ -14,11 +14,11 @@
     }
   },
   "crypto": {
-    "mcap_usd": 2272673474359.644,
-    "btc_dominance": 56.546085457534154,
-    "mcap_change_24h": 0.36764859606557154,
-    "btc_price_usd": 64053.0,
-    "btc_change_24h": 1.1609971693350258
+    "mcap_usd": 2275050728823.3716,
+    "btc_dominance": 56.55593965298698,
+    "mcap_change_24h": 0.47263483510547954,
+    "btc_price_usd": 64109.0,
+    "btc_change_24h": 1.1232435753311591
   },
   "fear_greed": {
     "value": 41,
