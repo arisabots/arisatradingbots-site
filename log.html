@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-08-19</div>
+      <h2>Every bot was under-reporting its own losses when a broker-side stop-loss fired</h2>
+      <div class="impact">9 bots affected · fleet total corrected from roughly breakeven to a real -$562.54</div>
+      <div class="body">
+        <p>Our accounts trade in GBP, but every dollar figure on this site is meant to be a genuine USD conversion of the real result, not a raw currency mix-up. When a bot closes its own position (a normal take-profit or a stage of one), it correctly converts that result to USD before logging it. But when a broker-side stop-loss fires on its own — the safety net doing exactly its job — the code that records that close was pulling the broker's raw GBP number and logging it as if it were already in USD, with no conversion applied at all.</p>
+        <p>Since stop-loss closes are the larger, and mostly losing, side of the ledger, this consistently made real losses look about a quarter smaller than they actually were — enough, added up across months of trading on our gold bot alone, to turn a real loss into what looked like a small gain on this site.</p>
+        <p>Caught by checking our own numbers against the broker's real account history directly, the same way we catch everything here — real data, not the dashboard's word for it.</p>
+        <p><b>Fix:</b> broker-side stop-loss closes now convert to USD the same way every other close already did, in all 9 affected bots. Every historical figure this affected was recalculated from the real broker record and corrected, not just fixed going forward — this site's whole point is an honest number, not a flattering one.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-08-10</div>
       <h2>A locked screen was quietly breaking the same card-rendering browser, days at a time</h2>
       <div class="impact">14 real trades queued · one stuck 3+ days</div>
