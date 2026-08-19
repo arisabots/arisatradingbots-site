@@ -6,7 +6,7 @@
     "symbol_display": "NAS100",
     "side": "LONG",
     "pnl_pct": -0.33,
-    "pnl_usd": -6.48,
+    "pnl_usd": -8.81,
     "exit_time": "2026-08-19T13:50:21.412301Z"
   },
   {
@@ -146,7 +146,7 @@
     "symbol_display": "US30",
     "side": "LONG",
     "pnl_pct": -1.51,
-    "pnl_usd": -30.41,
+    "pnl_usd": -41.38,
     "exit_time": "2026-08-18T13:30:54.193088Z"
   },
   {
@@ -166,7 +166,7 @@
     "symbol_display": "NAS100",
     "side": "LONG",
     "pnl_pct": -0.35,
-    "pnl_usd": -6.95,
+    "pnl_usd": -9.46,
     "exit_time": "2026-08-18T09:41:57.124981Z"
   },
   {
@@ -196,7 +196,7 @@
     "symbol_display": "SPX500",
     "side": "LONG",
     "pnl_pct": -1.2,
-    "pnl_usd": -9.12,
+    "pnl_usd": -12.41,
     "exit_time": "2026-08-18T07:59:48.055604Z"
   }
 ]
