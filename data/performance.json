@@ -25,8 +25,12 @@
       "cumulative_pnl": -2.3
     },
     {
+      "time": "2026-07-22T06:25:52.835840Z",
+      "cumulative_pnl": 8.09
+    },
+    {
       "time": "2026-07-22T07:09:07.357520Z",
-      "cumulative_pnl": -13.06
+      "cumulative_pnl": -2.67
     },
     {
       "time": "2026-07-22T07:18:26.309982Z",
@@ -875,14 +879,14 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 86,
-      "wins": 26,
+      "total_trades": 87,
+      "wins": 27,
       "losses": 60,
-      "win_rate": 30.23255813953488,
+      "win_rate": 31.03448275862069,
       "gross_profit": 917.92,
       "gross_loss": -996.48,
       "profit_factor": 0.92,
-      "avg_hold_minutes": 66.0,
+      "avg_hold_minutes": 64.2,
       "total_pnl": -78.56
     },
     {
@@ -1007,5 +1011,5 @@
     }
   ],
   "fleet_total_pnl": -154.04,
-  "fleet_total_trades": 217
+  "fleet_total_trades": 218
 }
