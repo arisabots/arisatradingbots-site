@@ -883,6 +883,22 @@
     {
       "time": "2026-08-19T11:41:45.706018Z",
       "cumulative_pnl": -32.93
+    },
+    {
+      "time": "2026-08-19T13:32:04.362948Z",
+      "cumulative_pnl": -15.02
+    },
+    {
+      "time": "2026-08-19T13:37:57.467061Z",
+      "cumulative_pnl": -6.59
+    },
+    {
+      "time": "2026-08-19T13:50:07.587246Z",
+      "cumulative_pnl": -3.92
+    },
+    {
+      "time": "2026-08-19T13:50:21.412301Z",
+      "cumulative_pnl": -10.4
     }
   ],
   "bots": [
@@ -906,15 +922,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 22,
-      "wins": 6,
-      "losses": 16,
-      "win_rate": 27.27272727272727,
-      "gross_profit": 141.71,
-      "gross_loss": -116.44,
+      "total_trades": 24,
+      "wins": 7,
+      "losses": 17,
+      "win_rate": 29.166666666666668,
+      "gross_profit": 150.14,
+      "gross_loss": -122.91,
       "profit_factor": 1.22,
-      "avg_hold_minutes": 320.0,
-      "total_pnl": 25.27
+      "avg_hold_minutes": 331.1,
+      "total_pnl": 27.23
     },
     {
       "bot": "OLIVIA",
@@ -981,15 +997,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 9,
-      "wins": 6,
+      "total_trades": 10,
+      "wins": 7,
       "losses": 3,
-      "win_rate": 66.66666666666666,
-      "gross_profit": 47.55,
+      "win_rate": 70.0,
+      "gross_profit": 50.22,
       "gross_loss": -27.35,
-      "profit_factor": 1.74,
-      "avg_hold_minutes": 3610.7,
-      "total_pnl": 20.2
+      "profit_factor": 1.84,
+      "avg_hold_minutes": 3331.5,
+      "total_pnl": 22.87
     },
     {
       "bot": "SPIKE",
@@ -1011,17 +1027,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 17,
-      "wins": 7,
+      "total_trades": 18,
+      "wins": 8,
       "losses": 10,
-      "win_rate": 41.17647058823529,
-      "gross_profit": 104.59,
+      "win_rate": 44.44444444444444,
+      "gross_profit": 122.5,
       "gross_loss": -246.59,
-      "profit_factor": 0.42,
-      "avg_hold_minutes": 277.4,
-      "total_pnl": -142.0
+      "profit_factor": 0.5,
+      "avg_hold_minutes": 268.5,
+      "total_pnl": -124.09
     }
   ],
-  "fleet_total_pnl": -32.93,
-  "fleet_total_trades": 221
+  "fleet_total_pnl": -10.4,
+  "fleet_total_trades": 225
 }
