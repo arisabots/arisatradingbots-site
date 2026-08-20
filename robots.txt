@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# 2026-08-20: /gun/ was never a real path on this site - external
+# backlink spam (gambling-keyword slugs, e.g. /gun/?id=55TBET) pointed
+# thousands of fake links at it, showing up as 404s/one stray 5xx in
+# Search Console. Nothing to fix on our end (a 404 for a page that was
+# never real is correct), but this tells well-behaved crawlers not to
+# bother requesting it at all.
+Disallow: /gun/
+
 Sitemap: https://arisatradingbot.com/sitemap.xml
