@@ -927,6 +927,14 @@
     {
       "time": "2026-08-21T03:41:16.658292Z",
       "cumulative_pnl": -608.17
+    },
+    {
+      "time": "2026-08-21T05:04:52.211775Z",
+      "cumulative_pnl": -615.33
+    },
+    {
+      "time": "2026-08-21T05:08:54.068971Z",
+      "cumulative_pnl": -636.45
     }
   ],
   "bots": [
@@ -935,15 +943,15 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 86,
+      "total_trades": 87,
       "wins": 26,
-      "losses": 60,
-      "win_rate": 30.23255813953488,
+      "losses": 61,
+      "win_rate": 29.88505747126437,
       "gross_profit": 905.88,
-      "gross_loss": -1239.35,
-      "profit_factor": 0.73,
-      "avg_hold_minutes": 54.1,
-      "total_pnl": -333.47
+      "gross_loss": -1260.47,
+      "profit_factor": 0.72,
+      "avg_hold_minutes": 53.8,
+      "total_pnl": -354.59
     },
     {
       "bot": "NAZIM",
@@ -980,15 +988,15 @@
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 8,
+      "total_trades": 9,
       "wins": 5,
-      "losses": 3,
-      "win_rate": 62.5,
+      "losses": 4,
+      "win_rate": 55.55555555555556,
       "gross_profit": 66.2,
-      "gross_loss": -125.08,
-      "profit_factor": 0.53,
-      "avg_hold_minutes": 1143.7,
-      "total_pnl": -58.88
+      "gross_loss": -132.24,
+      "profit_factor": 0.5,
+      "avg_hold_minutes": 1128.7,
+      "total_pnl": -66.04
     },
     {
       "bot": "SILVERSMITH",
@@ -1066,6 +1074,6 @@
       "total_pnl": -129.7
     }
   ],
-  "fleet_total_pnl": -608.17,
-  "fleet_total_trades": 232
+  "fleet_total_pnl": -636.45,
+  "fleet_total_trades": 234
 }
