@@ -1,5 +1,25 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.35,
+    "pnl_usd": -9.3,
+    "exit_time": "2026-08-24T05:34:18.722291Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "LONG",
+    "pnl_pct": -0.16,
+    "pnl_usd": -22.06,
+    "exit_time": "2026-08-24T05:30:10.286004Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -178,25 +198,5 @@
     "pnl_pct": -0.36,
     "pnl_usd": -9.55,
     "exit_time": "2026-08-20T11:46:43.096868Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": -1.05,
-    "pnl_usd": -11.1,
-    "exit_time": "2026-08-20T11:28:38.669462Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "LONG",
-    "pnl_pct": 0.14,
-    "pnl_usd": 3.87,
-    "exit_time": "2026-08-20T08:56:57.323819Z"
   }
 ]
