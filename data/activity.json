@@ -5,6 +5,26 @@
     "instrument_name": "Sugar",
     "symbol_display": "SUGAR",
     "side": "LONG",
+    "pnl_pct": 0.68,
+    "pnl_usd": 18.68,
+    "exit_time": "2026-08-24T13:42:13.524451Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.36,
+    "pnl_usd": -9.45,
+    "exit_time": "2026-08-24T13:41:17.930333Z"
+  },
+  {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "LONG",
     "pnl_pct": -1.24,
     "pnl_usd": -34.33,
     "exit_time": "2026-08-24T07:49:39.221360Z"
@@ -178,25 +198,5 @@
     "pnl_pct": -0.17,
     "pnl_usd": -23.69,
     "exit_time": "2026-08-21T00:06:51.509285Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "LONG",
-    "pnl_pct": 2.3,
-    "pnl_usd": 62.74,
-    "exit_time": "2026-08-20T14:05:17.856162Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.35,
-    "pnl_usd": -9.38,
-    "exit_time": "2026-08-20T12:32:32.027511Z"
   }
 ]
