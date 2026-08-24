@@ -101,6 +101,10 @@
       "cumulative_pnl": -7.74
     },
     {
+      "time": "2026-07-28T09:36:19.659543Z",
+      "cumulative_pnl": 2.07
+    },
+    {
       "time": "2026-07-28T10:08:07.668241Z",
       "cumulative_pnl": 34.31
     },
@@ -947,6 +951,14 @@
     {
       "time": "2026-08-24T04:06:40.059908Z",
       "cumulative_pnl": -574.12
+    },
+    {
+      "time": "2026-08-24T05:30:10.286004Z",
+      "cumulative_pnl": -596.17
+    },
+    {
+      "time": "2026-08-24T05:34:18.722291Z",
+      "cumulative_pnl": -605.47
     }
   ],
   "bots": [
@@ -955,30 +967,30 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 86,
-      "wins": 27,
-      "losses": 59,
-      "win_rate": 31.3953488372093,
+      "total_trades": 88,
+      "wins": 28,
+      "losses": 60,
+      "win_rate": 31.818181818181817,
       "gross_profit": 928.4,
-      "gross_loss": -1226.11,
-      "profit_factor": 0.76,
-      "avg_hold_minutes": 48.8,
-      "total_pnl": -297.71
+      "gross_loss": -1248.16,
+      "profit_factor": 0.74,
+      "avg_hold_minutes": 48.2,
+      "total_pnl": -319.76
     },
     {
       "bot": "NAZIM",
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 28,
+      "total_trades": 29,
       "wins": 8,
-      "losses": 20,
-      "win_rate": 28.57142857142857,
+      "losses": 21,
+      "win_rate": 27.586206896551722,
       "gross_profit": 156.48,
-      "gross_loss": -192.16,
-      "profit_factor": 0.81,
-      "avg_hold_minutes": 297.2,
-      "total_pnl": -35.68
+      "gross_loss": -201.46,
+      "profit_factor": 0.78,
+      "avg_hold_minutes": 294.2,
+      "total_pnl": -44.98
     },
     {
       "bot": "OLIVIA",
@@ -1086,6 +1098,6 @@
       "total_pnl": -129.7
     }
   ],
-  "fleet_total_pnl": -574.12,
-  "fleet_total_trades": 237
+  "fleet_total_pnl": -605.47,
+  "fleet_total_trades": 240
 }
