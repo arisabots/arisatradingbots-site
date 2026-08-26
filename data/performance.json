@@ -169,6 +169,10 @@
       "cumulative_pnl": -220.19
     },
     {
+      "time": "2026-07-30T02:54:36.814899Z",
+      "cumulative_pnl": -209.87
+    },
+    {
       "time": "2026-07-30T03:50:04.215759Z",
       "cumulative_pnl": -163.09
     },
@@ -991,6 +995,10 @@
     {
       "time": "2026-08-26T05:38:15.423647Z",
       "cumulative_pnl": -780.21
+    },
+    {
+      "time": "2026-08-26T07:09:15.451040Z",
+      "cumulative_pnl": -771.47
     }
   ],
   "bots": [
@@ -999,14 +1007,14 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 88,
-      "wins": 24,
+      "total_trades": 89,
+      "wins": 25,
       "losses": 64,
-      "win_rate": 27.27272727272727,
+      "win_rate": 28.08988764044944,
       "gross_profit": 827.97,
       "gross_loss": -1350.66,
       "profit_factor": 0.61,
-      "avg_hold_minutes": 45.2,
+      "avg_hold_minutes": 44.7,
       "total_pnl": -522.69
     },
     {
@@ -1074,15 +1082,15 @@
       "brand": "Solomon Trading",
       "instrument_name": "Soybean",
       "symbol_display": "SOYBN",
-      "total_trades": 9,
-      "wins": 6,
+      "total_trades": 10,
+      "wins": 7,
       "losses": 3,
-      "win_rate": 66.66666666666666,
-      "gross_profit": 46.02,
+      "win_rate": 70.0,
+      "gross_profit": 54.76,
       "gross_loss": -106.79,
-      "profit_factor": 0.43,
-      "avg_hold_minutes": 2634.3,
-      "total_pnl": -60.77
+      "profit_factor": 0.51,
+      "avg_hold_minutes": 3133.3,
+      "total_pnl": -52.03
     },
     {
       "bot": "SPENCER",
@@ -1130,6 +1138,6 @@
       "total_pnl": -132.2
     }
   ],
-  "fleet_total_pnl": -780.21,
-  "fleet_total_trades": 248
+  "fleet_total_pnl": -771.47,
+  "fleet_total_trades": 250
 }
