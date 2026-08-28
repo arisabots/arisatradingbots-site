@@ -233,6 +233,10 @@
       "cumulative_pnl": -219.04
     },
     {
+      "time": "2026-08-03T00:43:26.547641Z",
+      "cumulative_pnl": -209.13
+    },
+    {
       "time": "2026-08-03T01:25:25.500111Z",
       "cumulative_pnl": -182.47
     },
@@ -1023,6 +1027,10 @@
     {
       "time": "2026-08-28T00:18:26.401922Z",
       "cumulative_pnl": -805.7
+    },
+    {
+      "time": "2026-08-28T05:40:17.809274Z",
+      "cumulative_pnl": -827.54
     }
   ],
   "bots": [
@@ -1031,15 +1039,15 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 88,
-      "wins": 23,
-      "losses": 65,
-      "win_rate": 26.136363636363637,
+      "total_trades": 90,
+      "wins": 24,
+      "losses": 66,
+      "win_rate": 26.666666666666668,
       "gross_profit": 835.03,
-      "gross_loss": -1381.42,
+      "gross_loss": -1403.27,
       "profit_factor": 0.6,
-      "avg_hold_minutes": 46.2,
-      "total_pnl": -546.39
+      "avg_hold_minutes": 47.7,
+      "total_pnl": -568.24
     },
     {
       "bot": "NAZIM",
@@ -1162,6 +1170,6 @@
       "total_pnl": -132.2
     }
   ],
-  "fleet_total_pnl": -805.7,
-  "fleet_total_trades": 256
+  "fleet_total_pnl": -827.54,
+  "fleet_total_trades": 258
 }
