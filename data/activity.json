@@ -1,5 +1,15 @@
 [
   {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "LONG",
+    "pnl_pct": -1.62,
+    "pnl_usd": -44.9,
+    "exit_time": "2026-08-30T22:01:50.427284Z"
+  },
+  {
     "bot": "NAZIM",
     "brand": "Nazim Trading",
     "instrument_name": "Nasdaq 100",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.26,
     "pnl_usd": 6.9,
     "exit_time": "2026-08-26T14:16:13.299403Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": -1.05,
-    "pnl_usd": -11.24,
-    "exit_time": "2026-08-26T13:50:01.971125Z"
   }
 ]
