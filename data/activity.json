@@ -1,5 +1,15 @@
 [
   {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "LONG",
+    "pnl_pct": 0.17,
+    "pnl_usd": 22.72,
+    "exit_time": "2026-08-31T00:50:15.467372Z"
+  },
+  {
     "bot": "RUSSELL",
     "brand": "Russell Trading",
     "instrument_name": "Russell 2000",
@@ -188,15 +198,5 @@
     "pnl_pct": -1.04,
     "pnl_usd": -10.38,
     "exit_time": "2026-08-26T15:27:45.817055Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": 0.26,
-    "pnl_usd": 6.9,
-    "exit_time": "2026-08-26T14:16:13.299403Z"
   }
 ]
