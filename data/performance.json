@@ -1055,6 +1055,14 @@
     {
       "time": "2026-09-01T08:06:59.914347Z",
       "cumulative_pnl": -825.4
+    },
+    {
+      "time": "2026-09-01T08:38:31.203991Z",
+      "cumulative_pnl": -835.88
+    },
+    {
+      "time": "2026-09-01T08:42:19.501180Z",
+      "cumulative_pnl": -835.78
     }
   ],
   "bots": [
@@ -1093,15 +1101,15 @@
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 65,
+      "total_trades": 66,
       "wins": 43,
-      "losses": 22,
-      "win_rate": 66.15384615384615,
+      "losses": 23,
+      "win_rate": 65.15151515151516,
       "gross_profit": 145.09,
-      "gross_loss": -215.57,
-      "profit_factor": 0.67,
+      "gross_loss": -226.04,
+      "profit_factor": 0.64,
       "avg_hold_minutes": 90.4,
-      "total_pnl": -70.48
+      "total_pnl": -80.95
     },
     {
       "bot": "RUSSELL",
@@ -1123,15 +1131,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 8,
-      "wins": 5,
+      "total_trades": 9,
+      "wins": 6,
       "losses": 3,
-      "win_rate": 62.5,
-      "gross_profit": 13.18,
+      "win_rate": 66.66666666666666,
+      "gross_profit": 13.28,
       "gross_loss": -23.64,
       "profit_factor": 0.56,
-      "avg_hold_minutes": 149.4,
-      "total_pnl": -10.46
+      "avg_hold_minutes": 133.7,
+      "total_pnl": -10.36
     },
     {
       "bot": "SOLOMON",
@@ -1194,6 +1202,6 @@
       "total_pnl": -166.04
     }
   ],
-  "fleet_total_pnl": -825.4,
-  "fleet_total_trades": 264
+  "fleet_total_pnl": -835.78,
+  "fleet_total_trades": 266
 }
