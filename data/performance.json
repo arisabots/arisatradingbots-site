@@ -1071,6 +1071,22 @@
     {
       "time": "2026-09-01T10:43:44.672541Z",
       "cumulative_pnl": -846.38
+    },
+    {
+      "time": "2026-09-01T13:32:01.126617Z",
+      "cumulative_pnl": -855.85
+    },
+    {
+      "time": "2026-09-01T16:24:33.477415Z",
+      "cumulative_pnl": -866.02
+    },
+    {
+      "time": "2026-09-01T16:31:36.234741Z",
+      "cumulative_pnl": -907.34
+    },
+    {
+      "time": "2026-09-01T18:28:46.869364Z",
+      "cumulative_pnl": -916.68
     }
   ],
   "bots": [
@@ -1094,45 +1110,45 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 37,
+      "total_trades": 39,
       "wins": 13,
-      "losses": 24,
-      "win_rate": 35.13513513513514,
+      "losses": 26,
+      "win_rate": 33.33333333333333,
       "gross_profit": 211.28,
-      "gross_loss": -230.27,
-      "profit_factor": 0.92,
-      "avg_hold_minutes": 338.1,
-      "total_pnl": -18.99
+      "gross_loss": -249.08,
+      "profit_factor": 0.85,
+      "avg_hold_minutes": 326.4,
+      "total_pnl": -37.8
     },
     {
       "bot": "OLIVIA",
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 67,
+      "total_trades": 68,
       "wins": 44,
-      "losses": 23,
-      "win_rate": 65.67164179104478,
+      "losses": 24,
+      "win_rate": 64.70588235294117,
       "gross_profit": 146.67,
-      "gross_loss": -226.04,
-      "profit_factor": 0.65,
-      "avg_hold_minutes": 90.8,
-      "total_pnl": -79.37
+      "gross_loss": -236.2,
+      "profit_factor": 0.62,
+      "avg_hold_minutes": 89.7,
+      "total_pnl": -89.53
     },
     {
       "bot": "RUSSELL",
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 11,
+      "total_trades": 12,
       "wins": 6,
-      "losses": 5,
-      "win_rate": 54.54545454545454,
+      "losses": 6,
+      "win_rate": 50.0,
       "gross_profit": 73.38,
-      "gross_loss": -177.14,
-      "profit_factor": 0.41,
-      "avg_hold_minutes": 2132.0,
-      "total_pnl": -103.76
+      "gross_loss": -218.46,
+      "profit_factor": 0.34,
+      "avg_hold_minutes": 2166.4,
+      "total_pnl": -145.08
     },
     {
       "bot": "SILVERSMITH",
@@ -1210,6 +1226,6 @@
       "total_pnl": -166.04
     }
   ],
-  "fleet_total_pnl": -846.38,
-  "fleet_total_trades": 268
+  "fleet_total_pnl": -916.68,
+  "fleet_total_trades": 272
 }
