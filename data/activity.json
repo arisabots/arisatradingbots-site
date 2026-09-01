@@ -1,5 +1,45 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.35,
+    "pnl_usd": -9.34,
+    "exit_time": "2026-09-01T18:28:46.869364Z"
+  },
+  {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "LONG",
+    "pnl_pct": -1.52,
+    "pnl_usd": -41.32,
+    "exit_time": "2026-09-01T16:31:36.234741Z"
+  },
+  {
+    "bot": "OLIVIA",
+    "brand": "Olivia Trading",
+    "instrument_name": "Crude Oil",
+    "symbol_display": "WTI / USD",
+    "side": "SHORT",
+    "pnl_pct": -1.02,
+    "pnl_usd": -10.17,
+    "exit_time": "2026-09-01T16:24:33.477415Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.36,
+    "pnl_usd": -9.47,
+    "exit_time": "2026-09-01T13:32:01.126617Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -158,45 +198,5 @@
     "pnl_pct": -0.16,
     "pnl_usd": -22.12,
     "exit_time": "2026-08-31T01:48:41.550302Z"
-  },
-  {
-    "bot": "AURIKA",
-    "brand": "Aurika Trading",
-    "instrument_name": "Gold",
-    "symbol_display": "XAU / USD",
-    "side": "LONG",
-    "pnl_pct": 0.17,
-    "pnl_usd": 22.72,
-    "exit_time": "2026-08-31T00:50:15.467372Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "LONG",
-    "pnl_pct": -1.62,
-    "pnl_usd": -44.9,
-    "exit_time": "2026-08-30T22:01:50.427284Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.36,
-    "pnl_usd": -9.59,
-    "exit_time": "2026-08-28T16:21:48.708178Z"
-  },
-  {
-    "bot": "SPENCER",
-    "brand": "Spencer Trading",
-    "instrument_name": "S&P 500",
-    "symbol_display": "SPX500",
-    "side": "LONG",
-    "pnl_pct": 0.21,
-    "pnl_usd": 2.08,
-    "exit_time": "2026-08-28T15:41:02.839237Z"
   }
 ]
