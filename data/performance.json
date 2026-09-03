@@ -1119,6 +1119,14 @@
     {
       "time": "2026-09-03T12:33:20.249752Z",
       "cumulative_pnl": -867.93
+    },
+    {
+      "time": "2026-09-03T13:40:22.652190Z",
+      "cumulative_pnl": -857.74
+    },
+    {
+      "time": "2026-09-03T13:59:41.146556Z",
+      "cumulative_pnl": -890.54
     }
   ],
   "bots": [
@@ -1172,15 +1180,15 @@
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 12,
-      "wins": 6,
+      "total_trades": 13,
+      "wins": 7,
       "losses": 6,
-      "win_rate": 50.0,
-      "gross_profit": 73.38,
+      "win_rate": 53.84615384615385,
+      "gross_profit": 83.57,
       "gross_loss": -218.46,
-      "profit_factor": 0.34,
-      "avg_hold_minutes": 2166.4,
-      "total_pnl": -145.08
+      "profit_factor": 0.38,
+      "avg_hold_minutes": 2038.5,
+      "total_pnl": -134.89
     },
     {
       "bot": "SILVERSMITH",
@@ -1247,17 +1255,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 26,
+      "total_trades": 27,
       "wins": 12,
-      "losses": 14,
-      "win_rate": 46.15384615384615,
+      "losses": 15,
+      "win_rate": 44.44444444444444,
       "gross_profit": 220.95,
-      "gross_loss": -458.76,
-      "profit_factor": 0.48,
-      "avg_hold_minutes": 200.8,
-      "total_pnl": -237.81
+      "gross_loss": -491.56,
+      "profit_factor": 0.45,
+      "avg_hold_minutes": 197.2,
+      "total_pnl": -270.61
     }
   ],
-  "fleet_total_pnl": -867.93,
-  "fleet_total_trades": 280
+  "fleet_total_pnl": -890.54,
+  "fleet_total_trades": 282
 }
