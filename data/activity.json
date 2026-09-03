@@ -1,5 +1,15 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": 0.33,
+    "pnl_usd": 8.57,
+    "exit_time": "2026-09-03T14:05:00.323165Z"
+  },
+  {
     "bot": "SWEETPEA",
     "brand": "Sweetpea Trading",
     "instrument_name": "Sugar",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.15,
     "pnl_usd": -19.84,
     "exit_time": "2026-09-02T00:20:20.991702Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.35,
-    "pnl_usd": -9.34,
-    "exit_time": "2026-09-01T18:28:46.869364Z"
   }
 ]
