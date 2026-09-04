@@ -1143,6 +1143,14 @@
     {
       "time": "2026-09-04T12:30:25.226959Z",
       "cumulative_pnl": -840.24
+    },
+    {
+      "time": "2026-09-04T14:50:12.769198Z",
+      "cumulative_pnl": -833.86
+    },
+    {
+      "time": "2026-09-04T14:57:30.790975Z",
+      "cumulative_pnl": -826.5
     }
   ],
   "bots": [
@@ -1196,15 +1204,15 @@
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 13,
-      "wins": 7,
+      "total_trades": 14,
+      "wins": 8,
       "losses": 6,
-      "win_rate": 53.84615384615385,
-      "gross_profit": 83.57,
+      "win_rate": 57.14285714285714,
+      "gross_profit": 89.95,
       "gross_loss": -218.46,
-      "profit_factor": 0.38,
-      "avg_hold_minutes": 2038.5,
-      "total_pnl": -134.89
+      "profit_factor": 0.41,
+      "avg_hold_minutes": 1999.0,
+      "total_pnl": -128.51
     },
     {
       "bot": "SILVERSMITH",
@@ -1241,15 +1249,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 15,
-      "wins": 11,
+      "total_trades": 16,
+      "wins": 12,
       "losses": 4,
-      "win_rate": 73.33333333333333,
-      "gross_profit": 60.82,
+      "win_rate": 75.0,
+      "gross_profit": 68.18,
       "gross_loss": -49.4,
-      "profit_factor": 1.23,
-      "avg_hold_minutes": 3462.5,
-      "total_pnl": 11.42
+      "profit_factor": 1.38,
+      "avg_hold_minutes": 3372.3,
+      "total_pnl": 18.78
     },
     {
       "bot": "SPIKE",
@@ -1282,6 +1290,6 @@
       "total_pnl": -300.79
     }
   ],
-  "fleet_total_pnl": -840.24,
-  "fleet_total_trades": 286
+  "fleet_total_pnl": -826.5,
+  "fleet_total_trades": 288
 }
