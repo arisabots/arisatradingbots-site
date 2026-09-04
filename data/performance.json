@@ -1135,6 +1135,14 @@
     {
       "time": "2026-09-04T07:59:29.574423Z",
       "cumulative_pnl": -818.64
+    },
+    {
+      "time": "2026-09-04T12:23:21.286099Z",
+      "cumulative_pnl": -848.82
+    },
+    {
+      "time": "2026-09-04T12:30:25.226959Z",
+      "cumulative_pnl": -840.24
     }
   ],
   "bots": [
@@ -1158,15 +1166,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 42,
-      "wins": 16,
+      "total_trades": 43,
+      "wins": 17,
       "losses": 26,
-      "win_rate": 38.095238095238095,
-      "gross_profit": 229.59,
+      "win_rate": 39.53488372093023,
+      "gross_profit": 238.17,
       "gross_loss": -249.08,
-      "profit_factor": 0.92,
-      "avg_hold_minutes": 322.7,
-      "total_pnl": -19.49
+      "profit_factor": 0.96,
+      "avg_hold_minutes": 335.2,
+      "total_pnl": -10.91
     },
     {
       "bot": "OLIVIA",
@@ -1263,17 +1271,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 27,
+      "total_trades": 28,
       "wins": 12,
-      "losses": 15,
-      "win_rate": 44.44444444444444,
+      "losses": 16,
+      "win_rate": 42.857142857142854,
       "gross_profit": 220.95,
-      "gross_loss": -491.56,
-      "profit_factor": 0.45,
-      "avg_hold_minutes": 197.2,
-      "total_pnl": -270.61
+      "gross_loss": -521.74,
+      "profit_factor": 0.42,
+      "avg_hold_minutes": 190.7,
+      "total_pnl": -300.79
     }
   ],
-  "fleet_total_pnl": -818.64,
-  "fleet_total_trades": 284
+  "fleet_total_pnl": -840.24,
+  "fleet_total_trades": 286
 }
