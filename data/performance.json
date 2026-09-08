@@ -1187,6 +1187,10 @@
     {
       "time": "2026-09-08T07:47:38.463857Z",
       "cumulative_pnl": -1071.9
+    },
+    {
+      "time": "2026-09-08T12:29:45.037398Z",
+      "cumulative_pnl": -1063.44
     }
   ],
   "bots": [
@@ -1315,17 +1319,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 28,
-      "wins": 12,
+      "total_trades": 29,
+      "wins": 13,
       "losses": 16,
-      "win_rate": 42.857142857142854,
-      "gross_profit": 220.95,
+      "win_rate": 44.827586206896555,
+      "gross_profit": 229.41,
       "gross_loss": -521.74,
-      "profit_factor": 0.42,
-      "avg_hold_minutes": 190.7,
-      "total_pnl": -300.79
+      "profit_factor": 0.44,
+      "avg_hold_minutes": 186.3,
+      "total_pnl": -292.33
     }
   ],
-  "fleet_total_pnl": -1071.9,
-  "fleet_total_trades": 297
+  "fleet_total_pnl": -1063.44,
+  "fleet_total_trades": 298
 }
