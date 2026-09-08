@@ -1179,6 +1179,10 @@
     {
       "time": "2026-09-08T05:32:00.107171Z",
       "cumulative_pnl": -1051.71
+    },
+    {
+      "time": "2026-09-08T06:20:59.495363Z",
+      "cumulative_pnl": -1061.32
     }
   ],
   "bots": [
@@ -1202,15 +1206,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 44,
+      "total_trades": 45,
       "wins": 18,
-      "losses": 26,
-      "win_rate": 40.909090909090914,
+      "losses": 27,
+      "win_rate": 40.0,
       "gross_profit": 246.0,
-      "gross_loss": -249.08,
-      "profit_factor": 0.99,
-      "avg_hold_minutes": 352.9,
-      "total_pnl": -3.08
+      "gross_loss": -258.69,
+      "profit_factor": 0.95,
+      "avg_hold_minutes": 346.1,
+      "total_pnl": -12.69
     },
     {
       "bot": "OLIVIA",
@@ -1318,6 +1322,6 @@
       "total_pnl": -300.79
     }
   ],
-  "fleet_total_pnl": -1051.71,
-  "fleet_total_trades": 295
+  "fleet_total_pnl": -1061.32,
+  "fleet_total_trades": 296
 }
