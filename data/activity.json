@@ -5,6 +5,16 @@
     "instrument_name": "Nasdaq 100",
     "symbol_display": "NAS100",
     "side": "LONG",
+    "pnl_pct": -0.36,
+    "pnl_usd": -9.61,
+    "exit_time": "2026-09-08T06:20:59.495363Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
     "pnl_pct": 0.29,
     "pnl_usd": 7.83,
     "exit_time": "2026-09-08T05:32:00.107171Z"
@@ -188,15 +198,5 @@
     "pnl_pct": 0.26,
     "pnl_usd": 7.11,
     "exit_time": "2026-09-03T17:13:39.011547Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": 0.33,
-    "pnl_usd": 8.57,
-    "exit_time": "2026-09-03T14:05:00.323165Z"
   }
 ]
