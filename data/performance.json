@@ -1223,6 +1223,10 @@
     {
       "time": "2026-09-09T11:35:23.614590Z",
       "cumulative_pnl": -1058.73
+    },
+    {
+      "time": "2026-09-09T11:52:17.109357Z",
+      "cumulative_pnl": -1054.54
     }
   ],
   "bots": [
@@ -1261,15 +1265,15 @@
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 79,
-      "wins": 48,
+      "total_trades": 80,
+      "wins": 49,
       "losses": 31,
-      "win_rate": 60.75949367088608,
-      "gross_profit": 158.31,
+      "win_rate": 61.25000000000001,
+      "gross_profit": 162.5,
       "gross_loss": -309.49,
-      "profit_factor": 0.51,
-      "avg_hold_minutes": 134.9,
-      "total_pnl": -151.18
+      "profit_factor": 0.53,
+      "avg_hold_minutes": 133.5,
+      "total_pnl": -146.99
     },
     {
       "bot": "RUSSELL",
@@ -1362,6 +1366,6 @@
       "total_pnl": -275.99
     }
   ],
-  "fleet_total_pnl": -1058.73,
-  "fleet_total_trades": 306
+  "fleet_total_pnl": -1054.54,
+  "fleet_total_trades": 307
 }
