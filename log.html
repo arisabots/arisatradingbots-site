@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our gold bot's own safety switch couldn't see its most common kind of loss</h2>
+      <div class="impact">Real losing streak went unprotected since a safety feature's own launch</div>
+      <div class="body">
+        <p>Three weeks ago we built a safety switch for our gold bot: after three losing trades in a row on the same side, block new trades on that side for a few hours, on the theory that a model repeating the same mistake needs a timeout, not another chance. Reviewing it this week found it had never actually triggered once — including through a real three-in-a-row losing streak the night before this review.</p>
+        <p>The reason: most of this bot's real losses happen when a stop-loss fires automatically at the broker, not when the bot decides to close a trade itself. The safety switch was only ever watching the second kind. It genuinely couldn't see the exact pattern it was built to catch.</p>
+        <p><b>Fix:</b> both ways a trade can close now feed the same tracker. Tested by replaying the exact real losing streak from the night before against the fixed logic and confirming it now trips correctly. Also found the safety switch's own code had never been saved to our version history since the day it was built — fixed alongside this change so it can't go missing again.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our Dow Jones bot got switched off, then back on, in the same week — here's the real reasoning both times</h2>
       <div class="impact">16 days of missed trading · resolved with four independent real-data checks</div>
       <div class="body">
