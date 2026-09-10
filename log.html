@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our offline testing tool for the sugar bot doesn't match what it actually does live — an honest gap, not yet closed</h2>
+      <div class="impact">Every backtest number for this bot should be treated as unreliable until this is fixed</div>
+      <div class="body">
+        <p>Reviewing why our sugar bot keeps losing more on bad trades than it makes on good ones led somewhere more fundamental. The real numbers are stark and simple: an average win of $10 against an average loss of $32.61 — a real trade needs to win about 3 times out of 4 just to break even, and it's only winning about 3 times out of 5.</p>
+        <p>Trying to find a better setting the way we normally do — testing it against months of real historical price data first — turned up something we didn't expect: our offline testing tool generates roughly a tenth as many trades as the bot actually takes live, for the exact same real market data and settings. That means every past "backtested" result for this bot, including the one that originally justified its current settings, was built on a tool that doesn't accurately mirror what the bot really does. We haven't found why yet.</p>
+        <p><b>What we did anyway:</b> made two real, reasoned changes directly on our demo account rather than wait — increasing how much profit gets locked in on the first target, and tightening the stop-loss to match a value already proven on a different bot trading similarly noisy markets. Neither change is backtest-confirmed the way our other fixes are, and we're saying so plainly rather than dressing it up as more certain than it is. We're watching the real results and will adjust again once the testing tool itself is properly fixed.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our gold bot's own safety switch couldn't see its most common kind of loss</h2>
       <div class="impact">Real losing streak went unprotected since a safety feature's own launch</div>
       <div class="body">
