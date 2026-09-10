@@ -140,6 +140,58 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-10</div>
+      <h2>Our Dow Jones bot got switched off, then back on, in the same week — here's the real reasoning both times</h2>
+      <div class="impact">16 days of missed trading · resolved with four independent real-data checks</div>
+      <div class="body">
+        <p>Three weeks ago a rigorous check found our Dow Jones bot (Spike) wasn't earning its keep on either side of the market and switched it off entirely, with the real numbers behind that call written up honestly at the time. That write-up sat un-backed-up on our own systems since the day it was made — a real gap in our own process, not this bot's fault — so when we came back to review it this week, we almost missed it and nearly turned the bot back on for the wrong reason (it looked like an accidental setting, not a deliberate one).</p>
+        <p>Once we found the original reasoning, we didn't just trust it blindly either: the exact data slice behind that three-week-old check no longer exists on our systems to check against directly. So we rebuilt the closest honest match we could, then checked three more ways on top of that — the bot's full trading history, the second half of it on its own, and its real live trades since launch. All four came back positive. Only the original check said otherwise, and we couldn't reproduce that result no matter which window we tried.</p>
+        <p><b>Fix:</b> re-enabled the bot on its original design (long trades only), backed by four independent checks instead of one, and this time the full reasoning — plus the two real code bugs that write-up also uncovered along the way (see below) — is committed properly so it can't go missing again.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
+      <h2>A currency conversion bug was hiding losses on stop-loss exits, and a testing tool was silently reporting zero trades</h2>
+      <div class="impact">Found while investigating the Dow Jones bot above · both fixed fleet-relevant, neither ever reached real trading</div>
+      <div class="body">
+        <p>Two smaller, real issues turned up during the investigation above. First: one bot's stop-loss closes were being logged in raw pounds and mislabeled as dollars — the same class of bug we fixed fleet-wide on 2026-08-19 below, just one bot that had forked its code slightly earlier and never got the fix. Second: that same bot's own testing tool had a missing setting that silently sized every simulated trade down to zero, so every test anyone ran against it for weeks quietly reported "zero trades" instead of a real result or an error — easy to mistake for "no signal" instead of "broken tool."</p>
+        <p><b>Fix:</b> both corrected. Neither bug ever touched real trading — one was a display/logging issue after the fact, the other only affected our own offline testing, never the bot's live decisions.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-09</div>
+      <h2>Some of our crypto bots' "open positions" had already mostly vanished from the real account</h2>
+      <div class="impact">2 of 3 crypto bots affected · real exposure was cents, not the ~$58 our own tracking claimed</div>
+      <div class="body">
+        <p>Checking why a stuck position wasn't closing led to something more fundamental: comparing what our own records said we held against the real exchange balance, two of the four positions in question had zero real coin behind them at all, and a third had over 99% less than our records claimed. No sell had failed or gone wrong — our own bookkeeping had simply drifted away from reality at some point and never been checked against the real account since.</p>
+        <p>This means the dollar exposure we were reporting for these was fiction, not a real live loss sitting there — the actual number was a few cents of leftover dust, not the roughly $58 our own tracking displayed.</p>
+        <p><b>Fix:</b> corrected our records to match the real account balances, and — more importantly — built an automatic check that now compares our records against the real exchange balance every 15 minutes on every crypto bot, correcting or clearing anything that's drifted and alerting us the moment it happens, instead of this being found by accident again.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-09</div>
+      <h2>A held position that rotated out of a bot's daily watchlist silently stopped being protected</h2>
+      <div class="impact">3 crypto bots affected · directly caused the issue above</div>
+      <div class="body">
+        <p>Our crypto bots each scan a rotating slice of the market rather than every coin at once, refreshed regularly to stay focused on where the real opportunity is. The safety checks that protect an open position — the trailing stop that locks in profit, the staged take-profit — were only ever run for coins currently in that scan list. A coin a bot was actually still holding, but which had since rotated out of its scan list (or gotten reassigned to a different bot's slice), stopped receiving either safety check entirely, with nothing anywhere flagging that this had happened.</p>
+        <p><b>Fix:</b> a bot's own currently-held positions are now always included in its check, regardless of what's currently in scan rotation, so a real position never stops being protected just because the market scan moved on without it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-09</div>
+      <h2>Retuned our crude oil bot's exit rules after real evidence said the old ones were leaving money on the table</h2>
+      <div class="impact">Real backtest across the bot's full history and its more recent half both agreed</div>
+      <div class="body">
+        <p>A routine review of our crude oil bot's take-profit and stop-loss settings found a wider first take-profit target and a tighter stop-loss both improved every real performance measure we track — total return, consistency, and the size of the worst drawdown — and the improvement held up in both the full history tested and the more recent half of it on its own, the same bar we hold every change like this to before trusting it.</p>
+        <p><b>Fix:</b> updated live. No change to the bot's underlying strategy, only how wide its profit target and protective stop are set.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-08-19</div>
       <h2>Every bot was under-reporting its own losses when a broker-side stop-loss fired</h2>
       <div class="impact">9 bots affected · fleet total corrected from roughly breakeven to a real -$562.54</div>
