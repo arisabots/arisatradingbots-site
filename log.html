@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our forex bot's entry signal isn't the problem — its stop-loss might be too tight</h2>
+      <div class="impact">Nearly half of all real trades were being cut short before they could resolve normally</div>
+      <div class="body">
+        <p>With the missing-trade bug above fixed, we had a complete real trade history for the first time and asked the harder question: is this bot's actual trading logic any good? The answer was more interesting than a flat yes or no. Every one of the bot's five trading strategies wins 79-85% of the time whenever a trade is allowed to play out normally — closing at a profit target, trailing a winning move, or timing out. None of them is meaningfully worse than the others.</p>
+        <p>But nearly half of all real trades — 46% — never got that chance. They hit a fixed protective stop-loss first, before the entry logic's real advantage could show up. That's not a strategy problem, it's a risk-setting problem: the stop looks like it may simply be too tight for how long these trades are typically held (we found a real trade that took over 55 hours to reach its normal exit).</p>
+        <p>We tried to test a wider stop the honest way — against real historical data first — and found our existing testing tool for this bot simulates a completely different kind of stop-loss than the one actually in use live, so it couldn't answer the question. Building a proper test that faithfully mirrors the real live logic would take real time to get right, and we weren't willing to fake that confidence on a real-money decision.</p>
+        <p><b>What we did instead:</b> widened the stop by 50% as a deliberate, real live experiment — clearly labeled as such, not dressed up as backtest-proven. We're watching real results closely over the next couple of weeks and will reverse it if it doesn't help.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our forex bot's own trade log was quietly dropping every stop-loss it hit</h2>
       <div class="impact">32 real losing trades in a week never made it into our own records</div>
       <div class="body">
