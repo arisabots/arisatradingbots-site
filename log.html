@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our silver bot's stop-loss was wider than its own first profit target</h2>
+      <div class="impact">Backtest-confirmed in both the full history and the recent window</div>
+      <div class="body">
+        <p>Real trades on this bot showed a losing trade costing roughly five times what a winning trade earned. The reason was structural: the stop-loss protecting each trade was actually set wider than the very first profit target meant to lock in a win — the opposite of how it should be weighted.</p>
+        <p>Before changing anything, we checked whether our offline testing tool for this bot could be trusted (two of our other bots failed that check today). This one passed — it generates roughly the same number of trades our real bot takes, for the same real market data. That gave us confidence to test properly: tightening the stop improved results across the bot's entire trading history <em>and</em> held up separately in just the recent weeks — the same two-part check we require before trusting any change like this.</p>
+        <p><b>Fix:</b> stop-loss tightened to match the first profit target's spacing. Confirmed by real backtest, not just a live guess.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our Nasdaq bot's most confident trades were its worst ones</h2>
       <div class="impact">The model's top confidence band accounted for the entire real loss</div>
       <div class="body">
