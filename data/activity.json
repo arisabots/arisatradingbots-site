@@ -1,5 +1,35 @@
 [
   {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "LONG",
+    "pnl_pct": -1.12,
+    "pnl_usd": -7.39,
+    "exit_time": "2026-09-10T12:36:52.522534Z"
+  },
+  {
+    "bot": "SPENCER",
+    "brand": "Spencer Trading",
+    "instrument_name": "S&P 500",
+    "symbol_display": "SPX500",
+    "side": "LONG",
+    "pnl_pct": -1.21,
+    "pnl_usd": -12.19,
+    "exit_time": "2026-09-10T12:33:12.388604Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.35,
+    "pnl_usd": -9.43,
+    "exit_time": "2026-09-10T12:31:58.824443Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -168,35 +198,5 @@
     "pnl_pct": 0.26,
     "pnl_usd": 6.97,
     "exit_time": "2026-09-08T18:49:28.436321Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": -1.02,
-    "pnl_usd": -10.59,
-    "exit_time": "2026-09-08T18:49:00.993477Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.44,
-    "pnl_usd": 4.57,
-    "exit_time": "2026-09-08T15:09:32.682035Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "LONG",
-    "pnl_pct": 0.4,
-    "pnl_usd": 2.64,
-    "exit_time": "2026-09-08T12:44:57.629781Z"
   }
 ]
