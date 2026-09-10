@@ -1251,6 +1251,18 @@
     {
       "time": "2026-09-10T12:00:41.254304Z",
       "cumulative_pnl": -1108.03
+    },
+    {
+      "time": "2026-09-10T12:31:58.824443Z",
+      "cumulative_pnl": -1117.45
+    },
+    {
+      "time": "2026-09-10T12:33:12.388604Z",
+      "cumulative_pnl": -1129.65
+    },
+    {
+      "time": "2026-09-10T12:36:52.522534Z",
+      "cumulative_pnl": -1137.04
     }
   ],
   "bots": [
@@ -1274,15 +1286,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 47,
+      "total_trades": 48,
       "wins": 19,
-      "losses": 28,
-      "win_rate": 40.42553191489361,
+      "losses": 29,
+      "win_rate": 39.58333333333333,
       "gross_profit": 252.97,
-      "gross_loss": -268.13,
-      "profit_factor": 0.94,
-      "avg_hold_minutes": 338.3,
-      "total_pnl": -15.16
+      "gross_loss": -277.56,
+      "profit_factor": 0.91,
+      "avg_hold_minutes": 332.0,
+      "total_pnl": -24.59
     },
     {
       "bot": "OLIVIA",
@@ -1319,15 +1331,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 10,
+      "total_trades": 11,
       "wins": 7,
-      "losses": 3,
-      "win_rate": 70.0,
+      "losses": 4,
+      "win_rate": 63.63636363636363,
       "gross_profit": 15.92,
-      "gross_loss": -23.64,
-      "profit_factor": 0.67,
-      "avg_hold_minutes": 123.1,
-      "total_pnl": -7.72
+      "gross_loss": -31.04,
+      "profit_factor": 0.51,
+      "avg_hold_minutes": 112.7,
+      "total_pnl": -15.12
     },
     {
       "bot": "SOLOMON",
@@ -1349,15 +1361,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 16,
+      "total_trades": 17,
       "wins": 12,
-      "losses": 4,
-      "win_rate": 75.0,
+      "losses": 5,
+      "win_rate": 70.58823529411765,
       "gross_profit": 68.18,
-      "gross_loss": -49.4,
-      "profit_factor": 1.38,
-      "avg_hold_minutes": 3372.3,
-      "total_pnl": 18.78
+      "gross_loss": -61.6,
+      "profit_factor": 1.11,
+      "avg_hold_minutes": 3433.4,
+      "total_pnl": 6.58
     },
     {
       "bot": "SPIKE",
@@ -1390,6 +1402,6 @@
       "total_pnl": -261.84
     }
   ],
-  "fleet_total_pnl": -1108.03,
-  "fleet_total_trades": 313
+  "fleet_total_pnl": -1137.04,
+  "fleet_total_trades": 316
 }
