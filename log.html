@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our Nasdaq bot's most confident trades were its worst ones</h2>
+      <div class="impact">The model's top confidence band accounted for the entire real loss</div>
+      <div class="body">
+        <p>A routine review flagged this bot as showing no clear edge in either direction — rather than stop there, we broke down every real trade by how confident the model was when it opened it. The split was clean and backwards from what you'd expect: trades opened below a certain confidence level made money; trades opened above it lost money, and lost enough to account for the entire real loss on this bot.</p>
+        <p>We tried to confirm this against months of historical data first, the way we normally do, and couldn't — the same offline-testing gap we found on our sugar bot the same day turned up here too, generating far fewer test trades than the bot actually takes live. That's now looking like one shared bug across several of our bots rather than two unrelated ones.</p>
+        <p><b>What we did anyway:</b> added a new kind of limit we've never used before — a confidence <em>ceiling</em> instead of the usual floor, blocking the bot's most-confident trades rather than requiring a minimum. Tested the logic in isolation first. It's a real but modest sample, and we're watching it rather than declaring it solved.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our offline testing tool for the sugar bot doesn't match what it actually does live — an honest gap, not yet closed</h2>
       <div class="impact">Every backtest number for this bot should be treated as unreliable until this is fixed</div>
       <div class="body">
