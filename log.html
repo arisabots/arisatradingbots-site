@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-10</div>
+      <h2>Our forex bot's own trade log was quietly dropping every stop-loss it hit</h2>
+      <div class="impact">32 real losing trades in a week never made it into our own records</div>
+      <div class="body">
+        <p>We compared our forex bot's own trade log against the broker's real transaction history directly, the same way we catch everything on this page. The two disagreed badly: our own log showed the account up for the week; the broker's own records showed it down. Digging in, 32 real trades from that week simply weren't in our log at all — and every single one of them was a stop-loss firing to cut a loss. Checking the bot's entire history, this has likely been happening quietly since it first went live: real protective stop-losses working exactly as intended, just never making it into our own bookkeeping.</p>
+        <p>We couldn't pin down the exact reason our real-time logging missed these specific closes in the time we had, so rather than leave it broken while we kept digging, we built something more durable: a background check that compares our own records against the broker's real ledger every 15 minutes and fills in anything missing, using the broker's own exact numbers, not an estimate. It doesn't matter why a trade goes missing in the future — this catches it either way.</p>
+        <p><b>Fix:</b> the 32 missing trades from the past week have been added back using the broker's real data. Our trade log's numbers now match the broker's own count and win rate exactly. A small residual difference remains in the total profit/loss figure, traced to older records with a smaller, separate rounding issue — flagged for a follow-up look, not something we're treating as solved just because the big piece is fixed.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-10</div>
       <h2>Our silver bot's stop-loss was wider than its own first profit target</h2>
       <div class="impact">Backtest-confirmed in both the full history and the recent window</div>
       <div class="body">
