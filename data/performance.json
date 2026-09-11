@@ -1275,6 +1275,10 @@
     {
       "time": "2026-09-11T07:29:27.499197Z",
       "cumulative_pnl": -1031.69
+    },
+    {
+      "time": "2026-09-11T12:30:55.289082Z",
+      "cumulative_pnl": -1029.05
     }
   ],
   "bots": [
@@ -1373,15 +1377,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 17,
-      "wins": 12,
+      "total_trades": 18,
+      "wins": 13,
       "losses": 5,
-      "win_rate": 70.58823529411765,
-      "gross_profit": 68.18,
+      "win_rate": 72.22222222222221,
+      "gross_profit": 70.82,
       "gross_loss": -61.6,
-      "profit_factor": 1.11,
-      "avg_hold_minutes": 3433.4,
-      "total_pnl": 6.58
+      "profit_factor": 1.15,
+      "avg_hold_minutes": 3322.1,
+      "total_pnl": 9.22
     },
     {
       "bot": "SPIKE",
@@ -1414,6 +1418,6 @@
       "total_pnl": -261.84
     }
   ],
-  "fleet_total_pnl": -1031.69,
-  "fleet_total_trades": 319
+  "fleet_total_pnl": -1029.05,
+  "fleet_total_trades": 320
 }
