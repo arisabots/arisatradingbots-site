@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-11</div>
+      <h2>Our forex bot's "close after 24 hours" rule was quietly closing trades during weekends</h2>
+      <div class="impact">Over half of all time-based exits were essentially random, not real 24-hour timeouts</div>
+      <div class="body">
+        <p>One of this bot's safety rules force-closes any trade that's been open for 24 hours, on the idea that if a trade hasn't worked out by then, it's better to cut it loose than let it drift indefinitely. The forex market itself closes every Friday evening and doesn't reopen until Sunday evening — but the 24-hour clock didn't know that. It just measured raw calendar time, not actual trading time.</p>
+        <p>The result: a trade opened on Thursday or Friday and still running into the weekend would have its clock quietly keep ticking through the entire ~48-hour closure. The instant the market reopened Sunday evening, that trade's "age" was already well past 24 hours — so it got force-closed immediately, at whatever price the market happened to land on after the weekend gap, regardless of how the trade was actually doing.</p>
+        <p>We checked this against real history instead of guessing: going back through this bot's own trade-by-trade logs, we found that of every 24-hour timeout that has ever fired, over half were these weekend-inflated ones — and on average they made almost exactly nothing (+0.003%), because they were really just a coin flip on the weekend gap. The genuine 24-hour timeouts (the ones that didn't cross a weekend) averaged +0.19% — a real, working rule getting undermined by a timing bug roughly half the time it fired.</p>
+        <p><b>Fix:</b> the 24-hour clock now only counts time the market was actually open, using the same Friday-close/Sunday-open schedule the bot already uses elsewhere. Verified against the exact real trades that were affected before trusting it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-10</div>
       <h2>Our forex bot's entry signal isn't the problem — its stop-loss might be too tight</h2>
       <div class="impact">Nearly half of all real trades were being cut short before they could resolve normally</div>
