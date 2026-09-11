@@ -141,6 +141,52 @@
 
     <div class="entry">
       <div class="date">2026-09-11</div>
+      <h2>A gold bot's own warning log turned out to be 98% noise</h2>
+      <div class="impact">250 of 256 "trade limit reached" warnings were misleading</div>
+      <div class="body">
+        <p>We noticed this bot's trades cluster heavily in the early hours of the day and rarely show up later — so we checked the real numbers. Over the last 45 days, 64% of all its trades happened in a single 6-hour window, and on most days it hit its daily trade limit before later hours even had a chance. That part was real.</p>
+        <p>But while digging into why, we found the bot's own "daily limit reached" warning log was mostly lying to us. The code checked the daily limit before checking whether the bot was just repeating a decision it had already made (like reaffirming a trade it was already holding) — so every time it simply confirmed an existing position, that got logged as if a brand new opportunity had been blocked. In one real sample of 256 such warnings, 250 of them were this false alarm. Only 6 were genuine.</p>
+        <p>We also checked whether the early-hours clustering is a real edge worth keeping — pulling fresh real price data and comparing volatility by hour. It isn't: the quietest trading hours are exactly when this bot trades most, and the busiest, most opportunity-rich hours are when it trades least.</p>
+        <p><b>Fix:</b> reordered the checks so the warning log only fires for genuine blocked opportunities, not routine reaffirmations. Also raised the daily trade limit to give the bot real room to act later in the day, since some days already showed it wanting to keep trading past the old limit. No change to the bot's actual trading logic — only to what gets logged and how much room it has.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-11</div>
+      <h2>A routine restart nearly cost our forex bot its best-performing pairs</h2>
+      <div class="impact">7 of 8 top-performing pairs dropped out with zero errors logged</div>
+      <div class="body">
+        <p>After a planned restart, only one of this bot's eight best-performing currency pairs was still marked as "selected" for trading — the other seven, each with a long real track record, simply weren't in the list anymore. Nothing crashed, nothing logged an error; they just weren't there.</p>
+        <p>The real cause: the system that ranks pairs by real performance was reading from a working log file that gets automatically rotated (trimmed down) once it grows past a certain size — far more often than the 30-day performance window it was supposed to be judging pairs against. Right after the restart, that file only had a few hours of history in it, nowhere near enough to fairly judge seven pairs with months of real, solid results.</p>
+        <p><b>Fixed</b> by pointing that ranking system at our durable, non-rotating trade record instead, so a routine file cleanup can never again wipe out months of real performance history from consideration.</p>
+        <p>Separately, while investigating this, we found our own durable trade record itself had gone missing — months of real trade history, gone, with no trace of what happened to it in any of our own code, logs, or system history. We couldn't find the cause. What we could do: rebuild it directly from the broker's own official record, which is the real source of truth anyway. We recovered 1,296 real trades this way, and fixed our safety-net process so it now keeps both records in sync going forward, regardless of what caused this.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-11</div>
+      <h2>Our forex bot's social-sentiment feed came back online — we chose not to rush it into a live decision</h2>
+      <div class="impact">Real signal restored; kept it out of live trading until it earns that trust</div>
+      <div class="body">
+        <p>This bot has a feature that reads public social sentiment as one input among several. It had gone quiet for over two months due to a lapsed subscription. That's now resolved, and real data is flowing again — we also trimmed how often it checks in, so the same subscription lasts longer.</p>
+        <p>The bigger question this raised: could we use this restored feed to make the bot's more advanced (AI-trained) decision-making actually sentiment-aware? Looking into it honestly, the answer is not yet. That AI model has never been trained on real sentiment data — the feed's outage means there's no real history to learn from, and getting it back today doesn't create history that never existed.</p>
+        <p>Rather than force a decision-making change on an untested foundation, we're doing the patient thing: quietly building a real, growing history of this data now, so that in a few weeks there's enough evidence to properly evaluate whether it actually helps — before it ever gets anywhere near a live decision.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-11</div>
+      <h2>Seven tradeable currency pairs had been quietly switched off, with no record of why</h2>
+      <div class="impact">Every one of the seven had a strong real track record before being switched off</div>
+      <div class="body">
+        <p>Reviewing this bot's configuration, we found seven currency pairs manually excluded from trading — all switched off within the same 24-hour window months ago, with no note anywhere explaining the decision. Checking their real historical performance before that point: every single one had been a strong, profitable performer. Nothing in the data justified leaving them off.</p>
+        <p>Turning them back on wasn't as simple as flipping a switch, though. The system that ranks and picks which pairs actually get to trade only considers pairs that already have recent trades to judge — and a pair that's been switched off for months has none. So switching one back on wouldn't do anything: it can't get picked without recent trades, and it can't get recent trades without being picked.</p>
+        <p><b>Fix:</b> built a bounded trial system. Re-enabled pairs now get a fixed, limited window — a capped number of trades or days, whichever comes first — at reduced size while they rebuild a track record. Once that window closes, they compete for a permanent slot on the exact same real performance ranking as every other pair, and can lose that slot again if they don't perform. All seven pairs are now back in this trial.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-11</div>
       <h2>Our forex bot's "close after 24 hours" rule was quietly closing trades during weekends</h2>
       <div class="impact">Over half of all time-based exits were essentially random, not real 24-hour timeouts</div>
       <div class="body">
