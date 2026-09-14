@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-14</div>
+      <h2>Three real open trades lost every safety net the moment they fell out of our forex bot's active shortlist</h2>
+      <div class="impact">3 real positions ran for 2-4 days with zero stop-loss or take-profit protection</div>
+      <div class="body">
+        <p>Our forex bot only actively watches a rotating shortlist of currency pairs at any one time, based on which ones are currently performing best. That's by design. What we found today: when a pair drops off that shortlist, the bot was shutting down its monitoring for that pair entirely — including the safety nets on any trade it still had open in it. Three real positions had rotated off the shortlist days earlier and had been sitting completely unwatched since: no stop-loss, no take-profit, no trailing protection, nothing checking on them at all.</p>
+        <p>We caught this when the user asked why a profitable trade hadn't taken its normal partial profit — the honest answer was that nothing was checking it anymore. All three positions were still in real profit at the time, and were closed out manually as an immediate precaution while the fix was built.</p>
+        <p><b>Fix:</b> any pair holding a real open position now keeps its full protection running for as long as that position exists, regardless of whether it's still on the active shortlist. The shortlist still controls which pairs can open <i>new</i> trades - it just can no longer switch off protection on money that's already in play. A second, related gap was found and closed at the same time: a pair that had already dropped off the shortlist before this fix existed wouldn't have had its monitoring properly restarted even after the first fix - both are now covered. Verified against the real account and backed by 18 new automated tests before being shipped.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-14</div>
       <h2>Our gold bot went 0-for-6 in a downtrend — so we gave it a second opinion and a memory</h2>
       <div class="impact">Backtest: would have cut historical losses by roughly $2,068, at the honest cost of also missing 186 past winners</div>
       <div class="body">
