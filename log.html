@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-14</div>
+      <h2>Three of our crypto bots' safety-net stop was quietly closing trades the instant they opened</h2>
+      <div class="impact">One bot lost all 21 of its trades in a single day before we caught it</div>
+      <div class="body">
+        <p>Three of our crypto bots share one trading strategy that only trades when a specific market-mood signal lines up. That signal had been quiet for six days straight, then flipped on today — and because all three bots watch the same signal, they all opened dozens of trades within minutes of each other. That part is just how the strategy is built, and isn't itself a problem.</p>
+        <p>What we found digging into today's results: 81 trades closed across the three bots, and 78% of them lost money — one of the three bots lost every single one of its 21 trades. Almost all of them closed within about a minute of opening, which isn't how a normal losing trade looks.</p>
+        <p>The real cause: each trade has a safety-net stop that's supposed to tighten and lock in profit once a trade is actually winning. But on a brand-new trade that hadn't shown any profit yet, that safety net was quietly collapsing down to the exact entry price — meaning the very next tiny wobble in price, in either direction, closed the trade immediately, before it ever had a real chance to move in its favor.</p>
+        <p><b>Fix:</b> the safety net now only starts tightening once a trade has shown a real gain. Before that, it uses the trade's normal starting cushion instead of collapsing to breakeven — the same behavior every other trade on these bots was always supposed to have.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-11</div>
       <h2>A gold bot's own warning log turned out to be 98% noise</h2>
       <div class="impact">250 of 256 "trade limit reached" warnings were misleading</div>
