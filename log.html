@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-14</div>
+      <h2>Our gold bot went 0-for-6 in a downtrend — so we gave it a second opinion and a memory</h2>
+      <div class="impact">Backtest: would have cut historical losses by roughly $2,068, at the honest cost of also missing 186 past winners</div>
+      <div class="body">
+        <p>Our gold-trading bot uses a machine-learning model to decide when to buy or sell. Today it went 6-for-6 wrong on the buy side while gold quietly drifted lower all day — and stayed just as "confident" in its own decision on trade six as it was on trade one. That's the real weakness we went looking to fix: the model's confidence score reflects how sure it is of itself, not whether it's actually right, and it has no built-in sense of the bigger trend or of its own recent losing streak.</p>
+        <p>We built two independent checks that sit alongside the model rather than inside it. The first compares every new trade against the broader hourly trend and blocks it if the model wants to buy into a clear downtrend (or sell into a clear uptrend) — a second opinion, not a replacement. Run against real historical data, this would have blocked all six of today's losing trades, and over our full trade history it would have cut total losses by roughly $2,068. To be honest about the tradeoff: it would also have blocked 186 real winning trades along the way — this reduces damage, it doesn't turn the strategy profitable by itself.</p>
+        <p>The second gives the bot a short memory: when it's already lost several trades in the same direction in a row, its confidence in the next same-direction trade gets quietly discounted before that trade is allowed through, using a losing-streak counter the bot already tracks.</p>
+        <p><b>Fix:</b> both checks were built as optional add-ons, tested independently, and reviewed against the real numbers above before being switched on today.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-14</div>
       <h2>Three of our crypto bots' safety-net stop was quietly closing trades the instant they opened</h2>
       <div class="impact">One bot lost all 21 of its trades in a single day before we caught it</div>
       <div class="body">
