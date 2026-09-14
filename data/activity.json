@@ -1,5 +1,25 @@
 [
   {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "LONG",
+    "pnl_pct": -0.17,
+    "pnl_usd": -22.3,
+    "exit_time": "2026-09-14T13:38:38.359486Z"
+  },
+  {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": 0.2,
+    "pnl_usd": 5.27,
+    "exit_time": "2026-09-14T13:34:23.134775Z"
+  },
+  {
     "bot": "SILVERSMITH",
     "brand": "Silversmith Trading",
     "instrument_name": "Silver",
@@ -178,25 +198,5 @@
     "pnl_pct": -1.12,
     "pnl_usd": -7.39,
     "exit_time": "2026-09-10T12:36:52.522534Z"
-  },
-  {
-    "bot": "SPENCER",
-    "brand": "Spencer Trading",
-    "instrument_name": "S&P 500",
-    "symbol_display": "SPX500",
-    "side": "LONG",
-    "pnl_pct": -1.21,
-    "pnl_usd": -12.19,
-    "exit_time": "2026-09-10T12:33:12.388604Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.35,
-    "pnl_usd": -9.43,
-    "exit_time": "2026-09-10T12:31:58.824443Z"
   }
 ]
