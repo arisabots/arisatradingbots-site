@@ -1,1336 +1,1324 @@
 {
   "equity_curve": [
     {
-      "time": "2026-07-20T07:43:42.377088Z",
-      "cumulative_pnl": -0.87
-    },
-    {
       "time": "2026-07-20T12:00:35.286885Z",
-      "cumulative_pnl": -0.37
+      "cumulative_pnl": 0.5
     },
     {
       "time": "2026-07-21T02:36:33.559015Z",
-      "cumulative_pnl": -8.96
+      "cumulative_pnl": -8.09
     },
     {
       "time": "2026-07-21T03:02:14.152982Z",
-      "cumulative_pnl": -8.95
+      "cumulative_pnl": -8.08
     },
     {
       "time": "2026-07-21T09:51:48.622710Z",
-      "cumulative_pnl": -3.76
+      "cumulative_pnl": -2.89
     },
     {
       "time": "2026-07-21T20:34:27.860549Z",
-      "cumulative_pnl": -2.3
+      "cumulative_pnl": -1.43
     },
     {
       "time": "2026-07-22T07:09:07.357520Z",
-      "cumulative_pnl": -13.06
+      "cumulative_pnl": -12.19
     },
     {
       "time": "2026-07-22T09:16:19.489874Z",
-      "cumulative_pnl": -23.59
+      "cumulative_pnl": -22.72
     },
     {
       "time": "2026-07-22T11:43:13.426692Z",
-      "cumulative_pnl": -14.81
+      "cumulative_pnl": -13.94
     },
     {
       "time": "2026-07-22T13:47:08.317918Z",
-      "cumulative_pnl": -13.48
+      "cumulative_pnl": -12.61
     },
     {
       "time": "2026-07-22T13:59:32.978408Z",
-      "cumulative_pnl": -21.59
+      "cumulative_pnl": -20.72
     },
     {
       "time": "2026-07-22T20:42:49.252494Z",
-      "cumulative_pnl": -20.07
+      "cumulative_pnl": -19.2
     },
     {
       "time": "2026-07-23T06:03:52.929248Z",
-      "cumulative_pnl": -16.0
+      "cumulative_pnl": -15.13
     },
     {
       "time": "2026-07-23T20:15:55.774717Z",
-      "cumulative_pnl": -26.66
+      "cumulative_pnl": -25.79
     },
     {
       "time": "2026-07-24T03:23:04.910566Z",
-      "cumulative_pnl": -25.72
+      "cumulative_pnl": -24.85
     },
     {
       "time": "2026-07-24T08:50:27.442324Z",
-      "cumulative_pnl": -36.38
+      "cumulative_pnl": -35.51
     },
     {
       "time": "2026-07-24T13:51:58.964969Z",
-      "cumulative_pnl": -31.79
+      "cumulative_pnl": -30.92
     },
     {
       "time": "2026-07-24T17:07:35.389395Z",
-      "cumulative_pnl": -28.08
+      "cumulative_pnl": -27.21
     },
     {
       "time": "2026-07-24T17:27:28.399142Z",
-      "cumulative_pnl": -26.22
+      "cumulative_pnl": -25.35
     },
     {
       "time": "2026-07-27T06:35:56.881331Z",
-      "cumulative_pnl": -24.53
+      "cumulative_pnl": -23.66
     },
     {
       "time": "2026-07-27T07:59:15.668124Z",
-      "cumulative_pnl": -25.12
+      "cumulative_pnl": -24.25
     },
     {
       "time": "2026-07-27T09:11:20.829859Z",
-      "cumulative_pnl": -23.55
+      "cumulative_pnl": -22.68
     },
     {
       "time": "2026-07-27T10:23:30.300214Z",
-      "cumulative_pnl": -22.34
+      "cumulative_pnl": -21.47
     },
     {
       "time": "2026-07-27T13:57:45.641741Z",
-      "cumulative_pnl": -15.8
+      "cumulative_pnl": -14.93
     },
     {
       "time": "2026-07-28T07:15:23.286761Z",
-      "cumulative_pnl": -7.74
+      "cumulative_pnl": -6.87
     },
     {
       "time": "2026-07-28T13:32:45.856635Z",
-      "cumulative_pnl": -0.93
+      "cumulative_pnl": -0.06
     },
     {
       "time": "2026-07-28T13:43:46.922944Z",
-      "cumulative_pnl": -10.06
+      "cumulative_pnl": -9.19
     },
     {
       "time": "2026-07-28T15:33:20.747229Z",
-      "cumulative_pnl": -19.8
+      "cumulative_pnl": -18.93
     },
     {
       "time": "2026-07-28T18:22:15.452817Z",
-      "cumulative_pnl": -10.56
+      "cumulative_pnl": -9.69
     },
     {
       "time": "2026-07-28T20:07:58.886601Z",
-      "cumulative_pnl": -7.57
+      "cumulative_pnl": -6.7
     },
     {
       "time": "2026-07-28T22:20:36.830783Z",
-      "cumulative_pnl": 1.15
+      "cumulative_pnl": 2.02
     },
     {
       "time": "2026-07-28T23:00:44.812346Z",
-      "cumulative_pnl": -8.96
+      "cumulative_pnl": -8.09
     },
     {
       "time": "2026-07-29T08:44:57.696815Z",
-      "cumulative_pnl": -44.9
+      "cumulative_pnl": -44.03
     },
     {
       "time": "2026-07-29T13:51:20.209773Z",
-      "cumulative_pnl": -55.27
+      "cumulative_pnl": -54.4
     },
     {
       "time": "2026-07-29T13:53:20.621551Z",
-      "cumulative_pnl": -66.74
+      "cumulative_pnl": -65.87
     },
     {
       "time": "2026-07-29T14:12:03.544478Z",
-      "cumulative_pnl": -50.86
+      "cumulative_pnl": -49.99
     },
     {
       "time": "2026-07-29T14:41:01.199774Z",
-      "cumulative_pnl": -91.83
+      "cumulative_pnl": -90.96
     },
     {
       "time": "2026-07-29T16:04:28.325874Z",
-      "cumulative_pnl": -103.89
+      "cumulative_pnl": -103.02
     },
     {
       "time": "2026-07-29T16:15:18.469235Z",
-      "cumulative_pnl": -145.8
+      "cumulative_pnl": -144.93
     },
     {
       "time": "2026-07-29T19:38:27.982061Z",
-      "cumulative_pnl": -155.39
+      "cumulative_pnl": -154.52
     },
     {
       "time": "2026-07-29T20:10:00.646307Z",
-      "cumulative_pnl": -168.14
+      "cumulative_pnl": -167.27
     },
     {
       "time": "2026-07-30T00:16:45.597683Z",
-      "cumulative_pnl": -220.19
+      "cumulative_pnl": -219.32
     },
     {
       "time": "2026-07-30T05:32:21.138877Z",
-      "cumulative_pnl": -231.37
+      "cumulative_pnl": -230.5
     },
     {
       "time": "2026-07-30T14:20:47.254298Z",
-      "cumulative_pnl": -215.38
+      "cumulative_pnl": -214.51
     },
     {
       "time": "2026-07-30T15:10:30.672897Z",
-      "cumulative_pnl": -203.93
+      "cumulative_pnl": -203.06
     },
     {
       "time": "2026-07-30T16:41:08.387277Z",
-      "cumulative_pnl": -198.34
+      "cumulative_pnl": -197.47
     },
     {
       "time": "2026-07-31T03:11:23.800499Z",
-      "cumulative_pnl": -193.96
+      "cumulative_pnl": -193.09
     },
     {
       "time": "2026-07-31T06:45:20.355203Z",
-      "cumulative_pnl": -193.23
+      "cumulative_pnl": -192.36
     },
     {
       "time": "2026-07-31T08:52:15.167313Z",
-      "cumulative_pnl": -188.87
+      "cumulative_pnl": -188.0
     },
     {
       "time": "2026-07-31T13:06:54.370102Z",
-      "cumulative_pnl": -185.19
+      "cumulative_pnl": -184.32
     },
     {
       "time": "2026-07-31T13:39:02.394995Z",
-      "cumulative_pnl": -176.2
+      "cumulative_pnl": -175.33
     },
     {
       "time": "2026-07-31T13:50:33.086288Z",
-      "cumulative_pnl": -155.35
+      "cumulative_pnl": -154.48
     },
     {
       "time": "2026-07-31T13:51:08.243185Z",
-      "cumulative_pnl": -188.71
+      "cumulative_pnl": -187.84
     },
     {
       "time": "2026-07-31T13:54:19.282874Z",
-      "cumulative_pnl": -198.49
-    },
-    {
-      "time": "2026-07-31T14:02:51.230640Z",
-      "cumulative_pnl": -189.86
-    },
-    {
-      "time": "2026-07-31T14:04:42.132576Z",
-      "cumulative_pnl": -231.36
-    },
-    {
-      "time": "2026-07-31T14:11:32.640623Z",
-      "cumulative_pnl": -225.02
-    },
-    {
-      "time": "2026-07-31T15:22:06.071618Z",
-      "cumulative_pnl": -219.04
-    },
-    {
-      "time": "2026-08-03T07:38:09.997738Z",
-      "cumulative_pnl": -214.9
-    },
-    {
-      "time": "2026-08-03T08:06:15.497556Z",
-      "cumulative_pnl": -249.65
-    },
-    {
-      "time": "2026-08-03T08:24:33.226480Z",
-      "cumulative_pnl": -258.93
-    },
-    {
-      "time": "2026-08-03T13:30:49.628046Z",
-      "cumulative_pnl": -268.29
-    },
-    {
-      "time": "2026-08-04T10:14:24.290918Z",
-      "cumulative_pnl": -266.59
-    },
-    {
-      "time": "2026-08-04T11:43:46.858071Z",
-      "cumulative_pnl": -257.34
-    },
-    {
-      "time": "2026-08-04T11:43:48.887005Z",
-      "cumulative_pnl": -268.42
-    },
-    {
-      "time": "2026-08-04T13:28:27.571382Z",
-      "cumulative_pnl": -210.26
-    },
-    {
-      "time": "2026-08-04T13:33:48.834516Z",
-      "cumulative_pnl": -144.23
-    },
-    {
-      "time": "2026-08-04T14:16:11.842872Z",
-      "cumulative_pnl": -121.58
-    },
-    {
-      "time": "2026-08-04T14:38:37.510936Z",
-      "cumulative_pnl": -120.55
-    },
-    {
-      "time": "2026-08-04T15:39:42.431939Z",
-      "cumulative_pnl": -172.73
-    },
-    {
-      "time": "2026-08-04T17:11:08.961021Z",
-      "cumulative_pnl": -168.2
-    },
-    {
-      "time": "2026-08-05T02:33:59.512669Z",
-      "cumulative_pnl": -178.74
-    },
-    {
-      "time": "2026-08-05T06:13:21.888454Z",
-      "cumulative_pnl": -174.78
-    },
-    {
-      "time": "2026-08-05T07:48:26.832358Z",
-      "cumulative_pnl": -172.93
-    },
-    {
-      "time": "2026-08-05T14:02:45.366919Z",
-      "cumulative_pnl": -163.24
-    },
-    {
-      "time": "2026-08-06T01:26:04.390065Z",
-      "cumulative_pnl": -173.14
-    },
-    {
-      "time": "2026-08-06T07:11:00.958237Z",
-      "cumulative_pnl": -172.74
-    },
-    {
-      "time": "2026-08-06T09:01:50.150811Z",
-      "cumulative_pnl": -156.79
-    },
-    {
-      "time": "2026-08-06T13:06:39.066351Z",
-      "cumulative_pnl": -167.15
-    },
-    {
-      "time": "2026-08-06T13:32:38.037413Z",
-      "cumulative_pnl": -176.58
-    },
-    {
-      "time": "2026-08-06T14:46:44.121144Z",
-      "cumulative_pnl": -150.44
-    },
-    {
-      "time": "2026-08-06T14:46:59.659665Z",
-      "cumulative_pnl": -144.39
-    },
-    {
-      "time": "2026-08-06T15:00:11.859341Z",
-      "cumulative_pnl": -180.01
-    },
-    {
-      "time": "2026-08-06T15:21:38.422798Z",
-      "cumulative_pnl": -211.52
-    },
-    {
-      "time": "2026-08-06T16:02:19.626593Z",
-      "cumulative_pnl": -210.73
-    },
-    {
-      "time": "2026-08-06T20:08:05.675478Z",
-      "cumulative_pnl": -207.11
-    },
-    {
-      "time": "2026-08-07T07:34:04.150622Z",
-      "cumulative_pnl": -229.27
-    },
-    {
-      "time": "2026-08-07T09:43:15.804373Z",
-      "cumulative_pnl": -215.76
-    },
-    {
-      "time": "2026-08-07T11:52:24.700300Z",
-      "cumulative_pnl": -204.58
-    },
-    {
-      "time": "2026-08-07T12:14:47.493146Z",
-      "cumulative_pnl": -237.24
-    },
-    {
-      "time": "2026-08-07T12:57:35.968765Z",
-      "cumulative_pnl": -222.36
-    },
-    {
-      "time": "2026-08-07T13:12:26.071571Z",
-      "cumulative_pnl": -218.91
-    },
-    {
-      "time": "2026-08-07T13:30:10.238036Z",
-      "cumulative_pnl": -199.32
-    },
-    {
-      "time": "2026-08-07T14:24:35.438955Z",
       "cumulative_pnl": -197.62
     },
     {
+      "time": "2026-07-31T14:02:51.230640Z",
+      "cumulative_pnl": -188.99
+    },
+    {
+      "time": "2026-07-31T14:04:42.132576Z",
+      "cumulative_pnl": -230.49
+    },
+    {
+      "time": "2026-07-31T14:11:32.640623Z",
+      "cumulative_pnl": -224.15
+    },
+    {
+      "time": "2026-07-31T15:22:06.071618Z",
+      "cumulative_pnl": -218.17
+    },
+    {
+      "time": "2026-08-03T07:38:09.997738Z",
+      "cumulative_pnl": -214.03
+    },
+    {
+      "time": "2026-08-03T08:06:15.497556Z",
+      "cumulative_pnl": -248.78
+    },
+    {
+      "time": "2026-08-03T08:24:33.226480Z",
+      "cumulative_pnl": -258.06
+    },
+    {
+      "time": "2026-08-03T13:30:49.628046Z",
+      "cumulative_pnl": -267.42
+    },
+    {
+      "time": "2026-08-04T10:14:24.290918Z",
+      "cumulative_pnl": -265.72
+    },
+    {
+      "time": "2026-08-04T11:43:46.858071Z",
+      "cumulative_pnl": -256.47
+    },
+    {
+      "time": "2026-08-04T11:43:48.887005Z",
+      "cumulative_pnl": -267.55
+    },
+    {
+      "time": "2026-08-04T13:28:27.571382Z",
+      "cumulative_pnl": -209.39
+    },
+    {
+      "time": "2026-08-04T13:33:48.834516Z",
+      "cumulative_pnl": -143.36
+    },
+    {
+      "time": "2026-08-04T14:16:11.842872Z",
+      "cumulative_pnl": -120.71
+    },
+    {
+      "time": "2026-08-04T14:38:37.510936Z",
+      "cumulative_pnl": -119.68
+    },
+    {
+      "time": "2026-08-04T15:39:42.431939Z",
+      "cumulative_pnl": -171.86
+    },
+    {
+      "time": "2026-08-04T17:11:08.961021Z",
+      "cumulative_pnl": -167.33
+    },
+    {
+      "time": "2026-08-05T02:33:59.512669Z",
+      "cumulative_pnl": -177.87
+    },
+    {
+      "time": "2026-08-05T06:13:21.888454Z",
+      "cumulative_pnl": -173.91
+    },
+    {
+      "time": "2026-08-05T07:48:26.832358Z",
+      "cumulative_pnl": -172.06
+    },
+    {
+      "time": "2026-08-05T14:02:45.366919Z",
+      "cumulative_pnl": -162.37
+    },
+    {
+      "time": "2026-08-06T01:26:04.390065Z",
+      "cumulative_pnl": -172.27
+    },
+    {
+      "time": "2026-08-06T07:11:00.958237Z",
+      "cumulative_pnl": -171.87
+    },
+    {
+      "time": "2026-08-06T09:01:50.150811Z",
+      "cumulative_pnl": -155.92
+    },
+    {
+      "time": "2026-08-06T13:06:39.066351Z",
+      "cumulative_pnl": -166.28
+    },
+    {
+      "time": "2026-08-06T13:32:38.037413Z",
+      "cumulative_pnl": -175.71
+    },
+    {
+      "time": "2026-08-06T14:46:44.121144Z",
+      "cumulative_pnl": -149.57
+    },
+    {
+      "time": "2026-08-06T14:46:59.659665Z",
+      "cumulative_pnl": -143.52
+    },
+    {
+      "time": "2026-08-06T15:00:11.859341Z",
+      "cumulative_pnl": -179.14
+    },
+    {
+      "time": "2026-08-06T15:21:38.422798Z",
+      "cumulative_pnl": -210.65
+    },
+    {
+      "time": "2026-08-06T16:02:19.626593Z",
+      "cumulative_pnl": -209.86
+    },
+    {
+      "time": "2026-08-06T20:08:05.675478Z",
+      "cumulative_pnl": -206.24
+    },
+    {
+      "time": "2026-08-07T07:34:04.150622Z",
+      "cumulative_pnl": -228.4
+    },
+    {
+      "time": "2026-08-07T09:43:15.804373Z",
+      "cumulative_pnl": -214.89
+    },
+    {
+      "time": "2026-08-07T11:52:24.700300Z",
+      "cumulative_pnl": -203.71
+    },
+    {
+      "time": "2026-08-07T12:14:47.493146Z",
+      "cumulative_pnl": -236.37
+    },
+    {
+      "time": "2026-08-07T12:57:35.968765Z",
+      "cumulative_pnl": -221.49
+    },
+    {
+      "time": "2026-08-07T13:12:26.071571Z",
+      "cumulative_pnl": -218.04
+    },
+    {
+      "time": "2026-08-07T13:30:10.238036Z",
+      "cumulative_pnl": -198.45
+    },
+    {
+      "time": "2026-08-07T14:24:35.438955Z",
+      "cumulative_pnl": -196.75
+    },
+    {
       "time": "2026-08-07T15:50:03.875242Z",
-      "cumulative_pnl": -196.57
+      "cumulative_pnl": -195.7
     },
     {
       "time": "2026-08-07T19:29:18.933628Z",
-      "cumulative_pnl": -162.54
+      "cumulative_pnl": -161.67
     },
     {
       "time": "2026-08-10T00:01:05.143177Z",
-      "cumulative_pnl": -165.1
+      "cumulative_pnl": -164.23
     },
     {
       "time": "2026-08-10T06:10:48.069829Z",
-      "cumulative_pnl": -163.8
+      "cumulative_pnl": -162.93
     },
     {
       "time": "2026-08-10T07:40:16.676883Z",
-      "cumulative_pnl": -160.93
+      "cumulative_pnl": -160.06
     },
     {
       "time": "2026-08-10T10:25:58.406292Z",
-      "cumulative_pnl": -159.07
+      "cumulative_pnl": -158.2
     },
     {
       "time": "2026-08-10T12:53:22.910557Z",
-      "cumulative_pnl": -168.76
+      "cumulative_pnl": -167.89
     },
     {
       "time": "2026-08-10T15:05:25.715310Z",
-      "cumulative_pnl": -179.88
+      "cumulative_pnl": -179.01
     },
     {
       "time": "2026-08-11T06:44:13.739097Z",
-      "cumulative_pnl": -190.28
+      "cumulative_pnl": -189.41
     },
     {
       "time": "2026-08-11T11:36:21.852504Z",
-      "cumulative_pnl": -188.96
+      "cumulative_pnl": -188.09
     },
     {
       "time": "2026-08-11T13:36:22.058264Z",
-      "cumulative_pnl": -198.89
+      "cumulative_pnl": -198.02
     },
     {
       "time": "2026-08-11T16:13:28.339716Z",
-      "cumulative_pnl": -198.4
+      "cumulative_pnl": -197.53
     },
     {
       "time": "2026-08-11T17:12:15.854599Z",
-      "cumulative_pnl": -207.76
+      "cumulative_pnl": -206.89
     },
     {
       "time": "2026-08-12T07:46:55.335846Z",
-      "cumulative_pnl": -242.29
+      "cumulative_pnl": -241.42
     },
     {
       "time": "2026-08-12T13:59:59.028375Z",
-      "cumulative_pnl": -231.39
+      "cumulative_pnl": -230.52
     },
     {
       "time": "2026-08-12T15:07:22.412931Z",
-      "cumulative_pnl": -211.77
+      "cumulative_pnl": -210.9
     },
     {
       "time": "2026-08-12T16:28:45.427817Z",
-      "cumulative_pnl": -245.85
+      "cumulative_pnl": -244.98
     },
     {
       "time": "2026-08-13T01:56:26.560826Z",
-      "cumulative_pnl": -238.43
+      "cumulative_pnl": -237.56
     },
     {
       "time": "2026-08-13T09:14:17.837094Z",
-      "cumulative_pnl": -249.0
+      "cumulative_pnl": -248.13
     },
     {
       "time": "2026-08-13T15:15:59.928737Z",
-      "cumulative_pnl": -234.69
+      "cumulative_pnl": -233.82
     },
     {
       "time": "2026-08-13T15:18:45.169226Z",
-      "cumulative_pnl": -231.66
+      "cumulative_pnl": -230.79
     },
     {
       "time": "2026-08-13T17:11:15.104521Z",
-      "cumulative_pnl": -229.93
+      "cumulative_pnl": -229.06
     },
     {
       "time": "2026-08-14T08:31:46.947200Z",
-      "cumulative_pnl": -198.11
+      "cumulative_pnl": -197.24
     },
     {
       "time": "2026-08-14T08:38:53.284894Z",
-      "cumulative_pnl": -189.9
+      "cumulative_pnl": -189.03
     },
     {
       "time": "2026-08-14T09:59:09.752731Z",
-      "cumulative_pnl": -183.43
+      "cumulative_pnl": -182.56
     },
     {
       "time": "2026-08-14T14:07:27.707558Z",
-      "cumulative_pnl": -175.95
+      "cumulative_pnl": -175.08
     },
     {
       "time": "2026-08-14T15:52:02.531893Z",
-      "cumulative_pnl": -185.7
+      "cumulative_pnl": -184.83
     },
     {
       "time": "2026-08-17T01:21:57.045897Z",
-      "cumulative_pnl": -180.16
-    },
-    {
-      "time": "2026-08-17T07:30:44.202958Z",
-      "cumulative_pnl": -169.37
-    },
-    {
-      "time": "2026-08-17T07:54:19.558420Z",
-      "cumulative_pnl": -155.39
+      "cumulative_pnl": -179.29
     },
     {
       "time": "2026-08-17T17:13:51.070608Z",
-      "cumulative_pnl": -165.31
+      "cumulative_pnl": -189.21
     },
     {
       "time": "2026-08-17T17:38:18.365420Z",
-      "cumulative_pnl": -175.77
+      "cumulative_pnl": -199.67
     },
     {
       "time": "2026-08-18T01:14:30.536107Z",
-      "cumulative_pnl": -153.51
+      "cumulative_pnl": -177.41
     },
     {
       "time": "2026-08-18T02:16:53.488600Z",
-      "cumulative_pnl": -163.3
+      "cumulative_pnl": -187.2
     },
     {
       "time": "2026-08-18T03:17:41.473742Z",
-      "cumulative_pnl": -184.28
+      "cumulative_pnl": -208.18
     },
     {
       "time": "2026-08-18T05:31:32.950779Z",
-      "cumulative_pnl": -206.3
+      "cumulative_pnl": -230.2
     },
     {
       "time": "2026-08-18T05:31:35.034634Z",
-      "cumulative_pnl": -213.24
+      "cumulative_pnl": -237.14
     },
     {
       "time": "2026-08-18T07:59:48.055604Z",
-      "cumulative_pnl": -225.65
+      "cumulative_pnl": -249.55
     },
     {
       "time": "2026-08-18T08:09:47.298577Z",
-      "cumulative_pnl": -224.33
+      "cumulative_pnl": -248.23
     },
     {
       "time": "2026-08-18T08:11:39.205905Z",
-      "cumulative_pnl": -245.03
+      "cumulative_pnl": -268.93
     },
     {
       "time": "2026-08-18T09:41:57.124981Z",
-      "cumulative_pnl": -254.49
+      "cumulative_pnl": -278.39
     },
     {
       "time": "2026-08-18T13:13:15.088300Z",
-      "cumulative_pnl": -278.69
+      "cumulative_pnl": -302.59
     },
     {
       "time": "2026-08-18T13:30:54.193088Z",
-      "cumulative_pnl": -320.07
+      "cumulative_pnl": -343.97
     },
     {
       "time": "2026-08-18T17:30:51.542832Z",
-      "cumulative_pnl": -340.39
+      "cumulative_pnl": -364.29
     },
     {
       "time": "2026-08-18T22:05:25.543603Z",
-      "cumulative_pnl": -299.48
+      "cumulative_pnl": -323.38
     },
     {
       "time": "2026-08-18T23:25:09.061882Z",
-      "cumulative_pnl": -320.9
+      "cumulative_pnl": -344.8
     },
     {
       "time": "2026-08-19T00:56:17.944967Z",
-      "cumulative_pnl": -341.6
+      "cumulative_pnl": -365.5
     },
     {
       "time": "2026-08-19T04:39:03.833366Z",
-      "cumulative_pnl": -362.95
+      "cumulative_pnl": -386.85
     },
     {
       "time": "2026-08-19T07:03:53.768503Z",
-      "cumulative_pnl": -360.63
+      "cumulative_pnl": -384.53
     },
     {
       "time": "2026-08-19T07:43:33.715178Z",
-      "cumulative_pnl": -319.01
+      "cumulative_pnl": -342.91
     },
     {
       "time": "2026-08-19T08:34:51.765994Z",
-      "cumulative_pnl": -303.08
+      "cumulative_pnl": -326.98
     },
     {
       "time": "2026-08-19T09:39:50.638202Z",
-      "cumulative_pnl": -301.74
+      "cumulative_pnl": -325.64
     },
     {
       "time": "2026-08-19T11:41:45.706018Z",
-      "cumulative_pnl": -277.99
+      "cumulative_pnl": -301.89
     },
     {
       "time": "2026-08-19T13:32:04.362948Z",
-      "cumulative_pnl": -260.08
+      "cumulative_pnl": -283.98
     },
     {
       "time": "2026-08-19T13:37:57.467061Z",
-      "cumulative_pnl": -251.65
+      "cumulative_pnl": -275.55
     },
     {
       "time": "2026-08-19T13:50:07.587246Z",
-      "cumulative_pnl": -248.98
+      "cumulative_pnl": -272.88
     },
     {
       "time": "2026-08-19T13:50:21.412301Z",
-      "cumulative_pnl": -257.79
+      "cumulative_pnl": -281.69
     },
     {
       "time": "2026-08-19T17:08:39.549725Z",
-      "cumulative_pnl": -280.3
+      "cumulative_pnl": -304.2
     },
     {
       "time": "2026-08-19T23:23:39.616585Z",
-      "cumulative_pnl": -220.31
+      "cumulative_pnl": -244.21
     },
     {
       "time": "2026-08-20T00:08:47.474962Z",
-      "cumulative_pnl": -219.56
+      "cumulative_pnl": -243.46
     },
     {
       "time": "2026-08-20T02:14:08.208171Z",
-      "cumulative_pnl": -240.38
+      "cumulative_pnl": -264.28
     },
     {
       "time": "2026-08-20T04:32:46.815338Z",
-      "cumulative_pnl": -262.83
+      "cumulative_pnl": -286.73
     },
     {
       "time": "2026-08-20T05:35:09.812230Z",
-      "cumulative_pnl": -284.37
+      "cumulative_pnl": -308.27
     },
     {
       "time": "2026-08-20T08:25:12.010882Z",
-      "cumulative_pnl": -295.14
+      "cumulative_pnl": -319.04
     },
     {
       "time": "2026-08-20T08:56:57.323819Z",
-      "cumulative_pnl": -291.27
+      "cumulative_pnl": -315.17
     },
     {
       "time": "2026-08-20T11:28:38.669462Z",
-      "cumulative_pnl": -302.37
+      "cumulative_pnl": -326.27
     },
     {
       "time": "2026-08-20T11:46:43.096868Z",
-      "cumulative_pnl": -311.91
+      "cumulative_pnl": -335.81
     },
     {
       "time": "2026-08-20T12:13:17.704130Z",
-      "cumulative_pnl": -353.59
+      "cumulative_pnl": -377.49
     },
     {
       "time": "2026-08-20T12:32:32.027511Z",
-      "cumulative_pnl": -362.97
+      "cumulative_pnl": -386.87
     },
     {
       "time": "2026-08-20T14:05:17.856162Z",
-      "cumulative_pnl": -300.23
+      "cumulative_pnl": -324.13
     },
     {
       "time": "2026-08-21T00:06:51.509285Z",
-      "cumulative_pnl": -323.93
+      "cumulative_pnl": -347.83
     },
     {
       "time": "2026-08-21T01:13:40.774338Z",
-      "cumulative_pnl": -319.15
+      "cumulative_pnl": -343.05
     },
     {
       "time": "2026-08-21T01:39:45.375763Z",
-      "cumulative_pnl": -341.23
+      "cumulative_pnl": -365.13
     },
     {
       "time": "2026-08-21T03:41:16.658292Z",
-      "cumulative_pnl": -362.8
+      "cumulative_pnl": -386.7
     },
     {
       "time": "2026-08-21T05:04:52.211775Z",
-      "cumulative_pnl": -369.96
+      "cumulative_pnl": -393.86
     },
     {
       "time": "2026-08-21T05:08:54.068971Z",
-      "cumulative_pnl": -391.08
+      "cumulative_pnl": -414.98
     },
     {
       "time": "2026-08-21T10:32:00.549537Z",
-      "cumulative_pnl": -389.6
+      "cumulative_pnl": -413.5
     },
     {
       "time": "2026-08-21T13:37:49.724191Z",
-      "cumulative_pnl": -399.16
+      "cumulative_pnl": -423.06
     },
     {
       "time": "2026-08-23T22:06:43.393225Z",
-      "cumulative_pnl": -391.98
+      "cumulative_pnl": -415.88
     },
     {
       "time": "2026-08-23T22:41:25.150590Z",
-      "cumulative_pnl": -415.55
+      "cumulative_pnl": -439.45
     },
     {
       "time": "2026-08-24T00:17:00.149265Z",
-      "cumulative_pnl": -409.21
+      "cumulative_pnl": -433.11
     },
     {
       "time": "2026-08-24T00:18:38.904973Z",
-      "cumulative_pnl": -361.05
+      "cumulative_pnl": -384.95
     },
     {
       "time": "2026-08-24T02:39:52.730854Z",
-      "cumulative_pnl": -310.33
+      "cumulative_pnl": -334.23
     },
     {
       "time": "2026-08-24T04:06:40.059908Z",
-      "cumulative_pnl": -332.84
+      "cumulative_pnl": -356.74
     },
     {
       "time": "2026-08-24T05:30:10.286004Z",
-      "cumulative_pnl": -354.9
+      "cumulative_pnl": -378.8
     },
     {
       "time": "2026-08-24T05:34:18.722291Z",
-      "cumulative_pnl": -364.2
+      "cumulative_pnl": -388.1
     },
     {
       "time": "2026-08-24T07:42:46.635388Z",
-      "cumulative_pnl": -386.65
+      "cumulative_pnl": -410.55
     },
     {
       "time": "2026-08-24T07:49:39.221360Z",
-      "cumulative_pnl": -420.99
+      "cumulative_pnl": -444.89
     },
     {
       "time": "2026-08-24T13:41:17.930333Z",
-      "cumulative_pnl": -430.43
+      "cumulative_pnl": -454.33
     },
     {
       "time": "2026-08-24T13:42:13.524451Z",
-      "cumulative_pnl": -411.75
+      "cumulative_pnl": -435.65
     },
     {
       "time": "2026-08-24T20:22:35.728844Z",
-      "cumulative_pnl": -399.78
+      "cumulative_pnl": -423.68
     },
     {
       "time": "2026-08-25T00:05:11.864630Z",
-      "cumulative_pnl": -421.87
+      "cumulative_pnl": -445.77
     },
     {
       "time": "2026-08-25T02:33:29.488107Z",
-      "cumulative_pnl": -443.8
+      "cumulative_pnl": -467.7
     },
     {
       "time": "2026-08-25T03:35:41.976065Z",
-      "cumulative_pnl": -441.23
+      "cumulative_pnl": -465.13
     },
     {
       "time": "2026-08-25T05:18:28.507193Z",
-      "cumulative_pnl": -463.2
+      "cumulative_pnl": -487.1
     },
     {
       "time": "2026-08-25T06:59:26.878238Z",
-      "cumulative_pnl": -485.84
+      "cumulative_pnl": -509.74
     },
     {
       "time": "2026-08-25T08:08:56.503442Z",
-      "cumulative_pnl": -472.68
+      "cumulative_pnl": -496.58
     },
     {
       "time": "2026-08-25T13:30:57.522045Z",
-      "cumulative_pnl": -466.27
+      "cumulative_pnl": -490.17
     },
     {
       "time": "2026-08-25T14:30:48.430313Z",
-      "cumulative_pnl": -447.09
+      "cumulative_pnl": -470.99
     },
     {
       "time": "2026-08-25T23:23:24.537544Z",
-      "cumulative_pnl": -469.87
+      "cumulative_pnl": -493.77
     },
     {
       "time": "2026-08-26T01:33:52.644855Z",
-      "cumulative_pnl": -491.72
+      "cumulative_pnl": -515.62
     },
     {
       "time": "2026-08-26T03:00:36.302546Z",
-      "cumulative_pnl": -513.66
+      "cumulative_pnl": -537.56
     },
     {
       "time": "2026-08-26T05:38:15.423647Z",
-      "cumulative_pnl": -536.47
+      "cumulative_pnl": -560.37
     },
     {
       "time": "2026-08-26T07:09:15.451040Z",
-      "cumulative_pnl": -527.73
+      "cumulative_pnl": -551.63
     },
     {
       "time": "2026-08-26T07:55:14.390705Z",
-      "cumulative_pnl": -549.22
+      "cumulative_pnl": -573.12
     },
     {
       "time": "2026-08-26T13:50:01.971125Z",
-      "cumulative_pnl": -560.46
+      "cumulative_pnl": -584.36
     },
     {
       "time": "2026-08-26T14:16:13.299403Z",
-      "cumulative_pnl": -553.56
+      "cumulative_pnl": -577.46
     },
     {
       "time": "2026-08-26T15:27:45.817055Z",
-      "cumulative_pnl": -563.93
+      "cumulative_pnl": -587.83
     },
     {
       "time": "2026-08-26T19:04:05.380966Z",
-      "cumulative_pnl": -585.78
+      "cumulative_pnl": -609.68
     },
     {
       "time": "2026-08-27T00:08:26.923236Z",
-      "cumulative_pnl": -523.5
+      "cumulative_pnl": -547.4
     },
     {
       "time": "2026-08-27T02:28:47.897542Z",
-      "cumulative_pnl": -477.28
+      "cumulative_pnl": -501.18
     },
     {
       "time": "2026-08-27T03:49:33.507300Z",
-      "cumulative_pnl": -499.24
+      "cumulative_pnl": -523.14
     },
     {
       "time": "2026-08-27T05:20:17.591716Z",
-      "cumulative_pnl": -495.73
+      "cumulative_pnl": -519.63
     },
     {
       "time": "2026-08-27T09:04:57.614524Z",
-      "cumulative_pnl": -517.73
+      "cumulative_pnl": -541.63
     },
     {
       "time": "2026-08-27T11:32:24.775311Z",
-      "cumulative_pnl": -509.27
+      "cumulative_pnl": -533.17
     },
     {
       "time": "2026-08-27T13:33:43.987351Z",
-      "cumulative_pnl": -532.39
+      "cumulative_pnl": -556.29
     },
     {
       "time": "2026-08-27T17:59:07.877007Z",
-      "cumulative_pnl": -542.77
+      "cumulative_pnl": -566.67
     },
     {
       "time": "2026-08-27T18:13:30.327128Z",
-      "cumulative_pnl": -540.17
+      "cumulative_pnl": -564.07
     },
     {
       "time": "2026-08-28T00:18:26.401922Z",
-      "cumulative_pnl": -562.35
+      "cumulative_pnl": -586.25
     },
     {
       "time": "2026-08-28T05:40:17.809274Z",
-      "cumulative_pnl": -584.19
+      "cumulative_pnl": -608.09
     },
     {
       "time": "2026-08-28T07:06:07.350183Z",
-      "cumulative_pnl": -536.89
+      "cumulative_pnl": -560.79
     },
     {
       "time": "2026-08-28T10:50:29.176611Z",
-      "cumulative_pnl": -558.32
+      "cumulative_pnl": -582.22
     },
     {
       "time": "2026-08-28T12:13:59.102659Z",
-      "cumulative_pnl": -592.16
+      "cumulative_pnl": -616.06
     },
     {
       "time": "2026-08-28T15:41:02.839237Z",
-      "cumulative_pnl": -590.08
+      "cumulative_pnl": -613.98
     },
     {
       "time": "2026-08-28T16:21:48.708178Z",
-      "cumulative_pnl": -599.67
+      "cumulative_pnl": -623.57
     },
     {
       "time": "2026-08-30T22:01:50.427284Z",
-      "cumulative_pnl": -644.57
+      "cumulative_pnl": -668.47
     },
     {
       "time": "2026-08-31T00:50:15.467372Z",
-      "cumulative_pnl": -621.85
+      "cumulative_pnl": -645.75
     },
     {
       "time": "2026-08-31T01:48:41.550302Z",
-      "cumulative_pnl": -643.97
+      "cumulative_pnl": -667.87
     },
     {
       "time": "2026-08-31T03:36:45.666782Z",
-      "cumulative_pnl": -665.39
+      "cumulative_pnl": -689.29
     },
     {
       "time": "2026-08-31T05:34:12.769631Z",
-      "cumulative_pnl": -635.01
+      "cumulative_pnl": -658.91
     },
     {
       "time": "2026-08-31T05:55:19.844417Z",
-      "cumulative_pnl": -633.07
+      "cumulative_pnl": -656.97
     },
     {
       "time": "2026-08-31T08:10:04.055739Z",
-      "cumulative_pnl": -608.39
+      "cumulative_pnl": -632.29
     },
     {
       "time": "2026-08-31T08:41:58.223425Z",
-      "cumulative_pnl": -619.11
+      "cumulative_pnl": -643.01
     },
     {
       "time": "2026-08-31T12:25:55.783146Z",
-      "cumulative_pnl": -610.82
+      "cumulative_pnl": -634.72
     },
     {
       "time": "2026-09-01T01:15:14.602676Z",
-      "cumulative_pnl": -632.13
+      "cumulative_pnl": -656.03
     },
     {
       "time": "2026-09-01T02:30:57.959354Z",
-      "cumulative_pnl": -654.06
+      "cumulative_pnl": -677.96
     },
     {
       "time": "2026-09-01T04:06:51.029344Z",
-      "cumulative_pnl": -676.4
+      "cumulative_pnl": -700.3
     },
     {
       "time": "2026-09-01T06:00:18.026452Z",
-      "cumulative_pnl": -654.35
+      "cumulative_pnl": -678.25
     },
     {
       "time": "2026-09-01T08:06:59.914347Z",
-      "cumulative_pnl": -664.12
+      "cumulative_pnl": -688.02
     },
     {
       "time": "2026-09-01T08:38:31.203991Z",
-      "cumulative_pnl": -674.59
+      "cumulative_pnl": -698.49
     },
     {
       "time": "2026-09-01T08:42:19.501180Z",
-      "cumulative_pnl": -674.49
+      "cumulative_pnl": -698.39
     },
     {
       "time": "2026-09-01T09:15:13.180136Z",
-      "cumulative_pnl": -686.67
+      "cumulative_pnl": -710.57
     },
     {
       "time": "2026-09-01T10:43:44.672541Z",
-      "cumulative_pnl": -685.09
+      "cumulative_pnl": -708.99
     },
     {
       "time": "2026-09-01T13:32:01.126617Z",
-      "cumulative_pnl": -694.57
+      "cumulative_pnl": -718.47
     },
     {
       "time": "2026-09-01T16:24:33.477415Z",
-      "cumulative_pnl": -704.73
+      "cumulative_pnl": -728.63
     },
     {
       "time": "2026-09-01T16:31:36.234741Z",
-      "cumulative_pnl": -746.05
+      "cumulative_pnl": -769.95
     },
     {
       "time": "2026-09-01T18:28:46.869364Z",
-      "cumulative_pnl": -755.4
+      "cumulative_pnl": -779.3
     },
     {
       "time": "2026-09-02T00:20:20.991702Z",
-      "cumulative_pnl": -775.24
+      "cumulative_pnl": -799.14
     },
     {
       "time": "2026-09-02T01:15:56.099938Z",
-      "cumulative_pnl": -748.51
+      "cumulative_pnl": -772.41
     },
     {
       "time": "2026-09-02T02:44:09.464946Z",
-      "cumulative_pnl": -746.15
+      "cumulative_pnl": -770.05
     },
     {
       "time": "2026-09-02T03:07:36.722951Z",
-      "cumulative_pnl": -766.48
+      "cumulative_pnl": -790.38
     },
     {
       "time": "2026-09-02T06:05:44.762440Z",
-      "cumulative_pnl": -715.99
+      "cumulative_pnl": -739.89
     },
     {
       "time": "2026-09-02T06:50:45.429231Z",
-      "cumulative_pnl": -734.93
+      "cumulative_pnl": -758.83
     },
     {
       "time": "2026-09-02T12:51:08.280916Z",
-      "cumulative_pnl": -727.55
+      "cumulative_pnl": -751.45
     },
     {
       "time": "2026-09-03T01:15:00.044504Z",
-      "cumulative_pnl": -690.4
+      "cumulative_pnl": -714.3
     },
     {
       "time": "2026-09-03T01:44:48.677461Z",
-      "cumulative_pnl": -711.43
+      "cumulative_pnl": -735.33
     },
     {
       "time": "2026-09-03T05:07:17.387994Z",
-      "cumulative_pnl": -689.24
+      "cumulative_pnl": -713.14
     },
     {
       "time": "2026-09-03T05:17:58.928416Z",
-      "cumulative_pnl": -686.83
+      "cumulative_pnl": -710.73
     },
     {
       "time": "2026-09-03T06:12:46.858110Z",
-      "cumulative_pnl": -705.86
+      "cumulative_pnl": -729.76
     },
     {
       "time": "2026-09-03T08:13:05.039462Z",
-      "cumulative_pnl": -701.05
+      "cumulative_pnl": -724.95
     },
     {
       "time": "2026-09-03T09:21:53.219525Z",
-      "cumulative_pnl": -735.96
+      "cumulative_pnl": -759.86
     },
     {
       "time": "2026-09-03T09:58:42.211779Z",
-      "cumulative_pnl": -746.35
+      "cumulative_pnl": -770.25
     },
     {
       "time": "2026-09-03T10:08:38.854741Z",
-      "cumulative_pnl": -783.2
+      "cumulative_pnl": -807.1
     },
     {
       "time": "2026-09-03T12:33:20.249752Z",
-      "cumulative_pnl": -782.06
+      "cumulative_pnl": -805.96
     },
     {
       "time": "2026-09-03T13:40:22.652190Z",
-      "cumulative_pnl": -771.87
+      "cumulative_pnl": -795.77
     },
     {
       "time": "2026-09-03T13:59:41.146556Z",
-      "cumulative_pnl": -804.68
+      "cumulative_pnl": -828.58
     },
     {
       "time": "2026-09-03T14:05:00.323165Z",
-      "cumulative_pnl": -796.11
+      "cumulative_pnl": -820.01
     },
     {
       "time": "2026-09-03T17:13:39.011547Z",
-      "cumulative_pnl": -789.0
+      "cumulative_pnl": -812.9
     },
     {
       "time": "2026-09-04T00:30:34.703505Z",
-      "cumulative_pnl": -809.85
+      "cumulative_pnl": -833.75
     },
     {
       "time": "2026-09-04T02:26:58.605499Z",
-      "cumulative_pnl": -834.15
+      "cumulative_pnl": -858.05
     },
     {
       "time": "2026-09-04T06:12:16.798682Z",
-      "cumulative_pnl": -855.51
+      "cumulative_pnl": -879.41
     },
     {
       "time": "2026-09-04T07:59:29.574423Z",
-      "cumulative_pnl": -818.91
+      "cumulative_pnl": -842.81
     },
     {
       "time": "2026-09-04T12:23:21.286099Z",
-      "cumulative_pnl": -849.09
+      "cumulative_pnl": -872.99
     },
     {
       "time": "2026-09-04T12:30:25.226959Z",
-      "cumulative_pnl": -840.51
+      "cumulative_pnl": -864.41
     },
     {
       "time": "2026-09-04T14:50:12.769198Z",
-      "cumulative_pnl": -834.13
+      "cumulative_pnl": -858.03
     },
     {
       "time": "2026-09-04T14:57:30.790975Z",
-      "cumulative_pnl": -826.77
+      "cumulative_pnl": -850.67
     },
     {
       "time": "2026-09-04T15:56:12.784136Z",
-      "cumulative_pnl": -837.03
+      "cumulative_pnl": -860.93
     },
     {
       "time": "2026-09-06T23:57:24.183905Z",
-      "cumulative_pnl": -858.7
+      "cumulative_pnl": -882.6
     },
     {
       "time": "2026-09-07T00:31:09.525111Z",
-      "cumulative_pnl": -879.52
+      "cumulative_pnl": -903.42
     },
     {
       "time": "2026-09-07T02:10:12.678308Z",
-      "cumulative_pnl": -899.69
+      "cumulative_pnl": -923.59
     },
     {
       "time": "2026-09-07T04:32:39.891117Z",
-      "cumulative_pnl": -920.72
+      "cumulative_pnl": -944.62
     },
     {
       "time": "2026-09-07T04:38:28.117420Z",
-      "cumulative_pnl": -931.19
+      "cumulative_pnl": -955.09
     },
     {
       "time": "2026-09-07T05:51:18.399087Z",
-      "cumulative_pnl": -952.46
+      "cumulative_pnl": -976.36
     },
     {
       "time": "2026-09-07T06:25:20.811493Z",
-      "cumulative_pnl": -951.34
+      "cumulative_pnl": -975.24
     },
     {
       "time": "2026-09-07T14:57:46.966387Z",
-      "cumulative_pnl": -961.57
+      "cumulative_pnl": -985.47
     },
     {
       "time": "2026-09-08T05:32:00.107171Z",
-      "cumulative_pnl": -953.74
+      "cumulative_pnl": -977.64
     },
     {
       "time": "2026-09-08T06:20:59.495363Z",
-      "cumulative_pnl": -963.35
+      "cumulative_pnl": -987.25
     },
     {
       "time": "2026-09-08T07:47:38.463857Z",
-      "cumulative_pnl": -973.92
+      "cumulative_pnl": -997.82
     },
     {
       "time": "2026-09-08T12:29:45.037398Z",
-      "cumulative_pnl": -965.46
+      "cumulative_pnl": -989.36
     },
     {
       "time": "2026-09-08T12:44:57.629781Z",
-      "cumulative_pnl": -962.82
+      "cumulative_pnl": -986.72
     },
     {
       "time": "2026-09-08T15:09:32.682035Z",
-      "cumulative_pnl": -958.25
+      "cumulative_pnl": -982.15
     },
     {
       "time": "2026-09-08T18:49:00.993477Z",
-      "cumulative_pnl": -968.84
+      "cumulative_pnl": -992.74
     },
     {
       "time": "2026-09-08T18:49:28.436321Z",
-      "cumulative_pnl": -961.87
+      "cumulative_pnl": -985.77
     },
     {
       "time": "2026-09-09T07:35:05.922683Z",
-      "cumulative_pnl": -945.53
+      "cumulative_pnl": -969.43
     },
     {
       "time": "2026-09-09T09:56:19.974135Z",
-      "cumulative_pnl": -956.31
+      "cumulative_pnl": -980.21
     },
     {
       "time": "2026-09-09T10:02:05.705321Z",
-      "cumulative_pnl": -965.75
+      "cumulative_pnl": -989.65
     },
     {
       "time": "2026-09-09T11:35:23.614590Z",
-      "cumulative_pnl": -960.76
+      "cumulative_pnl": -984.66
     },
     {
       "time": "2026-09-09T11:52:17.109357Z",
-      "cumulative_pnl": -956.57
+      "cumulative_pnl": -980.47
     },
     {
       "time": "2026-09-09T16:14:00.648042Z",
-      "cumulative_pnl": -942.42
+      "cumulative_pnl": -966.32
     },
     {
       "time": "2026-09-09T19:41:24.139315Z",
-      "cumulative_pnl": -983.54
+      "cumulative_pnl": -1007.44
     },
     {
       "time": "2026-09-09T23:58:31.216186Z",
-      "cumulative_pnl": -1004.81
+      "cumulative_pnl": -1028.71
     },
     {
       "time": "2026-09-10T01:21:16.559726Z",
-      "cumulative_pnl": -981.1
+      "cumulative_pnl": -1005.0
     },
     {
       "time": "2026-09-10T03:08:22.754820Z",
-      "cumulative_pnl": -1001.58
+      "cumulative_pnl": -1025.48
     },
     {
       "time": "2026-09-10T04:41:37.076786Z",
-      "cumulative_pnl": -1022.79
+      "cumulative_pnl": -1046.69
     },
     {
       "time": "2026-09-10T06:14:36.847158Z",
-      "cumulative_pnl": -1044.25
+      "cumulative_pnl": -1068.15
     },
     {
       "time": "2026-09-10T08:33:40.264269Z",
-      "cumulative_pnl": -1053.27
+      "cumulative_pnl": -1077.17
     },
     {
       "time": "2026-09-10T09:30:44.631107Z",
-      "cumulative_pnl": -1061.37
+      "cumulative_pnl": -1085.27
     },
     {
       "time": "2026-09-10T11:01:42.206934Z",
-      "cumulative_pnl": -1058.54
+      "cumulative_pnl": -1082.44
     },
     {
       "time": "2026-09-10T12:00:41.254304Z",
-      "cumulative_pnl": -1066.35
+      "cumulative_pnl": -1090.25
     },
     {
       "time": "2026-09-10T12:31:58.824443Z",
-      "cumulative_pnl": -1075.77
+      "cumulative_pnl": -1099.67
     },
     {
       "time": "2026-09-10T12:33:12.388604Z",
-      "cumulative_pnl": -1087.97
+      "cumulative_pnl": -1111.87
     },
     {
       "time": "2026-09-10T12:36:52.522534Z",
-      "cumulative_pnl": -1095.36
+      "cumulative_pnl": -1119.26
     },
     {
       "time": "2026-09-10T14:25:05.157609Z",
-      "cumulative_pnl": -1078.21
+      "cumulative_pnl": -1102.11
     },
     {
       "time": "2026-09-10T18:26:25.489631Z",
-      "cumulative_pnl": -1077.27
+      "cumulative_pnl": -1101.17
     },
     {
       "time": "2026-09-10T22:41:55.082080Z",
-      "cumulative_pnl": -1098.21
+      "cumulative_pnl": -1122.11
     },
     {
       "time": "2026-09-11T00:58:29.224162Z",
-      "cumulative_pnl": -1086.47
+      "cumulative_pnl": -1110.37
     },
     {
       "time": "2026-09-11T01:19:51.990689Z",
-      "cumulative_pnl": -1053.53
+      "cumulative_pnl": -1077.43
     },
     {
       "time": "2026-09-11T01:41:19.627423Z",
-      "cumulative_pnl": -1074.61
-    },
-    {
-      "time": "2026-09-11T03:01:36.618830Z",
-      "cumulative_pnl": -1040.64
-    },
-    {
-      "time": "2026-09-11T06:25:40.735217Z",
-      "cumulative_pnl": -962.49
-    },
-    {
-      "time": "2026-09-11T07:29:27.499197Z",
-      "cumulative_pnl": -981.92
-    },
-    {
-      "time": "2026-09-11T12:30:55.289082Z",
-      "cumulative_pnl": -979.28
-    },
-    {
-      "time": "2026-09-11T18:43:06.304515Z",
-      "cumulative_pnl": -976.96
-    },
-    {
-      "time": "2026-09-14T00:01:24.456137Z",
-      "cumulative_pnl": -997.98
-    },
-    {
-      "time": "2026-09-14T00:27:01.435618Z",
-      "cumulative_pnl": -1019.25
-    },
-    {
-      "time": "2026-09-14T02:52:05.621715Z",
-      "cumulative_pnl": -1036.77
-    },
-    {
-      "time": "2026-09-14T08:54:00.026493Z",
-      "cumulative_pnl": -1056.43
-    },
-    {
-      "time": "2026-09-14T12:35:26.635566Z",
-      "cumulative_pnl": -1076.97
-    },
-    {
-      "time": "2026-09-14T12:36:54.528389Z",
-      "cumulative_pnl": -1073.76
-    },
-    {
-      "time": "2026-09-14T13:34:23.134775Z",
-      "cumulative_pnl": -1068.49
-    },
-    {
-      "time": "2026-09-14T13:38:38.359486Z",
-      "cumulative_pnl": -1090.8
-    },
-    {
-      "time": "2026-09-14T15:08:13.241248Z",
-      "cumulative_pnl": -1118.61
-    },
-    {
-      "time": "2026-09-14T17:24:50.215809Z",
-      "cumulative_pnl": -1117.01
-    },
-    {
-      "time": "2026-09-14T19:50:51.176391Z",
-      "cumulative_pnl": -1114.49
-    },
-    {
-      "time": "2026-09-15T01:09:57.222578Z",
-      "cumulative_pnl": -1113.4
-    },
-    {
-      "time": "2026-09-15T10:42:16.851517Z",
-      "cumulative_pnl": -1100.51
-    },
-    {
-      "time": "2026-09-15T13:01:39.329778Z",
       "cumulative_pnl": -1098.51
     },
     {
+      "time": "2026-09-11T03:01:36.618830Z",
+      "cumulative_pnl": -1064.54
+    },
+    {
+      "time": "2026-09-11T06:25:40.735217Z",
+      "cumulative_pnl": -986.39
+    },
+    {
+      "time": "2026-09-11T07:29:27.499197Z",
+      "cumulative_pnl": -1005.82
+    },
+    {
+      "time": "2026-09-11T12:30:55.289082Z",
+      "cumulative_pnl": -1003.18
+    },
+    {
+      "time": "2026-09-11T18:43:06.304515Z",
+      "cumulative_pnl": -1000.86
+    },
+    {
+      "time": "2026-09-14T00:01:24.456137Z",
+      "cumulative_pnl": -1021.88
+    },
+    {
+      "time": "2026-09-14T00:27:01.435618Z",
+      "cumulative_pnl": -1043.15
+    },
+    {
+      "time": "2026-09-14T02:52:05.621715Z",
+      "cumulative_pnl": -1060.67
+    },
+    {
+      "time": "2026-09-14T08:54:00.026493Z",
+      "cumulative_pnl": -1080.33
+    },
+    {
+      "time": "2026-09-14T12:35:26.635566Z",
+      "cumulative_pnl": -1100.87
+    },
+    {
+      "time": "2026-09-14T12:36:54.528389Z",
+      "cumulative_pnl": -1097.66
+    },
+    {
+      "time": "2026-09-14T13:34:23.134775Z",
+      "cumulative_pnl": -1092.39
+    },
+    {
+      "time": "2026-09-14T13:38:38.359486Z",
+      "cumulative_pnl": -1114.7
+    },
+    {
+      "time": "2026-09-14T15:08:13.241248Z",
+      "cumulative_pnl": -1142.51
+    },
+    {
+      "time": "2026-09-14T17:24:50.215809Z",
+      "cumulative_pnl": -1140.91
+    },
+    {
+      "time": "2026-09-14T19:50:51.176391Z",
+      "cumulative_pnl": -1138.39
+    },
+    {
+      "time": "2026-09-15T01:09:57.222578Z",
+      "cumulative_pnl": -1137.3
+    },
+    {
+      "time": "2026-09-15T10:42:16.851517Z",
+      "cumulative_pnl": -1124.41
+    },
+    {
+      "time": "2026-09-15T13:01:39.329778Z",
+      "cumulative_pnl": -1122.41
+    },
+    {
       "time": "2026-09-15T13:58:05.012306Z",
-      "cumulative_pnl": -1123.63
+      "cumulative_pnl": -1147.53
     },
     {
       "time": "2026-09-15T14:51:50.994203Z",
-      "cumulative_pnl": -1132.89
+      "cumulative_pnl": -1156.79
     }
   ],
   "bots": [
@@ -1339,15 +1327,15 @@
       "brand": "Aurika Trading",
       "instrument_name": "Gold",
       "symbol_display": "XAU / USD",
-      "total_trades": 90,
-      "wins": 24,
+      "total_trades": 88,
+      "wins": 22,
       "losses": 66,
-      "win_rate": 26.666666666666668,
-      "gross_profit": 849.79,
+      "win_rate": 25.0,
+      "gross_profit": 825.02,
       "gross_loss": -1415.67,
-      "profit_factor": 0.6,
+      "profit_factor": 0.58,
       "avg_hold_minutes": 53.6,
-      "total_pnl": -565.88
+      "total_pnl": -590.65
     },
     {
       "bot": "NAZIM",
@@ -1369,15 +1357,15 @@
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 87,
+      "total_trades": 86,
       "wins": 53,
-      "losses": 34,
-      "win_rate": 60.91954022988506,
+      "losses": 33,
+      "win_rate": 61.627906976744185,
       "gross_profit": 171.25,
-      "gross_loss": -334.42,
+      "gross_loss": -333.55,
       "profit_factor": 0.51,
       "avg_hold_minutes": 127.2,
-      "total_pnl": -163.17
+      "total_pnl": -162.3
     },
     {
       "bot": "RUSSELL",
@@ -1470,6 +1458,6 @@
       "total_pnl": -314.78
     }
   ],
-  "fleet_total_pnl": -1132.89,
-  "fleet_total_trades": 333
+  "fleet_total_pnl": -1156.79,
+  "fleet_total_trades": 330
 }
