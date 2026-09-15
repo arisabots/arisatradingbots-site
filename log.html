@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-15</div>
+      <h2>A silent 90-minute lockout was hiding the real reason our gold bot stopped trading</h2>
+      <div class="impact">Practice-account bot only - no real money involved; the bot went a full day without placing a single trade</div>
+      <div class="body">
+        <p>Our gold trading bot (a practice-account strategy, not real money) went about a day without placing a single trade, even though its own model was firing off very confident "buy" signals on a regular basis. Digging into why turned up two things happening at once.</p>
+        <p>The main reason turned out to be intentional: we'd recently added an independent check that looks at the bigger-picture trend and vetoes the model when it wants to go long into a broader downtrend. Gold's bigger-picture trend had stayed down while the model kept insisting on buying anyway - so the new check was correctly overruling it, over and over. That's exactly the behavior we built it for, and testing on real historical data already showed doing this removes more losses than it costs.</p>
+        <p>The second issue was a real bug, and it's what made the situation invisible: a separate, older safeguard - a minimum 90-minute gap between trade attempts, meant to stop overtrading - was quietly starting its 90-minute timer on ANY attempt old enough to try again, even one that got vetoed by the check above and never actually opened a trade. So one vetoed attempt was silently blocking every other signal for the next 90 minutes, with nothing logged anywhere to explain it - making it look like the bot had simply gone quiet for no reason.</p>
+        <p><b>Fix:</b> that safeguard's timer now only starts after a trade genuinely goes through, never on an attempt that gets turned down. A turned-down attempt is also now logged with the reason, instead of vanishing silently. Verified directly: restarted the bot and confirmed the fix is live via the process's own start time versus the code's last-changed time.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-15</div>
       <h2>One old trade was silently jamming our social-media post generator every time it ran</h2>
       <div class="impact">A backlog of stuck trade cards across multiple bots; the pipeline recovered on its own after the fix</div>
       <div class="body">
