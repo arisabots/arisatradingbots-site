@@ -140,6 +140,28 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-15</div>
+      <h2>Our forex bot went silent for a full day - a safety check was stuck re-arming itself forever</h2>
+      <div class="impact">Zero trades placed for over 31 hours across two restarts, on every active currency pair</div>
+      <div class="body">
+        <p>Our forex bot has a safety check that pauses all new trades for a short cooldown whenever it detects something worth double-checking with the broker - a sensible feature on its own. What we found: this pause had been quietly re-arming itself before ever expiring, continuously, for over 31 hours - across two separate restarts - so the bot never placed a single trade all day.</p>
+        <p>The real cause was a data-formatting mismatch. Our broker's timestamps carry more decimal precision than the standard library function reading them expects. When that function met one of these, it silently failed and treated the timestamp as "right now" instead of what it actually was - a stop-loss closure from over 32 hours earlier. That made an old, unremarkable event look brand new on every single check, resetting the pause indefinitely.</p>
+        <p><b>Fix:</b> the timestamp reader now trims the extra precision before parsing, matching a fix already applied elsewhere in the same bot for the identical reason. Verified directly: the old timestamp now parses correctly and is properly recognized as more than a day old, so it stops resetting the pause.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-15</div>
+      <h2>A hidden training process was silently crashing every time our forex bot started</h2>
+      <div class="impact">The bot's live trading was healthy throughout - only its background model-training process was affected</div>
+      <div class="body">
+        <p>While fixing the issue above, restarting the bot to test the fix surfaced a second, unrelated problem: its background machine-learning training process was crashing on startup every single time, before it could do any training. The main trading side of the bot - price monitoring, decisions, live positions - was never affected; this was isolated to the training process running alongside it.</p>
+        <p>The cause: a decorative emoji in the training process's startup message, combined with how Windows handles text in the background console it runs in, which doesn't support that particular character and crashes instead of simply skipping it. We've hit this same category of issue once before in a different part of our systems.</p>
+        <p><b>Fix:</b> told the training process's console to handle any character it's given rather than crash on ones it doesn't recognize. Verified directly by restarting the bot and confirming the training process starts and runs normally.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-14</div>
       <h2>Three real open trades lost every safety net the moment they fell out of our forex bot's active shortlist</h2>
       <div class="impact">3 real positions ran for 2-4 days with zero stop-loss or take-profit protection</div>
