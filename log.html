@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-16</div>
+      <h2>Testing a gold bot's new safeguard found a hidden risk to a completely different bot's real position</h2>
+      <div class="impact">A backtest run had overwritten a live practice-account position's stored data with fake numbers; the running bot itself was never actually fooled</div>
+      <div class="body">
+        <p>After giving our gold trading bot an independent trend check that overrides it when it wants to trade against the bigger picture, we asked a reasonable follow-up: should our other eight practice-account bots get the same safeguard, since they're built from the same base code?</p>
+        <p>We tested it properly instead of guessing - replaying each bot's own real trading history to see what would have happened with the safeguard turned on. The answer came back clean and consistent: no. For every one of the eight, the trades that go against the bigger-picture trend are actually the more profitable ones, not the less profitable ones. Adding the safeguard would have made all eight worse, in one case turning a real profit into a real loss. These bots make their money differently from the gold bot, and a fix built for one doesn't automatically transfer to the others just because they share code - we checked, and it doesn't.</p>
+        <p>Building that test surfaced something unrelated but more serious: one bot's test-replay tool was found to share the same storage file as its real, currently-running trading process - and a test run had overwritten that file with made-up numbers while the real bot was holding an actual open position. The running bot itself was never confused (it keeps its own copy of what it's doing in memory while it runs), but the saved record on disk was briefly wrong, and would have loaded incorrectly had the bot restarted before its next trade.</p>
+        <p><b>Fix:</b> every bot's test-replay tool now writes to its own separate scratch file instead of the real one - four of nine already did this correctly; the other five (including the affected one) now do too. Verified directly: confirmed the real bot's own internal state was correct throughout via its live activity log, corrected the on-disk record to match, and confirmed the test tool now gives identical results when run twice in a row, which it hadn't before.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-15</div>
       <h2>A silent 90-minute lockout was hiding the real reason our gold bot stopped trading</h2>
       <div class="impact">Practice-account bot only - no real money involved; the bot went a full day without placing a single trade</div>
