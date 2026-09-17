@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-17</div>
+      <h2>A trade reversed within a minute of opening - here's what we changed after tracing exactly why</h2>
+      <div class="impact">Practice-account bot only, no real money involved; a single trade lost $22.97</div>
+      <div class="body">
+        <p>Our gold bot bought at what turned out to be a short-term high, and the price fell steadily for the next ten minutes until a stop-loss closed it for a small loss. What made this worth digging into: our bot's own model actually recognized the reversal almost immediately, flagging a strong urge to exit within the first minute. It just wasn't allowed to act on that instinct - a safety rule requires a position to first move into profit before its stop-loss is allowed to tighten and protect it, so a trade that goes wrong right out of the gate has no such protection until it's too late.</p>
+        <p>We tested two different fixes against months of the bot's own real trading history before touching anything live, and only kept the one that actually earned its place. The first idea - loosening the trend check we added a few days ago so it ignores weak signals - made results worse at every setting we tried, because even a weak signal turns out to be more useful than no signal at all. The second idea - letting the model act on its own high-confidence "this is reversing" read even before the usual safety rule would normally allow it - held up: tested at a dozen different confidence bars, every single one beat doing nothing, cutting total losses and worst-case drawdown by roughly a quarter in the strongest range.</p>
+        <p><b>Fix:</b> the bot can now close a losing position early when its own model is highly confident it's reversing, instead of waiting for a safety rule that assumes the trade is already working. Only the version that proved itself on real historical data was enabled; the trend-check idea that didn't help was built, tested, documented, and left switched off.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-16</div>
       <h2>Testing a gold bot's new safeguard found a hidden risk to a completely different bot's real position</h2>
       <div class="impact">A backtest run had overwritten a live practice-account position's stored data with fake numbers; the running bot itself was never actually fooled</div>
