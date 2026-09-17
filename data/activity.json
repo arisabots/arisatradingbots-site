@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "LONG",
+    "pnl_pct": -1.03,
+    "pnl_usd": -27.95,
+    "exit_time": "2026-09-17T11:31:26.279929Z"
+  },
+  {
     "bot": "SOLOMON",
     "brand": "Solomon Trading",
     "instrument_name": "Soybean",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.41,
     "pnl_usd": 10.96,
     "exit_time": "2026-09-16T11:04:54.536185Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "LONG",
-    "pnl_pct": 0.14,
-    "pnl_usd": 1.46,
-    "exit_time": "2026-09-16T07:13:46.664534Z"
   }
 ]
