@@ -5,6 +5,16 @@
     "instrument_name": "Gold",
     "symbol_display": "XAU / USD",
     "side": "LONG",
+    "pnl_pct": 0.0,
+    "pnl_usd": 0.51,
+    "exit_time": "2026-09-20T22:14:17.896424Z"
+  },
+  {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "LONG",
     "pnl_pct": -0.01,
     "pnl_usd": -0.81,
     "exit_time": "2026-09-18T20:16:32.834987Z"
@@ -188,15 +198,5 @@
     "pnl_pct": -1.03,
     "pnl_usd": -27.95,
     "exit_time": "2026-09-17T11:31:26.279929Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": 0.39,
-    "pnl_usd": 10.46,
-    "exit_time": "2026-09-17T11:07:08.097935Z"
   }
 ]
