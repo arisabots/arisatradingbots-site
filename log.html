@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-21</div>
+      <h2>A fix we shipped four days ago worked too well - here's what we found reviewing the trades since</h2>
+      <div class="impact">Practice-account bot only, no real money involved; a small run of trades lost $47.70 over 3.5 days</div>
+      <div class="body">
+        <p>Four days ago we gave our gold bot the ability to close a losing position early when its own model was highly confident it was reversing, instead of waiting for an older safety rule that only protects a trade once it's already profitable. We tested it carefully against months of real history first and it looked good. Reviewing the actual trades since, though, it was closing almost every single position within a minute or two of opening - not the occasional rescue it was designed to be, but the dominant way nearly every trade ended.</p>
+        <p>Our first theory was that the fix simply wasn't doing what the test said it would - a worrying thought, since it would mean the whole validation was meaningless. That turned out to be a red herring: a logging setting meant to keep the test's output readable was also hiding the evidence that the mechanism was working correctly during testing, at a much calmer rate than what we were now seeing live. The real difference: our bot checks in with its model roughly once a minute while trading for real, but the test only checks in once every five minutes - so live gets five times as many chances for a fleeting, not-yet-reliable reading to trigger an early exit before a trade has had any real time to prove itself.</p>
+        <p><b>Fix:</b> a new rule requires a position to actually be held for a minimum stretch of real time before this early-exit ability can trigger at all - deliberately set to match the five-minute spacing our own testing already uses, so the fix costs nothing against the historical results that justified it in the first place, while bringing live behavior back in line with what was actually proven to work.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-17</div>
       <h2>A trade reversed within a minute of opening - here's what we changed after tracing exactly why</h2>
       <div class="impact">Practice-account bot only, no real money involved; a single trade lost $22.97</div>
