@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-22</div>
+      <h2>A user caught our dashboard overstating a real trade's profit - here's the whole trail</h2>
+      <div class="impact">Real-money bot; a reporting bug on our internal dashboard, not a trading or execution bug - actual trades and actual balances were never affected</div>
+      <div class="body">
+        <p>Someone reviewing our fleet dashboard spotted two crypto trades showing $2.37 and $3.01 in profit and flagged that the numbers didn't look right, then sent us the exact same two trades straight from our trading software's own screen - which showed 2.37% and 3.01% gains, with the real dollar amounts sitting at $0.31 and $0.21. Nearly ten times smaller than what our own dashboard had shown.</p>
+        <p>The cause: our trading software logs each closed trade with a field literally called "profit" - except for this bot, that field is actually a percentage, not a dollar figure. Our dashboard had been reading that percentage straight into the dollar column for every single trade this bot has ever closed. This was a display bug on our own internal monitoring tool, not a problem with the trades themselves or the money involved - the bot bought and sold correctly the whole time, and its real balance was never wrong. It just looked far more profitable on paper than it actually was.</p>
+        <p>Our first attempt at fixing it also came out wrong - we tried rebuilding the real dollar figure from other numbers in the same log entry, and got a wildly incorrect negative result, because we picked the wrong field to represent how much of the position was actually being sold in that specific trade. We caught this by checking our fix against the real numbers from the trading software's own screen before trusting it, the same standard we hold every fix to.</p>
+        <p><b>Fix:</b> the dashboard now calculates real dollar profit directly from price and quantity, matching the trading software's own figures to the second decimal place, verified against the exact trades that were flagged. This was a read-only reporting fix - it required no changes to the bot's actual trading and no restart of anything live.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-21</div>
       <h2>A fix we shipped four days ago worked too well - here's what we found reviewing the trades since</h2>
       <div class="impact">Practice-account bot only, no real money involved; a small run of trades lost $47.70 over 3.5 days</div>
