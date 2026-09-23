@@ -1451,6 +1451,14 @@
     {
       "time": "2026-09-23T07:05:35.040082Z",
       "cumulative_pnl": -1032.75
+    },
+    {
+      "time": "2026-09-23T07:56:23.911895Z",
+      "cumulative_pnl": -1051.8
+    },
+    {
+      "time": "2026-09-23T07:58:33.377445Z",
+      "cumulative_pnl": -1055.9
     }
   ],
   "bots": [
@@ -1519,15 +1527,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 20,
+      "total_trades": 21,
       "wins": 14,
-      "losses": 6,
-      "win_rate": 70.0,
+      "losses": 7,
+      "win_rate": 66.66666666666666,
       "gross_profit": 25.09,
-      "gross_loss": -39.33,
-      "profit_factor": 0.64,
-      "avg_hold_minutes": 101.3,
-      "total_pnl": -14.24
+      "gross_loss": -43.43,
+      "profit_factor": 0.58,
+      "avg_hold_minutes": 98.8,
+      "total_pnl": -18.34
     },
     {
       "bot": "SOLOMON",
@@ -1579,17 +1587,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 38,
+      "total_trades": 39,
       "wins": 18,
-      "losses": 20,
-      "win_rate": 47.368421052631575,
+      "losses": 21,
+      "win_rate": 46.15384615384615,
       "gross_profit": 300.12,
-      "gross_loss": -619.28,
-      "profit_factor": 0.48,
-      "avg_hold_minutes": 212.1,
-      "total_pnl": -319.16
+      "gross_loss": -638.33,
+      "profit_factor": 0.47,
+      "avg_hold_minutes": 232.4,
+      "total_pnl": -338.21
     }
   ],
-  "fleet_total_pnl": -1032.75,
-  "fleet_total_trades": 363
+  "fleet_total_pnl": -1055.9,
+  "fleet_total_trades": 365
 }
