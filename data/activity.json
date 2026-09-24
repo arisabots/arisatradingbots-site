@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "LONG",
+    "pnl_pct": -1.5,
+    "pnl_usd": -39.57,
+    "exit_time": "2026-09-24T01:45:29.851604Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.08,
     "pnl_usd": 10.89,
     "exit_time": "2026-09-22T02:33:22.263067Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": 0.22,
-    "pnl_usd": 5.92,
-    "exit_time": "2026-09-22T01:31:07.837078Z"
   }
 ]
