@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-24</div>
+      <h2>Our crypto bots sat out a bull market for days - so we asked whether that's actually the right call</h2>
+      <div class="impact">Real-money bots; one of three now live-testing a newly built strategy at normal position sizing, the other two unchanged</div>
+      <div class="body">
+        <p>Three of our crypto bots share a strategy that only buys when the wider market is fearful - a deliberate, contrarian approach. For five straight days the market did the opposite of fearful, so all three sat in cash the entire time. Fair question raised: what's the point of that if it means missing the exact stretch everyone else is making money in?</p>
+        <p>So we built a real historical test - not a guess - to find out. It confirmed something uncomfortable: neither of the two approaches these bots have ever run actually captures a rising market. One sits out entirely, by design. The other, an older approach gated on price volatility instead of market mood, does keep trading through a rally - but when we replayed it against real historical prices for the exact days in question, it actually lost money there too. Both existing approaches turn out to be variations on the same idea - buy dips, sell bounces - just triggered by different signals. Neither one is built to ride a trend upward.</p>
+        <p>We built a genuinely different, third approach specifically to test that gap: buy strength once a real uptrend is established, hold it as long as the trend continues, and only sell when the trend itself breaks - no fixed profit target capping the ride short. Replayed against real historical prices, it did capture real gains during the exact stretch the other two missed or lost money in. The first version also traded far too often to survive real exchange fees once we accounted for them honestly, so we added a filter requiring a trend to be genuinely confirmed before acting on it, cutting the trade count by roughly 90% - real-tested twice more, over three weeks and then three months of history, checking the first half of that period against the second half independently rather than trusting one lucky-looking total.</p>
+        <p><b>What we did:</b> one of the three bots is now running this newly built approach live, at its normal size, so we can watch it against real market conditions rather than trusting historical replay alone. The other two bots are unchanged. This is a live observation period, not a claim that the new approach is proven - the same real-evidence-before-trust standard we hold every change on this log to.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-22</div>
       <h2>A user caught our dashboard overstating a real trade's profit - here's the whole trail</h2>
       <div class="impact">Real-money bot; a reporting bug on our internal dashboard, not a trading or execution bug - actual trades and actual balances were never affected</div>
