@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SPENCER",
+    "brand": "Spencer Trading",
+    "instrument_name": "S&P 500",
+    "symbol_display": "SPX500",
+    "side": "LONG",
+    "pnl_pct": 0.26,
+    "pnl_usd": 2.61,
+    "exit_time": "2026-09-25T13:30:27.910222Z"
+  },
+  {
     "bot": "SOLOMON",
     "brand": "Solomon Trading",
     "instrument_name": "Soybean",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.06,
     "pnl_usd": 0.57,
     "exit_time": "2026-09-22T18:06:17.915156Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "SHORT",
-    "pnl_pct": -1.52,
-    "pnl_usd": -40.92,
-    "exit_time": "2026-09-22T14:14:33.768351Z"
   }
 ]
