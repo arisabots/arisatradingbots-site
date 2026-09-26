@@ -13,13 +13,7 @@
       "pct_change": 0.51
     }
   },
-  "crypto": {
-    "mcap_usd": 2897019621135.785,
-    "btc_dominance": 58.30213192231386,
-    "mcap_change_24h": -2.242171829063981,
-    "btc_price_usd": 84255.0,
-    "btc_change_24h": 0.37995063271829294
-  },
+  "crypto": null,
   "fear_greed": {
     "value": 74,
     "classification": "Greed"
