@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Two stop-losses in three days on our soybean bot - what the real numbers actually said to do about it</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>Our soybean bot hit its hard stop-loss twice within three days, after going seven weeks without one. Looking at its full real trading history: an 80% win rate, but the rare losses were roughly four and a half times bigger than the frequent wins - the kind of shape where you can be right most of the time and still lose money overall.</p>
+        <p>We checked first whether the bot should simply be trading the opposite direction - a fair question after two losses in a row - but a real historical test said no: the long-term evidence still clearly favors the direction it's already trading, and the recent sample was too thin either way to trust as a reason to flip. So the direction wasn't the problem. The actual mechanism was: this bot only locks in any profit protection once a trade has moved a small amount in its favor first; a trade that goes against it from the very start gets no such protection and rides all the way to the full stop-loss.</p>
+        <p>We tested 72 different combinations of the relevant settings against real historical prices, and the combination that looked best over the full test period turned out to be misleading once we split that period in half and checked each half on its own - a trap we specifically test for. The full test period was hiding something: with today's actual settings, the more recent half of history alone is already a net loss, which lines up exactly with the two real stop-losses that just happened. That recent decline was the real problem, not the direction.</p>
+        <p><b>Fix:</b> the one change that held up in both halves independently - not just the combined average - was letting a trade move a bit further in its favor before that first layer of profit protection switches on. That change turned the recent-history loss into a small real gain, and barely affected the older, already-good half. We're not overstating this: it's a modest fix for a recent decline, not a transformation - the same real test also showed this bot's worst-case losses have gotten larger recently regardless of any setting we tried, which looks like real increased volatility in the market itself, not something a settings change fixes.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>We weren't getting notified about our own gold bot's trades - here's why</h2>
       <div class="impact">Internal notification issue only; no effect on trading, prices, or any real money</div>
       <div class="body">
