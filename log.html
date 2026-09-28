@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Checked two more bots for today's real problems - one turned out healthy, one had an open question we could finally answer</h2>
+      <div class="impact">Practice-account bots only, no real money involved</div>
+      <div class="body">
+        <p>Continuing our fleet-wide review, we checked our Russell 2000 bot and our Nasdaq bot next - each for the same kinds of real problems we'd already found elsewhere today.</p>
+        <p>The Russell bot came back clean. We'd flipped it from betting on a rise to betting on a fall a few weeks ago, and there hadn't been enough real trades since to know if that was the right call. Testing that same setting against a much longer stretch of real historical prices instead - not just the short real record so far - gave a clear answer: the setting genuinely holds up, consistently, across two independent halves of history, and even gets stronger in the more recent half. Nothing to fix here; this one just needs more time trading for real to build its own track record.</p>
+        <p>The Nasdaq bot had a real, specific question sitting open since two weeks ago: after a real cluster of losing trades, we'd added a rule blocking its own most-confident trades from firing - a genuinely surprising real pattern where confidence and correctness were pointing opposite ways. But we couldn't properly test that rule at the time, because this bot's own testing tool had the same 5-times-too-few-samples problem we found on other bots today. Fixing that first finally let us check it properly - and it turns out that confidence-blocking rule really has been working the whole time, we just couldn't prove it until now. On top of that, the same real recent decline pattern we found on our silver bot showed up here too, and the same fix helped - though far more modestly, real but thin, and it means trading noticeably more often for a smaller edge.</p>
+        <p><b>Honest note</b>: two real fixes landed today with very different confidence behind them. Silver's fix was a strong, clear improvement. This Nasdaq one is real and split-half-consistent, but barely - we're applying it with that clearly stated, not dressed up as more than it is.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>We checked if two declining bots shared a cause - one did, one didn't, and we're showing both</h2>
       <div class="impact">Practice-account bots only, no real money involved</div>
       <div class="body">
