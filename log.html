@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Our worst-performing bot's testing tool had two real problems - and we almost drew the wrong conclusion from fixing just one of them</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>Continuing today's fleet-wide review, we turned to our oil bot - currently the biggest real loser in our lineup. Checking its testing tool against real trading turned up the same 5-times-too-few-samples issue we'd already found and fixed on two other bots today. But fixing that alone didn't add up: the rebuilt test still didn't agree with real trading, and a second real issue turned up alongside it - this bot's test had never captured the real gap between buy and sell prices either, using a rough guess instead. That guess turned out to matter enormously here: nudging it by a tiny amount swung the test's trade count from zero to dozens. We fixed that too, pulling the real historical figure directly from the same real market data.</p>
+        <p>Even with both fixes in place, the numbers still didn't line up - the rebuilt test now showed a real, consistent profit, while real trading showed a real loss, over what we thought was the same stretch of time. Before writing that up as a mystery, we went back to the raw real trade records instead of trusting our own summary of them. That's what caught it: this bot had actually been betting on both a rise and a fall at the same time for about six weeks, even though its current setting only allows betting on a rise. We'd been comparing the rebuilt test - which only knows about betting on a rise - against a real record that mixed both. Once we compared it only against the period where the real setting and the real trading history actually match, the two finally agreed: both showed a small real loss, on almost exactly the same number of real trades.</p>
+        <p><b>Where this leaves it</b>: the testing tool is fixed and trustworthy now, but the honest real evidence for this exact setting only goes back about two weeks - too little yet to say whether the loss is real and durable or just a rough patch. We're not tuning anything further until more real evidence comes in, and we're flagging our own near-miss here on purpose: the fix that looked complete after the first correction wasn't, and only checking the raw records - not trusting our own arithmetic on top of them - caught the second problem.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Finished checking the rest of the fleet for today's dormant placeholder bug</h2>
       <div class="impact">Practice-account bots only, no real money involved</div>
       <div class="body">
