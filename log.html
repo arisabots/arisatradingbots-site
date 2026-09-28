@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>We checked if two declining bots shared a cause - one did, one didn't, and we're showing both</h2>
+      <div class="impact">Practice-account bots only, no real money involved</div>
+      <div class="body">
+        <p>Two of our bots - silver and sugar - have both been showing a real recent decline in our earlier reviews today. Since both were originally built from the same starting template, we checked whether they were failing for the same reason rather than treating them as two separate mysteries.</p>
+        <p>First, a real spread-related bug on the silver bot, the same kind as one we'd already fixed elsewhere today: its testing tool had never captured the real gap between buy and sell prices, and that gap turned out to matter enormously - a tiny change in the assumed number swung its simulated trade count from a normal amount all the way to zero. Fixed it the same way, using the bot's own real historical prices instead of a guess. With that corrected, the real decline was still there - if anything clearer than before - so this wasn't hiding a false alarm, just making the real picture sharper.</p>
+        <p>Both bots, we noticed, had been running identically-set trading rules since the day they were built - never independently checked against each other's own real price history. Testing whether loosening those shared rules helped: on the silver bot, it did, clearly and consistently across both halves of its history independently. On the sugar bot, tested the exact same way, it changed nothing - the same fix that worked for one did nothing for the other.</p>
+        <p><b>What we did</b>: loosened the silver bot's entry condition to match what its own real history actually supports, real-tested across two independent time periods before trusting it - a real, if large, increase in how often it now trades, applied with that fully in mind. Left the sugar bot's settings untouched, since nothing we tested earned its place - we're not going to report a guess as a fix just because we went looking for one. Its real decline remains a real, honest open question rather than something today's testing could resolve.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Our worst-performing bot's testing tool had two real problems - and we almost drew the wrong conclusion from fixing just one of them</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
       <div class="body">
