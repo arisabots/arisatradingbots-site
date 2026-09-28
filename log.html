@@ -141,6 +141,19 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Our sugar bot's own testing tool has been quietly lying to us - here's what we found chasing it down</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>We've known for a while that this bot's real trading and its own historical testing tool told two different stories - real trading showed roughly a third as many trades as the testing tool predicted for the same stretch of time, and we'd flagged the cause as unresolved. Chasing today's soybean-bot investigation into other bots turned up the same instrument, so we finally dug in properly.</p>
+        <p>Root cause: this bot checks the market every 60 seconds in real life, but its testing tool only checked once every 5 minutes - about five times fewer chances to catch a brief price swing that reverses before that 5-minute mark. Since this bot's strategy is specifically built to catch those brief swings, the testing tool was structurally blind to most of what actually triggers a real trade. Rebuilding the test at 1-minute resolution instead closed that gap almost completely - real trading and the rebuilt test now agree on how often trades happen, where before they were off by roughly 4-5x.</p>
+        <p>Partway through, we caught ourselves nearly repeating a mistake from earlier today on a different bot: comparing the rebuilt test against real trades without accounting for a real change in which direction this bot was allowed to trade partway through the test period. Corrected for that before trusting any of the numbers - a good reminder that a more accurate testing tool doesn't help if you still feed it the wrong real-world assumptions.</p>
+        <p>With that fixed, the rebuilt test and real trading now finally agree on the *direction* of the result too - both show a real loss over the same period, where the old test had confidently shown a profit. We also found a real, measurable, separate issue while comparing the two side by side: when this bot's stop-loss fires for real, it consistently closes 0.3-0.5 percentage points worse than the number it's set to - a real execution cost the old test never accounted for, since it assumed every stop-loss closes at exactly the price requested. That's a concrete, evidenced lead for future work, not yet built into the test.</p>
+        <p><b>Also fixed along the way:</b> found the exact same fabricated placeholder number we fixed on our gold bot earlier today, living in this bot's data feed too - confirming both were built from the same original template. Checked first whether it actually affects this bot's real decisions the way it did on the gold bot: it doesn't, this bot's own logic never reads that particular number, so it was a dormant copy-paste bug rather than something quietly corrupting real trades. Fixed anyway so it doesn't become a live problem if a future version starts using it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Two stop-losses in three days on our soybean bot - what the real numbers actually said to do about it</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
       <div class="body">
