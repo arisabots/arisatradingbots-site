@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Finished checking the rest of the fleet for today's dormant placeholder bug</h2>
+      <div class="impact">Practice-account bots only, no real money involved</div>
+      <div class="body">
+        <p>Closing out something we flagged earlier today: once we found the fabricated placeholder number on our gold bot, then again on two more bots while chasing a separate issue, we went back and checked every remaining bot in our fleet for it directly, rather than waiting to stumble onto it again one at a time.</p>
+        <p>It was there in all of them. Every one of our practice-account bots - oil, silver, soybeans, sugar's Dow-tracking sibling, and our Nasdaq bot - had the exact same fake number standing in for real trading-activity data, all built from the same original template. We checked each one individually before touching anything: does this bot's real decision-making actually use this number? In every single case, no - each bot measures real market volatility a completely different way, and never reads the fake number at all. So this had been sitting dormant and harmless in all of them, not quietly costing anyone money, but a live risk waiting for a future version to start using it without anyone noticing it was fake.</p>
+        <p><b>Fixed everywhere</b>: all five now pull their real trading-activity number from the same live market-data source already used elsewhere in each bot, verified against the real feed for every one before moving to the next. The old fake number only kicks in now as a documented last resort if that real fetch ever genuinely fails, with a clear warning logged - not silently pretending to be real data forever, the way it did before today.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>The same testing-tool blind spot, found on two more bots once we knew where to look</h2>
       <div class="impact">Practice-account bots only, no real money involved</div>
       <div class="body">
