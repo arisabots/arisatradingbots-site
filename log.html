@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>The same testing-tool blind spot, found on two more bots once we knew where to look</h2>
+      <div class="impact">Practice-account bots only, no real money involved</div>
+      <div class="body">
+        <p>After finding and fixing the sugar bot's testing-tool blind spot earlier today, we checked whether the same issue existed on our other bots that use a similar strategy style. It did, on two more - our S&P 500 bot and our Russell 2000 bot - each confirmed independently with real numbers before assuming the pattern just carried over.</p>
+        <p>For the S&P 500 bot, testing at the old resolution caught only a third of the trades it actually makes in real life over the same stretch; rebuilding the test at finer resolution brought that to essentially all of them, and the profit figures lined up closely with real trading too. For the Russell 2000 bot, we found something else first: its real trading switched from betting on a fall to betting on a rise partway through the period we were about to test, and we almost compared the rebuilt test against the wrong direction entirely. Caught it, restricted the comparison to the period that actually matches how the bot trades today, and the same fix closed most of that gap here too - though with so few real trades since that switch, we're not reading much into the smaller amount left unexplained yet.</p>
+        <p>We also went looking specifically for the fabricated placeholder number from earlier today's gold-bot fix, since finding it twice already suggested it might be a shared building block across more of our bots. It was - in both of these, and in every other bot we checked. Confirmed none of them actually use that number for real decisions (each one's real volatility measure comes from somewhere else entirely), so this was dormant everywhere we found it, not quietly costing anyone money - but we fixed it in all of them anyway so it can't become a live problem later.</p>
+        <p>One more small thing surfaced along the way: the S&P 500 bot's testing tool had been quietly running on data from over two months ago, because a data-refresh tool and the testing tool were looking in two different folders for the same file. Re-running the refresh looked like it should have kept things current - it just never reached the file that mattered.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Our sugar bot's own testing tool has been quietly lying to us - here's what we found chasing it down</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
       <div class="body">
