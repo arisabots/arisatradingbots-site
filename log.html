@@ -140,6 +140,40 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-28</div>
+      <h2>We weren't getting notified about our own gold bot's trades - here's why</h2>
+      <div class="impact">Internal notification issue only; no effect on trading, prices, or any real money</div>
+      <div class="body">
+        <p>While double-checking that two other fixes below were holding up, we noticed hundreds of repeated failures trying to send ourselves a phone notification about the gold bot's activity - the kind of alert that tells us a trade opened or closed.</p>
+        <p>Cause: these notifications only go out when something actually happens, not on a constant schedule, so the connection used to send them sometimes sat unused for a while. Occasionally the other end quietly closed that connection during the gap, and the next attempt failed immediately, before it ever really got going - not a real outage, just a stale connection being reused.</p>
+        <p><b>Fix:</b> a failed attempt now automatically retries once on a fresh connection instead of giving up right away, the same approach we already use for our real market-data connections. Confirmed with a real test notification, delivered successfully. This only affects whether we get pinged about the bot's activity - it never touched the bot's actual trading.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
+      <h2>One of our gold bot's core inputs has been random noise since the day it went live</h2>
+      <div class="impact">Practice-account bot only, no real money involved; likely degraded decision quality since launch, now fixed</div>
+      <div class="body">
+        <p>While watching the console for something unrelated, we spotted a live warning flagging one specific number as far more extreme than anything else the model was looking at - and it kept happening on virtually every single check-in, not as an occasional blip.</p>
+        <p>Traced it back: that number, meant to represent how much trading activity was happening in the market, had always been randomly generated on every real live check-in - never actually connected to anything real, regardless of whether the rest of the market data was correct. The model, however, had been trained on the true historical version of that same number, which sits on a completely different scale. That means every real trading decision this bot has ever made included at least one input that was pure noise, not real information.</p>
+        <p><b>Fix:</b> now fetches the real version of that number directly from the same real market-data source already used elsewhere, matching the exact time window the training data itself uses. Confirmed live: the number now sits in a normal, expected range instead of standing out as an extreme outlier every time.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
+      <h2>Our gold bot stopped trading for five days straight - the cause was hiding in how it was trained</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>We noticed the gold bot hadn't traded in days and dug in. The bot's own model hadn't stopped working - it had essentially decided not to want to trade at all, sitting in "hold" the vast majority of the time.</p>
+        <p>Root cause: one of the model's inputs - the small real-time gap between the buy and sell price - gets converted into a number the model can learn from using a scale that itself gets learned from training data. That scale turned out to be badly broken: the training process had never had access to a real historical version of that gap, only a single fixed stand-in value used for every training example, so the model was trained believing that gap never moves at all. When the real gap moved even slightly during live trading, it registered as a number hundreds of times more extreme than anything the model had ever seen, and the model reacted by refusing to trade. We confirmed this was the exact cause by matching it precisely against the bot's own live activity log.</p>
+        <p>We fixed the immediate problem using 2,000 recent real readings to recalculate the broken scale, and added a general safeguard so any input's learned scale being suspiciously close to zero gets caught automatically from now on. But that still left the deeper question: why did training never have the real number to begin with? Traced it to the data-collection step itself only ever requesting the mid-point price, never the actual buy/sell gap - fixed that too, then ran a full real retrain on properly collected data.</p>
+        <p><b>Honest result:</b> we compared the retrained candidate against the model currently trading, on real, unseen historical data. The candidate won on every measure we track - smaller loss, better win rate, smaller worst-case drawdown - but it was still not profitable over that stretch, so our own promotion rule correctly declined to switch to it. Real improvement, not yet a fix for profitability itself - we're not overriding that rule to make the story sound better than it is.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-24</div>
       <h2>Our crypto bots sat out a bull market for days - so we asked whether that's actually the right call</h2>
       <div class="impact">Real-money bots; one of three now live-testing a newly built strategy at normal position sizing, the other two unchanged</div>
