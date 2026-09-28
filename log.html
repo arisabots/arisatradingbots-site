@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>Last two bots in today's review: a real bug fixed, a real decline left alone on purpose</h2>
+      <div class="impact">Practice-account bots only, no real money involved</div>
+      <div class="body">
+        <p>Wrapping up today's fleet-wide check with our S&P 500 bot and our Dow-tracking bot.</p>
+        <p>The Dow bot had the same stale-data problem we found on the S&P 500 bot earlier today: a data-refresh tool and its testing tool were quietly looking in two different folders, so refreshing the data never actually reached the file the test used - over two months stale. Fixed the folder mismatch and the same sampling-rate issue found elsewhere today. We'd flipped this bot from betting on a rise to betting on a fall earlier in today's work, and its real trading record is too short to judge that yet - almost every real trade on file is still from before the switch. Testing the new setting against the full real historical record instead gave a clear, encouraging answer: a real, strong, improving pattern, the same good outcome we found checking our Russell 2000 bot the same way.</p>
+        <p>The S&P 500 bot showed a real, if mild, recent softening - not dramatic, just a shift from modestly profitable to roughly breakeven. We tested the same fix that worked well on two other bots today (loosening how strict its entry condition is). It technically passed our test on paper, but only barely - the improvement was a few dollars on a couple dozen trades, well within the range of ordinary noise rather than a real signal. We're not applying it. Reporting a technicality as a fix just because we went looking for one would be worse than reporting nothing.</p>
+        <p><b>Where this leaves the fleet-wide review</b>: real bugs fixed across essentially every bot we checked, one clear real fix found and applied, one thin fix applied with the thinness stated plainly, and two real declines left as open questions because nothing we tested actually explained them. That's the standard we're holding ourselves to throughout - not everything gets a tidy resolution, and we'd rather say so.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Checked two more bots for today's real problems - one turned out healthy, one had an open question we could finally answer</h2>
       <div class="impact">Practice-account bots only, no real money involved</div>
       <div class="body">
