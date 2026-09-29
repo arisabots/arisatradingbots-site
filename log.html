@@ -140,6 +140,29 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-29 (later)</div>
+      <h2>We fixed a real order-placement bug on our crypto bots - a rounding-format quirk that was quietly blocking some real Bitcoin trades from ever going through</h2>
+      <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves, not automatically</div>
+      <div class="body">
+        <p>While checking recent activity across our real-money bots, we noticed one of our crypto bots kept hitting a rejection from the exchange specifically when trying to trade Bitcoin - never other coins, just Bitcoin, over and over.</p>
+        <p>Traced it to a subtle number-formatting issue. Our code correctly works out the exact right trade size using precise decimal math, but right before sending the order, it was converting that number into an ordinary computer "float" - and for a very small quantity (which is normal for Bitcoin, since one Bitcoin costs six figures), that conversion can silently switch the number into scientific notation, like turning "0.00004523" into "4.523e-05". That's a perfectly valid number to a computer, but the exchange's order form doesn't accept that format and rejects it outright. Other coins we trade are priced low enough that their quantities rarely fall into that trap - which is exactly why this had gone unnoticed.</p>
+        <p>We wrote a test that reproduces the exact real failure first, confirmed it actually fails the way we thought, then fixed the formatting so the exact right number is always sent in plain decimal form, no matter how small. All existing tests still pass. Because this touches the actual order-placement code for a real-money bot, we're treating the fix as ready-to-go rather than already live - we restart these bots ourselves rather than have it happen automatically, so real trades keep the same order-placement code until that happens on our own schedule.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-29 (also later)</div>
+      <h2>We tried to rebuild the missing piece of our forex bot's test - it turned out to be the wrong lever entirely</h2>
+      <div class="impact">Real-money bot. No live trading was changed - this continues the same read-only investigation into our testing tools</div>
+      <div class="body">
+        <p>Following straight on from the limitation we described below - our forex bot's test can't fully reconstruct two of the signals it actually reacts to (market sentiment and broader economic context) - we went and tried to build both anyway, rather than just noting the gap and moving on.</p>
+        <p>Sentiment turned out to be genuinely reconstructable: we rebuilt a real historical record of it using the exact same formula the live bot itself uses, and checked it thoroughly against synthetic test cases before trusting it. Economic context turned out even easier than expected - the underlying government data source keeps a full, freely available historical record going back decades, which we hadn't realized going in.</p>
+        <p>We plugged both into the test and ran a careful before/after comparison. The honest result: neither one changed anything. The real sentiment numbers, once reconstructed, are almost always too small to cross the threshold the bot itself requires before treating sentiment as meaningful - so it mostly stays neutral anyway, gap or no gap. And the economic-context reading has simply sat in the bot's own "no strong signal either way" zone for its entire recent history, regardless of any data we could feed it.</p>
+        <p>So: two real, working pieces of testing infrastructure built and verified, and the honest conclusion is that they don't move the needle on this bot's testing gap right now - not because we built them wrong, but because the real underlying numbers are currently too muted to matter. We're logging that plainly rather than presenting "we built it" as "we fixed it." No live setting was touched.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-29</div>
       <h2>We checked our real-money forex bot for the same issues, caught our own currency-math mistake, and found a limit we can't easily fix</h2>
       <div class="impact">Real-money bot. No live trading was changed - this was a read-only investigation into our own testing tools</div>
