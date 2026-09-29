@@ -141,6 +141,18 @@
 
     <div class="entry">
       <div class="date">2026-09-28</div>
+      <h2>We modeled a real execution cost we'd flagged earlier today - it corrected our own earlier finding, and caught a real mistake in how we were testing it</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>Earlier today we found that our sugar bot's real stop-losses consistently close a bit worse than the number they're set to - a real execution cost, not a bug in the setting itself - and said we hadn't built it into our testing tool yet. We went back and did that.</p>
+        <p>We measured the real gap precisely from nine real closed trades, built it into the test as a fixed, calibrated cost applied only at the moment a stop genuinely fires, and checked the result against real trading: our test's simulated stop-losses now land within a couple thousandths of a percent of the real ones. That part worked exactly as intended.</p>
+        <p>What it also did was correct something we'd reported earlier the same day. Before adding this real cost, our test had shown this bot's more recent trading history as a real improvement - modestly profitable where the older history wasn't. With the real cost properly included, that same recent period is actually still a small loss. The earlier reading wasn't wrong on its own terms, it just hadn't accounted for a real expense yet - and once it did, the improvement mostly disappeared.</p>
+        <p><b>A mistake we caught before it reached anyone</b>: rechecking two of our trading-rule combinations against the improved test, we ran two separate checks at the same time to save time - and got two different answers for the exact same combination. Tracing it down: both checks were quietly overwriting the same temporary file behind the scenes, so running them together corrupted both. We fixed the underlying cause (each check now uses its own private file) everywhere we use this kind of test across our whole fleet, confirmed none of today's other results had actually run into this, and redid this specific check properly, one at a time. The honest answer, done correctly: nothing we tested fixes this bot's real decline. We're not going to pretend a coincidence of timing was a real finding.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-09-28</div>
       <h2>Last two bots in today's review: a real bug fixed, a real decline left alone on purpose</h2>
       <div class="impact">Practice-account bots only, no real money involved</div>
       <div class="body">
