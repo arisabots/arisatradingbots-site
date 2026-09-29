@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-29 (even later)</div>
+      <h2>An automatic drift alert flagged our silver bot - we checked it properly, almost made a mistake, and flipped it from buy-only to sell-only</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>Our internal monitoring flagged this bot as "drifted" - a cheap early-warning check, not a verdict on its own. Before touching anything, we re-ran our own stricter, real backtest on fresh data to see if the warning actually held up.</p>
+        <p>First, some good news buried in the process: a threshold fix from yesterday that we'd logged as "still waiting to take effect" turned out to have already gone live a day earlier than we realized - one loose end we can now close out properly.</p>
+        <p>With that fix confirmed live, the fresh real numbers showed a genuine reversal: buying-the-dip, which had been the right call on this instrument for over two months, is now clearly the losing side, while selling-the-rally has flipped to clearly winning. Our first instinct was a middle-ground fix - allow both directions rather than pick one. We caught ourselves before doing that: we'd already tested exactly that combination months ago and found it was worse than picking a side, for a specific real reason - a losing direction drags down a winning one, it doesn't just cancel out. So instead we made the same kind of call we made back then: pick the side the real data supports, fully.</p>
+        <p><b>Where it's honest, not perfect</b>: this bot has traded very little the last three weeks, so we don't have enough very recent trades to double-check this specific call the way we normally would before flipping a live setting. We decided to act on the strength and consistency of the longer-term real numbers anyway, rather than wait indefinitely for more data that may not arrive soon - but we're saying so plainly rather than presenting this as a fully proven change. It's demo money either way, and easy to reverse if the next few weeks say otherwise.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-29 (later)</div>
       <h2>We fixed a real order-placement bug on our crypto bots - a rounding-format quirk that was quietly blocking some real Bitcoin trades from ever going through</h2>
       <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves, not automatically</div>
