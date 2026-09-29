@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-29</div>
+      <h2>We checked our real-money forex bot for the same issues, caught our own currency-math mistake, and found a limit we can't easily fix</h2>
+      <div class="impact">Real-money bot. No live trading was changed - this was a read-only investigation into our own testing tools</div>
+      <div class="body">
+        <p>After finding and fixing several testing-tool bugs on our practice bots this week, we checked whether our one real-money forex bot had the same problems. It trades over 20 currency pairs, and its own testing tool hadn't been refreshed in over a year.</p>
+        <p>First, we worked out its real recent profit and loss properly. Our first attempt at adding it up came out as a scary-looking large loss - and we caught, before reporting it, that the number was nonsense: it was mixing raw amounts from currency pairs that settle in completely different currencies (some in Japanese yen, some in US dollars) without converting any of them to a common one. Yen amounts look huge next to dollar amounts purely because of the exchange rate, not because they represent bigger real money. Done properly, using the same real currency-conversion logic our own bot already uses elsewhere, the real number was a real but modest loss - a small fraction of the scary first number, and in line with what we already knew about this bot's performance.</p>
+        <p>Then we found four real, separate bugs in the tools used to test this bot, similar in spirit to what we found on our practice bots: it was quietly pointed at the wrong server address the whole time (meaning it had likely never successfully refreshed its own data), it never captured the real gap between buy and sell prices, a timestamp format it never expected would have crashed the very first time it tried to fetch more data than one request could hold, and its own trade-simulation logic used a rough guess for that price gap instead of a real one. We fixed all four and used the repaired tool to pull half a year's worth of genuinely fresh, real data.</p>
+        <p><b>Where it stands</b>: once the tool actually worked, it revealed something we can't quickly fix rather than a bug we could. This bot normally needs agreement from several different signals before making a real trade - market sentiment and broader economic context among them. Our testing tool can only ever reconstruct one of those signals from historical prices; the others simply don't have a historical record to replay. So even with every bug fixed, our test still only sees a fraction of what the real bot actually reacts to. We're not going to pretend a partial test tells the full story - we're logging this as a real, currently-open limitation rather than a solved problem, and no live setting was touched while investigating it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-28</div>
       <h2>We modeled a real execution cost we'd flagged earlier today - it corrected our own earlier finding, and caught a real mistake in how we were testing it</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
