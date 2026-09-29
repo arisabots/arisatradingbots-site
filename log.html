@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-29 (yet later)</div>
+      <h2>Our stubbornly unprofitable sugar bot: two rounds of test-tool tuning found nothing, so we went and read the real trade log by hand instead</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>This bot has had the most stubborn real decline in our whole fleet - two separate, thorough rounds of testing-tool tuning (dozens of setting combinations each time) found nothing that would have fixed it. Rather than try a third round of the same kind of test, we went straight to the real trade history instead and split it a different way: not by setting, but by how each trade actually ended.</p>
+        <p>The real split is clean: trades that reach any profit-taking step along the way win 86% of the time and are solidly profitable overall. Trades that get fully stopped out - about 3 in 10 of all real trades - lose 100% of the time, no exceptions, and account for the entire real loss. In other words: the bot's entry decisions are genuinely good. The whole problem is concentrated in how often a trade never gets the chance to take any profit at all.</p>
+        <p>We'd already made one live change three weeks ago aimed at exactly this - loosening how much profit gets locked in early, specifically to soften the blow when a trade does get stopped out. Checking real results since: it worked, on the exact thing it was meant to fix - the ratio between a typical loss and a typical win improved by nearly half. It hasn't yet turned the bot fully profitable, but there's only a small number of real trades to judge it on so far.</p>
+        <p><b>The honest bottom line</b>: our own testing tool has repeatedly failed to find what a three-week-old live change already shows working for real. That tells us the tool itself still isn't trustworthy for this bot, not that there's nothing left to find. We're keeping the recent change in place rather than reverting it, and we're done running more test-tool sweeps here until the tool itself is fixed properly - testing against a tool that can't reproduce reality isn't testing.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-29 (even later)</div>
       <h2>An automatic drift alert flagged our silver bot - we checked it properly, almost made a mistake, and flipped it from buy-only to sell-only</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
