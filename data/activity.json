@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": 0.92,
+    "pnl_usd": 24.41,
+    "exit_time": "2026-09-30T16:30:39.017554Z"
+  },
+  {
     "bot": "RUSSELL",
     "brand": "Russell Trading",
     "instrument_name": "Russell 2000",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.8,
     "pnl_usd": -7.71,
     "exit_time": "2026-09-28T16:27:05.925990Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": -1.88,
-    "pnl_usd": -50.23,
-    "exit_time": "2026-09-28T13:53:58.521505Z"
   }
 ]
