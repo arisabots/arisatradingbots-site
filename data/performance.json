@@ -1567,6 +1567,14 @@
     {
       "time": "2026-09-30T08:03:35.051186Z",
       "cumulative_pnl": -1015.41
+    },
+    {
+      "time": "2026-09-30T12:29:54.490415Z",
+      "cumulative_pnl": -1006.39
+    },
+    {
+      "time": "2026-09-30T12:30:37.317931Z",
+      "cumulative_pnl": -1004.36
     }
   ],
   "bots": [
@@ -1620,30 +1628,30 @@
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 24,
-      "wins": 15,
+      "total_trades": 25,
+      "wins": 16,
       "losses": 9,
-      "win_rate": 62.5,
-      "gross_profit": 231.48,
+      "win_rate": 64.0,
+      "gross_profit": 240.5,
       "gross_loss": -342.23,
-      "profit_factor": 0.68,
-      "avg_hold_minutes": 2270.2,
-      "total_pnl": -110.75
+      "profit_factor": 0.7,
+      "avg_hold_minutes": 2191.9,
+      "total_pnl": -101.73
     },
     {
       "bot": "SILVERSMITH",
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 25,
-      "wins": 16,
+      "total_trades": 26,
+      "wins": 17,
       "losses": 9,
-      "win_rate": 64.0,
-      "gross_profit": 26.63,
+      "win_rate": 65.38461538461539,
+      "gross_profit": 28.66,
       "gross_loss": -51.81,
-      "profit_factor": 0.51,
-      "avg_hold_minutes": 94.6,
-      "total_pnl": -25.18
+      "profit_factor": 0.55,
+      "avg_hold_minutes": 103.7,
+      "total_pnl": -23.15
     },
     {
       "bot": "SOLOMON",
@@ -1706,6 +1714,6 @@
       "total_pnl": -288.32
     }
   ],
-  "fleet_total_pnl": -1015.41,
-  "fleet_total_trades": 392
+  "fleet_total_pnl": -1004.36,
+  "fleet_total_trades": 394
 }
