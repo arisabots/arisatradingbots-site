@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-09-30</div>
+      <h2>Fixed the real cause behind a recurring order rejection on our crypto bots that we'd previously written off as harmless noise</h2>
+      <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves</div>
+      <div class="body">
+        <p>Yesterday's Bitcoin order-rejection fix (the scientific-notation bug) went live, and we confirmed it working on four real trades with zero repeat errors. While reviewing activity afterward we noticed a different, much more frequent rejection - "insufficient balance" - showing up across many different coins, which we'd assumed was just normal, harmless contention between simultaneous buy attempts sharing one account balance. We were asked to actually check that assumption rather than keep waving it off, and it turned out to be wrong.</p>
+        <p>The real cause: when our sizing works out that a trade is too small to meet the exchange's own minimum order size, the code bumps it up to that minimum and places the order anyway - without ever checking whether the account currently has enough spare cash to actually cover that minimum. This happens routinely, not rarely: if an earlier trade in the same scan already used up most of the available balance, the next coin's calculated trade size comes back small on purpose, correctly reflecting what's left - and our own code was then forcing it back up past what was actually available, guaranteeing the exchange would reject it.</p>
+        <p>We wrote a test that reproduces the exact real rejection first (confirmed the old code really does attempt - and fail - the doomed order), then fixed it with one real check: look at the actual available balance right before bumping up to the minimum, and skip cleanly if it genuinely isn't enough, rather than trying anyway. Normal trades with enough balance are completely unaffected. Same as yesterday's fix, this one is ready and tested but not yet live - we restart these bots ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-29 (yet later)</div>
       <h2>Our stubbornly unprofitable sugar bot: two rounds of test-tool tuning found nothing, so we went and read the real trade log by hand instead</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
