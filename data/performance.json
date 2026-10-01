@@ -1603,6 +1603,18 @@
     {
       "time": "2026-10-01T07:29:46.983574Z",
       "cumulative_pnl": -978.82
+    },
+    {
+      "time": "2026-10-01T10:10:32.150738Z",
+      "cumulative_pnl": -976.9
+    },
+    {
+      "time": "2026-10-01T10:18:26.536680Z",
+      "cumulative_pnl": -957.95
+    },
+    {
+      "time": "2026-10-01T10:18:51.515718Z",
+      "cumulative_pnl": -950.59
     }
   ],
   "bots": [
@@ -1656,15 +1668,15 @@
       "brand": "Russell Trading",
       "instrument_name": "Russell 2000",
       "symbol_display": "US2000",
-      "total_trades": 26,
-      "wins": 17,
+      "total_trades": 27,
+      "wins": 18,
       "losses": 9,
-      "win_rate": 65.38461538461539,
-      "gross_profit": 244.92,
+      "win_rate": 66.66666666666666,
+      "gross_profit": 263.87,
       "gross_loss": -342.23,
-      "profit_factor": 0.72,
-      "avg_hold_minutes": 2111.3,
-      "total_pnl": -97.31
+      "profit_factor": 0.77,
+      "avg_hold_minutes": 2044.8,
+      "total_pnl": -78.36
     },
     {
       "bot": "SILVERSMITH",
@@ -1716,32 +1728,32 @@
       "brand": "Spike Trading",
       "instrument_name": "Dow Jones",
       "symbol_display": "US30",
-      "total_trades": 18,
-      "wins": 14,
+      "total_trades": 19,
+      "wins": 15,
       "losses": 4,
-      "win_rate": 77.77777777777779,
-      "gross_profit": 197.2,
+      "win_rate": 78.94736842105263,
+      "gross_profit": 204.56,
       "gross_loss": -161.64,
-      "profit_factor": 1.22,
-      "avg_hold_minutes": 3740.7,
-      "total_pnl": 35.56
+      "profit_factor": 1.27,
+      "avg_hold_minutes": 3560.3,
+      "total_pnl": 42.92
     },
     {
       "bot": "SWEETPEA",
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 42,
-      "wins": 21,
+      "total_trades": 43,
+      "wins": 22,
       "losses": 21,
-      "win_rate": 50.0,
-      "gross_profit": 350.01,
+      "win_rate": 51.162790697674424,
+      "gross_profit": 351.93,
       "gross_loss": -638.33,
       "profit_factor": 0.55,
-      "avg_hold_minutes": 239.6,
-      "total_pnl": -288.32
+      "avg_hold_minutes": 234.6,
+      "total_pnl": -286.4
     }
   ],
-  "fleet_total_pnl": -978.82,
-  "fleet_total_trades": 401
+  "fleet_total_pnl": -950.59,
+  "fleet_total_trades": 404
 }
