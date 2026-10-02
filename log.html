@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-02 (yet later)</div>
+      <h2>A 5th loss turned our gold bot's good day negative - because it was a different kind of gap than the two we'd already fixed today</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>After today's two earlier fixes to the losing-streak protection, a 5th loss still got through - and this one tipped the day from "gave back most of the profit" to an actual net loss (-$16.64, down from a $82.96 peak). Worth understanding why neither of today's earlier fixes caught it.</p>
+        <p>The answer: this 5th loss wasn't part of a losing streak at all. It was one standalone losing trade, on its own, after an earlier streak had already reset. Every fix we'd made so far only watches for consecutive losses in a row - by definition, it can never catch a single isolated loss that happens to be the one that tips a good day into a bad one.</p>
+        <p>So we built a genuinely different kind of guard: rather than watching for streaks, watch the day's running total directly, and pause new trades for the rest of the day once that total drops to a small real dollar floor - regardless of whether it got there via a streak or one bad trade. Tested against the full real trade history across a range of dollar amounts, and this was the clearest result of the entire day: a solid, consistent improvement across a whole range of nearby dollar values, not just one lucky number - real evidence this is a genuinely different, more complete kind of protection, not a variation on the same idea.</p>
+        <p>Same as everything else today: simple, reversible, practice money only, ready and tested but not yet running live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-02 (later)</div>
       <h2>The same gold bot still gave back almost all of a good day - a 4th loss slipped through right after our earlier fix's safety window expired</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
