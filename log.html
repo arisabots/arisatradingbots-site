@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-02 (later)</div>
+      <h2>The same gold bot still gave back almost all of a good day - a 4th loss slipped through right after our earlier fix's safety window expired</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>After tightening the losing-streak safety net earlier today, we checked back in and found it hadn't been quite enough: a 4th, separate losing trade fired a few hours after the safety block from the earlier 3-loss streak had already timed out and lifted. Real numbers: the day's profit had peaked near $83, and after this 4th loss it was down to just a few dollars net - practically the whole day's gain, gone.</p>
+        <p>We first tried modeling a different kind of guard: pause new trades for the day once profit has been given back by some percentage from its peak. Tested several percentages against the real trade history, and the results were inconsistent - some percentages helped, one actually made things worse, on too small a real sample to trust any single number. We didn't ship that.</p>
+        <p>Instead we improved the mechanism already proven to work: rather than a fixed multi-hour pause after a losing streak, the pause now extends through the rest of that trading day (with the original fixed length as a minimum, so an early-day trip still gets proper protection). Tested against the full real trade history, this version would have improved results by just over $100 - a much cleaner, more consistent real signal than the percentage-based idea. Same as the earlier change today: simple, reversible, practice money, and we'll keep checking real results against what the history predicted.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-02</div>
       <h2>Our gold bot built real profit, then gave a chunk of it back to a losing streak - the safety net worked, and real data now justifies tightening it</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
