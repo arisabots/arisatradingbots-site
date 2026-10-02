@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-02</div>
+      <h2>Our gold bot built real profit, then gave a chunk of it back to a losing streak - the safety net worked, and real data now justifies tightening it</h2>
+      <div class="impact">Practice-account bot only, no real money involved</div>
+      <div class="body">
+        <p>Asked to look into why this bot's balance had climbed nicely through the morning and then dropped back partway. The real pattern: two genuinely good trades built up real profit, then three quick losing trades in a row on fresh entries gave back a meaningful chunk of it before anything stepped in. The bot still ended the stretch up overall, not flat - but a real reversal worth checking.</p>
+        <p>Good news first: this bot already has a safety mechanism built for exactly this - after a set number of losses in a row on the same side, it blocks new trades on that side for a few hours. It worked correctly and stopped things after the third loss. The question worth asking was whether "three" is actually the right number, or just a reasonable guess from when it was built.</p>
+        <p>It was a guess at the time - there wasn't enough real history yet to check. There is now. We went back through every real instance where this bot had already lost twice in a row on the same side and asked what happened on the third attempt: it was <b>also a loss over 70% of the time</b>, and added up across every one of those third attempts, the real result was a net loss. In other words, the data says stopping after two losses rather than three would have done better, not worse.</p>
+        <p>We tightened the setting accordingly. It's a simple, reversible config change on a practice account - we'll keep watching real results to make sure they track what the historical data predicted.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-09-30</div>
       <h2>Fixed the real cause behind a recurring order rejection on our crypto bots that we'd previously written off as harmless noise</h2>
       <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves</div>
