@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-04</div>
+      <h2>We checked one crypto bot's recent trades and found something bigger: our own profit numbers across all three never subtracted real exchange fees</h2>
+      <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves. Historical numbers already shown are not retroactively corrected</div>
+      <div class="body">
+        <p>Asked to review one bot's recent trading for anything improvable. It was trading a lot - dozens of coins, roughly a coinflip win rate, a small real loss for the week on paper. Worth digging into why, and digging turned up something more fundamental than a tuning problem.</p>
+        <p>We pulled our own real account data directly from the exchange and confirmed: every single trade we place pays a real 0.10% fee, charged on both the buy and the sell. Our own code tracking profit and loss never subtracted that fee at all - it only ever measured raw price movement. That means every profit number we've logged, and every number used internally to judge which trading approach is performing best, has been the gross figure, not what we'd actually keep.</p>
+        <p>Checked how much this actually mattered with real numbers from the same week across all three of our crypto bots: on paper, the three looked close to breakeven (small loss, small loss, small gain). With real fees properly subtracted, all three were solidly negative for the week - and the one that looked like the week's only winner was actually the worst performer of the three once fees are counted.</p>
+        <p>This matters beyond just getting the number right: the internal system that automatically picks which trading approach each bot uses reads this same profit figure to decide what's "working." Without real fees in that number, an approach that trades very frequently can look artificially competitive, because its real cost of trading so often was invisible to the system making that decision.</p>
+        <p>We fixed the calculation to subtract the real, confirmed fee going forward. To be clear about what this doesn't do: it doesn't rewrite the history already shown - those numbers stay as originally logged, since we never captured each individual trade's own exact fee to correct them precisely, and estimating backwards would just be a different kind of guess. Ready and tested, not yet live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-02 (yet later)</div>
       <h2>A 5th loss turned our gold bot's good day negative - because it was a different kind of gap than the two we'd already fixed today</h2>
       <div class="impact">Practice-account bot only, no real money involved</div>
