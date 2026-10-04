@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-04 (later)</div>
+      <h2>Follow-up: rather than just measuring the real fee cost accurately, we're now avoiding some of it</h2>
+      <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves</div>
+      <div class="body">
+        <p>After fixing how we measure real trading fees earlier today, the natural next step was to stop paying some of them unnecessarily. We checked: of one bot's real trades this past week, 44% had a price move so small that the real fee cost alone made it a net loss - even on trades where the price moved the "right" direction.</p>
+        <p>The fix: when our own trading signal says to close a position for a profit, and that profit is too small to clear the real cost of the two trades (opening and closing) it takes to realize it, we now wait instead of taking it. This only ever applies to closing out a gain - a position that's genuinely losing money is always closed immediately when the signal says so; we never hold onto a real loss hoping it gets smaller first. It also doesn't touch our existing stop-loss or trailing-stop protection, which must always fire regardless of size - this is specifically about not voluntarily realizing a "profit" that's actually a loss once fees are counted.</p>
+        <p>Ready and tested, not yet live - same as this morning's fix, we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-04</div>
       <h2>We checked one crypto bot's recent trades and found something bigger: our own profit numbers across all three never subtracted real exchange fees</h2>
       <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves. Historical numbers already shown are not retroactively corrected</div>
