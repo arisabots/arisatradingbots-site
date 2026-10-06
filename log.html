@@ -140,15 +140,27 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-06</div>
+      <h2>Our own automated test-health check caught a broken test - and the bug was in a test we wrote two days earlier, not in the real trading code</h2>
+      <div class="impact">No real-money impact. A test-only bug, caught and fixed before it could hide a real problem</div>
+      <div class="body">
+        <p>We run an automated check every hour that runs each bot's full test suite and flags any failure. It flagged one: a test tied to Monday's fee-correction fix for our crypto dashboard started failing on its own, with nothing in the real trading code having changed.</p>
+        <p>The cause: that test checked a "today's profit" number, and to do that it needed a fake trade timestamped as "today." We wrote that test on the day it was written and typed in that day's actual date by hand. Two days later, "today" had moved on - but the test's fake trade was still stamped with the old date, so it silently fell out of the "today" bucket it was supposed to test, and the test broke on its own with nothing else having changed.</p>
+        <p>This is the same mistake, caught for the second time in one week - we fixed an identical bug in a different bot's test a few days earlier. The fix here is the same: compute the fake trade's timestamp from the real current date when the test runs, instead of typing in a fixed date that inevitably goes stale. We also checked the rest of our tests across two bots for the same pattern and found nothing else at risk.</p>
+        <p>Nothing about real trading was ever affected - this was a flaw in a test we wrote, not in the bot. It's exactly the kind of thing our own automated checks exist to catch, and it did.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-04 (the last one)</div>
       <h2>With real losses finally visible, we went looking for the actual cause - found a real lead, tried twice to prove it properly, and were honest when neither attempt held up</h2>
-      <div class="impact">Real-money bots. Added a measurement tool only - no trading behavior changed. Not yet live, we restart these ourselves</div>
+      <div class="impact">Real-money bots. Added a measurement tool only - no trading behavior changed. Confirmed live after restart</div>
       <div class="body">
         <p>Once today's earlier fixes made the real losses visible instead of hidden behind missing fees, the obvious next question was why the strategies themselves are losing money, not just losing a little extra to fees. We found a real, concrete lead: our standard downside-protection setting lets a losing trade run 3 to 6 times further than how quickly we lock in a win. Looking at this week's worst real losses, several sit almost exactly at that wider downside limit - a real, visible pattern, not a hunch.</p>
         <p>Before touching a real risk setting, we wanted to properly prove a specific fix using real historical price data, the same standard we've held every other change to today. We tried twice. The first attempt didn't account for the fact that two different parts of our system are racing each other to close a losing trade, and only modeling one of them gave a result nowhere close to what actually happened. The second attempt fixed that by reusing our real trading logic directly - better, but still didn't line up with real outcomes closely enough to trust.</p>
         <p>The likely reason: minute-by-minute historical price data shows the single most extreme price blip across the entire exchange in that minute, but our own bot only checks the price at its own regular check-ins, roughly once a minute - so it simply never sees most of those fleeting blips. A test built from historical data ends up reacting to things the real bot never actually saw.</p>
         <p>Rather than guess at a new setting from an unreliable test, we added a measurement tool instead: the bot now records exactly what it really sees and really decides, every single time it checks, going forward. That gives us genuine, trustworthy evidence to properly validate a fix against within a day or two, instead of trying to reconstruct it after the fact. We built this carefully so a problem with the new recording itself could never interfere with a real protective sell - tested directly by making the recording fail on purpose and confirming the real safety mechanism still fires regardless.</p>
-        <p>No trading behavior changes with this - it's purely a recording addition. Ready and tested, not yet live.</p>
+        <p>No trading behavior changes with this - it's purely a recording addition. Confirmed live and recording real data since the restart.</p>
       </div>
     </div>
 
