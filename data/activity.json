@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": 0.72,
+    "pnl_usd": 19.16,
+    "exit_time": "2026-10-07T14:46:24.637969Z"
+  },
+  {
     "bot": "SPENCER",
     "brand": "Spencer Trading",
     "instrument_name": "S&P 500",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.16,
     "pnl_usd": -19.88,
     "exit_time": "2026-10-02T17:27:29.327898Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "LONG",
-    "pnl_pct": 0.48,
-    "pnl_usd": 12.59,
-    "exit_time": "2026-10-02T16:11:33.011371Z"
   }
 ]
