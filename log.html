@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-07 (later, same day)</div>
+      <h2>Found the real reason two of our crypto bots have been losing a little money every day this week - a strategy running with its safety stop silently disabled</h2>
+      <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves</div>
+      <div class="body">
+        <p>Two of our crypto bots have been quietly losing a small amount of money most days this week - nothing dramatic on any single day, but a real, steady drift downward. We broke down every trade by which trading approach made it, and one stood out immediately: a trend-following approach that was both bots' busiest strategy of the week, winning under 40% of the time on each.</p>
+        <p>Digging into why that approach specifically was losing led somewhere concrete. We keep a full record of every time our system switches a bot onto a different trading approach, including the exact settings used. Checking all 29 real times this approach was switched on for these two bots going back to late September: every single one had its safety stop-loss turned off. Not inconsistently - every time, no exceptions.</p>
+        <p>The reason traces back two weeks: this same approach caused a real, sharp loss on a different one of our crypto bots, and we built and proved a fix for it then - a hard safety stop, backtested and switched on for that specific bot. But that fix was only ever applied to the one bot that had the problem. The shared template every bot pulls fresh settings from whenever our system tries this approach was never updated, so these two bots kept getting a copy with the stop-loss switched off, every single time.</p>
+        <p>We also checked whether this could have quietly fixed itself over time - it couldn't. The part of our system that nudges settings in small random steps to find better values can't move a setting away from exactly zero, for a simple mathematical reason: nudging zero by any percentage is still zero. This wasn't slow to self-correct; it was incapable of it.</p>
+        <p>The fix: we updated the shared template to the same safety value already proven and running live on the other bot. Neither of the two affected bots happened to be using this approach at the moment we found this, so no open trade was affected - this only changes what happens the next time either bot switches onto it. Ready and tested, not yet live - real money, we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-07</div>
       <h2>Sugar bot: two losses in a row raised an obvious question - should a loss pause trading for the rest of the day? We checked against real history before changing anything</h2>
       <div class="impact">Demo bot, no real money involved. Confirmed live after restart</div>
