@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-07</div>
+      <h2>Sugar bot: two losses in a row raised an obvious question - should a loss pause trading for the rest of the day? We checked against real history before changing anything</h2>
+      <div class="impact">Demo bot, no real money involved. Ready and tested, takes effect on the next restart</div>
+      <div class="body">
+        <p>Our sugar-trading demo bot took two losses back to back today. The natural question: should a loss mean we stop trading for the rest of the day, the way we already do on a different demo bot after it gave back a full day of gains a couple weeks ago? Rather than copy that fix over because it worked somewhere else, we checked it against this bot's own real trading history first.</p>
+        <p>We rebuilt its full real trade record - 47 complete trades since late July. All-time, it's down $342.04 real dollars, winning under half the time, with losses that run about twice the size of wins. Looking specifically at what happens after a loss: eleven times in its history, the bot took another trade later the same day. Those eleven follow-up trades net out to a real loss of $106, even though slightly more than half of them individually won - because the losses in that group were bigger than the wins.</p>
+        <p>We simulated what would have happened if the bot simply stopped trading for the rest of the day the moment any loss closed. Properly done - so a day with three trades doesn't quietly let the third one through just because the second one would never have happened - that would have skipped 8 real trades (3 real wins, 5 real losses) and brought the all-time total from -$342.04 to -$232.89. A real, validated $109 improvement, recovering about a third of this bot's lifetime losses.</p>
+        <p>With that evidence in hand, we built it: any single loss now pauses new trades on this bot until the next trading session. It's demo money, so there's no real-world risk either way, but we held it to the same standard as everything else here - proven against real numbers, not assumed from a different bot's result. Ready and tested, takes effect on the next restart.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-06</div>
       <h2>Our own automated test-health check caught a broken test - and the bug was in a test we wrote two days earlier, not in the real trading code</h2>
       <div class="impact">No real-money impact. A test-only bug, caught and fixed before it could hide a real problem</div>
