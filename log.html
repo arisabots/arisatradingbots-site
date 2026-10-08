@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-08</div>
+      <h2>Three losing trades in a row on the sugar bot looked like a trend reversal - it wasn't. The real pattern was about time of day, and we proved it before changing anything</h2>
+      <div class="impact">Demo bot, no real money involved. Fix is written and tested but not yet running live - we restart these ourselves</div>
+      <div class="body">
+        <p>Our sugar-trading demo bot took three losses in a row on trades betting the price would rise, which raised an obvious question: has the underlying trend flipped against it? We checked properly before assuming - ran the same trend-direction validation we use fleet-wide, against fresh real price data. The answer was clear: betting on a rise is still the better side, both over the long run and recently. No trend flip.</p>
+        <p>So we went back to a real pattern we'd already found and left unresolved a couple weeks ago: every time this bot's hard safety stop fires, it's a loss, by definition - but we'd never checked whether WHEN a trade starts matters. It does, a lot. This bot has a real multi-hour overnight closure unlike any other market we trade, and the first two and a half hours after it reopens each day carry a real stop-out rate nearly three times higher than the rest of the day - accounting for 78% of this bot's entire lifetime losses, on just a third of its trades, spread across 17 separate days.</p>
+        <p>Before building anything, we tested the idea properly against our backtesting tool using the bot's real strategy logic over its full history. We deliberately checked whether blocking just a little bit of that early window helped - it didn't, it made things worse, which told us this is a genuine pattern and not just "fewer trades means smaller losses." Blocking the first two and a half hours after reopen was the best setting we tested: cut the backtested loss by 46%.</p>
+        <p>To be straightforward about what this is and isn't: it doesn't turn this bot profitable - it's still a net loser even with this change, just a meaningfully smaller one. It also wouldn't have caught all three of the real losses that prompted this - two of the three, not all three. We built it anyway because the real, tested improvement is honest and worth having. Ready and tested, not yet live - demo money, but we hold ourselves to the same standard regardless and still restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-07 (later, same day)</div>
       <h2>Found the real reason two of our crypto bots have been losing a little money every day this week - a strategy running with its safety stop silently disabled</h2>
       <div class="impact">Real-money bots. Fix is written and tested but not yet running live - we restart these ourselves</div>
