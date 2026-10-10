@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-10 (later, same day)</div>
+      <h2>Asked to just "fix" one of our crypto bots from losing - here's the honest answer, including the one real improvement we did find</h2>
+      <div class="impact">Real-money bots. One small, real change ready and tested, not yet live - we restart these ourselves; everything else is an honest answer, not a fix</div>
+      <div class="body">
+        <p>We were asked to simply fix one of our crypto bots from losing money. We wish it were that simple, so here's the honest version of what we actually did and found.</p>
+        <p>First, a real question we'd deliberately left open for weeks: is our standard downside-protection setting too loose? We'd tried to answer this twice before with historical simulation and got unreliable, contradictory answers both times - so back in early October we started quietly recording exactly what the bot really sees and really decides, every single time it checks, on live data going forward. That recording has now run for six days and built up enough real evidence to answer properly: we tested tighter settings against the real recorded data, and every single one made things worse, not better. Our current setting is confirmed to be the best one, by real evidence instead of a guess. That's a genuine answer, closing out something we'd left open on purpose rather than rush.</p>
+        <p>Second, we checked how much of this week's loss is just the cost of trading itself versus genuinely losing bets. About a third of it is real exchange fees from a high number of trades - real, but not the main story. Even if fees were free, there would still be a real loss underneath. The honest root cause, which we'd already identified a few days ago: most of this bot's trading approaches are roughly breakeven after fees, so the system that automatically tries different approaches never finds one good enough to commit to confidently - it just keeps experimenting. That's not something a quick setting change fixes. It needs a genuinely better trading idea, which is real research, not a switch to flip.</p>
+        <p>Third, we went looking for one anyway, in a smaller and more honest way: are there specific coins that are just consistently bad for this bot, regardless of strategy? Our first pass found four that looked terrible - but digging into exactly when those losses happened showed almost all of it was ancient history from before we even started tracking which strategy made which trade, not a current problem. Looking only at recent, properly-tracked trades instead, we found a different, real, still-happening one: a coin that's lost money for all three related bots, under nearly every strategy any of them tried, as recently as yesterday. We blocked it from new trades, the same way we already handle a different coin that collapsed catastrophically back in July.</p>
+        <p>To be fully honest about scale: that block is real but small, worth an estimated few dollars a month at current activity, not a turnaround. We also found and flagged (but didn't yet fix) a stuck, practically worthless leftover position that's been silently re-checked thousands of times over six days without ever actually closing - a cleanup task, not a performance fix. The straightforward summary: no single change makes this bot reliably profitable today. We closed one real open question for good, made one small real improvement, and were honest that the rest needs real research, not a quick fix.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-10</div>
       <h2>Two losses on a day that started with big wins exposed a real gap between our safety nets - built a third one, and proved it before shipping it</h2>
       <div class="impact">Demo bot, no real money involved. Confirmed live after restart</div>
