@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-10 (one more, same day)</div>
+      <h2>Found the real, validated answer to today's "just fix the losing" question - and it's bigger than anything else we tried today</h2>
+      <div class="impact">Real-money bots. Implemented and tested, not yet live - we restart these ourselves. A real but major change to how often two of our bots trade</div>
+      <div class="body">
+        <p>Earlier today we closed out a long-open question and made one small, real improvement, but were honest that neither was a turnaround. We kept digging. The next idea - letting two bots learn from a third bot's trading history, since that one's self-learning model has been doing noticeably better - looked promising on the surface, but checking it properly on real data showed a genuinely mixed picture, not a clean transferable skill. Pursuing that further would mean real risk to systems that are already working, for a benefit that isn't clearly there. We set it aside rather than force it.</p>
+        <p>Then we checked one more, simpler angle: does it matter whether a coin is a major, well-established one versus a smaller, more obscure one? For two of our three crypto bots, the answer was dramatic and consistent. Trading the dozen or so biggest, most established coins loses only a fraction of a cent per trade on average. Trading everything else loses 27 to 33 times more per trade, on a similar win rate - meaning it's not that those trades win less often, it's that when they lose, they lose much bigger. We checked this held up in the last two weeks of real trading too, not just older history, and it did.</p>
+        <p>Importantly, this did NOT hold for the third bot - its real numbers showed the opposite, smaller coins doing slightly better for it specifically. So this isn't a blanket rule we're applying everywhere; we built it to apply only to the two bots where the real evidence actually supports it, and left the third bot's trading universe completely untouched.</p>
+        <p>To be fully honest about what this means in practice: trading only the biggest coins means trading a lot less often - our real numbers suggest roughly a 70-75% cut in how many trades these two bots make. That's a genuinely large change to how these bots behave, not a small tweak, which is exactly why we're treating it with the same care as every other real-money decision here: validated against real history first, implemented carefully, and disclosed plainly before it goes live. Ready and tested, not yet live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-10 (yet later, same day)</div>
       <h2>Digging into why one trading model performs better than its siblings turned up something much more urgent: our storage was about to run out</h2>
       <div class="impact">Real-money bots. Fixed, confirmed, and cleaned up - confirmed free space went from 164GB to 788GB</div>
