@@ -140,9 +140,22 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-10 (last one, we promise)</div>
+      <h2>Found and fixed a real safety-net bug we'd actually already written down and never circled back to</h2>
+      <div class="impact">Real-money bots. Restarted and running - affects all three crypto bots, not just two</div>
+      <div class="body">
+        <p>A real loss today (-9.2% on one position) led somewhere we didn't expect: a genuine bug in a shared safety mechanism, one we'd actually already noticed and written down three months ago without ever fixing.</p>
+        <p>Here's the mechanism, in plain terms. Our trailing stop - the thing that follows a position's best price and sells if it falls back too far - widens its own safety margin during choppier price action, which is normally sensible: don't get shaken out by ordinary noise. But the "how choppy is this" measurement it uses looks at very recent price swings. During a real crash, the crash itself IS the recent price action, so the measurement reads "very choppy" and widens the safety margin - precisely while a position is already in trouble. The faster it falls, the looser its own net gets. We'd actually flagged this exact risk in our own notes back in July and never came back to close it.</p>
+        <p>We tried the obvious fix first: just cap how wide that margin is allowed to get. Tested against real recorded data and it didn't hold up - the results bounced around unpredictably depending on the exact cap chosen, a sign of coincidence rather than a real effect, the same trap we caught ourselves falling into with a different bot earlier this week.</p>
+        <p>The fix that actually worked: freeze that "how choppy" measurement at whatever it read the last time the position hit a genuine new high, instead of letting it keep updating while a position is already sliding. That breaks the loop directly - a position already in trouble can no longer loosen its own safety net further. Tested against six days of real recorded data: a genuine net improvement, consistent in the more recent half of that window, essentially a wash (not a regression) in the older half.</p>
+        <p>One honest caveat: this specific fix wouldn't have fully saved today's exact loss - a single real price jump skipped past both the old and new safety level in one check, a separate, already-known limitation about how often we check prices, not about the math itself. Still a real, validated improvement to a mechanism all three of our crypto bots share. Ready and tested, not yet live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-10 (one more, same day)</div>
       <h2>Found the real, validated answer to today's "just fix the losing" question - and it's bigger than anything else we tried today</h2>
-      <div class="impact">Real-money bots. Implemented and tested, not yet live - we restart these ourselves. A real but major change to how often two of our bots trade</div>
+      <div class="impact">Real-money bots. Restarted and running - a real but major change to how often two of our bots trade</div>
       <div class="body">
         <p>Earlier today we closed out a long-open question and made one small, real improvement, but were honest that neither was a turnaround. We kept digging. The next idea - letting two bots learn from a third bot's trading history, since that one's self-learning model has been doing noticeably better - looked promising on the surface, but checking it properly on real data showed a genuinely mixed picture, not a clean transferable skill. Pursuing that further would mean real risk to systems that are already working, for a benefit that isn't clearly there. We set it aside rather than force it.</p>
         <p>Then we checked one more, simpler angle: does it matter whether a coin is a major, well-established one versus a smaller, more obscure one? For two of our three crypto bots, the answer was dramatic and consistent. Trading the dozen or so biggest, most established coins loses only a fraction of a cent per trade on average. Trading everything else loses 27 to 33 times more per trade, on a similar win rate - meaning it's not that those trades win less often, it's that when they lose, they lose much bigger. We checked this held up in the last two weeks of real trading too, not just older history, and it did.</p>
@@ -167,7 +180,7 @@
     <div class="entry">
       <div class="date">2026-10-10 (later, same day)</div>
       <h2>Asked to just "fix" one of our crypto bots from losing - here's the honest answer, including the one real improvement we did find</h2>
-      <div class="impact">Real-money bots. One small, real change ready and tested, not yet live - we restart these ourselves; everything else is an honest answer, not a fix</div>
+      <div class="impact">Real-money bots. One small, real change confirmed live after restart; everything else is an honest answer, not a fix</div>
       <div class="body">
         <p>We were asked to simply fix one of our crypto bots from losing money. We wish it were that simple, so here's the honest version of what we actually did and found.</p>
         <p>First, a real question we'd deliberately left open for weeks: is our standard downside-protection setting too loose? We'd tried to answer this twice before with historical simulation and got unreliable, contradictory answers both times - so back in early October we started quietly recording exactly what the bot really sees and really decides, every single time it checks, on live data going forward. That recording has now run for six days and built up enough real evidence to answer properly: we tested tighter settings against the real recorded data, and every single one made things worse, not better. Our current setting is confirmed to be the best one, by real evidence instead of a guess. That's a genuine answer, closing out something we'd left open on purpose rather than rush.</p>
