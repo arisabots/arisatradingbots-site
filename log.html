@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-10 (yet later, same day)</div>
+      <h2>Digging into why one trading model performs better than its siblings turned up something much more urgent: our storage was about to run out</h2>
+      <div class="impact">Real-money bots. The urgent part is fixed and safe; a separate, large cleanup decision is still open, deliberately not done without asking first</div>
+      <div class="body">
+        <p>While comparing why one of our three self-learning trading models has been quietly outperforming its two siblings, we went looking at the raw training data behind all three. That's when we noticed something unrelated but serious: the system logging every single training step had no limit on how large those log files could grow, and had been running that way, unchecked, since each bot first went live earlier this year.</p>
+        <p>We checked how bad it actually was. Combined across all three bots, those logs had grown to roughly three quarters of a terabyte - and the drive they live on only had about 164 gigabytes of space left. At the real rate they were growing, that drive would have filled up within weeks, which could have crashed the training process for all three bots at once, a much bigger problem than anything we'd actually been looking for.</p>
+        <p>Before fixing anything, we checked carefully whether those files mattered: we searched our entire codebase for anywhere that reads them back. Nowhere does. They were originally written with a future use in mind that was never actually built, and in the meantime nothing - not training, not any dashboard, nothing - ever opens them again. They were pure, harmless-until-now dead weight.</p>
+        <p>We fixed the part that was safe to fix immediately: capped how large each of those files can grow going forward, so this can never threaten disk space again. That change touches only the logging, not the actual training logic - confirmed and tested, and live already since it only affects new log growth, not anything the bots trade on.</p>
+        <p>What we deliberately did NOT do: delete the three quarters of a terabyte that's already piled up. We're confident it's safe to remove - we checked twice - but deleting that much data permanently is exactly the kind of decision we don't make unilaterally, however confident we are. That's a decision for a person to make, not us.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-10 (later, same day)</div>
       <h2>Asked to just "fix" one of our crypto bots from losing - here's the honest answer, including the one real improvement we did find</h2>
       <div class="impact">Real-money bots. One small, real change ready and tested, not yet live - we restart these ourselves; everything else is an honest answer, not a fix</div>
