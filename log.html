@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-11</div>
+      <h2>We were wrong yesterday - two "fixes" never actually did anything, and a real loss today is what proved it</h2>
+      <div class="impact">Real-money bots. Correction, not a fix - the previous two entries about trading only major coins and blocking a specific coin were both wrong</div>
+      <div class="body">
+        <p>A real loss today - about $5 on one of our crypto bots - came with a direct, fair challenge: nothing we'd said was fixed actually seemed fixed. We checked, and the honest answer is: it wasn't. We owe a correction, not another feature.</p>
+        <p>Here's exactly what went wrong. Yesterday we built two real changes: restricting two of our bots to major coins only, and blocking a specific coin that kept losing money. Both were based on real, solid evidence. Both got written into the right-looking file, tested, and restarted. Neither one was ever actually connected to the code our bots really run. We edited a settings file that used to matter but had quietly stopped being read months ago - the real decision about which coins to trade happens somewhere else in the codebase entirely, a path we didn't check closely enough before declaring it done.</p>
+        <p>That's on us. We confirmed the restart happened. We confirmed our tests passed. We never confirmed the edited code was actually reachable at all - and a passing test on a function nothing calls proves nothing about what the bot actually does. Checking today's real trades is what caught it: the "restricted" bots were still trading the exact same wide mix of coins as before, including the one we'd supposedly blocked.</p>
+        <p>We traced the real path properly this time - all the way from the bot's own code back through what actually calls it - and found where these two decisions genuinely live. Both fixes are rebuilt there now, tested against the real functions this time, not a file that turned out to be disconnected. Ready, and restarted - but given what just happened, we're not calling this "confirmed" until real trading data afterward actually shows it taking effect, not just a process restart timestamp.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-10 (last one, we promise)</div>
       <h2>Found and fixed a real safety-net bug we'd actually already written down and never circled back to</h2>
       <div class="impact">Real-money bots. Restarted and running - affects all three crypto bots, not just two</div>
@@ -155,7 +167,7 @@
     <div class="entry">
       <div class="date">2026-10-10 (one more, same day)</div>
       <h2>Found the real, validated answer to today's "just fix the losing" question - and it's bigger than anything else we tried today</h2>
-      <div class="impact">Real-money bots. Restarted and running - a real but major change to how often two of our bots trade</div>
+      <div class="impact">Real-money bots. Correction posted 2026-10-11: this never actually took effect - see that entry for what really happened and the real fix</div>
       <div class="body">
         <p>Earlier today we closed out a long-open question and made one small, real improvement, but were honest that neither was a turnaround. We kept digging. The next idea - letting two bots learn from a third bot's trading history, since that one's self-learning model has been doing noticeably better - looked promising on the surface, but checking it properly on real data showed a genuinely mixed picture, not a clean transferable skill. Pursuing that further would mean real risk to systems that are already working, for a benefit that isn't clearly there. We set it aside rather than force it.</p>
         <p>Then we checked one more, simpler angle: does it matter whether a coin is a major, well-established one versus a smaller, more obscure one? For two of our three crypto bots, the answer was dramatic and consistent. Trading the dozen or so biggest, most established coins loses only a fraction of a cent per trade on average. Trading everything else loses 27 to 33 times more per trade, on a similar win rate - meaning it's not that those trades win less often, it's that when they lose, they lose much bigger. We checked this held up in the last two weeks of real trading too, not just older history, and it did.</p>
@@ -180,7 +192,7 @@
     <div class="entry">
       <div class="date">2026-10-10 (later, same day)</div>
       <h2>Asked to just "fix" one of our crypto bots from losing - here's the honest answer, including the one real improvement we did find</h2>
-      <div class="impact">Real-money bots. One small, real change confirmed live after restart; everything else is an honest answer, not a fix</div>
+      <div class="impact">Real-money bots. Correction posted 2026-10-11: the one small change here never actually took effect either - see that entry</div>
       <div class="body">
         <p>We were asked to simply fix one of our crypto bots from losing money. We wish it were that simple, so here's the honest version of what we actually did and found.</p>
         <p>First, a real question we'd deliberately left open for weeks: is our standard downside-protection setting too loose? We'd tried to answer this twice before with historical simulation and got unreliable, contradictory answers both times - so back in early October we started quietly recording exactly what the bot really sees and really decides, every single time it checks, on live data going forward. That recording has now run for six days and built up enough real evidence to answer properly: we tested tighter settings against the real recorded data, and every single one made things worse, not better. Our current setting is confirmed to be the best one, by real evidence instead of a guess. That's a genuine answer, closing out something we'd left open on purpose rather than rush.</p>
