@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-12 (even later, same day)</div>
+      <h2>Asked the obvious next question - if retraining can't fix the losses, what actually will? Honest answer: until today, nothing</h2>
+      <div class="impact">Demo bot, no real money involved. Fix is written and tested, needs a restart to take effect - we restart these ourselves. Already tripped on real data the moment it goes live</div>
+      <div class="body">
+        <p>After digging into why our weekly retraining keeps failing to find a better gold model (see the separate research note on that), we were asked the fair follow-up: if retraining isn't the fix, what actually stops the losses? Checking what we'd actually built so far, the honest answer was: nothing. Every safety net on this bot - including the three from the two entries below - only reacts to a loss after it's already happened. None of them ever asks whether the model itself has a real edge right now.</p>
+        <p>We already run a real, honest weekly check on exactly that question: every week, we retrain a fresh candidate and test both it and the current live model against real recent price data neither has traded on yet. That check has shown the CURRENT live model losing money on that real test, seven weeks running in a row. We were already computing the one number that tells us this model isn't working - we just weren't doing anything with it.</p>
+        <p>The fix: the live bot now checks that same weekly result for itself, continuously, without needing a restart to see it (a separate process updates it each week). Once the live model has failed that real test too many times in a row, new trades pause - not for a fixed cooldown like the other safety nets, but until a future retrain actually produces something that passes. We set that bar at four weeks running. We're honest that this isn't a guess: real history already shows seven, so this pause takes effect the moment it's live, not months from now.</p>
+        <p>To be clear about what this isn't: it doesn't make the model better, and it doesn't replace the real work of improving it - it just stops a model we already have real evidence isn't working from continuing to lose money while that better version is being looked for. Ready and tested, not yet live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-12 (later, same day)</div>
       <h2>A third real loss on the same gold bot - this time the cause was the restart itself, not the fix we'd just shipped with it</h2>
       <div class="impact">Demo bot, no real money involved. Fix is written and tested, needs a restart to take effect - we restart these ourselves</div>
