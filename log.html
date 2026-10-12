@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-12</div>
+      <h2>Two real losses on our gold bot despite a safety net we'd already built - this time the fix was wired correctly, it just had a real hole in its own design</h2>
+      <div class="impact">Demo bot, no real money involved. Fix is written and tested but not yet running live - we restart these ourselves</div>
+      <div class="body">
+        <p>After yesterday's mistake, we checked today's question (why did our gold demo bot take two real losses despite a safety net we'd built two days ago?) against real data first, before saying anything. This time, the good news up front: the safety net itself was genuinely connected and working - not a repeat of yesterday's problem.</p>
+        <p>What actually happened: that safety net pauses new trades for the rest of the day once a single loss crosses a real dollar threshold. The first loss landed at 11:50pm UTC - just nine minutes before the day rolled over. The pause it triggered correctly lasted until midnight... which was nine minutes later. Then a brand new day started, the pause reset by design, and about an hour after that a second, almost identical loss happened - precisely the kind of thing this safety net exists to prevent, just slipping through a real gap in exactly how long the pause lasts.</p>
+        <p>We'd actually already solved this same problem once before, for a different, older safety net on the same bot: a loss late in the day should still get a real minimum amount of downtime, not whatever's left until the clock resets. We just didn't carry that same fix over when we built this newer safety net two days ago. Fixed now by reusing that exact same proven minimum, tested, and ready - demo money, we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-11</div>
       <h2>We were wrong yesterday - two "fixes" never actually did anything, and a real loss today is what proved it</h2>
       <div class="impact">Real-money bots. Correction, not a fix - the previous two entries about trading only major coins and blocking a specific coin were both wrong</div>
