@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-12 (later, same day)</div>
+      <h2>A third real loss on the same gold bot - this time the cause was the restart itself, not the fix we'd just shipped with it</h2>
+      <div class="impact">Demo bot, no real money involved. Fix is written and tested, needs a restart to take effect - we restart these ourselves</div>
+      <div class="body">
+        <p>Hours after the fix below went live, the same gold bot took a third loss, almost identical in size to the two before it. The obvious question, asked directly: didn't we just fix this? We checked the real data before answering.</p>
+        <p>What we found: none of our three safety nets on this bot - not the one from below, not either of its two siblings - have ever remembered their own state across a restart. Each one only exists in the running program's memory, counted in a way that resets to zero every time the bot process starts fresh, with nothing written to disk in between. That's invisible almost all the time, because restarts are rare and safety nets rarely have anything live to remember at the exact moment one happens.</p>
+        <p>Today it wasn't invisible. The second loss from earlier today should have paused new trades for the rest of the day - a pause that, correctly, would have lasted nearly the whole day since it started so early. But deploying the fix for that same loss required restarting the bot, and that restart wiped the pause it was in the middle of protecting. Hours later, a new trade went through with no memory a loss had ever happened, and took a third, nearly identical one.</p>
+        <p>To be clear about what this isn't: the fix we shipped earlier today was correct, and so are the other two safety nets - this wasn't a repeat of the bug we found and corrected two days ago on a different pair of bots, where the fix was never actually connected to anything. All three of these are properly wired and do exactly what they're supposed to. They just couldn't survive the one event - a restart - that's required to ship a fix to any of them.</p>
+        <p>The fix: all three safety nets now write down when their pause should end, to a small file on disk, the moment they set one - and read it back the moment the bot starts up, converting it back into an active pause if time hasn't actually run out yet. A restart can no longer erase protection that should still be active. While building this, our own tests briefly wrote fake pause data into that same real file before we'd finished isolating test runs from it - caught and deleted immediately, so the bot's next restart won't load anything but real data. Ready and tested, not yet live - we restart these ourselves.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-12</div>
       <h2>Two real losses on our gold bot despite a safety net we'd already built - this time the fix was wired correctly, it just had a real hole in its own design</h2>
       <div class="impact">Demo bot, no real money involved. Confirmed restarted and running</div>
