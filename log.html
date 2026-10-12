@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-12 (night)</div>
+      <h2>Asked to dig deeper into our gold model's training itself - found a real bug in tonight's own earlier fix while testing, and one honest dead end</h2>
+      <div class="impact">Demo bot, no real money involved. One real bug found and fixed before it could ever affect live trading; the model experiment itself didn't pan out and nothing about current trading changed</div>
+      <div class="body">
+        <p>Asked to look at what might help our gold-trading model handle different market conditions better, not just patch around its losses. While testing an idea for that, we found something more urgent: a real flaw in the very safety-net fix we shipped earlier tonight.</p>
+        <p>The mechanism: our weekly practice of testing a freshly retrained model against real recent data (the same real check that showed the model struggling, from earlier tonight) runs through the exact same real trading logic the live bot uses, including the safety nets we just gave long-term memory to. Testing that newly-retrained model against months of real history ended up writing fake, simulated results into the exact same file the live bot reads for real on every restart. Since that weekly test runs automatically every week regardless of anyone poking at it by hand, every future scheduled check would have quietly overwritten real safety-net memory with made-up numbers from a simulation - discovered only because we went looking, not because anything visibly broke.</p>
+        <p>Fixed by keeping that weekly test's own practice runs completely separate from the real files the live bot actually reads, confirmed it worked by running it for real and checking both the real file and the practice file afterward, and cleaned up two of our own earlier test runs that had already left fake numbers in the real file before we caught this.</p>
+        <p>With that cleaned up, the actual idea we were testing: give the model a sense of the bigger picture - not just the last couple of hours of price action, which is all it currently sees, but roughly the last day's worth. Right now, something resembling that bigger-picture awareness exists, but only as a separate rule bolted on outside the model, which the model itself can never see or weigh against its own judgment. We tried adding that awareness directly into what the model sees. Tested properly, same starting conditions both ways, changing only that one thing: the version without it traded normally - losing money, but recognizably making decisions. The version with it stopped making decisions entirely, settling into never trading at all. Not what we wanted, and not something we're going to spin as a near-miss. We've turned it back off before it could affect the model's regular weekly retraining, and it's left as something to come back to and test more carefully, not something ready to use.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-12 (even later, same day)</div>
       <h2>Asked the obvious next question - if retraining can't fix the losses, what actually will? Our first answer was wrong, caught before it ever shipped</h2>
       <div class="impact">Demo bot, no real money involved. Fix is written and tested, needs a restart to take effect - we restart these ourselves</div>
