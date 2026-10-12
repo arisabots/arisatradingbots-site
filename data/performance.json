@@ -1755,6 +1755,10 @@
     {
       "time": "2026-10-11T23:50:40.449391Z",
       "cumulative_pnl": -827.93
+    },
+    {
+      "time": "2026-10-12T00:15:31.831563Z",
+      "cumulative_pnl": -851.51
     }
   ],
   "bots": [
@@ -1868,15 +1872,15 @@
       "brand": "Spike Trading",
       "instrument_name": "Dow Jones",
       "symbol_display": "US30",
-      "total_trades": 21,
+      "total_trades": 22,
       "wins": 17,
-      "losses": 4,
-      "win_rate": 80.95238095238095,
+      "losses": 5,
+      "win_rate": 77.27272727272727,
       "gross_profit": 220.42,
-      "gross_loss": -161.64,
-      "profit_factor": 1.36,
-      "avg_hold_minutes": 3674.5,
-      "total_pnl": 58.78
+      "gross_loss": -185.22,
+      "profit_factor": 1.19,
+      "avg_hold_minutes": 3733.1,
+      "total_pnl": 35.2
     },
     {
       "bot": "SWEETPEA",
@@ -1894,6 +1898,6 @@
       "total_pnl": -363.77
     }
   ],
-  "fleet_total_pnl": -827.93,
-  "fleet_total_trades": 439
+  "fleet_total_pnl": -851.51,
+  "fleet_total_trades": 440
 }
