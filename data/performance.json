@@ -1775,6 +1775,14 @@
     {
       "time": "2026-10-12T14:18:05.720010Z",
       "cumulative_pnl": -855.35
+    },
+    {
+      "time": "2026-10-13T00:07:43.322970Z",
+      "cumulative_pnl": -864.9
+    },
+    {
+      "time": "2026-10-13T00:16:33.930765Z",
+      "cumulative_pnl": -863.7
     }
   ],
   "bots": [
@@ -1798,15 +1806,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 65,
+      "total_trades": 66,
       "wins": 26,
-      "losses": 39,
-      "win_rate": 40.0,
+      "losses": 40,
+      "win_rate": 39.39393939393939,
       "gross_profit": 348.24,
-      "gross_loss": -375.65,
-      "profit_factor": 0.93,
-      "avg_hold_minutes": 424.2,
-      "total_pnl": -27.41
+      "gross_loss": -385.2,
+      "profit_factor": 0.9,
+      "avg_hold_minutes": 426.8,
+      "total_pnl": -36.96
     },
     {
       "bot": "OLIVIA",
@@ -1843,15 +1851,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 44,
-      "wins": 27,
+      "total_trades": 45,
+      "wins": 28,
       "losses": 17,
-      "win_rate": 61.36363636363637,
-      "gross_profit": 52.39,
+      "win_rate": 62.22222222222222,
+      "gross_profit": 53.59,
       "gross_loss": -85.47,
-      "profit_factor": 0.61,
-      "avg_hold_minutes": 110.7,
-      "total_pnl": -33.08
+      "profit_factor": 0.63,
+      "avg_hold_minutes": 111.2,
+      "total_pnl": -31.88
     },
     {
       "bot": "SOLOMON",
@@ -1914,6 +1922,6 @@
       "total_pnl": -363.77
     }
   ],
-  "fleet_total_pnl": -855.35,
-  "fleet_total_trades": 444
+  "fleet_total_pnl": -863.7,
+  "fleet_total_trades": 446
 }
