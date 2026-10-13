@@ -1,5 +1,25 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": -0.31,
+    "pnl_usd": -8.28,
+    "exit_time": "2026-10-13T09:06:35.168585Z"
+  },
+  {
+    "bot": "SPENCER",
+    "brand": "Spencer Trading",
+    "instrument_name": "S&P 500",
+    "symbol_display": "SPX500",
+    "side": "LONG",
+    "pnl_pct": 0.04,
+    "pnl_usd": 0.46,
+    "exit_time": "2026-10-13T09:04:38.727614Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -178,25 +198,5 @@
     "pnl_pct": 0.6,
     "pnl_usd": 74.44,
     "exit_time": "2026-10-09T04:47:21.650761Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.62,
-    "pnl_usd": -4.16,
-    "exit_time": "2026-10-09T04:17:19.444172Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.64,
-    "pnl_usd": -4.2,
-    "exit_time": "2026-10-09T00:34:51.967371Z"
   }
 ]
