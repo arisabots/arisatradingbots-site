@@ -14,14 +14,14 @@
     }
   },
   "crypto": {
-    "mcap_usd": 2766506974243.197,
-    "btc_dominance": 59.28990483328798,
-    "mcap_change_24h": -4.440638647358193,
-    "btc_price_usd": 81772.0,
-    "btc_change_24h": -2.289737512296351
+    "mcap_usd": 2751932742068.602,
+    "btc_dominance": 59.31671820807608,
+    "mcap_change_24h": -5.052750900299702,
+    "btc_price_usd": 81340.0,
+    "btc_change_24h": -2.8484733728578657
   },
   "fear_greed": {
-    "value": 69,
+    "value": 57,
     "classification": "Greed"
   },
   "fed_funds_rate": 3.75
