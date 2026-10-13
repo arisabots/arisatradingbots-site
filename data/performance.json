@@ -1783,6 +1783,14 @@
     {
       "time": "2026-10-13T01:24:03.367703Z",
       "cumulative_pnl": -893.07
+    },
+    {
+      "time": "2026-10-13T09:04:38.727614Z",
+      "cumulative_pnl": -892.61
+    },
+    {
+      "time": "2026-10-13T09:06:35.168585Z",
+      "cumulative_pnl": -900.89
     }
   ],
   "bots": [
@@ -1866,30 +1874,30 @@
       "brand": "Solomon Trading",
       "instrument_name": "Soybean",
       "symbol_display": "SOYBN",
-      "total_trades": 24,
+      "total_trades": 25,
       "wins": 18,
-      "losses": 6,
-      "win_rate": 75.0,
+      "losses": 7,
+      "win_rate": 72.0,
       "gross_profit": 235.07,
-      "gross_loss": -257.97,
-      "profit_factor": 0.91,
-      "avg_hold_minutes": 2737.8,
-      "total_pnl": -22.9
+      "gross_loss": -266.25,
+      "profit_factor": 0.88,
+      "avg_hold_minutes": 2707.6,
+      "total_pnl": -31.18
     },
     {
       "bot": "SPENCER",
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 30,
-      "wins": 24,
+      "total_trades": 31,
+      "wins": 25,
       "losses": 6,
-      "win_rate": 80.0,
-      "gross_profit": 118.36,
+      "win_rate": 80.64516129032258,
+      "gross_profit": 118.82,
       "gross_loss": -73.66,
       "profit_factor": 1.61,
-      "avg_hold_minutes": 3037.8,
-      "total_pnl": 44.7
+      "avg_hold_minutes": 2958.9,
+      "total_pnl": 45.16
     },
     {
       "bot": "SPIKE",
@@ -1922,6 +1930,6 @@
       "total_pnl": -363.77
     }
   ],
-  "fleet_total_pnl": -893.07,
-  "fleet_total_trades": 446
+  "fleet_total_pnl": -900.89,
+  "fleet_total_trades": 448
 }
