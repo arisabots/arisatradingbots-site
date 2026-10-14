@@ -1,5 +1,15 @@
 [
   {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": -0.01,
+    "pnl_usd": -0.02,
+    "exit_time": "2026-10-14T02:00:53.328903Z"
+  },
+  {
     "bot": "SOLOMON",
     "brand": "Solomon Trading",
     "instrument_name": "Soybean",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.46,
     "pnl_usd": 12.28,
     "exit_time": "2026-10-09T08:59:26.516913Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.25,
-    "pnl_usd": 1.66,
-    "exit_time": "2026-10-09T07:09:33.929910Z"
   }
 ]
