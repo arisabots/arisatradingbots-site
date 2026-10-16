@@ -110,6 +110,26 @@
     "exit_time": "2026-10-15T19:06:28.840841Z"
   },
   {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "LONG",
+    "pnl_pct": -1.02,
+    "pnl_usd": -27.1,
+    "exit_time": "2026-10-15T07:33:52Z"
+  },
+  {
+    "bot": "SPENCER",
+    "brand": "Spencer Trading",
+    "instrument_name": "S&P 500",
+    "symbol_display": "SPX500",
+    "side": "LONG",
+    "pnl_pct": -0.75,
+    "pnl_usd": -12.3,
+    "exit_time": "2026-10-15T00:20:14Z"
+  },
+  {
     "bot": "SILVERSMITH",
     "brand": "Silversmith Trading",
     "instrument_name": "Silver",
@@ -178,25 +198,5 @@
     "pnl_pct": -0.07,
     "pnl_usd": -1.79,
     "exit_time": "2026-10-13T19:02:45.903501Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": -0.31,
-    "pnl_usd": -8.28,
-    "exit_time": "2026-10-13T09:06:35.168585Z"
-  },
-  {
-    "bot": "SPENCER",
-    "brand": "Spencer Trading",
-    "instrument_name": "S&P 500",
-    "symbol_display": "SPX500",
-    "side": "LONG",
-    "pnl_pct": 0.04,
-    "pnl_usd": 0.46,
-    "exit_time": "2026-10-13T09:04:38.727614Z"
   }
 ]
