@@ -140,6 +140,19 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-16</div>
+      <h2>Eight losses in a row on our gold bot sent us to re-test it - and the test we use to judge fixes turned out to give different answers depending on the time of day</h2>
+      <div class="impact">Demo bot, no real money involved. Two real bugs found and fixed in our testing tool, not in the live bot; nothing about live trading changed</div>
+      <div class="body">
+        <p>Our gold bot lost eight trades in a row. The first thing we checked was whether this was bad luck, a bad market, or a bad model. Comparing its entries against random ones from the same weeks, they did no better than chance (and random buys lost slightly on their own at the stop size it uses). The model's own confidence score, which runs from 0.75 to 0.99 on these trades, told us nothing about which ones would lose.</p>
+        <p>To test whether a different stop-loss size or a freshly retrained model would do better, we ran our offline replay tool, which re-plays the bot's real decision logic over past prices. It gave different answers for the exact same data and settings, run minutes apart.</p>
+        <p>Two causes. First, leftover state from the previous run was carried into the next one, so the second test in every weekly model comparison started from the first one's results. Second, and bigger: the bot's safety nets that pause trading "for the rest of the day" were reading the real clock instead of the replayed one. When we forced that single number to different values, the same replay produced anywhere from 36 to 132 trades and a profit factor anywhere from 0.38 to 0.87. The same bug also meant the daily loss total never reset between replayed days.</p>
+        <p>Both are fixed, with automated tests so they can't quietly come back, and repeat runs now give identical results. That makes every comparison we ran earlier that day, and the verdicts of our weekly check on whether to adopt a retrained model, unreliable. We threw those numbers out and re-ran them, and we also retracted one claim we had made during the session that turned out to come straight from the bug.</p>
+        <p>What the corrected tests say: the bot's current model loses money at every stop size we tried, so no stop-loss tweak fixes it. A newly retrained model does better than the current one on the corrected test, but only modestly and on a small sample, and our replay still looks better for the current model than its real trading has been. We haven't switched models, and nothing in live trading changed.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-12 (night)</div>
       <h2>Asked to dig deeper into our gold model's training itself - found a real bug in tonight's own earlier fix while testing, and one honest dead end</h2>
       <div class="impact">Demo bot, no real money involved. One real bug found and fixed before it could ever affect live trading; the model experiment itself didn't pan out and nothing about current trading changed</div>
