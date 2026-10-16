@@ -1835,6 +1835,14 @@
     {
       "time": "2026-10-16T15:06:40.998960Z",
       "cumulative_pnl": -869.12
+    },
+    {
+      "time": "2026-10-16T17:04:23.251668Z",
+      "cumulative_pnl": -878.57
+    },
+    {
+      "time": "2026-10-16T17:15:50.393006Z",
+      "cumulative_pnl": -890.81
     }
   ],
   "bots": [
@@ -1858,15 +1866,15 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 69,
+      "total_trades": 70,
       "wins": 26,
-      "losses": 43,
-      "win_rate": 37.68115942028986,
+      "losses": 44,
+      "win_rate": 37.142857142857146,
       "gross_profit": 348.24,
-      "gross_loss": -414.36,
-      "profit_factor": 0.84,
-      "avg_hold_minutes": 413.6,
-      "total_pnl": -66.12
+      "gross_loss": -423.82,
+      "profit_factor": 0.82,
+      "avg_hold_minutes": 409.2,
+      "total_pnl": -75.58
     },
     {
       "bot": "OLIVIA",
@@ -1933,15 +1941,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 31,
+      "total_trades": 32,
       "wins": 25,
-      "losses": 6,
-      "win_rate": 80.64516129032258,
+      "losses": 7,
+      "win_rate": 78.125,
       "gross_profit": 118.82,
-      "gross_loss": -73.66,
-      "profit_factor": 1.61,
-      "avg_hold_minutes": 2958.9,
-      "total_pnl": 45.16
+      "gross_loss": -85.9,
+      "profit_factor": 1.38,
+      "avg_hold_minutes": 2880.0,
+      "total_pnl": 32.92
     },
     {
       "bot": "SPIKE",
@@ -1974,6 +1982,6 @@
       "total_pnl": -363.77
     }
   ],
-  "fleet_total_pnl": -869.12,
-  "fleet_total_trades": 459
+  "fleet_total_pnl": -890.81,
+  "fleet_total_trades": 461
 }
