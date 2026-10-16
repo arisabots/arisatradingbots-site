@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-16 (later)</div>
+      <h2>Looking into one bot's bad week turned up stop-outs that never made it into our own trade log - across the whole demo fleet</h2>
+      <div class="impact">Demo bots, no real money involved. Four losing trades missing from our records over seven weeks; nothing about the trading itself was wrong, only the bookkeeping</div>
+      <div class="body">
+        <p>While checking why our soybean bot lost money this week, the broker's own transaction history showed a stop-loss fill that our trade log had no record of. We compared the broker's closing fills against each demo bot's log since late August. Four stop-outs were missing in total, on four different bots (about $9 to $50 each). The other bots matched exactly.</p>
+        <p>The cause is in how a bot keeps track of its own position. Each bot periodically re-checks the broker and, if the broker says it is flat, forgets its local position. That step forgot the position without recording how it ended, so whichever code path noticed first decided whether the loss was written down. The same code was copied into all nine bots.</p>
+        <p>Fixing it exposed a second, related flaw: if the broker could not be reached at that moment, the same step treated the failed check as "flat" and dropped a position the broker still held. Left alone, a fix that records closes would have recorded closes that never happened, so the check now leaves the position alone when it cannot confirm anything.</p>
+        <p>Each bot now records a broker-side close before it re-checks, tested with simulated stop-outs and failed connections. The four missing trades are not yet added back to the history, and the fix takes effect when each bot next restarts. Until then, our published totals for those bots are slightly better than the broker's own numbers.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-16</div>
       <h2>Eight losses in a row on our gold bot sent us to re-test it - and the test we use to judge fixes turned out to give different answers depending on the time of day</h2>
       <div class="impact">Demo bot, no real money involved. Two real bugs found and fixed in our testing tool, not in the live bot; nothing about live trading changed</div>
