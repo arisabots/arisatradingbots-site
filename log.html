@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-19 (afternoon)</div>
+      <h2>Our new gold model sat idle for three days - and our tests had never included the safety filter that was holding it back</h2>
+      <div class="impact">Demo bot, no real money involved. No bug in the live bot; a gap in how we test it, found by checking why it wasn't trading. The weekly auto-swap of models is now switched to report-only</div>
+      <div class="body">
+        <p>After we swapped in the retrained gold model, the bot placed no trades for three days. The reason was in its own log. The new model almost always wants to sell short (about 85% of its signals), and the bot has a trend filter that refuses to open a short while the one-hour trend points up. That filter blocked new shorts 470 times; a few more were stopped by two other entry checks. The trend signal here is a gap between two moving averages that is often tiny, within a tenth of a percent of price a third of the time, and it flipped direction ten times since the start of October.</p>
+        <p>The gap in our testing: our replay tool, and the weekly check that decides whether to swap models, run without a broker connection, and without one that filter quietly switches itself off. So every number we quoted for the new model assumed it could short freely. When we rebuilt the filter's behaviour inside the replay from historical prices, the new model's result over the test period went from a £39 gain (profit factor 1.10) to a £71 loss (0.76), and over the last three weeks from a $131 gain to $38. It still beat the old model in every window, which loses either way. But the evidence behind the swap was weaker than we told you. We did try loosening the filter, and the results bounced around too much to mean anything, so we left it alone.</p>
+        <p>What we changed: the weekly check still retrains and scores a new model each Friday, but it now only reports its verdict and does not swap anything. We decide after reading it. We kept the filter on and the trade size reduced. The bot opened its first short with the new model this afternoon, one unit with a stop attached, once the trend signal turned; we have no result to report on it yet. We'll judge the model on its real trades, which will be few, and not on replays.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-19 (evening)</div>
       <h2>Our real-money forex bot keeps losing a little on every trade - the broker's own records showed where the money goes</h2>
       <div class="impact">Real money, small stakes: the account is under £50 after losing about £100 since March. A protection against the daily rollover and a pair restriction went live this evening; the effect isn't measured yet</div>
@@ -180,7 +191,7 @@
       <div class="impact">Demo bot, no real money involved. One real bug found and fixed; the new model is an unproven bet on thin evidence and is being judged on live results</div>
       <div class="body">
         <p>With the offline testing tool giving the same answer every time, we re-ran the comparison our weekly check makes: the current gold model against a freshly retrained one, on recent prices neither had traded on. On the corrected test the retrained model came out ahead: 61 trades, +$39, profit factor 1.10, against the current model's 40 trades, -$209, profit factor 0.50. The weekly check's earlier refusal had come from the testing bugs, not from the models. We swapped the retrained model in by hand, and archived the old one so it can be restored.</p>
-        <p>The evidence is thin, and we say so: one test window, a few dozen trades, and our replay still looks kinder to the current model than its real trading has been. We also compared both against simple rule-based strategies. Those lost money at the bot's stop sizes over the period tested, so none of them is an alternative. We'll judge the new model on about three weeks of live results, keep the bot's trade size reduced in the meantime, and go back to the old model if live results disagree.</p>
+        <p>The evidence is thin, and we say so: one test window, a few dozen trades, and our replay still looks kinder to the current model than its real trading has been. We also compared both against simple rule-based strategies. Those lost money at the bot's stop sizes over the period tested, so none of them is an alternative. We'll judge the new model on about three weeks of live results, keep the bot's trade size reduced in the meantime, and go back to the old model if live results disagree. (Update, 19 October: the comparison had a blind spot - see the next entry up.)</p>
         <p>Doing the swap exposed a real bug. The bot picks up a new model file without a restart, but it only ever read the model's matching normalisation settings (the numbers that scale its inputs) at startup. So after a swap it ran the new model on the old model's settings until the next restart. The mismatch was modest, but it was not what we had tested. Fixed: the bot now reloads those settings whenever they change, with tests for a changed file, a corrupt file and a mismatched size, and we restarted it the same evening. The same gap would have applied to every earlier model swap that wasn't followed by a restart.</p>
       </div>
     </div>
