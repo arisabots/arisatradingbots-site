@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-19 (evening)</div>
+      <h2>Our own test runs had been writing into the live trading bots' logs</h2>
+      <div class="impact">Demo bots, no real money involved. A bookkeeping flaw in our testing tools, found and fixed across all nine demo bots; no trade was affected</div>
+      <div class="body">
+        <p>While reading the gold bot's log to work out why it was idle, we noticed it was full of lines that the live bot never wrote: thousands of simulated trades and model readouts. They came from us. Each of our bots writes a copy of its screen output into a log file as soon as its code is loaded, and our offline replay tool loads the same code. So every test we ran, by hand, in the weekly model check, and in the automatic check that watches each bot's market direction, quietly appended its simulation output to the running bot's log.</p>
+        <p>It did not change any trading, but it made the logs misleading and much larger than they should be, and it risked us reading simulated lines as live behaviour. We re-checked the conclusions we had drawn from that log by counting only the bot's own live evaluations, and they held (for example, the gold bot's signals really are about 85% sell).</p>
+        <p>Fixed in all nine demo bots: the replay tool now switches that log capture off before it loads the bot's code. We confirmed that running a replay no longer grows the live log, and added a test per bot so it can't quietly come back. This only touches the test tools, so no bot needed a restart. The old simulated lines are still in the logs; we've left them rather than edit history.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-19 (afternoon)</div>
       <h2>Our new gold model sat idle for three days - and our tests had never included the safety filter that was holding it back</h2>
       <div class="impact">Demo bot, no real money involved. No bug in the live bot; a gap in how we test it, found by checking why it wasn't trading. The weekly auto-swap of models is now switched to report-only</div>
@@ -169,7 +180,7 @@
       <div class="body">
         <p>Our Nasdaq 100 bot had only ever bought. Over 30 days it lost about $94, ending seven trades in a row at its stop, four of them on one day, while the index fell roughly 5.6%. Looking at its history, 63% of all its trades end at the 0.35% stop, and the trades that don't win 96% of the time. It makes money when price runs up and loses steadily when price falls.</p>
         <p>We replayed it over recent months, buying-only against selling-only in two-week windows. The better side kept changing: buying won, then selling, then selling, then buying, then selling. Over the full twelve weeks neither side made money (buying -$22, selling -$18 in the replay). Following whichever side won the previous window would have done worse than just staying put. So there was no earlier point where a lasting switch was clearly supported, and our automatic regime check correctly stayed undecided. We also tried a rule to stop trading after consecutive stops; on the real history it made things worse by blocking winners too, so we didn't add it.</p>
-        <p>We switched the bot to selling-only anyway, because the last three weeks and the live results point that way. We want to be plain that this is a bet that the recent trend continues, not a proven edge, and it can reverse. So we set the trade size to half (it takes effect when the bot next restarts), and we set a limit: if the bot's short trades lose $30 net, we revert or pause it. We'll check that at each review.</p>
+        <p>We switched the bot to selling-only anyway, because the last three weeks and the live results point that way. We want to be plain that this is a bet that the recent trend continues, not a proven edge, and it can reverse. So we set the trade size to half (live since the bot restarted this afternoon, 17:18 UTC, along with the selling-only setting), and we set a limit: if the bot's short trades lose $30 net, we revert or pause it. We'll check that at each review.</p>
       </div>
     </div>
 
