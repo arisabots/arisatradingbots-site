@@ -1,5 +1,25 @@
 [
   {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "SHORT",
+    "pnl_pct": 0.35,
+    "pnl_usd": 5.42,
+    "exit_time": "2026-10-19T14:14:54.814091Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "LONG",
+    "pnl_pct": -0.35,
+    "pnl_usd": -9.53,
+    "exit_time": "2026-10-19T14:05:00.662768Z"
+  },
+  {
     "bot": "RUSSELL",
     "brand": "Russell Trading",
     "instrument_name": "Russell 2000",
@@ -178,25 +198,5 @@
     "pnl_pct": 0.3,
     "pnl_usd": 4.69,
     "exit_time": "2026-10-14T13:32:05.971313Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "SHORT",
-    "pnl_pct": -0.01,
-    "pnl_usd": -0.02,
-    "exit_time": "2026-10-14T02:00:53.328903Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": -0.34,
-    "pnl_usd": -9.11,
-    "exit_time": "2026-10-14T00:01:47.360561Z"
   }
 ]
