@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-19</div>
+      <h2>Our Nasdaq bot lost on seven stops in a row, so we switched its direction - and told ourselves honestly why that's only a bet</h2>
+      <div class="impact">Demo bot, no real money involved. A trading-direction change, not a bug fix; made with a smaller trade size and a written limit on how much it may lose before we revisit it</div>
+      <div class="body">
+        <p>Our Nasdaq 100 bot had only ever bought. Over 30 days it lost about $94, ending seven trades in a row at its stop, four of them on one day, while the index fell roughly 5.6%. Looking at its history, 63% of all its trades end at the 0.35% stop, and the trades that don't win 96% of the time. It makes money when price runs up and loses steadily when price falls.</p>
+        <p>We replayed it over recent months, buying-only against selling-only in two-week windows. The better side kept changing: buying won, then selling, then selling, then buying, then selling. Over the full twelve weeks neither side made money (buying -$22, selling -$18 in the replay). Following whichever side won the previous window would have done worse than just staying put. So there was no earlier point where a lasting switch was clearly supported, and our automatic regime check correctly stayed undecided. We also tried a rule to stop trading after consecutive stops; on the real history it made things worse by blocking winners too, so we didn't add it.</p>
+        <p>We switched the bot to selling-only anyway, because the last three weeks and the live results point that way. We want to be plain that this is a bet that the recent trend continues, not a proven edge, and it can reverse. So we set the trade size to half (it takes effect when the bot next restarts), and we set a limit: if the bot's short trades lose $30 net, we revert or pause it. We'll check that at each review.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-16 (later)</div>
       <h2>Looking into one bot's bad week turned up stop-outs that never made it into our own trade log - across the whole demo fleet</h2>
       <div class="impact">Demo bots, no real money involved. Four losing trades missing from our records over seven weeks; nothing about the trading itself was wrong, only the bookkeeping</div>
@@ -152,15 +163,26 @@
     </div>
 
     <div class="entry">
+      <div class="date">2026-10-16 (evening)</div>
+      <h2>With the testing tool fixed, we re-ran the gold-model comparison, swapped in the retrained model - and found the swap only half-worked</h2>
+      <div class="impact">Demo bot, no real money involved. One real bug found and fixed; the new model is an unproven bet on thin evidence and is being judged on live results</div>
+      <div class="body">
+        <p>With the offline testing tool giving the same answer every time, we re-ran the comparison our weekly check makes: the current gold model against a freshly retrained one, on recent prices neither had traded on. On the corrected test the retrained model came out ahead: 61 trades, +$39, profit factor 1.10, against the current model's 40 trades, -$209, profit factor 0.50. The weekly check's earlier refusal had come from the testing bugs, not from the models. We swapped the retrained model in by hand, and archived the old one so it can be restored.</p>
+        <p>The evidence is thin, and we say so: one test window, a few dozen trades, and our replay still looks kinder to the current model than its real trading has been. We also compared both against simple rule-based strategies. Those lost money at the bot's stop sizes over the period tested, so none of them is an alternative. We'll judge the new model on about three weeks of live results, keep the bot's trade size reduced in the meantime, and go back to the old model if live results disagree.</p>
+        <p>Doing the swap exposed a real bug. The bot picks up a new model file without a restart, but it only ever read the model's matching normalisation settings (the numbers that scale its inputs) at startup. So after a swap it ran the new model on the old model's settings until the next restart. The mismatch was modest, but it was not what we had tested. Fixed: the bot now reloads those settings whenever they change, with tests for a changed file, a corrupt file and a mismatched size, and we restarted it the same evening. The same gap would have applied to every earlier model swap that wasn't followed by a restart.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-16</div>
       <h2>Eight losses in a row on our gold bot sent us to re-test it - and the test we use to judge fixes turned out to give different answers depending on the time of day</h2>
-      <div class="impact">Demo bot, no real money involved. Two real bugs found and fixed in our testing tool, not in the live bot; nothing about live trading changed</div>
+      <div class="impact">Demo bot, no real money involved. Two real bugs found and fixed in our testing tool, not in the live bot; live trading was unchanged when this was written (see the next entry up for what followed)</div>
       <div class="body">
         <p>Our gold bot lost eight trades in a row. The first thing we checked was whether this was bad luck, a bad market, or a bad model. Comparing its entries against random ones from the same weeks, they did no better than chance (and random buys lost slightly on their own at the stop size it uses). The model's own confidence score, which runs from 0.75 to 0.99 on these trades, told us nothing about which ones would lose.</p>
         <p>To test whether a different stop-loss size or a freshly retrained model would do better, we ran our offline replay tool, which re-plays the bot's real decision logic over past prices. It gave different answers for the exact same data and settings, run minutes apart.</p>
         <p>Two causes. First, leftover state from the previous run was carried into the next one, so the second test in every weekly model comparison started from the first one's results. Second, and bigger: the bot's safety nets that pause trading "for the rest of the day" were reading the real clock instead of the replayed one. When we forced that single number to different values, the same replay produced anywhere from 36 to 132 trades and a profit factor anywhere from 0.38 to 0.87. The same bug also meant the daily loss total never reset between replayed days.</p>
         <p>Both are fixed, with automated tests so they can't quietly come back, and repeat runs now give identical results. That makes every comparison we ran earlier that day, and the verdicts of our weekly check on whether to adopt a retrained model, unreliable. We threw those numbers out and re-ran them, and we also retracted one claim we had made during the session that turned out to come straight from the bug.</p>
-        <p>What the corrected tests say: the bot's current model loses money at every stop size we tried, so no stop-loss tweak fixes it. A newly retrained model does better than the current one on the corrected test, but only modestly and on a small sample, and our replay still looks better for the current model than its real trading has been. We haven't switched models, and nothing in live trading changed.</p>
+        <p>What the corrected tests say: the bot's current model loses money at every stop size we tried, so no stop-loss tweak fixes it. A newly retrained model does better than the current one on the corrected test, but only modestly and on a small sample, and our replay still looks better for the current model than its real trading has been. At the time of writing we hadn't switched models; later that evening we did, after re-running the comparison on the corrected test (see the next entry up).</p>
       </div>
     </div>
 
