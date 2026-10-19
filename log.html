@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-19 (evening)</div>
+      <h2>Our real-money forex bot keeps losing a little on every trade - the broker's own records showed where the money goes</h2>
+      <div class="impact">Real money, small stakes: the account is under £50 after losing about £100 since March. A protection against the daily rollover and a pair restriction went live this evening; the effect isn't measured yet</div>
+      <div class="body">
+        <p>Our forex bot wins about 43% of its trades, and the average win is about the same size as the average loss, so it quietly loses a few pence every trade. We pulled every fill from the broker's own records (1,719 closed trades) rather than trusting our simulator, which only holds old data for a few pairs and approximates how trades exit. Since July the bot is roughly break-even on price movement alone (+£2 over 928 trades) and loses £25 once the spread is paid. The signals are close to a coin flip, and the spread eats the rest.</p>
+        <p>One leak stood out, and it is mechanical rather than a statistical guess. Every day at 5pm New York time the forex market rolls over and spreads blow up for a few minutes: about £0.13 per fill that hour, against about £0.017 normally. Positions held through it get stopped out by the spike. 52 of the bot's stop-losses filled at the same second, 21:04:55 UTC, on different days. That hour lost £39 across the record, in both the first and second half of it. We also found that the bot's "don't trade at rollover" setting had never worked: it lived in a file the live bot doesn't use, and it only ever blocked new entries, not open positions.</p>
+        <p>What we changed: the bot now closes open positions in the five minutes before the rollover and doesn't open new ones until it has passed. The times follow New York time, so the US clock change on 1 November moves them an hour on its own. We also stopped it trading three pairs (GBP/CAD, GBP/JPY, CAD/JPY) that lost money in both halves of the record. Applied to the past record, both changes together would have turned the second half from a £18 loss into about break-even, though the pair choice is partly hindsight and the real effect could be smaller.</p>
+        <p>What we don't know: we could not test trading less often or being pickier on entries, because the strength of each signal isn't recorded with each fill. The bot restarted this evening with both changes, the first rollover it handles this way is tonight, and we will check the broker's records afterwards and revisit after about two weeks of fills. Even at best, this looks like moving from losing slowly to roughly break-even, not to making money.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-19</div>
       <h2>Our Nasdaq bot lost on seven stops in a row, so we switched its direction - and told ourselves honestly why that's only a bet</h2>
       <div class="impact">Demo bot, no real money involved. A trading-direction change, not a bug fix; made with a smaller trade size and a written limit on how much it may lose before we revisit it</div>
