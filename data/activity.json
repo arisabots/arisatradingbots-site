@@ -1,5 +1,15 @@
 [
   {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": 0.21,
+    "pnl_usd": 5.63,
+    "exit_time": "2026-10-19T15:03:25.606228Z"
+  },
+  {
     "bot": "SPIKE",
     "brand": "Spike Trading",
     "instrument_name": "Dow Jones",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.37,
     "pnl_usd": -10.22,
     "exit_time": "2026-10-14T13:58:24.975922Z"
-  },
-  {
-    "bot": "SPIKE",
-    "brand": "Spike Trading",
-    "instrument_name": "Dow Jones",
-    "symbol_display": "US30",
-    "side": "SHORT",
-    "pnl_pct": 0.3,
-    "pnl_usd": 4.69,
-    "exit_time": "2026-10-14T13:32:05.971313Z"
   }
 ]
