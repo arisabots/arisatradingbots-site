@@ -140,6 +140,18 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-20</div>
+      <h2>Four of our bots were stopped out within four minutes - and one bought straight back in because its "cool-off" rule never fired</h2>
+      <div class="impact">Demo bots, no real money involved. A real bug found and fixed in eight bots; the stop-outs themselves were a market shock and are not fixed by this</div>
+      <div class="body">
+        <p>This afternoon, between 14:27 and 14:30 UTC, stock indices and silver jumped while oil lurched down and then back up. Four of our bots were on the wrong side and were stopped out within about four minutes: the Russell 2000 bot lost about $40, the oil bot $9 and $7 on two successive trades, silver $4 and the Nasdaq bot $6. Across the demo fleet today's closed trades came to roughly -$60, almost all of it from that moment.</p>
+        <p>While reviewing it we found a real bug. Each bot has a rule that, after a stop-loss, it waits about six minutes before trading again. The Russell bot was stopped out at 14:28:08 and opened a new short 100 seconds later at almost the same price. The oil bot bought again into the same fall 18 minutes after its first stop and was stopped a second time. The cause: that cool-off was only switched on when the bot's own code closed a losing trade. But nearly every hard stop is a stop order resting at the broker, which fills without the bot doing anything, and the bot only notices afterwards. That path never started the cool-off.</p>
+        <p>Fixed in the eight demo bots that use this code: when a bot finds that the broker closed a position at a loss, it now starts the same cool-off, and it checks the broker just before deciding on a new trade each cycle so a stop that filled a moment ago is not missed. Winning closes do not trigger it. It is tested, and the bots were restarted this evening with it in place.</p>
+        <p>What this does not do: it doesn't stop the stop-outs, and a six-minute pause is a modest safeguard, so we haven't measured how much it will matter. Oil, for instance, recovered after both stops. We left the gold bot out because it already has its own, longer pause rules and a 40-minute setting that would change how it trades. We will watch the next few stop-outs to confirm the pause shows up in the logs.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-19 (evening)</div>
       <h2>Our own test runs had been writing into the live trading bots' logs</h2>
       <div class="impact">Demo bots, no real money involved. A bookkeeping flaw in our testing tools, found and fixed across all nine demo bots; no trade was affected</div>
