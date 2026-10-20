@@ -5,6 +5,46 @@
     "instrument_name": "Crude Oil",
     "symbol_display": "WTI / USD",
     "side": "LONG",
+    "pnl_pct": -0.97,
+    "pnl_usd": -9.69,
+    "exit_time": "2026-10-20T14:30:33.973303Z"
+  },
+  {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "SHORT",
+    "pnl_pct": -0.62,
+    "pnl_usd": -4.38,
+    "exit_time": "2026-10-20T14:29:30.403506Z"
+  },
+  {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": -1.51,
+    "pnl_usd": -40.37,
+    "exit_time": "2026-10-20T14:28:33.270358Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "SHORT",
+    "pnl_pct": -0.37,
+    "pnl_usd": -5.57,
+    "exit_time": "2026-10-20T14:27:38.374731Z"
+  },
+  {
+    "bot": "OLIVIA",
+    "brand": "Olivia Trading",
+    "instrument_name": "Crude Oil",
+    "symbol_display": "WTI / USD",
+    "side": "LONG",
     "pnl_pct": -0.84,
     "pnl_usd": -8.56,
     "exit_time": "2026-10-20T14:09:02.617496Z"
@@ -158,45 +198,5 @@
     "pnl_pct": 0.25,
     "pnl_usd": 3.96,
     "exit_time": "2026-10-16T17:42:19.806658Z"
-  },
-  {
-    "bot": "SPENCER",
-    "brand": "Spencer Trading",
-    "instrument_name": "S&P 500",
-    "symbol_display": "SPX500",
-    "side": "LONG",
-    "pnl_pct": -1.2,
-    "pnl_usd": -12.24,
-    "exit_time": "2026-10-16T17:15:50.393006Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.35,
-    "pnl_usd": -9.45,
-    "exit_time": "2026-10-16T17:04:23.251668Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.34,
-    "pnl_usd": -9.28,
-    "exit_time": "2026-10-16T15:06:40.998960Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.36,
-    "pnl_usd": -9.66,
-    "exit_time": "2026-10-16T13:30:43.753208Z"
   }
 ]
