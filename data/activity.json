@@ -1,5 +1,25 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": -1.25,
+    "pnl_usd": -21.98,
+    "exit_time": "2026-10-21T03:01:46.064907Z"
+  },
+  {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "LONG",
+    "pnl_pct": -0.24,
+    "pnl_usd": -61.55,
+    "exit_time": "2026-10-21T03:00:41.606592Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -178,25 +198,5 @@
     "pnl_pct": -0.35,
     "pnl_usd": -9.53,
     "exit_time": "2026-10-19T14:05:00.662768Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "SHORT",
-    "pnl_pct": 0.96,
-    "pnl_usd": 25.39,
-    "exit_time": "2026-10-19T02:04:24.623920Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "LONG",
-    "pnl_pct": -0.35,
-    "pnl_usd": -9.34,
-    "exit_time": "2026-10-16T19:06:50.979310Z"
   }
 ]
