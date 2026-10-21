@@ -5,6 +5,16 @@
     "instrument_name": "Silver",
     "symbol_display": "XAG / USD",
     "side": "LONG",
+    "pnl_pct": 0.13,
+    "pnl_usd": 0.91,
+    "exit_time": "2026-10-21T08:08:52.877176Z"
+  },
+  {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "LONG",
     "pnl_pct": -0.59,
     "pnl_usd": -4.1,
     "exit_time": "2026-10-21T04:54:33.431232Z"
@@ -188,15 +198,5 @@
     "pnl_pct": 0.21,
     "pnl_usd": 5.63,
     "exit_time": "2026-10-19T15:03:25.606228Z"
-  },
-  {
-    "bot": "SPIKE",
-    "brand": "Spike Trading",
-    "instrument_name": "Dow Jones",
-    "symbol_display": "US30",
-    "side": "SHORT",
-    "pnl_pct": 0.35,
-    "pnl_usd": 5.42,
-    "exit_time": "2026-10-19T14:14:54.814091Z"
   }
 ]
