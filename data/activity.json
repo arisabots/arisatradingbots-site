@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "LONG",
+    "pnl_pct": -1.0,
+    "pnl_usd": -27.19,
+    "exit_time": "2026-10-21T11:45:40.268362Z"
+  },
+  {
     "bot": "NAZIM",
     "brand": "Nazim Trading",
     "instrument_name": "Nasdaq 100",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.17,
     "pnl_usd": -1.67,
     "exit_time": "2026-10-19T20:00:30.995916Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.14,
-    "pnl_usd": 0.94,
-    "exit_time": "2026-10-19T18:47:21.033227Z"
   }
 ]
