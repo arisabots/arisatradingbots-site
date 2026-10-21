@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SPENCER",
+    "brand": "Spencer Trading",
+    "instrument_name": "S&P 500",
+    "symbol_display": "SPX500",
+    "side": "LONG",
+    "pnl_pct": 0.26,
+    "pnl_usd": 2.59,
+    "exit_time": "2026-10-21T18:57:43.531393Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.14,
     "pnl_usd": 1.43,
     "exit_time": "2026-10-20T06:38:16.110056Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.65,
-    "pnl_usd": -4.51,
-    "exit_time": "2026-10-20T03:06:11.068648Z"
   }
 ]
