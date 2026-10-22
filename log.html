@@ -140,6 +140,28 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-22 (evening)</div>
+      <h2>Our sugar bot kept losing - the broker's records and a corrected test pointed at when and which way it trades, not its stops</h2>
+      <div class="impact">Demo bot, no real money involved. A flaw in our test tool fixed, then two settings changed on that evidence; the new settings are untested live</div>
+      <div class="body">
+        <p>The sugar bot has lost money every month since it started: about £314 over 51 trades by the broker's own records, with about £158 of that paid in spread. Its 21 stop-outs cost about £496 while its other 30 trades made about £182, so one stop undoes roughly four winners. We had already tried the obvious dials - stop distance, profit targets, trailing threshold and the entry signal thresholds - with no setting that worked in both halves of its history, so we looked elsewhere.</p>
+        <p>First a flaw in our own test tool. Its "wait until tomorrow after a loss" rule used the computer's real clock instead of the replayed clock, so the same history and settings gave different answers depending on what time of day we ran the test. This is the same mistake we found in the gold bot's tool last week. With that fixed, repeated runs match exactly.</p>
+        <p>On the corrected 13-month replay, buying-only loses (about -$139), selling-only gains about $135 and trading both ways about $160. More telling was the time of day: the bot waits 150 minutes after the session opens before trading, and that wasn't long enough. Pushing the start later made the "both directions" result positive in all four overlapping windows we checked, including the last ten weeks where the current setting loses about $113. Starting anywhere from 12:30 to 15:30 UTC worked (a plateau, not one lucky value); starting before 12:00 lost in at least one window. The broker's records agree in spirit: entries between 07:00 and 11:00 UTC were stopped out 43 to 67% of the time.</p>
+        <p>We changed two things: the bot now trades both directions, and it starts taking trades at 13:30 UTC, the middle of the good range. It was restarted with them this evening. The caveats are real: the test windows overlap, the sample is a few hundred trades, and the replay has never been validated live, so we will judge it on real fills. If it loses $50 net we revert both changes and investigate.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-22 (evening)</div>
+      <h2>We switched our S&amp;P 500 bot to selling-only on a thin signal - on purpose, with half the size and a hard limit</h2>
+      <div class="impact">Demo bot, no real money involved. A trading-direction change, not a bug fix; the evidence is thinner than our automatic check requires, so this was a human call</div>
+      <div class="body">
+        <p>The S&amp;P 500 bot had only ever bought. Today a long trade was stopped out for about $12, and our monitor flagged that its trend had turned down. The replay test says selling beat buying in both windows we check: over the full history (profit factor 1.36 against 1.06) and over the last three weeks (2.84 against 0.82). The last-three-weeks figures rest on only 10 and 11 trades, below the 15 our automatic switch needs, so it couldn't flip on its own and we decided for it.</p>
+        <p>We have been burned by trend calls that reverse - the Nasdaq bot's best direction changed every couple of weeks in its own history - so this is sized as a bet. Trade size was halved, the bot was restarted with that and the new direction this evening, and we set a limit: if its selling trades lose $30 net, we switch back and investigate what is wrong. We will report on how it goes.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-21 (evening)</div>
       <h2>A price-feed hiccup turned into a fake price that closed a real position - eight bots had the same flaw</h2>
       <div class="impact">Demo bots, no real money involved. A real bug found and fixed in all nine demo bots; the cause of the feed hiccups themselves is still unknown, but we now capture what OANDA says when they happen</div>
