@@ -1,5 +1,15 @@
 [
   {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": 0.34,
+    "pnl_usd": 9.11,
+    "exit_time": "2026-10-22T11:35:26.130227Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.97,
     "pnl_usd": -9.69,
     "exit_time": "2026-10-20T14:30:33.973303Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.62,
-    "pnl_usd": -4.38,
-    "exit_time": "2026-10-20T14:29:30.403506Z"
   }
 ]
