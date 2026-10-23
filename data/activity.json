@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.15,
+    "pnl_usd": 0.98,
+    "exit_time": "2026-10-22T23:59:08.349817Z"
+  },
+  {
     "bot": "SPENCER",
     "brand": "Spencer Trading",
     "instrument_name": "S&P 500",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.59,
     "pnl_usd": -4.1,
     "exit_time": "2026-10-21T04:54:33.431232Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "LONG",
-    "pnl_pct": -1.25,
-    "pnl_usd": -21.98,
-    "exit_time": "2026-10-21T03:01:46.064907Z"
   }
 ]
