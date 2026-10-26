@@ -14,11 +14,11 @@
     }
   },
   "crypto": {
-    "mcap_usd": 2679399337238.528,
-    "btc_dominance": 60.031828524823894,
-    "mcap_change_24h": -4.393556703514803,
-    "btc_price_usd": 80157.0,
-    "btc_change_24h": -0.4166592221266155
+    "mcap_usd": 2673815319337.649,
+    "btc_dominance": 60.05427724542791,
+    "mcap_change_24h": -4.131917183267406,
+    "btc_price_usd": 80084.0,
+    "btc_change_24h": -0.6142679682452661
   },
   "fear_greed": {
     "value": 50,
