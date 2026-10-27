@@ -140,6 +140,85 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-27 (evening)</div>
+      <h2>Why do our bots win small and lose big? We tested whether they trade the wrong side - they don't, and we changed three stop-losses</h2>
+      <div class="impact">Demo bots, no real money involved. Three stop distances widened on test evidence that is not yet confirmed live; each has a loss limit that reverts it</div>
+      <div class="body">
+        <p>Across seven of our eight rule-based demo bots the average winning trade is about a third the size of the average loser, so they need to win 66-76% of the time just to break even. Only the Dow and S&amp;P bots clear that bar, and they are the only two profitable bots. The obvious suspicion was that the bots are on the wrong side of the market. We compared every real entry with an entry at a random moment in the same hours: the entries are mostly coin flips (a few short-term positives for the Russell, soybean and Dow bots, two negatives for oil and sugar), not systematically wrong. The shape of the losses is the exit design: a stop closes the whole position while profits are banked in small pieces.</p>
+        <p>We then tested the two obvious ways to change that. Removing the three staged profit-takes made the fleet worse in 22 of 24 bot-and-window comparisons (full-period total from +$427 to +$288). Loosening the trailing profit lock, or removing the trailing stop, was worse still (+$520 to between +$207 and +$379). Both stay as they are. The one lever that held up was stop width, and it came with a finding about our own tools: our test tool judged a stop on the closing price, so a spike through the stop that recovered by the close never stopped the test out, which made tight stops look free. We added a mode that judges stops the way the broker does.</p>
+        <p>With that, three stops were widened: Russell 1.5% to 1.2% (a clear plateau), Nasdaq 0.35% to 1.5% (it was being hit in 61% of its trades; the evidence is suggestive, not a plateau) and silver 0.6% to 1.5% (every width from 1.5% to 3% was positive in all three windows). A losing stop now costs more per trade, so each change has a limit that reverts it: Russell -$60, Nasdaq -$50, silver -$25. We left the other bots alone: sugar's test favoured a much wider stop but is biased by a setting fitted to the old broken stops, and the rest were noise.</p>
+        <p>We got things wrong along the way and fixed them. Our first run said removing the profit-takes was better for the soybean bot; that was our test tool letting two simultaneous runs overwrite each other's state, and the corrected number reverses it. A "no trailing stop" setting also had a typo and silently did nothing until a duplicate result gave it away.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-27 (evening)</div>
+      <h2>Our gold bot loses in the Asian session and at the London open - it now trades 12:00-21:00 UTC only</h2>
+      <div class="impact">Demo bot, no real money involved. A trading-hours change on historical evidence that is not stable over time; reverts if it loses $60 net</div>
+      <div class="body">
+        <p>Pulling the gold bot's 499 closed trades straight from the broker (net -£3,113 since March) and grouping them by the hour they were entered: the Asian session (00:00-07:00 UTC) accounts for half of all trades and 84% of the loss (-£2,617, profit factor 0.47), negative in both halves of the history. The London open loses nearly as much (-£794), with the 07:00 hour alone at -£707 and a 16% win rate. Only 12:00-21:00 made money (+£703), and not steadily: +£850 from March to June, -£147 from July to October.</p>
+        <p>The idea that it "sits out after an Asian loss" turned out to be false: on days with an Asian loss it still took 1.7 more trades a day and those later trades lost another £620. So we added an entry-hours setting and set it to 12:00-21:00 UTC. It only blocks new entries; stops, trailing exits and reversals work at any hour. The caveats are plain: the hours were chosen on the same trades they are judged on, the 12-21 window is the least bad one rather than a proven edge, and position sizes changed a lot over the period. It was restarted with the setting this evening. If it loses $60 net we clear the setting and investigate.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-27 (evening)</div>
+      <h2>Our monitor switched the oil bot's direction by itself while nobody was at the screen - on a thin margin, so we set a limit</h2>
+      <div class="impact">Demo bot, no real money involved. An automatic direction change; we reviewed it and kept it</div>
+      <div class="body">
+        <p>When we restarted our monitoring system at 17:54 UTC today, its regime check ran straight away and switched the oil bot from buying-only to selling-only, with no human approval; this is exactly what that automatic switch was built for. Its evidence: over the full history selling has a profit factor of 1.28 against 1.23 for buying (almost identical), and over the last 21 days 1.05 against 0.78. We re-ran the check and got the same numbers. The recent margin only just clears the rule's floor of 1.0, so we reviewed it rather than waving it through, and decided to keep it, with the same safety net as our hand-made direction bets: if its selling trades lose $25 net, we switch back and investigate.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-27 (evening)</div>
+      <h2>Our go-live checklist says "not ready" for every demo bot - and two of its failures were partly our own bookkeeping</h2>
+      <div class="impact">No trading involved. Fixes to the checking tools; the answer is still "not ready" for all nine demo bots</div>
+      <div class="body">
+        <p>We built a checklist to decide when a demo bot is ready for real money. Today it failed every bot. Two of the failures were partly artefacts: the audit ledger's tamper-check broke because two of our processes both recorded the same day's row during a restart on 10-15, leaving one exact duplicate line (nothing was altered; the other 1,216 rows chain correctly); and the "real trades since the last change" count reset on every harmless restart, so a bot could never reach the 10 trades it needs. We made the ledger check tolerate exact duplicates and added a lock so two writers cannot do it again (the file itself is untouched), and the count now resets only when a bot's trading code or trading settings change. The per-bot notes on the checklist were weeks out of date, so we rewrote them and made the checklist flag any note older than two weeks.</p>
+        <p>None of that changes the verdict. Seven of our nine demo bots are net negative since they started (the gold bot accounts for most of it) and only the S&amp;P and Dow bots are positive, by a few dollars each. The checklist still says "not ready" for all nine, and the go-live date is still March 2027.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-26 (evening)</div>
+      <h2>Our sugar bot's prices were rounded to the nearest 0.001 - about half a percent - so its signals and its stop-losses were off</h2>
+      <div class="impact">Demo bot, no real money involved. A real bug, fixed and restarted; the strategy itself is still about break-even in testing</div>
+      <div class="body">
+        <p>After the sugar bot's first loss under the 10-22 changes, its logs showed the momentum indicator jumping from 40 to 15 to 61 within ten minutes on tiny price moves, and our test tool refused to produce the trade the live bot had taken. The cause: the price feed rounded every sugar price to three decimals, a leftover from the index bots whose prices are in the thousands. Sugar trades near 0.18, so each step was about half a percent. The signals were computed on a staircase, and the broker stop was placed from the rounded price, so stops that should have been 0.8% away were between 0.83% and 1.08% away (median 0.99%) across 21 trades. That also explains the "stops fill at 1% against an 0.8% stop" puzzle we had put down to slippage. And our tests had validated a signal the live bot was not trading.</p>
+        <p>The same replay with the rounding switched on went from about +$12 to -$734 over 13 months. We now keep five decimals (what the broker quotes) and added tests. The first session after the restart: big indicator jumps fell from 7.5% of readings to 0.4%, the stop landed exactly 0.80% from the signal price, and the one trade, a buy at 13:35, closed at the profit lock for +$4.78. One trade proves nothing; even at full precision the sugar strategy only breaks even in testing, so this fixes a mismatch but does not create an edge.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-25 (evening)</div>
+      <h2>Our live forex bot was placing some trades twice - leftover processes from an old restart</h2>
+      <div class="impact">Real money, small account. Found while checking the weekend close; the extra processes were stopped before the Sunday open</div>
+      <div class="body">
+        <p>Checking that the live forex bot had closed everything before the weekend (it had: the new rollover protection closed all positions at 16:55 New York time every day, five minutes before the close), we noticed many entries came as pairs: two market orders three to four seconds apart on the same pair at the same price. Eight worker processes from an earlier restart had never been killed - restarting the launcher on Windows does not stop the programs it started - so every pair had two bots trading it. When both saw "no position" at nearly the same moment, both entered, doubling the exposure and the spread cost.</p>
+        <p>We stopped the eight leftovers on Sunday while the market was closed and the account was flat. At the Sunday open every entry was a single order. The lesson is on our checklist now: after any restart of that bot, look for worker processes whose parent no longer exists.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-23 (evening)</div>
+      <h2>Correction: our sugar bot's "selling works" numbers from 10-22 were overstated - the test tool was too kind to short trades</h2>
+      <div class="impact">Demo bot, no real money involved. A flaw in our test tool, found and corrected; the start-time finding survives, the "both directions is positive in every window" claim does not</div>
+      <div class="body">
+        <p>Our 10-22 entry said selling-only gained about $135 and trading both ways about $160, positive in all four windows we checked. The test tool judged a short trade's stop only on the closing price, while for buying trades it already checked every high and low; so short stop-outs were undercounted. With stops judged on the bar's high, for short trades the later 13:30 start still beats the old 150-minute start in all five windows we tried, so the start-time change stands. But "both directions" at that start is now +$70, +$39, -$19 and +$4 over the four windows, not positive in each, and no direction is demonstrated profitable. We left the settings in place, with the -$50 limit, and corrected the record in our changelog.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-23 (evening)</div>
+      <h2>Smaller things this week: a market-turn alert, the gold retraining verdict, and a Dow investigation that found nothing to change</h2>
+      <div class="impact">Demo bots, no real money involved. Monitoring and investigation, no trading changes</div>
+      <div class="body">
+        <p>Most of our bots are positioned in one direction (index and silver bots short, oil and soybeans long), so when the market reverses they are stopped out together; on 10-20 four bots lost $68 in four minutes. We added a "fleet turn" monitor that alerts when the market moves against that positioning, which fired as expected during this week's bounce. The gold bot's weekly retraining check ran in dry-run mode and kept the existing model (profit factor 1.32 against 1.09 for the fresh candidate on the same recent history); nothing was promoted. We investigated the Dow bot's recent short losses and found no stop distance or trend filter that fixes them, so we made no change. The soybean replay now uses one-minute data like the other bots, and every bot now writes a per-minute signal log so we can compare what the live bot saw with what our tests assume.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-22 (evening)</div>
       <h2>Our sugar bot kept losing - the broker's records and a corrected test pointed at when and which way it trades, not its stops</h2>
       <div class="impact">Demo bot, no real money involved. A flaw in our test tool fixed, then two settings changed on that evidence; the new settings are untested live</div>
