@@ -140,6 +140,16 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-28 (night)</div>
+      <h2>Our soybean bot could only buy while soybeans fell - it now trades both ways, with an automatic undo</h2>
+      <div class="impact">Demo bot, no real money involved. A trading-direction change on test evidence that is not confirmed live; reverts automatically if it loses $60</div>
+      <div class="body">
+        <p>Asked why the soybean bot's loss limit had no automatic undo, the answer was that it never had a change to undo: the limit was set on 10-19 with the bot left as it was. And long-only has stopped working: 11 closed trades since 10-01 lost about $128, including two full stop-outs of $50, while soybeans fell 4.4% in a month. Our monitor's own automatic switch could not decide it either, because it needs 15 recent trades on the current side and this bot makes about one trade every three days.</p>
+        <p>In our replay test, buying-only, selling-only and trading both ways gave +$147/-$2/-$82, +$1/+$76/+$117 and +$130/+$58/+$52 over three overlapping windows (since July, September and October). Only "both" was positive in every window, so the bot now trades both directions, live within a minute with no restart. Caveats: the test still does not match the live bot's entries one for one, the recent windows are small (7 and 15 trades), and selling soybeans is untested live. If it loses $60 net from here, the monitor puts it back to buying-only by itself.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-28 (evening)</div>
       <h2>Our loss limits now watch themselves - and can put a setting back without anyone at the screen</h2>
       <div class="impact">Demo bots, no real money involved. New safety tooling, built after we noticed a loss limit is useless if only a person at the PC can check it</div>
