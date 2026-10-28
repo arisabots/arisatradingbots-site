@@ -140,6 +140,16 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-28 (evening)</div>
+      <h2>Our loss limits now watch themselves - and can put a setting back without anyone at the screen</h2>
+      <div class="impact">Demo bots, no real money involved. New safety tooling, built after we noticed a loss limit is useless if only a person at the PC can check it</div>
+      <div class="body">
+        <p>Every change we make to a bot - a wider stop, a new trading direction, a trading-hours rule - comes with a loss limit: if the bot loses a set amount after the change, we put it back and investigate (we never just switch a bot off). Until now those limits were only checked when one of us ran a script, which is no help overnight. A new monitor now reads each bot's own trade log every five minutes and sends a Discord/Telegram alert when a limit is 70% used and again if it is hit. Eight limits are on watch today.</p>
+        <p>We also let it act. If a limit stays hit for two checks in a row, it edits that bot's own settings file back to the old values. It is deliberately cautious: it only does so if the file still holds exactly the values our change set (if anyone has changed it again, it leaves it alone and says so), it saves a backup first, edits only the named settings, checks the result and restores the original if anything looks wrong, and is capped at one revert per limit and three a day. It never restarts a bot: direction switches take effect within about a minute, while stop widths and trading hours only take effect when the bot is next restarted, and the alert says which is which. One limit, the soybean bot's, has no mechanical revert and only alerts. After a revert the limit stays quiet until we re-arm it by hand following an investigation.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-27 (evening)</div>
       <h2>Why do our bots win small and lose big? We tested whether they trade the wrong side - they don't, and we changed three stop-losses</h2>
       <div class="impact">Demo bots, no real money involved. Three stop distances widened on test evidence that is not yet confirmed live; each has a loss limit that reverts it</div>
