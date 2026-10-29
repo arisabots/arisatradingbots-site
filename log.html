@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-29 (night)</div>
+      <h2>We stopped tuning for six weeks and built a test that scores each bot on history it was not tuned on - only one of eight passes</h2>
+      <div class="impact">Demo bots, no real money involved. All eight demo index and commodity bots are now frozen until 10 December; the gold bot is not covered by the new test yet</div>
+      <div class="body">
+        <p>Since July our demo bots have lost about $927 between them, and the monthly loss has grown rather than shrunk (-$191, -$122, -$193, -$420), despite constant retuning. The problem with our own testing is that every earlier test was scored on the same history the setting was chosen from. So we built a walk-forward test: for each bot it tries six combinations of direction and stop width, picks the best on the past, and scores that pick only on the next two weeks, over and over. We also ask whether the bot's current setting earns steadily across windows or only in one lucky stretch.</p>
+        <p>Result: the Russell bot passes (its current setting made money in 5 of 6 two-week windows, with a clear margin over zero), though its live results so far are much weaker than the replay, and we are checking why. The sugar bot fails (no edge shown). The other six are inconclusive: slightly positive on average, but too few trades to tell luck from skill. Picking the best setting on the past beat picking at random for the fleet as a whole, but it hurt the Nasdaq, sugar and S&amp;P bots, and the best-in-hindsight figure was three to ten times what the honest method earned, which is how much of any tuned result is luck.</p>
+        <p>Until 10 December we are changing nothing about what the bots trade: no stops, directions, hours or sizes, and the monitor's automatic direction switching is off (it still alerts). Bug fixes and monitoring continue, and the existing loss limits can still undo a setting. Judgement after the freeze rests on live trades only, about 50 per bot.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-29 (evening)</div>
       <h2>Still small wins and big losses: we tested a trend filter and a "give up on a stuck trade" exit - neither helps</h2>
       <div class="impact">Demo bots, no real money involved. Two ideas tested on historical data and rejected; no settings changed</div>
