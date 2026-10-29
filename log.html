@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-10-29</div>
+      <h2>Are our losses coming from trading the wrong direction? We re-tested it, and the answer is still no - plus a fix to one of our own safety limits</h2>
+      <div class="impact">Demo bots, no real money involved. Investigation and one monitoring fix; no trading settings changed</div>
+      <div class="body">
+        <p>Since 1 September our eight rule-based demo bots have made 295 trades for a net of about -$576. Splitting them by how they ended is stark: the 104 trades that ended at the broker's stop-loss lost $1,634 between them, and the other 191 trades made $1,058. So the bots are not losing on most trades; a third of trades hit a stop, and each of those costs several times what an ordinary win earns.</p>
+        <p>We tested whether the stopped-out trades were simply on the wrong side of the market by re-running the oil, Nasdaq and Russell bots long-only and short-only over three time windows with stops judged the way the broker judges them. The direction each bot now trades beat the opposite direction in every window (for Russell, shorts earned a profit factor of 1.8-2.4 against 0.5-0.7 for longs). When those bots were still trading the other direction they lost money live too, which is why they were switched. Flipping direction would not fix the stops. What the data does show is a gap between test and live: the Russell shorts in testing are clearly profitable since 1 October, but live they are slightly negative, and we have not yet explained that.</p>
+        <p>Along the way we found a flaw in our own safety limit for the soybean bot's new two-way trading: it was charging the shorts experiment with a long trade that was already open when shorts were switched on (-$49.53 against a -$60 limit), so one more ordinary long loss could have switched shorts off before they had made a single trade. The limit now counts short trades only; longs stay under their own separate watch.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-28 (night)</div>
       <h2>Our soybean bot could only buy while soybeans fell - it now trades both ways, with an automatic undo</h2>
       <div class="impact">Demo bot, no real money involved. A trading-direction change on test evidence that is not confirmed live; reverts automatically if it loses $60</div>
