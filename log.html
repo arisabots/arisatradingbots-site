@@ -141,6 +141,16 @@
 
     <div class="entry">
       <div class="date">2026-10-29</div>
+      <h2>Why did our Russell bot's tests look better than its live results? Mostly we compared different stop settings - and some live trades were hit by fake prices</h2>
+      <div class="impact">Demo bot, no real money involved. Investigation only; no settings changed</div>
+      <div class="body">
+        <p>Our Russell 2000 bot showed +$60 in testing since 1 October against -$18 live. Most of that was an unfair comparison: the test used the new 1.2% stop-loss while the live bot ran the old 1.5% stop until 27 October. Re-running the test with the stop the bot really had, it made -$0.9 against +$14.5 live, so there was no gap. Where the same entry happened in both, live entry prices were within about one index point of the test and exits agreed within a couple of dollars.</p>
+        <p>There was a real live-only distortion, though. Seven times between August and October our data feed failed (OANDA returned an authentication error) and the bot briefly believed the index was at about 51,700. Its indicators then spent about 37 one-minute cycles producing nonsense, and on 13 October that closed a short at breakeven where the test earned $27. That was fixed on 21 October: the bot now skips a cycle when the feed fails, and has skipped seven since without trading on any of them. The cause of the authentication errors themselves is still unknown.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-10-29</div>
       <h2>Are our losses coming from trading the wrong direction? We re-tested it, and the answer is still no - plus a fix to one of our own safety limits</h2>
       <div class="impact">Demo bots, no real money involved. Investigation and one monitoring fix; no trading settings changed</div>
       <div class="body">
