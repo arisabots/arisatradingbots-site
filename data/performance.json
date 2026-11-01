@@ -2103,6 +2103,14 @@
     {
       "time": "2026-10-30T20:12:50.382760Z",
       "cumulative_pnl": -1181.97
+    },
+    {
+      "time": "2026-11-01T23:01:56.519829Z",
+      "cumulative_pnl": -1177.34
+    },
+    {
+      "time": "2026-11-01T23:05:41.050807Z",
+      "cumulative_pnl": -1177.43
     }
   ],
   "bots": [
@@ -2171,15 +2179,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 63,
+      "total_trades": 64,
       "wins": 42,
-      "losses": 21,
-      "win_rate": 66.66666666666666,
+      "losses": 22,
+      "win_rate": 65.625,
       "gross_profit": 85.38,
-      "gross_loss": -102.82,
+      "gross_loss": -102.91,
       "profit_factor": 0.83,
-      "avg_hold_minutes": 122.5,
-      "total_pnl": -17.44
+      "avg_hold_minutes": 168.7,
+      "total_pnl": -17.53
     },
     {
       "bot": "SOLOMON",
@@ -2201,15 +2209,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 37,
-      "wins": 27,
+      "total_trades": 38,
+      "wins": 28,
       "losses": 10,
-      "win_rate": 72.97297297297297,
-      "gross_profit": 122.57,
+      "win_rate": 73.68421052631578,
+      "gross_profit": 127.2,
       "gross_loss": -116.83,
-      "profit_factor": 1.05,
-      "avg_hold_minutes": 2738.4,
-      "total_pnl": 5.74
+      "profit_factor": 1.09,
+      "avg_hold_minutes": 2764.4,
+      "total_pnl": 10.37
     },
     {
       "bot": "SPIKE",
@@ -2242,6 +2250,6 @@
       "total_pnl": -431.55
     }
   ],
-  "fleet_total_pnl": -1181.97,
-  "fleet_total_trades": 526
+  "fleet_total_pnl": -1177.43,
+  "fleet_total_trades": 528
 }
