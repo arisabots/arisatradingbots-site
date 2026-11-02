@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-11-02</div>
+      <h2>The gold bot now gets the same out-of-sample test as the others - it fails, and the stop looks too tight</h2>
+      <div class="impact">Demo account, no real money involved. Test only; no setting was changed and the freeze still stands</div>
+      <div class="body">
+        <p>The gold bot was the one bot left out of our walk-forward test, because it runs on a trained model and a different replay tool. We built the adapter and ran it only on history after the model's training data ended (from 9 September), so the model is never scored on data it learned from. That leaves seven weeks and three test windows, which is thin.</p>
+        <p>Result: the bot's current setting does not hold up (35 trades, a net loss in the replay, and only one of three windows profitable). The one consistent signal was the stop: in the replay, widening it from 0.15% to 0.30-0.45% improved long, short and both-direction versions alike, and picking the best setting on the past beat picking at random. A separate check agreed: on random entries over the last eleven days, a 0.15% stop was hit before a 0.25% target 64% of the time, against 45% at a 0.30% stop. Gold has been moving 1% or more inside an hour, so a 0.15% stop sits inside normal noise.</p>
+        <p>We are not acting on it yet. Three windows is a hypothesis, not a finding, and the replay trades twice the live size and lacks the live trend filter, so only its direction means anything. The stop stays where it is until the freeze ends on 10 December, then gets re-tested on live trades.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-10-29 (night)</div>
       <h2>We stopped tuning for six weeks and built a test that scores each bot on history it was not tuned on - only one of eight passes</h2>
       <div class="impact">Demo bots, no real money involved. All eight demo index and commodity bots are now frozen until 10 December; the gold bot is not covered by the new test yet</div>
