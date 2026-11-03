@@ -2131,6 +2131,30 @@
     {
       "time": "2026-11-03T12:19:17.783686Z",
       "cumulative_pnl": -1197.67
+    },
+    {
+      "time": "2026-11-03T13:27:42.962399Z",
+      "cumulative_pnl": -1208.33
+    },
+    {
+      "time": "2026-11-03T13:29:39.881950Z",
+      "cumulative_pnl": -1196.25
+    },
+    {
+      "time": "2026-11-03T13:29:51.276976Z",
+      "cumulative_pnl": -1178.35
+    },
+    {
+      "time": "2026-11-03T13:29:53.217109Z",
+      "cumulative_pnl": -1173.14
+    },
+    {
+      "time": "2026-11-03T13:32:23.021214Z",
+      "cumulative_pnl": -1169.07
+    },
+    {
+      "time": "2026-11-03T13:40:17.691335Z",
+      "cumulative_pnl": -1168.28
     }
   ],
   "bots": [
@@ -2154,30 +2178,30 @@
       "brand": "Nazim Trading",
       "instrument_name": "Nasdaq 100",
       "symbol_display": "NAS100",
-      "total_trades": 86,
-      "wins": 34,
+      "total_trades": 87,
+      "wins": 35,
       "losses": 52,
-      "win_rate": 39.53488372093023,
-      "gross_profit": 393.47,
+      "win_rate": 40.229885057471265,
+      "gross_profit": 405.55,
       "gross_loss": -478.78,
-      "profit_factor": 0.82,
-      "avg_hold_minutes": -134.9,
-      "total_pnl": -85.31
+      "profit_factor": 0.85,
+      "avg_hold_minutes": -71.6,
+      "total_pnl": -73.23
     },
     {
       "bot": "OLIVIA",
       "brand": "Olivia Trading",
       "instrument_name": "Crude Oil",
       "symbol_display": "WTI / USD",
-      "total_trades": 92,
-      "wins": 56,
+      "total_trades": 93,
+      "wins": 57,
       "losses": 36,
-      "win_rate": 60.86956521739131,
-      "gross_profit": 154.23,
+      "win_rate": 61.29032258064516,
+      "gross_profit": 172.13,
       "gross_loss": -318.3,
-      "profit_factor": 0.48,
-      "avg_hold_minutes": 114.8,
-      "total_pnl": -164.07
+      "profit_factor": 0.54,
+      "avg_hold_minutes": 114.9,
+      "total_pnl": -146.17
     },
     {
       "bot": "RUSSELL",
@@ -2199,15 +2223,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 68,
-      "wins": 44,
-      "losses": 24,
-      "win_rate": 64.70588235294117,
-      "gross_profit": 89.56,
-      "gross_loss": -122.72,
-      "profit_factor": 0.73,
-      "avg_hold_minutes": 168.9,
-      "total_pnl": -33.16
+      "total_trades": 70,
+      "wins": 45,
+      "losses": 25,
+      "win_rate": 64.28571428571429,
+      "gross_profit": 90.35,
+      "gross_loss": -133.38,
+      "profit_factor": 0.68,
+      "avg_hold_minutes": 165.0,
+      "total_pnl": -43.03
     },
     {
       "bot": "SOLOMON",
@@ -2229,30 +2253,30 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 38,
-      "wins": 28,
+      "total_trades": 39,
+      "wins": 29,
       "losses": 10,
-      "win_rate": 73.68421052631578,
-      "gross_profit": 127.2,
+      "win_rate": 74.35897435897436,
+      "gross_profit": 131.27,
       "gross_loss": -116.83,
-      "profit_factor": 1.09,
-      "avg_hold_minutes": 2764.4,
-      "total_pnl": 10.37
+      "profit_factor": 1.12,
+      "avg_hold_minutes": 2730.3,
+      "total_pnl": 14.44
     },
     {
       "bot": "SPIKE",
       "brand": "Spike Trading",
       "instrument_name": "Dow Jones",
       "symbol_display": "US30",
-      "total_trades": 30,
-      "wins": 24,
+      "total_trades": 31,
+      "wins": 25,
       "losses": 6,
-      "win_rate": 80.0,
-      "gross_profit": 270.69,
+      "win_rate": 80.64516129032258,
+      "gross_profit": 275.9,
       "gross_loss": -209.0,
-      "profit_factor": 1.3,
-      "avg_hold_minutes": 3444.1,
-      "total_pnl": 61.69
+      "profit_factor": 1.32,
+      "avg_hold_minutes": 3394.9,
+      "total_pnl": 66.9
     },
     {
       "bot": "SWEETPEA",
@@ -2270,6 +2294,6 @@
       "total_pnl": -431.55
     }
   ],
-  "fleet_total_pnl": -1197.67,
-  "fleet_total_trades": 533
+  "fleet_total_pnl": -1168.28,
+  "fleet_total_trades": 539
 }
