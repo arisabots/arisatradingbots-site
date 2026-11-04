@@ -1,5 +1,25 @@
 [
   {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "SHORT",
+    "pnl_pct": -1.51,
+    "pnl_usd": -23.71,
+    "exit_time": "2026-11-04T13:17:31.316619Z"
+  },
+  {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "SHORT",
+    "pnl_pct": 0.32,
+    "pnl_usd": 4.49,
+    "exit_time": "2026-11-04T13:08:25.310371Z"
+  },
+  {
     "bot": "SILVERSMITH",
     "brand": "Silversmith Trading",
     "instrument_name": "Silver",
@@ -178,25 +198,5 @@
     "pnl_pct": -0.15,
     "pnl_usd": -5.78,
     "exit_time": "2026-11-03T12:19:17.783686Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "SHORT",
-    "pnl_pct": 0.41,
-    "pnl_usd": 10.92,
-    "exit_time": "2026-11-03T09:44:28.820859Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.09,
-    "pnl_usd": 0.94,
-    "exit_time": "2026-11-03T07:53:20.471097Z"
   }
 ]
