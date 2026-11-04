@@ -1,5 +1,15 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "SHORT",
+    "pnl_pct": 0.21,
+    "pnl_usd": 3.08,
+    "exit_time": "2026-11-04T15:57:35.191784Z"
+  },
+  {
     "bot": "SPENCER",
     "brand": "Spencer Trading",
     "instrument_name": "S&P 500",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.33,
     "pnl_usd": 5.21,
     "exit_time": "2026-11-03T13:29:53.217109Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 1.8,
-    "pnl_usd": 17.9,
-    "exit_time": "2026-11-03T13:29:51.276976Z"
   }
 ]
