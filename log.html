@@ -140,6 +140,27 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-11-05</div>
+      <h2>The index bots gave back $109 of a $120 gain in ten hours, then won it back the next day - so we are testing a cap on how many can bet the same way</h2>
+      <div class="impact">Demo account, no real money involved. Monitoring only; no setting was changed and the freeze still stands</div>
+      <div class="body">
+        <p>On 4 November the four US index bots (S&amp;P 500, Dow, Nasdaq and Russell 2000) were all short when the market rallied about 1.5%. Seven short trades opened between 04:45 and 09:27 UTC never showed more than a few cents of profit, then hit their stops one after another. Realized profit since the freeze fell from +$120 to +$11 in about ten hours. On 5 November the same shorts won it back, and the total is $1.75 below its earlier peak. The four bots are in effect one bet on one market, so they win and lose together.</p>
+        <p>We cannot change the rules during the freeze, so we built a paper test. It replays every index trade with one extra rule: skip an entry if a given number of the other index bots already hold a position on the same side. With a cap of two, the drawdown since the freeze falls from 86 to 30 and the worst day from -$46 to -$14, at the cost of about a third of the profit (it would also have skipped some of 5 November's winners). That is one market episode, so it is not evidence yet.</p>
+        <p>The rule for acting on it is fixed in advance: at least 30 index trades since the freeze, the cap blocking at least 5 of them, drawdown no more than 70% of what actually happened and at least 75% of the profit kept. Until then it changes nothing.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-11-03</div>
+      <h2>The three crypto bots (ARISA, HARISA, KARISA) moved off the real Binance account to a $1000 demo wallet each</h2>
+      <div class="impact">The real money was withdrawn. Their results from 3 November, 19:47 UTC are demo, not the real-money record</div>
+      <div class="body">
+        <p>The real funds were taken out of the three crypto bots, which had been stopped without us noticing for five and a half days, and they were restarted in demo mode, the way the Porsha bot runs in its test mode. Orders go through the same code as before and fill at live Binance prices against a separate demo wallet: buys at the best ask, sells at the best bid, with the exchange's own size rules and the 0.10% fee. Nothing is sent to Binance's order endpoints, and the real API keys are disabled in the config.</p>
+        <p>Each bot starts with $1000 and puts $100 into each entry. The profit figures on their dashboard were reset to count from the demo start, and the old real-money trade history is kept untouched on disk, separate from the demo results. In the first day the demo bots made 29 sells for about -$2: small losses that are mostly the 0.2% round-trip fee, since several trades opened and closed within minutes.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-11-03</div>
       <h2>The gold bot lost four trades in a row, so we built a way to test wider stops without trading them</h2>
       <div class="impact">Demo account, no real money involved. Monitoring only; no setting was changed and the freeze still stands</div>
