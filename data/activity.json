@@ -1,5 +1,15 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "SHORT",
+    "pnl_pct": 1.37,
+    "pnl_usd": 18.51,
+    "exit_time": "2026-11-06T00:09:18.408978Z"
+  },
+  {
     "bot": "SPIKE",
     "brand": "Spike Trading",
     "instrument_name": "Dow Jones",
@@ -188,15 +198,5 @@
     "pnl_pct": -1.52,
     "pnl_usd": -10.15,
     "exit_time": "2026-11-04T10:11:34.936192Z"
-  },
-  {
-    "bot": "NAZIM",
-    "brand": "Nazim Trading",
-    "instrument_name": "Nasdaq 100",
-    "symbol_display": "NAS100",
-    "side": "SHORT",
-    "pnl_pct": -1.52,
-    "pnl_usd": -21.45,
-    "exit_time": "2026-11-04T08:17:20.700427Z"
   }
 ]
