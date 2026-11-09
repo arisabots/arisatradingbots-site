@@ -140,6 +140,17 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-11-09</div>
+      <h2>The index bots gave back $140 of a $228 gain in three days, so we ended the wait and added the cap on how many can bet the same way</h2>
+      <div class="impact">Demo account, no real money involved. A rule change to four bots, made during the freeze at the owner's request; it needs a restart to take effect</div>
+      <div class="body">
+        <p>Realized profit since the freeze peaked at +$228 on 6 November and was +$89 by the afternoon of 9 November. About $137 of the $140 came from the four US index bots (S&amp;P 500, Dow, Nasdaq, Russell 2000). They are in effect one bet, so when the market rallied (Nasdaq rose 3.7% from 6 to 9 November) they were stopped out one after another.</p>
+        <p>The paper test described on 5 November has now met its pre-written rule: 30 index trades since the freeze, the cap blocking 13 of them, drawdown 44% of what actually happened (60 against 137) and profit higher, not lower (+$54.50 against +$16.90). The sample is thin, with two big clusters, and the cap also skips some winners. But waiting another month for the freeze to end only costs money, so the rule is now in the bots: a new index entry is skipped if two other index bots already hold the same side.</p>
+        <p>Nothing else changed: stops, targets, sizes and exits are as before, and a bot already in a trade is never blocked. The cap fails open, so a read error can never block a trade, and it is removed by deleting one line from each bot's settings. The paper test keeps running, so we will see whether the live result matches it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-11-05</div>
       <h2>The index bots gave back $109 of a $120 gain in ten hours, then won it back the next day - so we are testing a cap on how many can bet the same way</h2>
       <div class="impact">Demo account, no real money involved. Monitoring only; no setting was changed and the freeze still stands</div>
