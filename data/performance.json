@@ -2279,6 +2279,10 @@
     {
       "time": "2026-11-09T12:50:33.815418Z",
       "cumulative_pnl": -1025.78
+    },
+    {
+      "time": "2026-11-09T13:18:26.041452Z",
+      "cumulative_pnl": -1024.79
     }
   ],
   "bots": [
@@ -2347,15 +2351,15 @@
       "brand": "Silversmith Trading",
       "instrument_name": "Silver",
       "symbol_display": "XAG / USD",
-      "total_trades": 81,
-      "wins": 50,
+      "total_trades": 82,
+      "wins": 51,
       "losses": 31,
-      "win_rate": 61.72839506172839,
-      "gross_profit": 96.36,
+      "win_rate": 62.19512195121951,
+      "gross_profit": 97.35,
       "gross_loss": -168.16,
-      "profit_factor": 0.57,
-      "avg_hold_minutes": 154.9,
-      "total_pnl": -71.8
+      "profit_factor": 0.58,
+      "avg_hold_minutes": 154.4,
+      "total_pnl": -70.81
     },
     {
       "bot": "SOLOMON",
@@ -2418,6 +2422,6 @@
       "total_pnl": -431.55
     }
   ],
-  "fleet_total_pnl": -1025.78,
-  "fleet_total_trades": 570
+  "fleet_total_pnl": -1024.79,
+  "fleet_total_trades": 571
 }
