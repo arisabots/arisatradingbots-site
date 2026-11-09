@@ -141,6 +141,17 @@
 
     <div class="entry">
       <div class="date">2026-11-09</div>
+      <h2>The new Tortoise bot was running but its alerts went nowhere, and Marshall did not know it existed</h2>
+      <div class="impact">Demo only, no real money involved. Found within an hour of the first start; nothing was lost</div>
+      <div class="body">
+        <p>Tortoise, the slow trend portfolio, was started on a simulated $10,000 account at 17:56 UTC. Its first message, the four opening buys, printed "alert (offline)" in its own window instead of reaching Telegram or Discord. The cause was simple: the shared alert code reads its Telegram and Discord settings from the program's environment, Marshall's own settings file has them, and Tortoise's did not. Nothing had been wrongly sent or lost, but a bot that cannot tell us when something goes wrong is not finished. Tortoise now loads Marshall's alert settings and writes a line to its log whenever an alert reaches no channel.</p>
+        <p>The second gap was ours: Tortoise was built as a standalone program and never added to Marshall, which watches the rest of the fleet. It now writes a small status file every ten minutes (equity, positions, costs, last daily bar) that Marshall reads for the fleet report and the dashboard, and Marshall flags it as not running if the file goes 45 minutes without an update. We left it out of the tamper-evident track-record ledger on purpose, because that ledger holds only broker-verified account snapshots and Tortoise is a simulated account. After both restarts the dashboard showed it live: equity $9,968 (-0.32% against the $10,000 start), four positions, spread cost $0.35.</p>
+        <p>The opening dip is real, not a bug: the bot decided on Friday's close and bought on Monday's live prices, which the indices had already moved away from. That is the gap between a backtest and a real fill, and the first thing its pass-or-fail rule will measure.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-11-09</div>
       <h2>A full review found no profitable edge in the nine fast bots, so we built a slow trend portfolio for a simulated account</h2>
       <div class="impact">Demo only, no real money involved. A new bot, "Tortoise", that cannot place a broker order at all</div>
       <div class="body">
