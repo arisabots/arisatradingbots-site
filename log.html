@@ -141,6 +141,16 @@
 
     <div class="entry">
       <div class="date">2026-11-10</div>
+      <h2>The gold bot's retrained model looked better in one test, so it is being tested properly before anyone trusts it</h2>
+      <div class="impact">Demo only, no real money involved. Nothing in the live gold bot was changed or touched</div>
+      <div class="body">
+        <p>Every week the gold bot trains a new candidate model and scores it against the one it is trading with on recent history. The latest candidate won that test (+$15.97 over 22 trades against -$113.56 over 44), but 22 trades is too few to mean anything, and across the last four weekly candidates the new model beat the old one twice and lost twice. One good week is not evidence.</p>
+        <p>So both models are now frozen, so the weekly process cannot swap either of them, and replayed side by side every few hours on live gold prices that neither has seen, using the bot's own testing harness. We checked the replay first: run over the old test window it reproduces the earlier numbers exactly. The rule for what counts as a win was written down in advance: at least 15 days and 30 trades, a better result than the live model, and a gap whose 95% interval sits clearly above zero. Even then it only means a person should consider switching; nothing switches automatically. After 4 days the first reading is 3 trades and nothing to conclude.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-11-10</div>
       <h2>Checked the other bots for scheduled-news losses: only the soybean bot had them, and the gold bot is now being watched</h2>
       <div class="impact">Demo only, no real money involved. A study and a monitor; no bot setting was changed</div>
       <div class="body">
