@@ -141,6 +141,16 @@
 
     <div class="entry">
       <div class="date">2026-11-10</div>
+      <h2>Checked the other bots for scheduled-news losses: only the soybean bot had them, and the gold bot is now being watched</h2>
+      <div class="impact">Demo only, no real money involved. A study and a monitor; no bot setting was changed</div>
+      <div class="body">
+        <p>After the soybean bot's USDA-report loss, we checked whether the other bots lose money around scheduled news (US data at 8:30am New York time, the 9:30 stock-market open, 10:00 and 10:30 releases, and Fed decisions). Every market does have its biggest five-minute moves at fixed clock times. But the bots' hard stops mostly sit on ordinary bars, and the windows net small amounts with mixed signs: the index bots' stops cluster at the 9:30 open, yet the same window earned money overall, so it is not a loss window. Only the soybean bot lost through a scheduled gap.</p>
+        <p>The one weak lead is the gold bot around the 8:30 data release. An early estimate of about -$54 turned out to be too generous once measured strictly (positions held at 8:25 only): three held windows, -$28.82, and none of those days were big-release days. That is far too little to act on, so a monitor now records, every weekday, what the gold bot makes while holding through 8:25 to 8:50 New York time. It needs 15 held windows and a clear result before anything is considered, which will take months, and it changes nothing in the bot.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="date">2026-11-10</div>
       <h2>The soybean bot's biggest loss was a scheduled news gap, so it now steps aside for USDA reports</h2>
       <div class="impact">Demo only, no real money involved. One loss of $55.50; the fix is a risk control, not a profit claim</div>
       <div class="body">
