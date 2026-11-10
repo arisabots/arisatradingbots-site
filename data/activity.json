@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SILVERSMITH",
+    "brand": "Silversmith Trading",
+    "instrument_name": "Silver",
+    "symbol_display": "XAG / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.47,
+    "pnl_usd": 3.26,
+    "exit_time": "2026-11-10T01:01:54.442980Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.25,
     "pnl_usd": 2.57,
     "exit_time": "2026-11-06T04:15:07.537217Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.16,
-    "pnl_usd": 1.08,
-    "exit_time": "2026-11-06T01:01:46.347872Z"
   }
 ]
