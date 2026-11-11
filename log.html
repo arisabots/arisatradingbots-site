@@ -140,6 +140,16 @@
   <div class="wrap">
 
     <div class="entry">
+      <div class="date">2026-11-11</div>
+      <h2>Tested whether a different stop-loss would fix the sugar bot: no width of stop makes it profitable</h2>
+      <div class="impact">Demo only, no real money involved. A study; nothing in the sugar bot was changed</div>
+      <div class="body">
+        <p>The sugar bot is the biggest loser in the fleet, and its stop-loss was tightened in September without a proper test, because its own backtest tool was found to generate far fewer trades than real life. So the test was rebuilt: the bot's 57 real entries were fed through its real exit code, with stop-loss widths from 0.6% to 2.0%. First we checked the rebuilt test reproduces what really happened since September (it needed three fixes before it did: missing price minutes, a currency-sizing simplification, and duplicated cooldown rules), with pass marks written down beforehand.</p>
+        <p>The result: every stop width loses money. The best (0.6%) is only about $35 better than today's 0.8% and the difference is within noise; the whole range spans about $88 against a loss of roughly $270. The September change to the stop and the first take-profit also made no measurable difference. Part of the loss is structural: sugar's price gap between buying and selling costs about 0.14% on every round trip, roughly $210 across these 57 trades, about half of the actual loss. So the stop is not the lever; the entries are. Nothing was changed.</p>
+      </div>
+    </div>
+
+    <div class="entry">
       <div class="date">2026-11-10</div>
       <h2>The gold bot's retrained model looked better in one test, so it is being tested properly before anyone trusts it</h2>
       <div class="impact">Demo only, no real money involved. Nothing in the live gold bot was changed or touched</div>
