@@ -2359,6 +2359,14 @@
     {
       "time": "2026-11-13T14:18:06.556901Z",
       "cumulative_pnl": -854.68
+    },
+    {
+      "time": "2026-11-13T15:34:28.030332Z",
+      "cumulative_pnl": -847.79
+    },
+    {
+      "time": "2026-11-13T15:35:39.355773Z",
+      "cumulative_pnl": -841.43
     }
   ],
   "bots": [
@@ -2472,32 +2480,32 @@
       "brand": "Spike Trading",
       "instrument_name": "Dow Jones",
       "symbol_display": "US30",
-      "total_trades": 38,
-      "wins": 29,
+      "total_trades": 39,
+      "wins": 30,
       "losses": 9,
-      "win_rate": 76.31578947368422,
-      "gross_profit": 324.73,
+      "win_rate": 76.92307692307693,
+      "gross_profit": 331.62,
       "gross_loss": -279.81,
-      "profit_factor": 1.16,
-      "avg_hold_minutes": 3003.9,
-      "total_pnl": 44.92
+      "profit_factor": 1.19,
+      "avg_hold_minutes": 2950.6,
+      "total_pnl": 51.81
     },
     {
       "bot": "SWEETPEA",
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 58,
-      "wins": 28,
+      "total_trades": 59,
+      "wins": 29,
       "losses": 30,
-      "win_rate": 48.275862068965516,
-      "gross_profit": 432.32,
+      "win_rate": 49.152542372881356,
+      "gross_profit": 438.68,
       "gross_loss": -853.65,
       "profit_factor": 0.51,
-      "avg_hold_minutes": 335.8,
-      "total_pnl": -421.33
+      "avg_hold_minutes": 331.0,
+      "total_pnl": -414.97
     }
   ],
-  "fleet_total_pnl": -854.68,
-  "fleet_total_trades": 590
+  "fleet_total_pnl": -841.43,
+  "fleet_total_trades": 592
 }
