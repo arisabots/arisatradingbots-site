@@ -2395,6 +2395,14 @@
     {
       "time": "2026-11-18T14:36:41.799283Z",
       "cumulative_pnl": -709.17
+    },
+    {
+      "time": "2026-11-18T14:58:46.927447Z",
+      "cumulative_pnl": -707.27
+    },
+    {
+      "time": "2026-11-18T15:12:00.499183Z",
+      "cumulative_pnl": -737.58
     }
   ],
   "bots": [
@@ -2493,15 +2501,15 @@
       "brand": "Spencer Trading",
       "instrument_name": "S&P 500",
       "symbol_display": "SPX500",
-      "total_trades": 49,
-      "wins": 35,
+      "total_trades": 50,
+      "wins": 36,
       "losses": 14,
-      "win_rate": 71.42857142857143,
-      "gross_profit": 151.75,
+      "win_rate": 72.0,
+      "gross_profit": 153.65,
       "gross_loss": -142.44,
-      "profit_factor": 1.07,
-      "avg_hold_minutes": 2430.5,
-      "total_pnl": 9.31
+      "profit_factor": 1.08,
+      "avg_hold_minutes": 2390.4,
+      "total_pnl": 11.21
     },
     {
       "bot": "SPIKE",
@@ -2523,17 +2531,17 @@
       "brand": "Sweetpea Trading",
       "instrument_name": "Sugar",
       "symbol_display": "SUGAR",
-      "total_trades": 60,
+      "total_trades": 61,
       "wins": 30,
-      "losses": 30,
-      "win_rate": 50.0,
+      "losses": 31,
+      "win_rate": 49.18032786885246,
       "gross_profit": 471.49,
-      "gross_loss": -853.65,
-      "profit_factor": 0.55,
-      "avg_hold_minutes": 344.4,
-      "total_pnl": -382.16
+      "gross_loss": -883.96,
+      "profit_factor": 0.53,
+      "avg_hold_minutes": 340.1,
+      "total_pnl": -412.47
     }
   ],
-  "fleet_total_pnl": -709.17,
-  "fleet_total_trades": 599
+  "fleet_total_pnl": -737.58,
+  "fleet_total_trades": 601
 }
