@@ -1,5 +1,15 @@
 [
   {
+    "bot": "NAZIM",
+    "brand": "Nazim Trading",
+    "instrument_name": "Nasdaq 100",
+    "symbol_display": "NAS100",
+    "side": "SHORT",
+    "pnl_pct": 0.74,
+    "pnl_usd": 10.09,
+    "exit_time": "2026-11-18T04:16:53.831809Z"
+  },
+  {
     "bot": "SILVERSMITH",
     "brand": "Silversmith Trading",
     "instrument_name": "Silver",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.02,
     "pnl_usd": -0.14,
     "exit_time": "2026-11-15T23:36:36.963898Z"
-  },
-  {
-    "bot": "RUSSELL",
-    "brand": "Russell Trading",
-    "instrument_name": "Russell 2000",
-    "symbol_display": "US2000",
-    "side": "SHORT",
-    "pnl_pct": 0.86,
-    "pnl_usd": 22.6,
-    "exit_time": "2026-11-13T18:43:36.703388Z"
   }
 ]
