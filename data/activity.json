@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "SHORT",
+    "pnl_pct": 0.38,
+    "pnl_usd": 5.7,
+    "exit_time": "2026-11-23T16:50:55.393812Z"
+  },
+  {
     "bot": "SWEETPEA",
     "brand": "Sweetpea Trading",
     "instrument_name": "Sugar",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.38,
     "pnl_usd": 10.03,
     "exit_time": "2026-11-20T02:28:03.909453Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "LONG",
-    "pnl_pct": -0.93,
-    "pnl_usd": -24.84,
-    "exit_time": "2026-11-19T15:01:30.537981Z"
   }
 ]
