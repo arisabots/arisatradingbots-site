@@ -1,5 +1,15 @@
 [
   {
+    "bot": "RUSSELL",
+    "brand": "Russell Trading",
+    "instrument_name": "Russell 2000",
+    "symbol_display": "US2000",
+    "side": "SHORT",
+    "pnl_pct": -1.2,
+    "pnl_usd": -31.53,
+    "exit_time": "2026-11-24T17:33:47.076262Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.11,
     "pnl_usd": 0.7,
     "exit_time": "2026-11-23T05:36:55.570863Z"
-  },
-  {
-    "bot": "SOLOMON",
-    "brand": "Solomon Trading",
-    "instrument_name": "Soybean",
-    "symbol_display": "SOYBN",
-    "side": "SHORT",
-    "pnl_pct": -1.89,
-    "pnl_usd": -49.99,
-    "exit_time": "2026-11-23T01:12:22.804806Z"
   }
 ]
