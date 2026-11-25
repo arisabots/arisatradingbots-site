@@ -1,5 +1,15 @@
 [
   {
+    "bot": "AURIKA",
+    "brand": "Aurika Trading",
+    "instrument_name": "Gold",
+    "symbol_display": "XAU / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.29,
+    "pnl_usd": 10.17,
+    "exit_time": "2026-11-25T13:33:18.049424Z"
+  },
+  {
     "bot": "OLIVIA",
     "brand": "Olivia Trading",
     "instrument_name": "Crude Oil",
@@ -188,15 +198,5 @@
     "pnl_pct": -0.73,
     "pnl_usd": -4.76,
     "exit_time": "2026-11-23T13:58:41.090519Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.58,
-    "pnl_usd": 3.73,
-    "exit_time": "2026-11-23T13:56:32.459354Z"
   }
 ]
