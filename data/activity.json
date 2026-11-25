@@ -1,5 +1,35 @@
 [
   {
+    "bot": "OLIVIA",
+    "brand": "Olivia Trading",
+    "instrument_name": "Crude Oil",
+    "symbol_display": "WTI / USD",
+    "side": "SHORT",
+    "pnl_pct": 0.23,
+    "pnl_usd": 2.33,
+    "exit_time": "2026-11-25T15:13:26.211720Z"
+  },
+  {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "SHORT",
+    "pnl_pct": -0.91,
+    "pnl_usd": -23.88,
+    "exit_time": "2026-11-25T15:07:30.776343Z"
+  },
+  {
+    "bot": "SPIKE",
+    "brand": "Spike Trading",
+    "instrument_name": "Dow Jones",
+    "symbol_display": "US30",
+    "side": "SHORT",
+    "pnl_pct": 0.91,
+    "pnl_usd": 13.62,
+    "exit_time": "2026-11-25T15:03:30.641216Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -168,35 +198,5 @@
     "pnl_pct": -0.83,
     "pnl_usd": -21.78,
     "exit_time": "2026-11-23T15:58:38.406299Z"
-  },
-  {
-    "bot": "SPIKE",
-    "brand": "Spike Trading",
-    "instrument_name": "Dow Jones",
-    "symbol_display": "US30",
-    "side": "SHORT",
-    "pnl_pct": -1.51,
-    "pnl_usd": -22.34,
-    "exit_time": "2026-11-23T15:20:44.042141Z"
-  },
-  {
-    "bot": "SPENCER",
-    "brand": "Spencer Trading",
-    "instrument_name": "S&P 500",
-    "symbol_display": "SPX500",
-    "side": "SHORT",
-    "pnl_pct": -1.21,
-    "pnl_usd": -6.09,
-    "exit_time": "2026-11-23T14:17:37.675414Z"
-  },
-  {
-    "bot": "SILVERSMITH",
-    "brand": "Silversmith Trading",
-    "instrument_name": "Silver",
-    "symbol_display": "XAG / USD",
-    "side": "SHORT",
-    "pnl_pct": -0.73,
-    "pnl_usd": -4.76,
-    "exit_time": "2026-11-23T13:58:41.090519Z"
   }
 ]
