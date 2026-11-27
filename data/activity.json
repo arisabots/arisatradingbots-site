@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SWEETPEA",
+    "brand": "Sweetpea Trading",
+    "instrument_name": "Sugar",
+    "symbol_display": "SUGAR",
+    "side": "LONG",
+    "pnl_pct": 0.19,
+    "pnl_usd": 4.9,
+    "exit_time": "2026-11-27T15:32:46.070959Z"
+  },
+  {
     "bot": "RUSSELL",
     "brand": "Russell Trading",
     "instrument_name": "Russell 2000",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.23,
     "pnl_usd": 2.33,
     "exit_time": "2026-11-25T15:13:26.211720Z"
-  },
-  {
-    "bot": "SWEETPEA",
-    "brand": "Sweetpea Trading",
-    "instrument_name": "Sugar",
-    "symbol_display": "SUGAR",
-    "side": "SHORT",
-    "pnl_pct": -0.91,
-    "pnl_usd": -23.88,
-    "exit_time": "2026-11-25T15:07:30.776343Z"
   }
 ]
