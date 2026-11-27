@@ -1,5 +1,15 @@
 [
   {
+    "bot": "SOLOMON",
+    "brand": "Solomon Trading",
+    "instrument_name": "Soybean",
+    "symbol_display": "SOYBN",
+    "side": "SHORT",
+    "pnl_pct": -2.97,
+    "pnl_usd": -78.39,
+    "exit_time": "2026-11-27T14:31:12.389306Z"
+  },
+  {
     "bot": "AURIKA",
     "brand": "Aurika Trading",
     "instrument_name": "Gold",
@@ -188,15 +198,5 @@
     "pnl_pct": 0.29,
     "pnl_usd": 10.17,
     "exit_time": "2026-11-25T13:33:18.049424Z"
-  },
-  {
-    "bot": "OLIVIA",
-    "brand": "Olivia Trading",
-    "instrument_name": "Crude Oil",
-    "symbol_display": "WTI / USD",
-    "side": "SHORT",
-    "pnl_pct": 0.2,
-    "pnl_usd": 1.97,
-    "exit_time": "2026-11-25T13:01:08.955268Z"
   }
 ]
